@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UnifyDrive · 运营数据存档</title>
+<title>UnifyDrive · 运营周报</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='68' font-size='52' font-weight='800' fill='white' text-anchor='middle' font-family='system-ui'>U</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,6 @@
     -webkit-font-smoothing:antialiased;
     padding:0 20px 80px;
   }
-  .mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-feature-settings:"tnum" 1}
   .wrap{max-width:880px;margin:0 auto}
 
   .topbar{
@@ -62,63 +61,6 @@
   h1{font-size:clamp(30px,6vw,46px);font-weight:700;letter-spacing:-.025em;line-height:1.02;margin:14px 0 10px}
   .sub{font-size:15px;color:var(--ink-soft);max-width:42ch}
 
-  .kpis{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-    background:var(--line);border:1px solid var(--line);
-    border-radius:var(--radius);overflow:hidden;margin:30px 0 8px;
-  }
-  .kpi{background:var(--surface);padding:18px 18px 16px}
-  .kpi .lbl{font-size:11px;color:var(--ink-soft);letter-spacing:.02em;display:flex;align-items:center;gap:6px}
-  .kpi .val{font-family:'JetBrains Mono',monospace;font-size:25px;font-weight:500;letter-spacing:-.02em;margin-top:8px;line-height:1}
-  .kpi .val small{font-size:14px;color:var(--ink-faint);font-weight:400}
-  .delta{display:inline-flex;align-items:center;gap:3px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:2px 6px;border-radius:6px}
-  .delta.up{color:var(--green-deep);background:var(--green-soft)}
-  .delta.down{color:var(--amber);background:var(--amber-soft)}
-
-  .trend{
-    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    padding:20px 22px 16px;margin:26px 0 36px;box-shadow:var(--shadow);
-  }
-  .trend-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:8px}
-  .trend-head .t{font-size:13px;font-weight:600;letter-spacing:.01em}
-  .trend-head .t span{color:var(--ink-faint);font-weight:400}
-  .legend{display:flex;gap:14px;font-size:11px;color:var(--ink-soft)}
-  .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
-  .chart{
-    display:flex;align-items:flex-end;gap:clamp(8px,2.4vw,22px);
-    height:188px;padding-top:26px;position:relative;
-  }
-  .col{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;cursor:pointer;position:relative;min-width:0}
-  .bar-wrap{width:100%;display:flex;align-items:flex-end;justify-content:center;height:100%;position:relative}
-  .bar{
-    width:100%;max-width:46px;background:var(--green);border-radius:5px 5px 2px 2px;
-    transform-origin:bottom;transition:filter .15s, background .15s;
-    height:var(--h);animation:grow .7s cubic-bezier(.2,.8,.2,1) both;
-  }
-  .bar.warn{background:var(--amber)}
-  .bar.partial{
-    background:repeating-linear-gradient(135deg,var(--green) 0 7px,#3fb578 7px 9px);
-    opacity:.92;
-  }
-  .col:hover .bar{filter:brightness(1.08) saturate(1.1)}
-  .col:focus-visible{outline:none}
-  .col:focus-visible .bar{outline:2px solid var(--ink);outline-offset:2px}
-  @keyframes grow{from{transform:scaleY(0);opacity:.3}to{transform:scaleY(1);opacity:1}}
-  .proj{position:absolute;left:50%;transform:translateX(-50%);width:54px;border-top:1.5px dashed var(--amber);height:0}
-  .proj .ptag{position:absolute;top:-17px;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);white-space:nowrap;font-weight:500}
-  .col .xlabel{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);white-space:nowrap}
-  .col .xval{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink);font-weight:500;margin-top:2px}
-  .tip{
-    position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(4px);
-    background:var(--ink);color:#fff;border-radius:8px;padding:9px 11px;font-size:11px;line-height:1.45;
-    white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .14s,transform .14s;z-index:10;
-    box-shadow:0 8px 20px -6px rgba(0,0,0,.4);
-  }
-  .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--ink)}
-  .tip .tg{font-family:'JetBrains Mono',monospace}
-  .tip b{color:var(--green-bright)}
-  .col:hover .tip,.col:focus-visible .tip{opacity:1;transform:translateX(-50%) translateY(0)}
-
   .toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:12px}
   .seg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:3px}
   .seg button{
@@ -136,7 +78,6 @@
   .mhead .my{font-size:17px;font-weight:600;letter-spacing:-.01em;font-family:'JetBrains Mono',monospace}
   .mhead .mline{flex:1;height:1px;background:var(--line)}
   .mhead .mn{font-size:12px;color:var(--ink-soft);font-family:'JetBrains Mono',monospace}
-  .mhead .gmv{font-size:12px;color:var(--ink);font-family:'JetBrains Mono',monospace;font-weight:500}
   .chev{transition:transform .25s;color:var(--ink-faint)}
   .mhead[aria-expanded="false"] .chev{transform:rotate(-90deg)}
   .rows{display:grid;transition:grid-template-rows .3s ease, opacity .25s;grid-template-rows:1fr;opacity:1}
@@ -150,16 +91,18 @@
     transition:border-color .15s, box-shadow .15s, transform .15s;cursor:pointer;
   }
   .row:hover{border-color:var(--line-strong);box-shadow:var(--shadow);transform:translateY(-1px)}
-  .row.flash{animation:flash 1.4s ease}
-  @keyframes flash{0%,100%{box-shadow:var(--shadow)}25%{box-shadow:0 0 0 2px var(--green)}}
   .period{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink-soft);white-space:nowrap}
   .period .tag-inline{display:block;font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:.02em}
-  .metrics{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-  .metric{display:flex;flex-direction:column;gap:2px}
+
+  /* fixed-width metric columns for vertical alignment */
+  .metrics{display:flex;align-items:center;gap:0;flex-wrap:wrap}
+  .metric{display:flex;flex-direction:column;gap:2px;width:108px;flex-shrink:0}
+  .metric.w96{width:96px}
+  .metric.w80{width:80px}
   .metric .m-l{font-size:10px;color:var(--ink-faint);letter-spacing:.04em}
   .metric .m-v{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:500;letter-spacing:-.01em}
   .metric .m-v.big{font-size:17px}
-  .badges{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
   .badge{
     font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500;white-space:nowrap;
     font-family:'JetBrains Mono',monospace;
@@ -177,14 +120,10 @@
   .foot{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
   @media (max-width:640px){
-    .kpis{grid-template-columns:1fr 1fr}
     .row{grid-template-columns:1fr;gap:12px}
     .open{display:none}
     .metrics{gap:18px}
-    .trend-head{flex-direction:column;align-items:flex-start;gap:9px}
-    .legend{display:none}
-    .chart{gap:6px}
-    .col .tip{display:none}
+    .metric{width:auto}
     h1{margin-top:10px}
   }
   @media (prefers-reduced-motion:reduce){
@@ -207,40 +146,7 @@
   <section class="hero">
     <div class="eyebrow">Weekly &amp; Monthly Performance Ledger</div>
     <h1>运营周报</h1>
-    <p class="sub">运营数据与广告投放数据 · 周报 / 月报归档。点击走势图任意一周可定位到对应报告。</p>
-  </section>
-
-  <section class="kpis" aria-label="近期关键指标">
-    <div class="kpi">
-      <div class="lbl">近 5 周 GMV</div>
-      <div class="val">$58,591</div>
-    </div>
-    <div class="kpi">
-      <div class="lbl">累计订单</div>
-      <div class="val">69 <small>单</small></div>
-    </div>
-    <div class="kpi">
-      <div class="lbl">平均客单价</div>
-      <div class="val">$849</div>
-    </div>
-    <div class="kpi">
-      <div class="lbl">最新完整周环比</div>
-      <div class="val" style="font-size:20px;display:flex;align-items:center;gap:8px;margin-top:11px">
-        <span class="delta up">▲ 224%</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="trend">
-    <div class="trend-head">
-      <div class="t">GMV 走势 <span>· 近 5 周</span></div>
-      <div class="legend">
-        <span><i style="background:var(--green)"></i>完整周</span>
-        <span><i style="background:var(--amber)"></i>异常周</span>
-        <span><i style="background:repeating-linear-gradient(135deg,var(--green) 0 4px,#3fb578 4px 6px)"></i>进行中</span>
-      </div>
-    </div>
-    <div class="chart" id="chart"></div>
+    <p class="sub">运营数据与广告投放数据 · 周报 / 月报归档</p>
   </section>
 
   <div class="toolbar">
@@ -264,50 +170,50 @@
 <script>
 const periods = [
   // Jun 2026
-  { type:'weekly', month:'2026 / 06', year:2026, mo:6, partial:true,
+  { type:'weekly', month:'2026 / 06', year:2026, mo:6,
     label:'06-01 – 06-04', note:'部分周 · 4 天',
     gmv:13806, orders:15, badges:[{t:'含 5月月报',c:'green'}],
-    chart:true, proj:24160, href:'weekly/2026-06-01.html' },
+    href:'weekly/2026-06-01.html' },
   // May 2026
   { type:'weekly', month:'2026 / 05', year:2026, mo:5,
     label:'05-22 – 05-28', gmv:14280, orders:14,
-    chart:true, href:'weekly/2026-05-22.html' },
+    href:'weekly/2026-05-22.html' },
   { type:'weekly', month:'2026 / 05', year:2026, mo:5,
     label:'05-15 – 05-21', gmv:4405, orders:13,
-    chart:true, warn:'单周 GMV 骤降 · 客单价异常', href:'weekly/2026-05-15.html' },
+    warn:'单周 GMV 骤降', href:'weekly/2026-05-15.html' },
   { type:'weekly', month:'2026 / 05', year:2026, mo:5,
     label:'05-08 – 05-15', gmv:14750, orders:13,
-    chart:true, href:'reports/2026-05-15.html' },
+    href:'reports/2026-05-15.html' },
   { type:'weekly', month:'2026 / 05', year:2026, mo:5,
     label:'05-01 – 05-08', gmv:11350, orders:14,
-    chart:true, href:'reports/2026-05-08.html' },
+    href:'reports/2026-05-08.html' },
   // Apr 2026
   { type:'monthly', month:'2026 / 04', year:2026, mo:4,
     label:'4月月报', note:'月度复盘',
-    gmv:null, orders:null, badges:[{t:'+58% UP6 vs 3月',c:'green'},{t:'月报',c:'indigo'}],
+    badges:[{t:'+58% UP6 vs 3月',c:'green'},{t:'月报',c:'indigo'}],
     mreport:true, href:'reports/2026-04-29.html' },
   { type:'weekly', month:'2026 / 04', year:2026, mo:4,
-    label:'04-16 – 04-22', gmv:null, orders:null,
+    label:'04-16 – 04-22',
     desc:'促销后复盘 · 购物车页面调整', href:'reports/2026-04-22.html' },
   { type:'weekly', month:'2026 / 04', year:2026, mo:4,
-    label:'04-10 – 04-15', gmv:null, orders:null,
+    label:'04-10 – 04-15',
     desc:'Shopify + Meta 促销首周 · 用户热力图', href:'reports/2026-04-16.html' },
   { type:'weekly', month:'2026 / 04', year:2026, mo:4,
-    label:'04-01 – 04-08', gmv:null, orders:null,
+    label:'04-01 – 04-08',
     alt:[{l:'Revenue',v:'$1,599'},{l:'ROAS',v:'2.51'}], href:'reports/2026-04-09.html' },
   { type:'monthly', month:'2026 / 04', year:2026, mo:4,
     label:'3月月报', note:'月度复盘',
-    gmv:null, orders:null, badges:[{t:'+149% 收入 vs 2月',c:'green'},{t:'月报',c:'indigo'}],
+    badges:[{t:'+149% 收入 vs 2月',c:'green'},{t:'月报',c:'indigo'}],
     mreport:true, href:'reports/2026-04-02.html' },
   // Mar 2026
   { type:'weekly', month:'2026 / 03', year:2026, mo:3,
-    label:'03-26', gmv:null, orders:null,
+    label:'03-26',
     desc:'春季促销方案 · EDM · 日本市场专属', badges:[{t:'方案',c:'ghost'}], href:'reports/2026-03-26.html' },
   { type:'weekly', month:'2026 / 03', year:2026, mo:3,
-    label:'03-12 – 03-18', gmv:null, orders:null,
+    label:'03-12 – 03-18',
     desc:'退货率分析 · 网站改版热力图', href:'reports/2026-03-19.html' },
   { type:'weekly', month:'2026 / 03', year:2026, mo:3,
-    label:'03-05 – 03-11', gmv:null, orders:null,
+    label:'03-05 – 03-11',
     alt:[{l:'YouTube',v:'$11,492'},{l:'Google',v:'$7,194'}], href:'reports/2026-03-12.html' },
   { type:'monthly', month:'2026 / 03', year:2026, mo:3,
     label:'2月月报', note:'月度复盘',
@@ -315,80 +221,28 @@ const periods = [
     mreport:true, href:'reports/2026-03-05.html' },
   // Feb 2026
   { type:'weekly', month:'2026 / 02', year:2026, mo:2,
-    label:'02-05', gmv:null, orders:null,
+    label:'02-05',
     desc:'官网 10 层改版方案 · $9K 广告投放', badges:[{t:'方案',c:'ghost'}], href:'reports/2026-02-05.html' },
   // Jan 2026
   { type:'weekly', month:'2026 / 01', year:2026, mo:1,
-    label:'01-29', gmv:null, orders:null,
+    label:'01-29',
     desc:'UC250/UC450 分析 · Banner 优化 · 购物车 1.0', href:'reports/2026-01-29.html' },
   { type:'weekly', month:'2026 / 01', year:2026, mo:1,
-    label:'01-22', gmv:null, orders:null,
+    label:'01-22',
     alt:[{l:'UT2',v:'$2,551'},{l:'UC250',v:'$1,452'}], href:'reports/2026-01-22.html' },
   { type:'weekly', month:'2026 / 01', year:2026, mo:1,
-    label:'01-15', gmv:null, orders:null,
+    label:'01-15',
     desc:'UC450PRO 页面 · Trustpilot · 弃单优化 · VAT', href:'reports/2026-01-15.html' },
   // Dec 2025
   { type:'monthly', month:'2025 / 12', year:2025, mo:12,
     label:'12月', note:'工作总结',
-    gmv:null, orders:null,
     desc:'GitHub 管理 · 购物车推荐 · SSD 上架 · 圣诞 Banner', href:'reports/2025-12.html' },
 ];
 
 const fmt = n => '$' + n.toLocaleString('en-US');
 const aov = p => p.orders ? Math.round(p.gmv / p.orders) : null;
 
-/* ---------- trend chart ---------- */
-const chartData = periods.filter(p=>p.chart).slice().reverse();
-const maxGmv = Math.max(...chartData.map(p=>p.gmv));
-const chartEl = document.getElementById('chart');
-const usable = 150;
-
-chartData.forEach((p,i)=>{
-  const h = Math.max(8, Math.round(p.gmv / maxGmv * usable));
-  const col = document.createElement('div');
-  col.className='col';
-  col.tabIndex=0;
-  col.setAttribute('role','button');
-  col.setAttribute('aria-label', `${p.label}，GMV ${fmt(p.gmv)}，${p.orders} 单`);
-  col.dataset.label = p.label;
-  const barClass = 'bar' + (p.warn?' warn':'') + (p.partial?' partial':'');
-  const projHtml = p.proj ? `<div class="proj"><span class="ptag">≈${fmt(Math.round(p.proj/1000))}K</span></div>` : '';
-  col.innerHTML = `
-    <div class="tip">
-      <div class="tg">${p.label}${p.partial?' · 进行中':''}</div>
-      <div class="tg">GMV <b>${fmt(p.gmv)}</b> · ${p.orders}单</div>
-      <div class="tg">客单价 ${fmt(aov(p))}</div>
-      ${p.proj?`<div class="tg" style="color:#ffd9a3">节奏预测 ≈${fmt(p.proj)}</div>`:''}
-    </div>
-    <div class="bar-wrap">
-      ${projHtml}
-      <div class="${barClass}" style="--h:${h}px;animation-delay:${i*70}ms"></div>
-    </div>
-    <div class="xlabel">${p.label.slice(0,5)}</div>
-    <div class="xval">${fmt(Math.round(p.gmv/1000))}K</div>`;
-  col.addEventListener('click', ()=> focusRow(p.label));
-  col.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();focusRow(p.label);} });
-  chartEl.appendChild(col);
-});
-
-/* ---------- archive list ---------- */
 const archiveEl = document.getElementById('archive');
-
-function monthGmv(items){
-  const withGmv = items.filter(p=>p.gmv);
-  if(!withGmv.length) return '';
-  const sum = withGmv.reduce((a,p)=>a+p.gmv,0);
-  return withGmv.length===1 && items.length===1 ? '' : fmt(sum);
-}
-
-function deltaFor(idx){
-  const ci = chartData.findIndex(p=>p===periods[idx]);
-  if(ci<=0) return null;
-  const prev = chartData[ci-1];
-  const cur = chartData[ci];
-  if(!prev||!cur) return null;
-  return Math.round((cur.gmv-prev.gmv)/prev.gmv*100);
-}
 
 let currentFilter = 'all';
 function render(filter='all'){
@@ -410,7 +264,6 @@ function render(filter='all'){
       <button class="mhead" aria-expanded="${isRecent}">
         <span class="my">${month}</span>
         <span class="mline"></span>
-        <span class="gmv">${monthGmv(items)}</span>
         <span class="mn">${items.length} 期</span>
         <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -427,16 +280,11 @@ function render(filter='all'){
       let contentHtml='';
       if(p.gmv){
         const a = aov(p);
-        const d = deltaFor(p._idx);
-        const deltaHtml = (d!==null && !p.partial)
-          ? `<span class="delta ${d>=0?'up':'down'}">${d>=0?'▲':'▼'} ${Math.abs(d)}%</span>`
-          : (p.partial ? `<span class="badge ghost">进行中</span>` : '');
         contentHtml = `
           <div class="metrics">
             <div class="metric"><span class="m-l">GMV</span><span class="m-v big">${fmt(p.gmv)}</span></div>
-            <div class="metric"><span class="m-l">订单</span><span class="m-v">${p.orders} 单</span></div>
-            <div class="metric"><span class="m-l">客单价</span><span class="m-v">${fmt(a)}</span></div>
-            <div class="metric"><span class="m-l">环比</span><span class="m-v" style="margin-top:1px">${deltaHtml||'<span style="color:var(--ink-faint)">—</span>'}</span></div>
+            <div class="metric w96"><span class="m-l">订单</span><span class="m-v">${p.orders} 单</span></div>
+            <div class="metric w96"><span class="m-l">客单价</span><span class="m-v">${fmt(a)}</span></div>
           </div>`;
       } else if(p.alt){
         contentHtml = `<div class="metrics">${p.alt.map(m=>`<div class="metric"><span class="m-l">${m.l}</span><span class="m-v big">${m.v}</span></div>`).join('')}</div>`;
@@ -445,14 +293,13 @@ function render(filter='all'){
       }
 
       const warnBadge = p.warn ? `<span class="badge amber" title="${p.warn}">⚠ 异常</span>` : '';
-      const projBadge = p.proj ? `<span class="badge ghost">节奏 ≈${fmt(Math.round(p.proj/1000))}K</span>` : '';
       const extraBadges = (p.badges||[]).map(b=>`<span class="badge ${b.c}">${b.t}</span>`).join('');
 
       row.innerHTML = `
         <div class="period">${p.label}${p.note?`<span class="tag-inline">${p.note}</span>`:''}</div>
         ${contentHtml}
         <div style="display:flex;align-items:center;gap:10px">
-          ${warnBadge}${projBadge}${extraBadges}
+          ${warnBadge}${extraBadges}
           <span class="open">查看 <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>`;
       inner.appendChild(row);
@@ -467,18 +314,6 @@ function render(filter='all'){
   });
 
   document.getElementById('count').textContent = `${shown} 期`;
-}
-
-function focusRow(label){
-  render(currentFilter);
-  const row = [...document.querySelectorAll('.row')].find(r=>r.dataset.label===label);
-  if(!row) return;
-  const head = row.closest('.month').querySelector('.mhead');
-  if(head.getAttribute('aria-expanded')==='false') head.setAttribute('aria-expanded','true');
-  setTimeout(()=>{
-    row.scrollIntoView({behavior:'smooth',block:'center'});
-    row.classList.remove('flash'); void row.offsetWidth; row.classList.add('flash');
-  },100);
 }
 
 document.querySelectorAll('.seg button').forEach(b=>{
