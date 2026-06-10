@@ -138,7 +138,7 @@ PAGE_TPL = '''<!DOCTYPE html>
   .nav{{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);margin-bottom:32px;font-size:13px;font-weight:600}}
   .nav a{{text-decoration:none;color:var(--text-2);transition:color .12s}}
   .nav a:hover{{color:var(--text)}}
-    .top-bar{{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;padding-bottom:16px;border-bottom:1px solid var(--border)}}
+  .top-bar{{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;padding-bottom:16px;border-bottom:1px solid var(--border)}}
   .back-link{{font-size:12px;color:var(--text-2);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color .12s}}
   .back-link:hover{{color:var(--text)}}
   .date-badge{{font-size:13px;font-weight:600;color:var(--text);background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:20px;font-family:'IBM Plex Mono',monospace}}
