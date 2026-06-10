@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025.12 · UnifyDrive</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#f5f4f0;--surface:#fff;--surface2:#efede7;--border:rgba(0,0,0,0.12);--border-light:rgba(0,0,0,0.07);--text:#15150f;--text-2:#5c5c56;--text-3:#8f8f88;--green:#0f7a3d;--green-bg:#dff2e6}
+  body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.7;padding:0 24px 60px}
+  .page{max-width:780px;margin:0 auto}
+  .nav{display:flex;gap:0;justify-content:center;padding:16px 0 0;margin-bottom:20px}
+  .nav a{text-decoration:none;font-size:13px;font-weight:500;padding:8px 24px;border-radius:8px;color:var(--text-2);transition:all .15s}
+  .nav a:hover{color:var(--text);background:var(--surface2)}
+  .nav a.active{color:var(--text);font-weight:600;background:var(--surface);border:1px solid var(--border)}
+  .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+  .back-link{font-size:12px;color:var(--text-2);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color .12s}
+  .back-link:hover{color:var(--text)}
+  .date-badge{font-size:13px;font-weight:600;color:var(--text);background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:20px;font-family:'IBM Plex Mono',monospace}
+  .section-label{font-size:11px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em}
+  .content h1,.content h2,.content h3{margin-top:28px;margin-bottom:8px;font-weight:600;color:var(--text)}
+  .content h1{font-size:20px;margin-top:0}
+  .content h2{font-size:17px;margin-top:32px;padding-bottom:6px;border-bottom:1px solid var(--border-light)}
+  .content h3{font-size:14px;margin-top:24px;color:var(--text-2)}
+  .content p{margin:10px 0}
+  .content ul,.content ol{margin:8px 0;padding-left:20px}
+  .content li{margin:4px 0;color:var(--text-2)}
+  .content code{background:var(--surface2);padding:2px 6px;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:13px}
+  .content blockquote{margin:12px 0;padding:10px 16px;background:var(--surface2);border-left:3px solid var(--text-3);border-radius:0 6px 6px 0;font-size:13px;color:var(--text-2)}
+  .content hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+  .content strong{color:var(--text);font-weight:600}
+  .content img{max-width:100%;border-radius:8px;border:1px solid var(--border)}
+  .content .img-wrap{margin:16px 0;text-align:center}
+  .content a{color:var(--text)}
+  .footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-3)}
+  @media(max-width:540px){body{padding:0 16px 40px}.content h1{font-size:18px}.content h2{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="nav">
+    <a  href="reports.html">周报月报</a>
+    <a class="active" href="meetings.html">例会 / 工作计划</a>
+  </nav>
+  <div class="top-bar">
+    <div>
+      <div class="section-label">Meeting Notes / Work Plan</div>
+      <span class="date-badge">2025.12</span>
+    </div>
+    <a class="back-link" href="meetings.html">&larr; 例会 / 工作计划</a>
+  </div>
+  <div class="content">
+        <h3>一、使用GitHub管理主题，便于本地开发与模板管理</h3>
+        <ul>
+        <li>增加gtm，clarity数据收集代码，增加的时间不是很长，数据收集；</li>
+        </ul>
+        <hr>
+        <h3>二、购物车页增加推荐产品</h3>
+        <ul>
+        <li>在结账前的购物车页，增加 <strong>ssd</strong> 的搭配推荐模块</li>
+        </ul>
+        <ul>
+        <li>推荐文案为“最适合 NAS 使用的硬盘推荐”，稍微强化价值，偏转化语气</li>
+        </ul>
+        <p class="img-wrap"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NTk5ZWYyZTRmNzc5MTAxZWRiYWE0MWY5YzhkYzMzN2ZfYWQzOGMyNmJkNmZmMTI5MjI0ODkyMzNhYjFmZTBjYWFfSUQ6NzU4NzY3NDUzNjUxNTgzMzA1NV8xNzgxMDg5OTA5OjE3ODExNzYzMDlfVjM" alt="Image" loading="lazy"></p>
+        <hr>
+        <h3>三、导航栏设置日版导航栏</h3>
+        <ul>
+        <li>新上架的ssd和UT2的导航只会在日本市场出现</li>
+        </ul>
+        <hr>
+        <h3>四、上架产品,仅限日本市场</h3>
+        <ul>
+        <li>上架一个SSD产品，256GB</li>
+        </ul>
+        <p class="img-wrap"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NjllN2NmZjY3ZDdhMWY3YTYxMTc1YTM2OTk4NThmM2VfNTYzM2NhZTk3YjcxYzRjMjQyYzA5ZGE2MjI0MzY1MTFfSUQ6NzU4NzY4Mjk1OTU5Njk0ODQzM18xNzgxMDg5OTA5OjE3ODExNzYzMDlfVjM" alt="Image" loading="lazy"></p>
+        <ul>
+        <li>上架UT2与SSD的组合产品，10个配件与12个配件两个变体</li>
+        </ul>
+        <hr>
+        <h3>五、下掉黑五banner更换圣诞节banner</h3>
+        <h3>下周工作计划：</h3>
+        <ul>
+        <li>新年banner/活动？</li>
+        </ul>
+        <ul>
+        <li>完成UC450PRO产品落地页</li>
+        </ul>
+        <ul>
+        <li>UT2落地页优化\-计划，看UC450PRO完成情况</li>
+        </ul>
+        <ul>
+        <li>观察新上架产品的数据，适时调整</li>
+        </ul>
+        <ul>
+        <li>注册Trustpilot嵌入独立站，有助于长期品牌建设</li>
+        </ul>
+  </div>
+  <div class="footer">
+    <a style="color:inherit" href="https://github.com/theyouthforyou/unifydrive-weekly">View on GitHub</a>
+  </div>
+</div>
+</body>
+</html>

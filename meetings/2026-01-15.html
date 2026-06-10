@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026.1.15 · UnifyDrive</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#f5f4f0;--surface:#fff;--surface2:#efede7;--border:rgba(0,0,0,0.12);--border-light:rgba(0,0,0,0.07);--text:#15150f;--text-2:#5c5c56;--text-3:#8f8f88;--green:#0f7a3d;--green-bg:#dff2e6}
+  body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.7;padding:0 24px 60px}
+  .page{max-width:780px;margin:0 auto}
+  .nav{display:flex;gap:0;justify-content:center;padding:16px 0 0;margin-bottom:20px}
+  .nav a{text-decoration:none;font-size:13px;font-weight:500;padding:8px 24px;border-radius:8px;color:var(--text-2);transition:all .15s}
+  .nav a:hover{color:var(--text);background:var(--surface2)}
+  .nav a.active{color:var(--text);font-weight:600;background:var(--surface);border:1px solid var(--border)}
+  .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+  .back-link{font-size:12px;color:var(--text-2);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color .12s}
+  .back-link:hover{color:var(--text)}
+  .date-badge{font-size:13px;font-weight:600;color:var(--text);background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:20px;font-family:'IBM Plex Mono',monospace}
+  .section-label{font-size:11px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em}
+  .content h1,.content h2,.content h3{margin-top:28px;margin-bottom:8px;font-weight:600;color:var(--text)}
+  .content h1{font-size:20px;margin-top:0}
+  .content h2{font-size:17px;margin-top:32px;padding-bottom:6px;border-bottom:1px solid var(--border-light)}
+  .content h3{font-size:14px;margin-top:24px;color:var(--text-2)}
+  .content p{margin:10px 0}
+  .content ul,.content ol{margin:8px 0;padding-left:20px}
+  .content li{margin:4px 0;color:var(--text-2)}
+  .content code{background:var(--surface2);padding:2px 6px;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:13px}
+  .content blockquote{margin:12px 0;padding:10px 16px;background:var(--surface2);border-left:3px solid var(--text-3);border-radius:0 6px 6px 0;font-size:13px;color:var(--text-2)}
+  .content hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+  .content strong{color:var(--text);font-weight:600}
+  .content img{max-width:100%;border-radius:8px;border:1px solid var(--border)}
+  .content .img-wrap{margin:16px 0;text-align:center}
+  .content a{color:var(--text)}
+  .footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-3)}
+  @media(max-width:540px){body{padding:0 16px 40px}.content h1{font-size:18px}.content h2{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="nav">
+    <a  href="reports.html">周报月报</a>
+    <a class="active" href="meetings.html">例会 / 工作计划</a>
+  </nav>
+  <div class="top-bar">
+    <div>
+      <div class="section-label">Meeting Notes / Work Plan</div>
+      <span class="date-badge">2026.1.15</span>
+    </div>
+    <a class="back-link" href="meetings.html">&larr; 例会 / 工作计划</a>
+  </div>
+  <div class="content">
+        <h2>1.UC450PRO完成页面；</h2>
+        <h2>2.UP6页面增加UPS和AI相册模块；</h2>
+        <h2>3.trustpilot邀评：<strong>安全第一（防止被封）、分层转化（提高成功率）、榨取最大价值（区分新老客户），分时间发送邮件。</strong></h2>
+        <p><strong>客户分层（Segmentation）：</strong></p>
+        <p>手动剔除那些曾经退款、投诉、发生过纠纷的客户，分为日语客户和英语客户</p>
+        <p>按照下单时间，将客户分为三组：</p>
+        <p>\* <strong>黄金组（0\-3个月）：</strong> 记忆犹新，最容易给好评，他们成功率最高，。</p>
+        <p>\* <strong>白银组（3\-12个月）：</strong> 产品用了很久，评价最有分量，获取高质量、长篇幅的“耐用性”好评。</p>
+        <p>\* <strong>沉睡组（1\-2年）：</strong> 不直接邀请评价。 风险太高，转化太低，可以发送一封“老客户回归”邮件，提供新品折扣，有转化可以再邀请评价。</p>
+        <p>最后在 Shopify 中设置一个 <strong>work Flow 自动邀请客户评价</strong></p>
+        <h2>4.弃单弃购邮件优化</h2>
+        <p>分日语客户和英语客户，修改邮件内容，发送时间，区分日本客户和英语客户的语言习惯和购物习惯</p>
+        <h2>5.pixelmob项目</h2>
+        <p>通过meta广告邀请用户测试，2025.1.15开始；</p>
+        <h2>6.10% VAT的税</h2>
+        <p>参考过同品类和不同品类的独立站后</p>
+        <p>推荐使用<strong>含税价（Tax\-Inclusive）</strong>的方案；</p>
+        <p>理由是：</p>
+        <p><strong>法律背景</strong>：日本从 2021 年起实施了\<em>\</em>“总额表示义务”\<em>\</em>。这意味着面向消费者的标价必须是“最终支付价格”。</p>
+        <p><strong>优点</strong>：</p>
+        <ul>
+        <li><strong>转化率高</strong>：客户在结账时不会被突然多出来的 10% 费用吓跑。</li>
+        </ul>
+        <ul>
+        <li><strong>合规</strong>：符合日本消费者的心理预期和法律规范。</li>
+        </ul>
+        <p>在我们独立站的做法，保持不变，在价格/结账部分加上<strong>含税价（Tax\-Inclusive）文案。</strong></p>
+        <p><strong>是否需要再加10%的价格？</strong></p>
+        <h2>7.其他</h2>
+        <p>协助财务给订单数据</p>
+        <p>##</p>
+        <h2>下周工作计划</h2>
+        <p>上线UC250；</p>
+        <p>新上产品增加曝光，社媒，blog，edm；网站增加新banner；</p>
+        <p>网站首页增加新产品展示区域；</p>
+        <p>注册pixelmob站点，搭建初始页面；</p>
+        <p><strong>优化UP6页面</strong>/网站内容，本月至今，UP6的流量高于UT2，销量却低了不少；</p>
+        <p><strong>做好各数据的监控，对比，分析</strong></p>
+        <p>跑Google广告？</p>
+  </div>
+  <div class="footer">
+    <a style="color:inherit" href="https://github.com/theyouthforyou/unifydrive-weekly">View on GitHub</a>
+  </div>
+</div>
+</body>
+</html>
