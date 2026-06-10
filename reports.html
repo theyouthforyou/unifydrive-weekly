@@ -119,11 +119,16 @@
   }
 
   .entry .kpis {
-    display: flex; gap: 0; align-items: baseline;
+    display: flex; gap: 24px; align-items: baseline;
   }
   .entry .kv {
-    display: flex; align-items: baseline; gap: 5px;
-    min-width: 110px;
+    display: flex; align-items: baseline; gap: 6px;
+  }
+  .entry .kv.gmv {
+    min-width: 120px;
+  }
+  .entry .kv.orders {
+    min-width: 64px;
   }
   .entry .kv .v {
     font-family: 'JetBrains Mono', monospace;
@@ -201,8 +206,8 @@
       <a class="entry" href="weekly/2026-06-01.html">
         <span class="date">06-01 — 06-04</span>
         <div class="kpis">
-          <span class="kv"><span class="v">$13,806</span> <span class="lb">GMV</span></span>
-          <span class="kv"><span class="v">15</span> <span class="lb">单</span></span>
+          <span class="kv gmv"><span class="v">$13,806</span> <span class="lb">GMV</span></span>
+          <span class="kv orders"><span class="v">15</span> <span class="lb">单</span></span>
         </div>
         <span class="tag gr">含 5月月报</span>
         <span class="arr">→</span>
@@ -221,32 +226,32 @@
       <a class="entry" href="weekly/2026-05-22.html">
         <span class="date">05-22 — 05-28</span>
         <div class="kpis">
-          <span class="kv"><span class="v">$14,280</span> <span class="lb">GMV</span></span>
-          <span class="kv"><span class="v">14</span> <span class="lb">单</span></span>
+          <span class="kv gmv"><span class="v">$14,280</span> <span class="lb">GMV</span></span>
+          <span class="kv orders"><span class="v">14</span> <span class="lb">单</span></span>
         </div>
         <span class="arr">→</span>
       </a>
       <a class="entry" href="weekly/2026-05-15.html">
         <span class="date">05-15 — 05-21</span>
         <div class="kpis">
-          <span class="kv"><span class="v">$4,405</span> <span class="lb">GMV</span></span>
-          <span class="kv"><span class="v">13</span> <span class="lb">单</span></span>
+          <span class="kv gmv"><span class="v">$4,405</span> <span class="lb">GMV</span></span>
+          <span class="kv orders"><span class="v">13</span> <span class="lb">单</span></span>
         </div>
         <span class="arr">→</span>
       </a>
       <a class="entry" href="reports/2026-05-15.html">
         <span class="date">05-08 — 05-15</span>
         <div class="kpis">
-          <span class="kv"><span class="v">$14,750</span> <span class="lb">GMV</span></span>
-          <span class="kv"><span class="v">13</span> <span class="lb">单</span></span>
+          <span class="kv gmv"><span class="v">$14,750</span> <span class="lb">GMV</span></span>
+          <span class="kv orders"><span class="v">13</span> <span class="lb">单</span></span>
         </div>
         <span class="arr">→</span>
       </a>
       <a class="entry" href="reports/2026-05-08.html">
         <span class="date">05-01 — 05-08</span>
         <div class="kpis">
-          <span class="kv"><span class="v">$11,350</span> <span class="lb">GMV</span></span>
-          <span class="kv"><span class="v">14</span> <span class="lb">单</span></span>
+          <span class="kv gmv"><span class="v">$11,350</span> <span class="lb">GMV</span></span>
+          <span class="kv orders"><span class="v">14</span> <span class="lb">单</span></span>
         </div>
         <span class="arr">→</span>
       </a>
@@ -264,7 +269,7 @@
       <a class="entry" href="reports/2026-04-29.html">
         <span class="date">4月月报</span>
         <div class="kpis">
-          <span class="kv"><span class="v gr">+58%</span> <span class="lb">UP6 vs 3月</span></span>
+          <span class="kv gmv"><span class="v gr">+58%</span> <span class="lb">UP6 vs 3月</span></span>
         </div>
         <span class="tag mo">月报</span>
         <span class="arr">→</span>
@@ -282,7 +287,7 @@
       <a class="entry" href="reports/2026-04-09.html">
         <span class="date">04-01 — 04-08</span>
         <div class="kpis">
-          <span class="kv"><span class="v">$1,599</span> <span class="lb">Revenue</span></span>
+          <span class="kv gmv"><span class="v">$1,599</span> <span class="lb">Revenue</span></span>
           <span class="kv"><span class="v">2.51</span> <span class="lb">ROAS</span></span>
         </div>
         <span class="arr">→</span>
@@ -290,7 +295,7 @@
       <a class="entry" href="reports/2026-04-02.html">
         <span class="date">3月月报</span>
         <div class="kpis">
-          <span class="kv"><span class="v gr">+149%</span> <span class="lb">收入 vs 2月</span></span>
+          <span class="kv gmv"><span class="v gr">+149%</span> <span class="lb">收入 vs 2月</span></span>
         </div>
         <span class="tag mo">月报</span>
         <span class="arr">→</span>
@@ -320,16 +325,16 @@
       <a class="entry" href="reports/2026-03-12.html">
         <span class="date">03-05 — 03-11</span>
         <div class="kpis">
-          <span class="kv"><span class="v">$11,492</span> <span class="lb">YouTube</span></span>
-          <span class="kv"><span class="v">$7,194</span> <span class="lb">Google</span></span>
+          <span class="kv gmv"><span class="v">$11,492</span> <span class="lb">YouTube</span></span>
+          <span class="kv gmv"><span class="v">$7,194</span> <span class="lb">Google</span></span>
         </div>
         <span class="arr">→</span>
       </a>
       <a class="entry" href="reports/2026-03-05.html">
         <span class="date">2月月报</span>
         <div class="kpis">
-          <span class="kv"><span class="v">$30,707</span> <span class="lb">GMV</span></span>
-          <span class="kv"><span class="v">36</span> <span class="lb">单</span></span>
+          <span class="kv gmv"><span class="v">$30,707</span> <span class="lb">GMV</span></span>
+          <span class="kv orders"><span class="v">36</span> <span class="lb">单</span></span>
         </div>
         <span class="tag mo">月报</span>
         <span class="arr">→</span>
@@ -370,8 +375,8 @@
       <a class="entry" href="reports/2026-01-22.html">
         <span class="date">01-22</span>
         <div class="kpis">
-          <span class="kv"><span class="v">$2,551</span> <span class="lb">UT2</span></span>
-          <span class="kv"><span class="v">$1,452</span> <span class="lb">UC250</span></span>
+          <span class="kv gmv"><span class="v">$2,551</span> <span class="lb">UT2</span></span>
+          <span class="kv gmv"><span class="v">$1,452</span> <span class="lb">UC250</span></span>
         </div>
         <span class="arr">→</span>
       </a>
