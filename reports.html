@@ -40,10 +40,11 @@
   /* ── topbar ── */
   .topbar {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 32px 0 0; margin-bottom: 48px;
+    padding: 32px 0 16px; margin-bottom: 48px;
+    border-bottom: 2px solid var(--ink);
   }
   .topbar .logo { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
-  .topbar .logo span { color: var(--blue); }
+  .topbar .logo span { color: var(--ink); }
   .topbar .updated {
     font-size: 12px; color: var(--ink3); font-weight: 500;
   }
@@ -54,7 +55,7 @@
   /* ── hero ── */
   .hero { margin-bottom: 48px; }
   .hero .eyebrow {
-    font-size: 11px; font-weight: 700; color: var(--blue);
+    font-size: 11px; font-weight: 700; color: var(--ink3);
     letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px;
   }
   .hero h1 {
