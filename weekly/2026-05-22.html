@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UnifyDrive 周报 · May 22–28, 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+  :root {
+    --bg: #f5f4f0; --surface: #ffffff; --surface2: #efede7;
+    --border: rgba(0,0,0,0.12); --border-light: rgba(0,0,0,0.07);
+    --text: #15150f; --text-2: #5c5c56; --text-3: #8f8f88;
+    --green: #0f7a3d; --green-strong: #0a6332; --green-bg: #dff2e6;
+    --red: #c42121; --red-strong: #a01818; --red-bg: #fce4e4;
+    --amber: #9a5d00; --amber-bg: #fbedd4;
+    --blue: #14478a; --blue-bg: #e6eefb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; padding: 40px 24px 80px; }
+  .page { max-width: 940px; margin: 0 auto; }
+  .header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; padding-bottom: 20px; border-bottom: 2px solid var(--text); }
+  .header-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+  .header-meta { font-size: 12px; color: var(--text-2); text-align: right; line-height: 1.8; }
+  .section { margin-bottom: 38px; }
+  .section-title { font-size: 11px; font-weight: 700; color: var(--text-2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+  .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .metric-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 15px 17px; }
+  .metric-label { font-size: 11px; color: var(--text-2); margin-bottom: 6px; font-weight: 500; }
+  .metric-value { font-size: 25px; font-weight: 700; letter-spacing: -0.02em; }
+  .metric-delta { font-size: 12px; margin-top: 5px; font-weight: 600; }
+  .down { color: var(--red); } .up { color: var(--green); } .neutral { color: var(--text-2); font-weight: 500; }
+  .product-list { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .product-row { display: flex; align-items: center; gap: 12px; padding: 13px 18px; border-bottom: 1px solid var(--border-light); }
+  .product-row:last-child { border-bottom: none; }
+  .product-row.top { background: var(--green-bg); }
+  .product-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .product-name { font-size: 13px; font-weight: 600; }
+  .product-share { font-size: 11px; color: var(--text-2); margin-left: 8px; font-weight: 500; }
+  .product-rev { font-size: 16px; font-weight: 700; margin-left: auto; text-align: right; }
+  .product-orders { font-size: 11px; color: var(--text-2); font-weight: 500; }
+  .group-label { font-size: 11px; font-weight: 700; color: var(--text); letter-spacing: 0.04em; margin-bottom: 8px; margin-top: 20px; display: flex; align-items: center; gap: 6px; }
+  .group-label:first-child { margin-top: 0; }
+  .ad-block { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 16px; }
+  .ad-block-header { font-size: 12px; font-weight: 600; color: var(--text); padding: 10px 14px; background: var(--surface2); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 6px; }
+  .ad-footer { font-size: 12px; color: var(--text-2); padding: 10px 14px; background: var(--surface2); border-top: 1px solid var(--border); }
+  .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .tbl th { text-align: left; color: var(--text-2); font-weight: 600; padding: 9px 10px; border-bottom: 1.5px solid var(--border); white-space: nowrap; background: var(--surface); }
+  .tbl td { padding: 11px 10px; border-bottom: 1px solid var(--border-light); vertical-align: top; background: var(--surface); }
+  .tbl tr:last-child td { border-bottom: none; }
+  .tbl tr:hover td { background: var(--surface2); }
+  .tbl tr.win td { background: var(--green-bg); }
+  .tbl tr.win:hover td { background: #d2ecdc; }
+  .tbl tr.total td { font-weight: 700; background: var(--surface2); }
+  .sub-label { font-size: 11px; color: var(--text-3); margin-top: 2px; font-family: 'IBM Plex Mono', monospace; }
+  .status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 4px; vertical-align: 2px; }
+  .num { font-family: 'IBM Plex Mono', monospace; }
+  .hl-good { color: var(--green-strong); font-weight: 700; }
+  .hl-bad { color: var(--red-strong); font-weight: 700; }
+  .info-note { font-size: 12px; color: var(--text-2); padding: 9px 13px; background: var(--blue-bg); border-radius: 7px; border: 1px solid rgba(20,71,138,0.18); margin-top: 10px; }
+  .chart-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; font-size: 12px; color: var(--text-2); font-weight: 500; }
+  .legend span { display: flex; align-items: center; gap: 5px; }
+  .legend-dot { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
+  .alert-row { display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px; border-radius: 9px; margin-bottom: 9px; border: 1px solid var(--border); background: var(--surface); }
+  .alert-row.urgent { border-color: rgba(196,33,33,0.35); background: #fdf2f2; }
+  .alert-row.win { border-color: rgba(15,122,61,0.3); background: #f1faf4; }
+  .alert-icon { font-size: 17px; margin-top: 1px; flex-shrink: 0; line-height: 1; }
+  .alert-title { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+  .alert-desc { font-size: 12px; color: var(--text-2); }
+  .badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 5px; font-weight: 700; margin-left: 6px; vertical-align: 1px; }
+  .badge-red { background: var(--red-bg); color: var(--red-strong); }
+  .badge-green { background: var(--green-bg); color: var(--green-strong); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .analysis-note { font-size: 12.5px; color: var(--text-2); line-height: 1.75; margin-top: 13px; padding: 12px 15px; border-left: 3px solid var(--text-3); background: var(--surface2); border-radius: 0 7px 7px 0; }
+  .analysis-note strong { color: var(--text); font-weight: 600; }
+  @media (max-width: 640px) { .metric-grid { grid-template-columns: repeat(2,1fr); } .metric-grid-3 { grid-template-columns: repeat(2,1fr); } body { padding: 24px 16px 60px; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div>
+      <div style="font-size:11px;font-weight:700;color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Weekly Report</div>
+      <div class="header-title">UnifyDrive 周报</div>
+    </div>
+    <div class="header-meta">May 22 – 28, 2026<br>Shopify · Meta · Google Ads · GA4</div>
+  </div>
+
+  <!-- 核心销售数据 -->
+  <div class="section">
+    <div class="section-title">核心销售数据</div>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-label">本周 GMV</div>
+        <div class="metric-value">$14,280</div>
+        <div class="metric-delta up">▲ +224% vs 上周 $4,405</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">订单量</div>
+        <div class="metric-value">14 单</div>
+        <div class="metric-delta up">▲ +75% vs 上周 8 单</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">客单价 AOV</div>
+        <div class="metric-value">$1,019</div>
+        <div class="metric-delta up">▲ +60% vs 上周 $637</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">访问量</div>
+        <div class="metric-value">13,031</div>
+        <div class="metric-delta down">▼ -14% vs 上周 15,184</div>
+      </div>
+    </div>
+    <div class="analysis-note">销售强势反弹,GMV 翻 3 倍多,核心由 UP6 大量成交拉动。<strong>访问量降了 14% 但订单量涨了 75%</strong>——上周缩流量预算砍掉的是低质量流量,留下的转化效率反而更高。客单价从 $637 涨到 $1,019,本质是产品结构变化:本周 UP6 高单价订单占比大幅提升。</div>
+  </div>
+
+  <!-- 产品明细 -->
+  <div class="section">
+    <div class="section-title">产品销售明细</div>
+    <div class="product-list">
+      <div class="product-row top">
+        <div class="product-icon" style="background:#cdeedb;">🖥</div>
+        <div class="product-name">UnifyDrive UP6</div>
+        <div class="product-share">85% 收入占比</div>
+        <div class="product-rev">$12,142<div class="product-orders">8 单</div></div>
+      </div>
+      <div class="product-row">
+        <div class="product-icon" style="background:#eef3fc;">💾</div>
+        <div class="product-name">UnifyDrive UT2</div>
+        <div class="product-share">15% 收入占比</div>
+        <div class="product-rev">$2,111<div class="product-orders">5 单</div></div>
+      </div>
+      <div class="product-row">
+        <div class="product-icon" style="background:#f1f0ec;">🎮</div>
+        <div class="product-name">Remote Control</div>
+        <div class="product-rev">$17<div class="product-orders">1 单</div></div>
+      </div>
+    </div>
+    <div class="analysis-note"><strong>UP6 强势回归,贡献 85% 收入</strong>(上周仅 $3,098)。UT2 表现稳定,5 单 $2,111。UP6 单量少但单价高,任何一单的得失都对 GMV 影响巨大,这既是本周暴涨的原因,也意味着收入波动性高——下周要保持就得持续喂养 UP6 的转化系列。</div>
+  </div>
+
+  <!-- 转化漏斗 -->
+  <div class="section">
+    <div class="section-title">转化漏斗（Shopify）</div>
+    <div class="metric-grid" style="margin-bottom:16px;">
+      <div class="metric-card">
+        <div class="metric-label">加购访问</div>
+        <div class="metric-value">171</div>
+        <div class="metric-delta up">▲ vs 上周 124</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">到达结账页</div>
+        <div class="metric-value">106</div>
+        <div class="metric-delta up">▲ vs 上周 78</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">完成结账</div>
+        <div class="metric-value">12</div>
+        <div class="metric-delta up">▲ vs 上周 8</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">结账弃单率</div>
+        <div class="metric-value" style="color:var(--red);">88.7%</div>
+        <div class="metric-delta neutral">≈ 上周 89.7%</div>
+      </div>
+    </div>
+    <div class="ad-block">
+      <div class="ad-block-header">📦 本周加购弃单分布（按落地页）</div>
+      <div style="overflow-x:auto;">
+        <table class="tbl">
+          <thead>
+            <tr><th>落地页</th><th>加购次数</th><th>完成购买</th><th>弃单数</th><th>转化率</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>UP6 产品页</td><td class="num">64</td><td class="num">3</td><td class="num hl-bad">61</td><td class="num">4.7%</td></tr>
+            <tr class="urgent" style="background:#fdf2f2;"><td>首页</td><td class="num">49</td><td class="num">0</td><td class="num hl-bad">49</td><td class="num hl-bad">0%</td></tr>
+            <tr><td>UT2 产品页</td><td class="num">22</td><td class="num">3</td><td class="num">19</td><td class="num hl-good">13.6%</td></tr>
+            <tr class="win"><td>UP6 Exclusive Offer 页</td><td class="num">6</td><td class="num">2</td><td class="num">4</td><td class="num hl-good">33.3%</td></tr>
+            <tr><td>日文 UT2 页 (/ja-jp)</td><td class="num">6</td><td class="num">0</td><td class="num">6</td><td class="num hl-bad">0%</td></tr>
+            <tr><td>UC250 产品页</td><td class="num">4</td><td class="num">0</td><td class="num">4</td><td class="num">0%</td></tr>
+            <tr><td>Blog: Best Portable NAS</td><td class="num">3</td><td class="num">0</td><td class="num">3</td><td class="num">0%</td></tr>
+            <tr><td>UC450 Pro 产品页</td><td class="num">2</td><td class="num">0</td><td class="num">2</td><td class="num">0%</td></tr>
+            <tr class="total"><td>合计</td><td class="num">171</td><td class="num">12</td><td class="num hl-bad">159</td><td class="num">7.0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ad-footer">加购→结账 弃单率 38%（上周 37%）· 结账→完成 弃单率 88.7%（上周 89.7%）· 弃单率基本持平,未改善。</div>
+    </div>
+    <div class="analysis-note">尽管销售反弹,<strong>结账环节仍是最大瓶颈</strong>——106 人进结账页,94 人离开。两个新发现值得立即行动:<strong>① 首页 49 次加购 0 成交</strong>,这些高意向用户全部流失,极可能是首页加购后的引导路径有断点;<strong>② 日文页 6 次加购 0 成交</strong>,日本市场有自然需求冒头但没承接住,可能缺日语结账或日元定价。而 UP6 Exclusive Offer 页转化率 33%(全站最高),说明这种针对性优惠页的打法是对的,值得复制到其他产品。</div>
+  </div>
+
+  <!-- Meta 广告总览 -->
+  <div class="section">
+    <div class="section-title">Meta 广告投放</div>
+    <div class="group-label">📊 转化系列总览</div>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-label">购买</div>
+        <div class="metric-value">5 笔</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">收入</div>
+        <div class="metric-value">$6,395</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">综合 ROAS</div>
+        <div class="metric-value" style="color:var(--green);">8.3x</div>
+        <div class="metric-delta up">▲ vs 上周 3.17x</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">花费</div>
+        <div class="metric-value">$773</div>
+        <div class="metric-delta neutral">转化 + 流量共 $1,380</div>
+      </div>
+    </div>
+
+    <!-- 转化系列表格 -->
+    <div class="group-label" style="margin-top:22px;">🛒 转化系列（Retargeting / Purchase）</div>
+    <div class="ad-block">
+      <div class="ad-block-header">目标：促成购买</div>
+      <div style="overflow-x:auto;">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>广告系列</th><th>购买</th><th>收入</th><th>ROAS</th><th>花费</th>
+              <th>状态</th><th>频次</th><th>CPM</th><th>独立点击</th><th>CTR</th><th>CPC</th><th>落地页浏览</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="win">
+              <td>20260507_KRIS_Retargeting_UP6_Sale<div class="sub-label">UP6 再营销 · CBO</div></td>
+              <td class="num">2</td><td class="num">$2,898</td><td class="num hl-good">12.83x ★</td><td class="num">$113</td>
+              <td><span class="status-dot" style="background:#0f7a3d;"></span>活跃</td><td class="num">2.71</td><td class="num">$20.41</td><td class="num">192</td><td class="num">4.69%</td><td class="num">$1.18</td><td class="num">295</td>
+            </tr>
+            <tr class="win">
+              <td>20260520_KRIS_US_UP6_Purchase<div class="sub-label">UP6 购买目标 · $100/天</div></td>
+              <td class="num">3</td><td class="num">$3,497</td><td class="num hl-good">6.20x</td><td class="num">$564</td>
+              <td><span class="status-dot" style="background:#0f7a3d;"></span>活跃</td><td class="num">1.96</td><td class="num">$44.92</td><td class="num">502</td><td class="num">7.82%</td><td class="num">$1.12</td><td class="num">486</td>
+            </tr>
+            <tr>
+              <td>20260507_KRIS_Retargeting_UT2_Sale<div class="sub-label">UT2 再营销 · CBO</div></td>
+              <td class="num hl-bad">0</td><td class="num">—</td><td class="num hl-bad">0x</td><td class="num">$96</td>
+              <td><span class="status-dot" style="background:#0f7a3d;"></span>活跃</td><td class="num">2.17</td><td class="num">$29.36</td><td class="num">93</td><td class="num">6.19%</td><td class="num">$1.03</td><td class="num">96</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ad-footer">UP6 Retargeting 本周翻身——上周频次 2.7、0 转化,本周 ROAS 全场最高 12.83x。UP6 Purchase 稳定 6.20x。UT2 Retargeting 本周未出单。</div>
+    </div>
+
+    <!-- 流量系列表格 -->
+    <div class="group-label">↗ 流量系列（Traffic）</div>
+    <div class="ad-block">
+      <div class="ad-block-header">目标：引流进站</div>
+      <div style="overflow-x:auto;">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>广告系列</th><th>落地页浏览</th><th>花费</th><th>CPV</th>
+              <th>状态</th><th>预算</th><th>CPM</th><th>频次</th><th>独立点击</th><th>CTR</th><th>CPC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20260514_KRIS_US_UP6-Traffic<div class="sub-label">UP6 流量 · 最大来源</div></td>
+              <td class="num">3,068</td><td class="num">$303</td><td class="num">$0.10</td>
+              <td><span class="status-dot" style="background:#0f7a3d;"></span>活跃</td><td class="num">$50/天</td><td class="num">$6.49</td><td class="num">1.19</td><td class="num">2,944</td><td class="num">7.48%</td><td class="num">$0.10</td>
+            </tr>
+            <tr>
+              <td>20260513_KRIS_US_UT2-Traffic<div class="sub-label">UT2 流量</div></td>
+              <td class="num">2,410</td><td class="num">$304</td><td class="num">$0.13</td>
+              <td><span class="status-dot" style="background:#0f7a3d;"></span>活跃</td><td class="num">$50/天</td><td class="num">$7.08</td><td class="num">1.09</td><td class="num">2,446</td><td class="num">6.21%</td><td class="num">$0.12</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ad-footer">两条流量系列共带来 5,478 次落地页浏览,CPV $0.10–0.13 成本合理,持续为再营销池补充新访客。</div>
+    </div>
+    <div class="analysis-note">Meta 整体大幅改善:<strong>转化系列综合 ROAS 从上周 3.17x 提升到 8.3x</strong>。最大亮点是 UP6 Retargeting——上周频次过高 0 转化,本周调整后跑出 12.83x,是全场效率最高的系列。建议:<strong>UP6 Purchase 可继续加预算放量</strong>(目前 $100/天,ROAS 仍有 6.2x);UT2 Retargeting 连续表现弱,考虑换素材或缩减。</div>
+  </div>
+
+  <!-- Google 搜索广告 -->
+  <div class="section">
+    <div class="section-title">Google 搜索广告</div>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-label">花费</div>
+        <div class="metric-value">$202</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">转化</div>
+        <div class="metric-value">3 笔</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">转化价值</div>
+        <div class="metric-value">$3,447</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ROAS</div>
+        <div class="metric-value" style="color:var(--green);">~17x</div>
+        <div class="metric-delta neutral">样本小,3 笔转化</div>
+      </div>
+    </div>
+
+    <div class="group-label" style="margin-top:22px;">🎯 品牌词（出单主力）</div>
+    <div class="ad-block">
+      <div class="ad-block-header">认识品牌后搜索 · 购买意向最强</div>
+      <div style="overflow-x:auto;">
+        <table class="tbl">
+          <thead>
+            <tr><th>关键字</th><th>转化</th><th>转化价值</th><th>费用</th><th>展示</th><th>点击</th><th>CTR</th><th>CPC</th></tr>
+          </thead>
+          <tbody>
+            <tr class="win">
+              <td>"unifydrive"<div class="sub-label">品牌词</div></td>
+              <td class="num">2</td><td class="num">$3,048</td><td class="num">$82</td><td class="num">406</td><td class="num">86</td><td class="num">21.2%</td><td class="num">$0.95</td>
+            </tr>
+            <tr class="win">
+              <td>[unifydrive ut2]<div class="sub-label">品牌词 · 完全匹配</div></td>
+              <td class="num">1</td><td class="num">$399</td><td class="num">$23</td><td class="num">94</td><td class="num">20</td><td class="num">21.3%</td><td class="num">$1.16</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ad-footer">两个品牌词贡献了全部 3 笔转化、$3,447 价值。CTR 21% 远高于品类词,购买意向极强。</div>
+    </div>
+
+    <div class="group-label">🔍 品类词（认知 / 获客,暂未出单）</div>
+    <div class="ad-block">
+      <div class="ad-block-header">不认识品牌的潜在客户 · 漏斗上层</div>
+      <div style="overflow-x:auto;">
+        <table class="tbl">
+          <thead>
+            <tr><th>关键字</th><th>展示</th><th>点击</th><th>CTR</th><th>费用</th><th>CPC</th><th>转化</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>"portable nas"</td><td class="num">126</td><td class="num">16</td><td class="num hl-good">12.7%</td><td class="num">$19.58</td><td class="num">$1.22</td><td class="num">0</td></tr>
+            <tr><td>"pocket nas"</td><td class="num">102</td><td class="num">5</td><td class="num">4.9%</td><td class="num">$6.95</td><td class="num">$1.39</td><td class="num">0</td></tr>
+            <tr><td>"portable drive with wifi"</td><td class="num">96</td><td class="num">6</td><td class="num">6.3%</td><td class="num">$8.19</td><td class="num">$1.37</td><td class="num">0</td></tr>
+            <tr><td>"photo backup device for photographers"</td><td class="num">73</td><td class="num">6</td><td class="num">8.2%</td><td class="num">$8.08</td><td class="num">$1.35</td><td class="num">0</td></tr>
+            <tr><td>"field backup device"</td><td class="num">65</td><td class="num">4</td><td class="num">6.2%</td><td class="num">$5.41</td><td class="num">$1.35</td><td class="num">0</td></tr>
+            <tr><td>[portable nas]<div class="sub-label">完全匹配</div></td><td class="num">63</td><td class="num">8</td><td class="num hl-good">12.7%</td><td class="num">$11.11</td><td class="num">$1.39</td><td class="num">0</td></tr>
+            <tr><td>"travel nas"</td><td class="num">31</td><td class="num">5</td><td class="num">16.1%</td><td class="num">$6.39</td><td class="num">$1.28</td><td class="num">0</td></tr>
+            <tr><td>"mobile nas"</td><td class="num">28</td><td class="num">6</td><td class="num hl-good">21.4%</td><td class="num">$7.91</td><td class="num">$1.32</td><td class="num">0</td></tr>
+            <tr><td>"gnarbox alternative"<div class="sub-label">竞品替代词</div></td><td class="num">6</td><td class="num">1</td><td class="num">16.7%</td><td class="num">$1.13</td><td class="num">$1.13</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ad-footer">品类词处于认知阶段,有点击没转化是正常的——作用是让不认识品牌的人发现你。"portable nas" 词组 126 次展示 CTR 12.7%,需求明确。</div>
+    </div>
+    <div class="analysis-note">Google 搜索整体 ROAS 极高(~17x)但<strong>样本小,仅 3 笔转化,别过度乐观</strong>。出单全靠两个品牌词,说明现有付费搜索主要是在"收割"已经认识品牌的人。品类词(portable nas、mobile nas、travel nas)有稳定点击但零转化,这是漏斗上层的正常表现。<strong>两个机会点:</strong>① "portable nas" 需求强,可单独建落地页承接;② "gnarbox alternative" 等竞品替代词有人搜,是从竞品抢量的入口。</div>
+  </div>
+
+  <!-- 渠道归因说明 -->
+  <div class="section">
+    <div class="section-title">渠道归因说明（GA4 vs Meta）</div>
+    <div class="ad-block">
+      <div class="ad-block-header">⚠ 为什么 GA4 和 Meta 的购买数对不上</div>
+      <div style="overflow-x:auto;">
+        <table class="tbl">
+          <thead>
+            <tr><th>来源 / 媒介</th><th>会话数</th><th>互动率</th><th>平均停留</th><th>GA4 归因购买</th><th>转化价值</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>facebook / cpc</td><td class="num">5,859</td><td class="num">17.3%</td><td class="num">8 秒</td><td class="num">1.00</td><td class="num">$1,499</td></tr>
+            <tr class="win"><td>youtube.com / referral<div class="sub-label">博主 ALEXZARFATI 专属链接</div></td><td class="num">1,246</td><td class="num hl-good">52.1%</td><td class="num hl-good">36 秒</td><td class="num">1.00</td><td class="num">$1,599</td></tr>
+            <tr><td>google / organic</td><td class="num">1,186</td><td class="num">43.3%</td><td class="num">48 秒</td><td class="num">4.00</td><td class="num">$2,271</td></tr>
+            <tr><td>instagram / boost</td><td class="num">918</td><td class="num">13.0%</td><td class="num">3 秒</td><td class="num">0</td><td class="num">—</td></tr>
+            <tr><td>(direct) / (none)</td><td class="num">915</td><td class="num">18.7%</td><td class="num">13 秒</td><td class="num">2.00</td><td class="num">$3,098</td></tr>
+            <tr><td>fb / retargeting</td><td class="num">128</td><td class="num">32.8%</td><td class="num">24 秒</td><td class="num">2.00</td><td class="num">$2,898</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ad-footer">数据来源:GA4 流量获取报告,5/22–5/28</div>
+    </div>
+    <div class="info-note">ⓘ <strong>归因口径不同,两边都没错。</strong>Meta 用点击后 7 天 / 浏览后 1 天归因,会把"看过广告后才买"的订单算给自己;GA4 用最后非直接点击归因,若用户先点 FB 广告、几天后又从 YouTube 或直接访问下单,GA4 会归给后者。<strong>建议以 Shopify 实际订单(12 单完成结账)为准,Meta 和 GA4 仅作渠道参考。</strong></div>
+    <div class="analysis-note"><strong>YouTube 这条线被低估了。</strong>博主 ALEXZARFATI 的专属链接带来 1,246 会话,互动率 52%(全渠道最高)、停留 36 秒——这是质量极高的流量。GA4 只归因 1 笔购买,但红人流量往往延迟转化,真实贡献可能更大。建议:<strong>① 维持与该博主合作;② 给他一个专属折扣码,精确追踪他带来的实际成交</strong>,而不是只靠 GA4 的会话归因。Google organic 也值得注意——4 笔归因购买、停留 48 秒,自然搜索的内容布局在见效。</div>
+  </div>
+
+  <!-- 重点关注 -->
+  <div class="section">
+    <div class="section-title">重点关注与挽救措施</div>
+    <div class="alert-row urgent">
+      <div class="alert-icon" style="color:#c42121;">⚠</div>
+      <div>
+        <div class="alert-title">首页 49 次加购 0 成交 <span class="badge badge-red">紧急</span></div>
+        <div class="alert-desc">最大异常漏点。这些用户已加购(强意向)却全部流失,极可能是首页加购后跳转路径有断点。立即检查首页"加入购物车"后的引导流程,并对这批人开启弃单挽回邮件。</div>
+      </div>
+    </div>
+    <div class="alert-row urgent">
+      <div class="alert-icon" style="color:#c42121;">🛒</div>
+      <div>
+        <div class="alert-title">结账弃单率 88.7%,连续两周未改善 <span class="badge badge-red">紧急</span></div>
+        <div class="alert-desc">106 人进结账页,94 人离开。检查运费显示时机、支付方式;UP6 $1,599 高客单价强烈建议开通分期付款(Shop Pay Installments),分摊成约 $133/月。</div>
+      </div>
+    </div>
+    <div class="alert-row">
+      <div class="alert-icon" style="color:#9a5d00;">🇯🇵</div>
+      <div>
+        <div class="alert-title">日文页 6 次加购 0 成交 <span class="badge badge-amber">机会</span></div>
+        <div class="alert-desc">日本市场有自然需求冒出但未承接。检查是否缺日语结账流程、日元定价或本地支付方式。需求是真实的,值得投入。</div>
+      </div>
+    </div>
+    <div class="alert-row win">
+      <div class="alert-icon" style="color:#0f7a3d;">↑</div>
+      <div>
+        <div class="alert-title">UP6 Retargeting 12.83x · UP6 Purchase 6.20x <span class="badge badge-green">放量</span></div>
+        <div class="alert-desc">Meta 转化系列本周大爆发。UP6 Purchase 可逐步提高日预算测试放量上限;UP6 Retargeting 维持当前打法。</div>
+      </div>
+    </div>
+    <div class="alert-row win">
+      <div class="alert-icon" style="color:#0f7a3d;">▶</div>
+      <div>
+        <div class="alert-title">YouTube 红人 + UP6 Exclusive Offer 页 <span class="badge badge-green">复制成功</span></div>
+        <div class="alert-desc">博主 ALEXZARFATI 带来高质量流量,给专属折扣码精确追踪。UP6 Exclusive Offer 页转化率 33% 全站最高,这种针对性优惠页打法值得复制到 UT2、UC250。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 各系列花费 vs 收入 -->
+  <div class="section">
+    <div class="section-title">Meta 各系列 花费 vs 收入</div>
+    <div class="chart-wrap">
+      <div class="legend">
+        <span><span class="legend-dot" style="background:#9cc2ec;"></span>花费</span>
+        <span><span class="legend-dot" style="background:#5cba83;"></span>收入</span>
+      </div>
+      <div style="position:relative;width:100%;height:270px;">
+        <canvas id="adChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+new Chart(document.getElementById('adChart'), {
+  type: 'bar',
+  data: {
+    labels: ['UP6 Retargeting','UP6 Purchase','UT2 Retargeting','UP6-Traffic','UT2-Traffic'],
+    datasets: [
+      { label: '花费', data: [113,564,96,303,304], backgroundColor: '#9cc2ec', borderRadius: 5 },
+      { label: '收入', data: [2898,3497,0,0,0], backgroundColor: '#5cba83', borderRadius: 5 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' $' + ctx.parsed.y.toLocaleString() } } },
+    scales: {
+      x: { ticks: { color: '#5c5c56', font: { size: 11, weight: '500' } }, grid: { display: false } },
+      y: { ticks: { color: '#8f8f88', callback: v => '$' + v.toLocaleString() }, grid: { color: 'rgba(0,0,0,0.06)' } }
+    }
+  }
+});
+</script>
+</body>
+</html>

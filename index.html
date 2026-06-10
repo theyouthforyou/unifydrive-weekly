@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UnifyDrive 周报存档</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f5f4f0; --surface: #fff; --surface2: #efede7;
+    --border: rgba(0,0,0,0.12); --border-light: rgba(0,0,0,0.07);
+    --text: #15150f; --text-2: #5c5c56; --text-3: #8f8f88;
+    --green: #0f7a3d; --green-bg: #dff2e6;
+  }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; padding: 48px 24px; }
+  .page { max-width: 680px; margin: 0 auto; }
+
+  .header { text-align: center; margin-bottom: 48px; }
+  .header-label { font-size: 11px; font-weight: 600; color: var(--text-3); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
+  .header-title { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
+  .header-desc { font-size: 13px; color: var(--text-2); margin-top: 8px; }
+
+  .count-bar { text-align: center; font-size: 12px; color: var(--text-3); margin-bottom: 32px; padding: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+
+  details { margin-bottom: 8px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); overflow: hidden; }
+  details[open] { border-color: var(--text); }
+  summary { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; cursor: pointer; font-size: 15px; font-weight: 600; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 10px; color: var(--text-3); margin-right: 10px; transition: transform .15s; }
+  details[open] > summary::before { transform: rotate(90deg); }
+  summary .meta { font-size: 12px; font-weight: 400; color: var(--text-2); }
+
+  .entry-list { padding: 0 18px 14px; }
+  .entry { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 8px; text-decoration: none; color: inherit; transition: background .12s; margin-bottom: 4px; }
+  .entry:hover { background: var(--surface2); }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-date { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; color: var(--text-3); min-width: 110px; }
+  .entry-stats { flex: 1; display: flex; gap: 16px; font-size: 12px; color: var(--text-2); }
+  .entry-stats span { white-space: nowrap; }
+  .entry-stats .num { font-family: 'IBM Plex Mono', monospace; font-weight: 600; color: var(--text); }
+  .entry-rank { font-size: 12px; color: var(--text-3); }
+  .entry-arrow { color: var(--text-3); font-size: 14px; }
+
+  .footer { text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-3); }
+
+  @media (max-width: 540px) {
+    .entry { flex-wrap: wrap; gap: 4px; }
+    .entry-date { min-width: auto; width: 100%; }
+    .entry-stats { gap: 10px; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-label">Weekly Report Archive</div>
+    <div class="header-title">UnifyDrive 周报</div>
+    <div class="header-desc">UnifyDrive 运营数据 · 广告投放复盘 · 重点关注</div>
+  </div>
+
+  <div class="count-bar">共 <strong>2</strong> 期 · 最后更新 2026-05-28</div>
+
+  <details open>
+    <summary>May 2026 <span class="meta">2 期</span></summary>
+    <div class="entry-list">
+      <a class="entry" href="weekly/2026-05-15.html">
+        <span class="entry-date">05.15 — 05.21</span>
+        <div class="entry-stats">
+          <span>GMV <span class="num">$4,405</span></span>
+          <span>ROAS <span class="num">3.17x</span></span>
+          <span>订单 <span class="num">8</span></span>
+        </div>
+        <span class="entry-rank">第 1 期</span>
+        <span class="entry-arrow">→</span>
+      </a>
+      <a class="entry" href="weekly/2026-05-22.html">
+        <span class="entry-date">05.22 — 05.28</span>
+        <div class="entry-stats">
+          <span>GMV <span class="num">$14,280</span></span>
+          <span>ROAS <span class="num">8.3x</span></span>
+          <span>订单 <span class="num">14</span></span>
+        </div>
+        <span class="entry-rank">第 2 期</span>
+        <span class="entry-arrow">→</span>
+      </a>
+    </div>
+  </details>
+
+  <div class="footer">
+    <a style="color:inherit;" href="https://github.com/theyouthforyou/unifydrive-weekly">View on GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>

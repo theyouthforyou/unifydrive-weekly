@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UnifyDrive 周报 · May 15–21, 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  :root {
+    --bg: #f7f6f3; --surface: #ffffff; --surface2: #f1f0ec;
+    --border: rgba(0,0,0,0.1); --border-light: rgba(0,0,0,0.06);
+    --text: #1a1a18; --text-2: #6b6b67; --text-3: #9b9b97;
+    --green: #1a7a4a; --green-bg: #e8f5ee;
+    --red: #b83030; --red-bg: #fdf0f0;
+    --amber: #8a5a00; --amber-bg: #fdf4e3;
+    --blue-bg: #eef3fc;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; padding: 40px 24px 80px; }
+  .page { max-width: 920px; margin: 0 auto; }
+  .header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; padding-bottom: 20px; border-bottom: 1.5px solid var(--text); }
+  .header-title { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+  .header-meta { font-size: 12px; color: var(--text-2); text-align: right; line-height: 1.8; }
+  .section { margin-bottom: 36px; }
+  .section-title { font-size: 11px; font-weight: 600; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 0.5px solid var(--border); }
+  .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .metric-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .metric-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .metric-label { font-size: 11px; color: var(--text-2); margin-bottom: 6px; }
+  .metric-value { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
+  .metric-delta { font-size: 11px; margin-top: 4px; }
+  .down { color: var(--red); } .up { color: var(--green); } .neutral { color: var(--text-2); }
+  .product-list { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .product-row { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 0.5px solid var(--border-light); }
+  .product-row:last-child { border-bottom: none; }
+  .product-icon { width: 34px; height: 34px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+  .product-name { font-size: 13px; font-weight: 500; }
+  .product-rev { font-size: 15px; font-weight: 600; margin-left: auto; text-align: right; }
+  .product-orders { font-size: 11px; color: var(--text-2); }
+  .group-label { font-size: 11px; font-weight: 600; color: var(--text-2); letter-spacing: 0.06em; margin-bottom: 8px; margin-top: 18px; }
+  .group-label:first-child { margin-top: 0; }
+  .ad-block { border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 16px; }
+  .ad-block-header { font-size: 12px; font-weight: 500; color: var(--text-2); padding: 9px 14px; background: var(--surface2); border-bottom: 0.5px solid var(--border); display: flex; align-items: center; gap: 6px; }
+  .ad-footer { font-size: 12px; color: var(--text-2); padding: 9px 14px; background: var(--surface2); border-top: 0.5px solid var(--border); }
+  .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .tbl th { text-align: left; color: var(--text-2); font-weight: 500; padding: 8px 10px; border-bottom: 0.5px solid var(--border); white-space: nowrap; background: var(--surface); }
+  .tbl td { padding: 10px 10px; border-bottom: 0.5px solid var(--border-light); vertical-align: top; background: var(--surface); }
+  .tbl tr:last-child td { border-bottom: none; }
+  .tbl tr:hover td { background: var(--surface2); }
+  .sub-label { font-size: 11px; color: var(--text-3); margin-top: 2px; font-family: 'IBM Plex Mono', monospace; }
+  .status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 4px; vertical-align: 2px; }
+  .highlight-good { color: var(--green); font-weight: 600; }
+  .highlight-bad { color: var(--red); }
+  .info-note { font-size: 12px; color: var(--text-2); padding: 8px 12px; background: var(--blue-bg); border-radius: 6px; border: 0.5px solid rgba(26,74,138,0.15); margin-top: 10px; }
+  .chart-wrap { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 20px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; font-size: 12px; color: var(--text-2); }
+  .legend span { display: flex; align-items: center; gap: 5px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .alert-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; border-radius: 8px; margin-bottom: 8px; border: 0.5px solid var(--border); background: var(--surface); }
+  .alert-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; line-height: 1; }
+  .alert-title { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+  .alert-desc { font-size: 12px; color: var(--text-2); }
+  .badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin-left: 6px; vertical-align: 1px; }
+  .badge-red { background: var(--red-bg); color: var(--red); }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  @media (max-width: 640px) { .metric-grid { grid-template-columns: repeat(2,1fr); } .metric-grid-3 { grid-template-columns: repeat(2,1fr); } body { padding: 24px 16px 60px; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div>
+      <div style="font-size:11px;font-weight:600;color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Weekly Report</div>
+      <div class="header-title">UnifyDrive 周报</div>
+    </div>
+    <div class="header-meta">May 15 – 21, 2026<br>Facebook Ads · Shopify</div>
+  </div>
+
+  <!-- 核心销售数据 -->
+  <div class="section">
+    <div class="section-title">核心销售数据</div>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-label">本周 GMV</div>
+        <div class="metric-value">$4,405</div>
+        <div class="metric-delta down">▼ 65.4% vs 上周 $12,752</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">总订单量</div>
+        <div class="metric-value">8 单</div>
+        <div class="metric-delta down">▼ 33.3% vs 上周 12 单</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">客单价 AOV</div>
+        <div class="metric-value">$637</div>
+        <div class="metric-delta down">▼ 51.0% vs 上周 $1,299</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">总访问量</div>
+        <div class="metric-value">15,154</div>
+        <div class="metric-delta down">▼ 14.5% vs 上周 18,646</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 产品销售明细 -->
+  <div class="section">
+    <div class="section-title">产品销售明细</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-icon" style="background:#e8f5ee;">🖥</div>
+        <div class="product-name">UnifyDrive UP6</div>
+        <div class="product-rev">$3,098<div class="product-orders">2 单</div></div>
+      </div>
+      <div class="product-row">
+        <div class="product-icon" style="background:#eef3fc;">💾</div>
+        <div class="product-name">UnifyDrive UT2</div>
+        <div class="product-rev">$1,197<div class="product-orders">4 单</div></div>
+      </div>
+      <div class="product-row">
+        <div class="product-icon" style="background:#fdf4e3;">🗄</div>
+        <div class="product-name">UnifyDrive UC250</div>
+        <div class="product-rev">$399<div class="product-orders">1 单</div></div>
+      </div>
+      <div class="product-row">
+        <div class="product-icon" style="background:#f1f0ec;">🎮</div>
+        <div class="product-name">Remote Control</div>
+        <div class="product-rev">$0<div class="product-orders">1 单</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 广告总览 -->
+  <div class="section">
+    <div class="section-title">广告投放总览</div>
+    <div class="group-label">流量系列</div>
+    <div class="metric-grid-3">
+      <div class="metric-card">
+        <div class="metric-label">花费</div>
+        <div class="metric-value">$911</div>
+        <div class="metric-delta neutral">3 条系列</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">落地页浏览</div>
+        <div class="metric-value">9,049</div>
+        <div class="metric-delta neutral">独立点击 9,091</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">平均 CTR</div>
+        <div class="metric-value">10.2%</div>
+        <div class="metric-delta neutral">CPC 均值 $7.59</div>
+      </div>
+    </div>
+    <div class="group-label">转化系列</div>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-label">花费</div>
+        <div class="metric-value">$599</div>
+        <div class="metric-delta neutral">3 条系列</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">购买</div>
+        <div class="metric-value">2 笔</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">收入</div>
+        <div class="metric-value">$1,898</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ROAS</div>
+        <div class="metric-value" style="color:var(--green);">3.17x</div>
+        <div class="metric-delta neutral">最高单系列 6.59x</div>
+      </div>
+    </div>
+    <div class="info-note">ⓘ ROAS 仅统计转化系列。流量系列目标为引流，不参与 ROAS 计算。</div>
+  </div>
+
+  <!-- 流量系列表格 -->
+  <div class="section">
+    <div class="section-title">广告投放 · 流量系列（Traffic）</div>
+    <div class="ad-block">
+      <div class="ad-block-header">↗ 目标：引流进站 · 合计花费 $911 · 落地页浏览 9,049 次</div>
+      <div style="overflow-x:auto;">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>广告系列</th><th>状态</th><th>预算</th><th>花费</th><th>落地页浏览</th>
+              <th>CPM</th><th>频次</th><th>独立点击</th><th>CTR</th><th>CPC</th><th>CPV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20260413_KRIS_US_UP6-Traffic<div class="sub-label">UP6 流量</div></td>
+              <td><span class="status-dot" style="background:#aaa;"></span>暂停</td>
+              <td>$50/天</td><td>$253</td><td>2,422</td><td>$5.59</td><td>1.29</td><td>2,426</td><td>10.5%</td><td>$6.90</td><td>$0.10</td>
+            </tr>
+            <tr>
+              <td>20260513_KRIS_US_UT2-Traffic<div class="sub-label">UT2 流量 · 本周主力</div></td>
+              <td><span class="status-dot" style="background:#1a7a4a;"></span>活跃</td>
+              <td>$50/天</td><td>$327</td><td>3,034</td><td>$6.46</td><td>1.11</td><td>3,170</td><td>10.8%</td><td>$6.92</td><td>$0.11</td>
+            </tr>
+            <tr>
+              <td>20260514_KRIS_US_UP6-Traffic<div class="sub-label">UP6 流量 · 最大来源</div></td>
+              <td><span class="status-dot" style="background:#1a7a4a;"></span>活跃</td>
+              <td>$50/天</td><td>$331</td><td>3,593</td><td>$6.20</td><td>1.37</td><td>3,495</td><td>9.2%</td><td>$8.96</td><td>$0.09</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ad-footer">CTR 9–11%、频次 1.1–1.4、CPM $5.6–6.5，广告本身运转正常。断点在落地页之后 — 9,049 次浏览，0 笔购买。</div>
+    </div>
+  </div>
+
+  <!-- 转化系列表格 -->
+  <div class="section">
+    <div class="section-title">广告投放 · 转化系列（Retargeting / Purchase）</div>
+    <div class="ad-block">
+      <div class="ad-block-header">🛒 目标：促成购买 · 合计花费 $599 · 2 笔购买 · 收入 $1,898 · ROAS 3.17x</div>
+      <div style="overflow-x:auto;">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>广告系列</th><th>状态</th><th>预算</th><th>购买</th><th>收入</th><th>ROAS</th>
+              <th>花费</th><th>CPM</th><th>频次</th><th>独立点击</th><th>CTR</th><th>CPC</th><th>落地页浏览</th><th>CPV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20260507_KRIS_Retargeting_UT2_Sale<div class="sub-label">UT2 再营销 · CBO</div></td>
+              <td><span class="status-dot" style="background:#1a7a4a;"></span>活跃</td>
+              <td>CBO</td><td>1</td><td>$399</td><td class="highlight-good">3.47x</td>
+              <td>$115</td><td>$30.34</td><td>2.14</td><td>114</td><td>6.4%</td><td>$1.01</td><td>123</td><td>$0.94</td>
+            </tr>
+            <tr>
+              <td>20260507_KRIS_Retargeting_UP6_Sale<div class="sub-label">UP6 再营销 · CBO</div></td>
+              <td><span class="status-dot" style="background:#1a7a4a;"></span>活跃</td>
+              <td>CBO</td><td class="highlight-bad">0</td><td>—</td><td class="highlight-bad">0x</td>
+              <td>$256</td><td>$18.38</td><td>2.69</td><td>195</td><td>3.8%</td><td>$1.31</td><td>335</td><td>$0.76</td>
+            </tr>
+            <tr>
+              <td>20260520_KRIS_US_UP6_Purchase<div class="sub-label">UP6 购买目标 · 本周最佳</div></td>
+              <td><span class="status-dot" style="background:#1a7a4a;"></span>活跃</td>
+              <td>$100/天</td><td>1</td><td>$1,499</td><td class="highlight-good">6.59x ★</td>
+              <td>$228</td><td>$32.57</td><td>1.71</td><td>276</td><td>6.7%</td><td>$0.82</td><td>275</td><td>$0.83</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ad-footer">20260520_KRIS_US_UP6_Purchase 是本周唯一高效系列（6.59x），CPC $0.82 全场最低。UP6 Retargeting 频次 2.69，花费 $256 无转化，受众可能已疲劳。</div>
+    </div>
+  </div>
+
+  <!-- 花费 vs 收入图 -->
+  <div class="section">
+    <div class="section-title">各系列花费 vs 收入</div>
+    <div class="chart-wrap">
+      <div class="legend">
+        <span><span class="legend-dot" style="background:#aac8e8;"></span>花费</span>
+        <span><span class="legend-dot" style="background:#90d4b0;"></span>收入（仅转化系列统计）</span>
+      </div>
+      <div style="position:relative;width:100%;height:260px;">
+        <canvas id="adChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- 重点关注 -->
+  <div class="section">
+    <div class="section-title">重点关注</div>
+    <div class="alert-row">
+      <div class="alert-icon" style="color:#b83030;">⚠</div>
+      <div>
+        <div class="alert-title">落地页转化断层 <span class="badge badge-red">紧急</span></div>
+        <div class="alert-desc">流量系列 CTR 9–11% 正常，9,049 次落地页浏览但 0 购买。UP6 产品页 7,298 次访问转化率仅 0.014%，需排查页面加载速度、价格展示与结账流程。</div>
+      </div>
+    </div>
+    <div class="alert-row">
+      <div class="alert-icon" style="color:#b83030;">🚚</div>
+      <div>
+        <div class="alert-title">California + FedEx 配送持续变慢 <span class="badge badge-red">紧急</span></div>
+        <div class="alert-desc">California 连续 3 周下降 47%，FedEx 较 3 周前增加约 5 天延误。建议联系承运商或切换备选物流。</div>
+      </div>
+    </div>
+    <div class="alert-row">
+      <div class="alert-icon" style="color:#8a5a00;">↻</div>
+      <div>
+        <div class="alert-title">UP6 Retargeting 频次 2.69，0 购买 <span class="badge badge-amber">重要</span></div>
+        <div class="alert-desc">20260507_KRIS_Retargeting_UP6_Sale 花费 $256 无转化，频次偏高。建议更换素材或扩充再营销受众池。</div>
+      </div>
+    </div>
+    <div class="alert-row">
+      <div class="alert-icon" style="color:#1a7a4a;">↑</div>
+      <div>
+        <div class="alert-title">UP6 Purchase 系列 ROAS 6.59x <span class="badge badge-green">机会</span></div>
+        <div class="alert-desc">20260520_KRIS_US_UP6_Purchase 表现最佳，CPC $0.82 全场最低。建议提高日预算（当前 $100/天）测试放量上限。</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+new Chart(document.getElementById('adChart'), {
+  type: 'bar',
+  data: {
+    labels: ['UP6-Traffic (0413)','UT2-Traffic (0513)','UP6-Traffic (0514)','Retargeting UT2 Sale','Retargeting UP6 Sale','UP6 Purchase'],
+    datasets: [
+      { label: '花费', data: [253,327,331,115,256,228], backgroundColor: '#aac8e8', borderRadius: 4 },
+      { label: '收入', data: [0,0,0,399,0,1499], backgroundColor: '#90d4b0', borderRadius: 4 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' $' + ctx.parsed.y.toLocaleString() } } },
+    scales: {
+      x: { ticks: { color: '#9b9b97', font: { size: 11 } }, grid: { display: false } },
+      y: { ticks: { color: '#9b9b97', callback: v => '$' + v }, grid: { color: 'rgba(0,0,0,0.05)' } }
+    }
+  }
+});
+</script>
+</body>
+</html>
