@@ -4,895 +4,827 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UnifyDrive 运营报告</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;
+  --bg2:#f8f9fb;
+  --bg3:#f2f4f7;
+  --bg4:#eceef2;
+  --border:#e4e7ec;
+  --border2:#d0d5dd;
+  --t1:#101828;
+  --t2:#344054;
+  --t3:#667085;
+  --t4:#98a2b3;
+  --blue:#1570ef;
+  --blue-l:#eff4ff;
+  --blue-b:#b2ccff;
+  --green:#039855;
+  --green-l:#ecfdf3;
+  --green-b:#a9efc5;
+  --red:#d92d20;
+  --red-l:#fff1f0;
+  --red-b:#fecdca;
+  --amber:#b54708;
+  --amber-l:#fffaeb;
+  --amber-b:#fedf89;
+  --purple:#6941c6;
+  --purple-l:#f4f3ff;
+  --purple-b:#d9d6fe;
+  --r:8px;--r2:12px;--r3:16px;
+}
+body{font-family:'Inter',sans-serif;background:#f0f2f5;color:var(--t1);-webkit-font-smoothing:antialiased;min-height:100vh}
+.page{max-width:1000px;margin:0 auto;padding:32px 20px 80px}
 
-  :root {
-    --bg: #0a0a0f;
-    --bg2: #111118;
-    --bg3: #18181f;
-    --bg4: #1f1f28;
-    --border: rgba(255,255,255,0.07);
-    --border2: rgba(255,255,255,0.12);
-    --text1: #f0f0f5;
-    --text2: #9999b0;
-    --text3: #606075;
-    --green: #22d88a;
-    --green-bg: rgba(34,216,138,0.1);
-    --green-border: rgba(34,216,138,0.25);
-    --red: #ff5f6d;
-    --red-bg: rgba(255,95,109,0.1);
-    --red-border: rgba(255,95,109,0.25);
-    --blue: #5b9cf6;
-    --blue-bg: rgba(91,156,246,0.1);
-    --blue-border: rgba(91,156,246,0.25);
-    --amber: #f5a623;
-    --amber-bg: rgba(245,166,35,0.1);
-    --amber-border: rgba(245,166,35,0.25);
-    --purple: #a78bfa;
-    --purple-bg: rgba(167,139,250,0.1);
-    --accent: #5b9cf6;
-    --r: 10px;
-    --r2: 14px;
-  }
+/* ── TOP HEADER ── */
+.top-header{background:var(--bg);border:1px solid var(--border);border-radius:var(--r3);padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-icon{width:36px;height:36px;background:var(--blue-l);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.brand-text h1{font-size:15px;font-weight:600;color:var(--t1)}
+.brand-text p{font-size:12px;color:var(--t3);margin-top:1px}
+.tab-row{display:flex;gap:4px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:4px}
+.tab-btn{padding:7px 20px;border-radius:7px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;background:transparent;color:var(--t3);transition:all .18s}
+.tab-btn:hover{color:var(--t1)}
+.tab-btn.active{background:var(--bg);color:var(--t1);border:1px solid var(--border2);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.period-chip{display:flex;align-items:center;gap:6px;padding:6px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:20px;font-size:12px;color:var(--t3);font-family:'JetBrains Mono',monospace;white-space:nowrap}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text1);
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-  }
+/* ── SECTION ── */
+.section{margin-bottom:20px}
+.sec-label{font-size:11px;font-weight:600;color:var(--t4);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
 
-  .wrap { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+/* ── KPI CARDS ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kpi{background:var(--bg);border:1px solid var(--border);border-radius:var(--r2);padding:16px 18px}
+.kpi-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px}
+.kpi-label{font-size:12px;font-weight:500;color:var(--t3)}
+.kpi-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.kpi-val{font-size:24px;font-weight:600;color:var(--t1);font-variant-numeric:tabular-nums;line-height:1;margin-bottom:8px}
+.kpi-footer{display:flex;align-items:center;gap:6px}
+.delta{display:inline-flex;align-items:center;gap:2px;font-size:12px;font-weight:500;padding:2px 7px;border-radius:5px}
+.delta.up{color:var(--green);background:var(--green-l)}
+.delta.dn{color:var(--red);background:var(--red-l)}
+.delta.neu{color:var(--t3);background:var(--bg3)}
+.kpi-vs{font-size:11px;color:var(--t4)}
 
-  /* Header */
-  .header { margin-bottom: 36px; }
-  .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
-  .brand-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 12px var(--blue); }
-  .brand-name { font-size: 13px; font-weight: 500; color: var(--text2); letter-spacing: 0.12em; text-transform: uppercase; }
+/* ── ALERT ── */
+.alert{border-radius:var(--r);padding:12px 16px;font-size:13px;line-height:1.65;margin-bottom:20px;border:1px solid;display:flex;gap:10px}
+.alert-icon{font-size:15px;flex-shrink:0;margin-top:1px}
+.alert.warn{background:var(--amber-l);border-color:var(--amber-b);color:#93370d}
+.alert.good{background:var(--green-l);border-color:var(--green-b);color:#027a48}
+.alert.info{background:var(--blue-l);border-color:var(--blue-b);color:#1d4ed8}
 
-  /* Tab switcher */
-  .tab-row { display: flex; gap: 4px; background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: 4px; width: fit-content; }
-  .tab-btn {
-    padding: 8px 22px; border-radius: 9px; border: none; cursor: pointer;
-    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
-    background: transparent; color: var(--text2); transition: all 0.2s;
-  }
-  .tab-btn:hover { color: var(--text1); }
-  .tab-btn.active { background: var(--bg4); color: var(--text1); border: 1px solid var(--border2); }
+/* ── CARD ── */
+.card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r2);padding:20px}
+.card-h{font-size:13px;font-weight:600;color:var(--t2);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.card-h .badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase}
+.badge-blue{background:var(--blue-l);color:var(--blue);border:1px solid var(--blue-b)}
+.badge-green{background:var(--green-l);color:var(--green);border:1px solid var(--green-b)}
+.badge-amber{background:var(--amber-l);color:var(--amber);border:1px solid var(--amber-b)}
+.badge-purple{background:var(--purple-l);color:var(--purple);border:1px solid var(--purple-b)}
+.badge-gray{background:var(--bg3);color:var(--t3);border:1px solid var(--border2)}
 
-  /* Period badge */
-  .period-tag {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 12px; color: var(--text3); margin-top: 12px;
-    font-family: 'DM Mono', monospace;
-  }
-  .period-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); display: inline-block; }
+/* ── 2/3 COL ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.g13{display:grid;grid-template-columns:1fr 2fr;gap:12px}
+.g31{display:grid;grid-template-columns:2fr 1fr;gap:12px}
 
-  /* Section */
-  .section { margin-bottom: 32px; }
-  .section-title {
-    font-size: 11px; font-weight: 500; color: var(--text3);
-    letter-spacing: 0.14em; text-transform: uppercase;
-    margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
-  }
-  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+/* ── PRODUCT TABLE ── */
+.prod-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.prod-item:last-child{border-bottom:none}
+.prod-rank{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;background:var(--bg3);color:var(--t3)}
+.prod-rank.r1{background:var(--blue-l);color:var(--blue)}
+.prod-info{flex:1;min-width:0}
+.prod-name{font-size:13px;font-weight:500;color:var(--t1)}
+.prod-bar-wrap{height:4px;background:var(--bg3);border-radius:2px;margin-top:5px;overflow:hidden}
+.prod-bar-fill{height:100%;border-radius:2px}
+.prod-nums{text-align:right;flex-shrink:0}
+.prod-rev{font-size:13px;font-weight:600;color:var(--t1);font-family:'JetBrains Mono',monospace}
+.prod-units{font-size:11px;color:var(--t3);margin-top:2px}
 
-  /* KPI grid */
-  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-  .kpi-card {
-    background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r2);
-    padding: 18px 16px; position: relative; overflow: hidden;
-  }
-  .kpi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; border-radius: 2px 2px 0 0; }
-  .kpi-card.up::before { background: var(--green); }
-  .kpi-card.down::before { background: var(--red); }
-  .kpi-card.neutral::before { background: var(--text3); }
-  .kpi-label { font-size: 11px; color: var(--text3); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
-  .kpi-value { font-size: 26px; font-weight: 600; color: var(--text1); line-height: 1; margin-bottom: 8px; font-variant-numeric: tabular-nums; }
-  .kpi-delta {
-    font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 3px;
-    padding: 2px 7px; border-radius: 6px;
-  }
-  .kpi-delta.up { color: var(--green); background: var(--green-bg); }
-  .kpi-delta.down { color: var(--red); background: var(--red-bg); }
-  .kpi-delta.neutral { color: var(--text2); background: var(--bg4); }
-  .kpi-sub { font-size: 11px; color: var(--text3); margin-top: 5px; }
+/* ── FUNNEL ── */
+.funnel-step{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:4px}
+.funnel-num{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;min-width:72px;color:var(--t1)}
+.funnel-label{flex:1;font-size:13px;color:var(--t2)}
+.funnel-rate{font-size:12px;font-weight:500;padding:2px 8px;border-radius:5px}
+.rate-good{color:var(--green);background:var(--green-l)}
+.rate-bad{color:var(--red);background:var(--red-l)}
+.rate-neu{color:var(--t3);background:var(--bg3)}
+.funnel-arrow{text-align:center;font-size:11px;color:var(--t4);padding:2px 0;margin-bottom:4px}
+.abandon-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{font-size:11px;font-weight:500;padding:4px 10px;border-radius:6px;border:1px solid}
+.chip-red{color:var(--red);background:var(--red-l);border-color:var(--red-b)}
+.chip-amber{color:var(--amber);background:var(--amber-l);border-color:var(--amber-b)}
+.chip-green{color:var(--green);background:var(--green-l);border-color:var(--green-b)}
 
-  /* Alert banner */
-  .alert {
-    border-radius: var(--r); padding: 12px 16px;
-    font-size: 13px; line-height: 1.6; margin-bottom: 24px;
-    border: 1px solid;
-  }
-  .alert.warn { background: rgba(245,166,35,0.07); border-color: var(--amber-border); color: #d4944a; }
-  .alert.good { background: rgba(34,216,138,0.07); border-color: var(--green-border); color: #1aaa6e; }
-  .alert .icon { margin-right: 6px; }
+/* ── TABLE ── */
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{font-size:11px;font-weight:600;color:var(--t4);text-transform:uppercase;letter-spacing:.06em;padding:0 8px 10px;text-align:left;border-bottom:1px solid var(--border)}
+.tbl th.r{text-align:right}
+.tbl td{padding:9px 8px;border-bottom:1px solid var(--border);color:var(--t2);vertical-align:middle}
+.tbl td.r{text-align:right;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--t1)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr.total-row td{font-weight:600;color:var(--t1);background:var(--bg2);font-size:12px}
+.tbl tr:hover td{background:var(--bg2)}
+.page-name{font-size:12px;color:var(--t2)}
+.page-tag{font-size:10px;font-weight:600;padding:2px 6px;border-radius:4px;margin-left:5px;display:inline-block}
+.tag-red{color:var(--red);background:var(--red-l);border:1px solid var(--red-b)}
+.tag-green{color:var(--green);background:var(--green-l);border:1px solid var(--green-b)}
+.tag-amber{color:var(--amber);background:var(--amber-l);border:1px solid var(--amber-b)}
 
-  /* Two-col layout */
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+/* ── AD SECTION ── */
+.ad-block{background:var(--bg);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;margin-bottom:12px}
+.ad-header{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;background:var(--bg2)}
+.platform-pill{font-size:11px;font-weight:700;padding:4px 11px;border-radius:6px;letter-spacing:.06em;text-transform:uppercase}
+.pill-meta{background:#e7f0ff;color:#1553b5;border:1px solid #b2ccff}
+.pill-google{background:#fce8e6;color:#c5221f;border:1px solid #f5c6c4}
+.ad-type-tag{font-size:11px;font-weight:600;padding:3px 9px;border-radius:5px}
+.type-traffic{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+.type-purchase{background:#eff4ff;color:#1d4ed8;border:1px solid #bfdbfe}
+.ad-period{font-size:12px;color:var(--t3);margin-left:auto}
+.ad-metrics{display:grid;padding:16px 20px;border-bottom:1px solid var(--border);gap:0}
+.ad-metrics-row{display:grid;gap:0}
+.ad-meta-item{padding:10px 16px;border-right:1px solid var(--border)}
+.ad-meta-item:last-child{border-right:none}
+.am-label{font-size:11px;color:var(--t4);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.am-val{font-size:18px;font-weight:600;font-family:'JetBrains Mono',monospace;color:var(--t1)}
+.am-val.green{color:var(--green)}
+.am-val.blue{color:var(--blue)}
+.am-val.amber{color:var(--amber)}
+.am-sub{font-size:11px;color:var(--t4);margin-top:2px}
+.ad-table-wrap{padding:16px 20px}
+.roas-tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:600;font-family:'JetBrains Mono',monospace}
+.roas-hi{color:var(--green);background:var(--green-l);border:1px solid var(--green-b)}
+.roas-mid{color:var(--amber);background:var(--amber-l);border:1px solid var(--amber-b)}
+.roas-lo{color:var(--red);background:var(--red-l);border:1px solid var(--red-b)}
+.roas-na{color:var(--t4);background:var(--bg3);border:1px solid var(--border)}
 
-  /* Card */
-  .card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r2); padding: 20px; }
-  .card-title { font-size: 12px; font-weight: 500; color: var(--text2); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+/* ── INSIGHT ── */
+.insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.insight{border-radius:var(--r);padding:14px 16px;border:1px solid}
+.insight.red{background:var(--red-l);border-color:var(--red-b)}
+.insight.amber{background:var(--amber-l);border-color:var(--amber-b)}
+.insight.green{background:var(--green-l);border-color:var(--green-b)}
+.insight.blue{background:var(--blue-l);border-color:var(--blue-b)}
+.insight-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+.insight.red .insight-lbl{color:var(--red)}
+.insight.amber .insight-lbl{color:var(--amber)}
+.insight.green .insight-lbl{color:var(--green)}
+.insight.blue .insight-lbl{color:var(--blue)}
+.insight p{font-size:13px;line-height:1.65;color:var(--t2)}
 
-  /* Product table */
-  .prod-table { width: 100%; border-collapse: collapse; }
-  .prod-table tr { border-bottom: 1px solid var(--border); }
-  .prod-table tr:last-child { border-bottom: none; }
-  .prod-table td { padding: 10px 0; font-size: 14px; }
-  .prod-table td:last-child { text-align: right; font-family: 'DM Mono', monospace; font-size: 13px; }
-  .prod-badge { display: inline-block; font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
-  .prod-badge.main { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
-  .prod-bar-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
-  .prod-bar-row:last-child { border-bottom: none; }
-  .prod-bar-name { font-size: 13px; min-width: 130px; }
-  .prod-bar-track { flex: 1; height: 5px; background: var(--bg4); border-radius: 3px; overflow: hidden; }
-  .prod-bar-fill { height: 100%; border-radius: 3px; background: var(--blue); }
-  .prod-bar-val { font-size: 12px; color: var(--text2); font-family: 'DM Mono', monospace; min-width: 60px; text-align: right; }
+/* ── STAT ROW ── */
+.stat-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.stat-pill{padding:6px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;font-size:12px;color:var(--t2);font-family:'JetBrains Mono',monospace}
+.stat-pill b{color:var(--t1);font-weight:600}
 
-  /* Funnel */
-  .funnel-row {
-    display: flex; align-items: center; gap: 12px;
-    padding: 11px 14px; background: var(--bg4); border-radius: var(--r);
-    margin-bottom: 6px; border: 1px solid var(--border);
-  }
-  .funnel-num { font-family: 'DM Mono', monospace; font-size: 14px; font-weight: 500; min-width: 70px; }
-  .funnel-label { flex: 1; font-size: 13px; color: var(--text2); }
-  .funnel-rate { font-size: 12px; color: var(--text3); }
-  .funnel-arrow { font-size: 10px; color: var(--text3); margin: 0 auto; display: block; text-align: center; padding: 2px 0; }
-  .abandon-row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
-  .abandon-pill {
-    padding: 6px 12px; border-radius: 8px; font-size: 12px;
-    background: var(--red-bg); border: 1px solid var(--red-border); color: var(--red);
-    font-weight: 500;
-  }
-
-  /* Landing page table */
-  .lp-table { width: 100%; border-collapse: collapse; }
-  .lp-table th { font-size: 11px; color: var(--text3); text-align: left; padding: 0 0 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
-  .lp-table th:not(:first-child) { text-align: right; }
-  .lp-table tr.data-row { border-top: 1px solid var(--border); }
-  .lp-table td { padding: 9px 0; font-size: 13px; }
-  .lp-table td:not(:first-child) { text-align: right; font-family: 'DM Mono', monospace; font-size: 12px; }
-  .lp-url { color: var(--text2); font-size: 12px; }
-  .abandon-num { color: var(--red); }
-  .issue-tag {
-    font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-left: 5px;
-    background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border);
-  }
-
-  /* Ad section */
-  .ad-platform { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
-  .platform-tag {
-    font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 6px;
-    letter-spacing: 0.06em; text-transform: uppercase;
-  }
-  .platform-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
-  .meta-item { background: var(--bg4); border-radius: 8px; padding: 10px 12px; }
-  .meta-label { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
-  .meta-value { font-size: 15px; font-weight: 600; font-family: 'DM Mono', monospace; }
-  .meta-value.green { color: var(--green); }
-  .meta-value.amber { color: var(--amber); }
-  .meta-value.blue { color: var(--blue); }
-  .ad-table { width: 100%; border-collapse: collapse; }
-  .ad-table th { font-size: 11px; color: var(--text3); text-align: left; padding: 0 0 8px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
-  .ad-table th:not(:first-child) { text-align: right; }
-  .ad-table td { padding: 8px 0; font-size: 12px; border-bottom: 1px solid var(--border); }
-  .ad-table td:not(:first-child) { text-align: right; font-family: 'DM Mono', monospace; }
-  .ad-table tr:last-child td { border-bottom: none; }
-  .roas-pill {
-    display: inline-block; padding: 2px 7px; border-radius: 5px; font-size: 11px; font-weight: 600;
-  }
-  .roas-high { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
-  .roas-mid { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
-  .roas-low { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
-  .ad-total-row td { font-weight: 600; color: var(--text1); border-top: 1px solid var(--border2) !important; padding-top: 10px !important; font-size: 13px; }
-
-  /* Insight cards */
-  .insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .insight-item {
-    padding: 14px 16px; border-radius: var(--r); border: 1px solid;
-    font-size: 13px; line-height: 1.6;
-  }
-  .insight-item.red { background: var(--red-bg); border-color: var(--red-border); }
-  .insight-item.amber { background: var(--amber-bg); border-color: var(--amber-border); }
-  .insight-item.green { background: var(--green-bg); border-color: var(--green-border); }
-  .insight-item.blue { background: var(--blue-bg); border-color: var(--blue-border); }
-  .insight-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
-  .insight-item.red .insight-label { color: var(--red); }
-  .insight-item.amber .insight-label { color: var(--amber); }
-  .insight-item.green .insight-label { color: var(--green); }
-  .insight-item.blue .insight-label { color: var(--blue); }
-
-  .section-divider { height: 1px; background: var(--border); margin: 32px 0; }
-  .hidden { display: none; }
-
-  /* Comparison badge for weekly */
-  .vs-badge {
-    font-size: 11px; padding: 2px 8px; border-radius: 5px;
-    background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border);
-    font-family: 'DM Mono', monospace;
-  }
-
-  @media (max-width: 680px) {
-    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-    .two-col { grid-template-columns: 1fr; }
-    .three-col { grid-template-columns: 1fr 1fr; }
-    .platform-meta { grid-template-columns: repeat(2, 1fr); }
-    .insight-grid { grid-template-columns: 1fr; }
-  }
+.hidden{display:none!important}
+@media(max-width:680px){
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .g2,.g3,.g13,.g31{grid-template-columns:1fr}
+  .insight-grid{grid-template-columns:1fr}
+  .top-header{flex-wrap:wrap}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="page">
 
-  <!-- Header -->
-  <div class="header">
-    <div class="brand">
-      <div class="brand-dot"></div>
-      <span class="brand-name">UnifyDrive · 运营报告</span>
+<!-- TOP HEADER -->
+<div class="top-header">
+  <div class="brand">
+    <div class="brand-icon">📦</div>
+    <div class="brand-text">
+      <h1>UnifyDrive 运营报告</h1>
+      <p>销售 · 广告 · 转化分析</p>
     </div>
-    <div class="tab-row">
-      <button class="tab-btn active" onclick="switchTab('monthly')">📅 五月月报</button>
-      <button class="tab-btn" onclick="switchTab('weekly')">⚡ 六月周报</button>
+  </div>
+  <div class="tab-row">
+    <button class="tab-btn active" onclick="show('monthly')">五月月报</button>
+    <button class="tab-btn" onclick="show('weekly')">六月周报</button>
+  </div>
+  <div class="period-chip" id="period-chip">
+    <span class="dot"></span>
+    <span id="period-txt">May 1 – May 31, 2026</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ MONTHLY ═══ -->
+<div id="tab-monthly">
+
+<!-- KPI -->
+<div class="section">
+  <div class="sec-label">核心销售数据</div>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-top"><span class="kpi-label">GMV</span><div class="kpi-icon" style="background:var(--red-l)">📉</div></div>
+      <div class="kpi-val">$57,370</div>
+      <div class="kpi-footer"><span class="delta dn">▼ 32.8%</span><span class="kpi-vs">vs 四月 $85,376</span></div>
     </div>
-    <div class="period-tag" id="period-label">
-      <span class="period-dot"></span>
-      2026年5月1日 — 5月31日
+    <div class="kpi">
+      <div class="kpi-top"><span class="kpi-label">订单量</span><div class="kpi-icon" style="background:var(--red-l)">📦</div></div>
+      <div class="kpi-val">59 单</div>
+      <div class="kpi-footer"><span class="delta dn">▼ 31.4%</span><span class="kpi-vs">vs 四月 86单</span></div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-top"><span class="kpi-label">客单价 AOV</span><div class="kpi-icon" style="background:var(--amber-l)">💰</div></div>
+      <div class="kpi-val">$1,028</div>
+      <div class="kpi-footer"><span class="delta dn">▼ 3.7%</span><span class="kpi-vs">vs 四月 $1,068</span></div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-top"><span class="kpi-label">访问量</span><div class="kpi-icon" style="background:var(--green-l)">👆</div></div>
+      <div class="kpi-val">73,990</div>
+      <div class="kpi-footer"><span class="delta up">▲ 13.0%</span><span class="kpi-vs">vs 四月 65,494</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="alert warn">
+  <span class="alert-icon">⚠️</span>
+  <div>流量增长 13% 但 GMV 下滑 33%，转化率从约 0.13% 跌至 <b>0.069%</b>——流量在涨但质量在变差，需重点排查广告受众与落地页相关性。</div>
+</div>
+
+<!-- Products + Funnel -->
+<div class="g2 section">
+  <div class="card">
+    <div class="card-h">产品销售明细</div>
+
+    <div class="prod-item">
+      <div class="prod-rank r1">1</div>
+      <div class="prod-info">
+        <div class="prod-name">UnifyDrive UP6 <span class="badge badge-blue">主力 74.7%</span></div>
+        <div class="prod-bar-wrap"><div class="prod-bar-fill" style="width:74.7%;background:var(--blue)"></div></div>
+      </div>
+      <div class="prod-nums">
+        <div class="prod-rev">$42,876</div>
+        <div class="prod-units">28 台 · $1,531/台</div>
+      </div>
+    </div>
+
+    <div class="prod-item">
+      <div class="prod-rank">2</div>
+      <div class="prod-info">
+        <div class="prod-name">UnifyDrive UT2</div>
+        <div class="prod-bar-wrap"><div class="prod-bar-fill" style="width:19.2%;background:var(--purple)"></div></div>
+      </div>
+      <div class="prod-nums">
+        <div class="prod-rev">$11,010</div>
+        <div class="prod-units">26 台 · $424/台</div>
+      </div>
+    </div>
+
+    <div class="prod-item">
+      <div class="prod-rank">3</div>
+      <div class="prod-info">
+        <div class="prod-name">UnifyDrive UC250</div>
+        <div class="prod-bar-wrap"><div class="prod-bar-fill" style="width:3.5%;background:var(--amber)"></div></div>
+      </div>
+      <div class="prod-nums">
+        <div class="prod-rev">$1,995</div>
+        <div class="prod-units">5 台 · $399/台</div>
+      </div>
+    </div>
+
+    <div class="prod-item">
+      <div class="prod-rank">4</div>
+      <div class="prod-info">
+        <div class="prod-name">UnifyDrive UC450 Pro <span class="badge badge-amber">仅1台</span></div>
+        <div class="prod-bar-wrap"><div class="prod-bar-fill" style="width:2.6%;background:#d0d5dd"></div></div>
+      </div>
+      <div class="prod-nums">
+        <div class="prod-rev">$1,499</div>
+        <div class="prod-units">1 台 · $1,499/台</div>
+      </div>
+    </div>
+
+    <div class="prod-item">
+      <div class="prod-rank">—</div>
+      <div class="prod-info">
+        <div class="prod-name" style="color:var(--t3)">配件（CF Adapter + Remote）</div>
+        <div class="prod-bar-wrap"><div class="prod-bar-fill" style="width:0.1%;background:#d0d5dd"></div></div>
+      </div>
+      <div class="prod-nums">
+        <div class="prod-rev" style="color:var(--t3)">$70</div>
+        <div class="prod-units">3 件</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);display:flex;gap:8px;font-size:12px;color:var(--t3)">
+      <span>合计：<b style="color:var(--t1)">63 件</b></span>
+      <span>·</span>
+      <span>总收入：<b style="color:var(--t1)">$57,450</b></span>
     </div>
   </div>
 
-  <!-- ===================== MONTHLY REPORT ===================== -->
-  <div id="tab-monthly">
-
-    <div class="section">
-      <div class="section-title">核心销售数据</div>
-      <div class="kpi-grid">
-        <div class="kpi-card down">
-          <div class="kpi-label">GMV</div>
-          <div class="kpi-value">$57,370</div>
-          <span class="kpi-delta down">▼ -32.8%</span>
-          <div class="kpi-sub">vs 四月 $85,376</div>
-        </div>
-        <div class="kpi-card down">
-          <div class="kpi-label">订单量</div>
-          <div class="kpi-value">59</div>
-          <span class="kpi-delta down">▼ -31.4%</span>
-          <div class="kpi-sub">vs 四月 86 单</div>
-        </div>
-        <div class="kpi-card down">
-          <div class="kpi-label">客单价 AOV</div>
-          <div class="kpi-value">$1,028</div>
-          <span class="kpi-delta down">▼ -3.7%</span>
-          <div class="kpi-sub">vs 四月 $1,068</div>
-        </div>
-        <div class="kpi-card up">
-          <div class="kpi-label">访问量</div>
-          <div class="kpi-value">73,990</div>
-          <span class="kpi-delta up">▲ +13.0%</span>
-          <div class="kpi-sub">vs 四月 65,494</div>
-        </div>
-      </div>
+  <div class="card">
+    <div class="card-h">转化漏斗</div>
+    <div class="funnel-step">
+      <div class="funnel-num">73,990</div>
+      <div class="funnel-label">总访问量</div>
+      <span class="funnel-rate rate-neu">—</span>
     </div>
-
-    <div class="alert warn">
-      <span class="icon">⚠️</span>流量增加了 13%，但 GMV 和订单量双双下滑约三分之一——转化率在下降，流量质量变差，需重点排查落地页和广告受众质量。
+    <div class="funnel-arrow">↓ 加购率 1.02%</div>
+    <div class="funnel-step">
+      <div class="funnel-num">754</div>
+      <div class="funnel-label">加购访问</div>
+      <span class="funnel-rate rate-bad">1.02%</span>
     </div>
-
-    <!-- Products + Funnel -->
-    <div class="two-col section">
-      <div class="card">
-        <div class="card-title">产品销售占比</div>
-        <div class="prod-bar-row">
-          <div class="prod-bar-name">UP6 <span class="prod-badge main">主力</span></div>
-          <div class="prod-bar-track"><div class="prod-bar-fill" style="width:74.7%; background: var(--blue);"></div></div>
-          <div class="prod-bar-val">$42,876</div>
-        </div>
-        <div class="prod-bar-row">
-          <div class="prod-bar-name">UT2</div>
-          <div class="prod-bar-track"><div class="prod-bar-fill" style="width:19.2%; background: var(--purple);"></div></div>
-          <div class="prod-bar-val">$11,010</div>
-        </div>
-        <div class="prod-bar-row">
-          <div class="prod-bar-name">UC250</div>
-          <div class="prod-bar-track"><div class="prod-bar-fill" style="width:3.5%; background: var(--amber);"></div></div>
-          <div class="prod-bar-val">$1,995</div>
-        </div>
-        <div class="prod-bar-row">
-          <div class="prod-bar-name">UC450 Pro</div>
-          <div class="prod-bar-track"><div class="prod-bar-fill" style="width:2.6%; background: var(--text3);"></div></div>
-          <div class="prod-bar-val">$1,499</div>
-        </div>
-        <div class="prod-bar-row">
-          <div class="prod-bar-name">其他</div>
-          <div class="prod-bar-track"><div class="prod-bar-fill" style="width:0.1%; background: var(--text3);"></div></div>
-          <div class="prod-bar-val">$70</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">转化漏斗</div>
-        <div class="funnel-row">
-          <div class="funnel-num">73,990</div>
-          <div class="funnel-label">总访问</div>
-        </div>
-        <div class="funnel-arrow">↓ 1.02% 加购</div>
-        <div class="funnel-row">
-          <div class="funnel-num">754</div>
-          <div class="funnel-label">加购访问</div>
-          <div class="funnel-rate">1.02%</div>
-        </div>
-        <div class="funnel-arrow">↓ 58.6% 进入结账</div>
-        <div class="funnel-row">
-          <div class="funnel-num">442</div>
-          <div class="funnel-label">到达结账页</div>
-          <div class="funnel-rate">58.6%</div>
-        </div>
-        <div class="funnel-arrow">↓ 11.5% 完成</div>
-        <div class="funnel-row">
-          <div class="funnel-num">51</div>
-          <div class="funnel-label">完成结账</div>
-          <div class="funnel-rate">11.5%</div>
-        </div>
-        <div class="abandon-row">
-          <span class="abandon-pill">整体转化 0.069%</span>
-          <span class="abandon-pill">结账弃单 88.5%</span>
-          <span class="abandon-pill">加购流失 41.4%</span>
-        </div>
-      </div>
+    <div class="funnel-arrow">↓ 进入结账 58.6%（流失 41.4%）</div>
+    <div class="funnel-step">
+      <div class="funnel-num">442</div>
+      <div class="funnel-label">到达结账页</div>
+      <span class="funnel-rate rate-bad">58.6%</span>
     </div>
+    <div class="funnel-arrow">↓ 完成结账 11.5%</div>
+    <div class="funnel-step" style="border-color:var(--green-b);background:var(--green-l)">
+      <div class="funnel-num" style="color:var(--green)">51</div>
+      <div class="funnel-label">完成结账</div>
+      <span class="funnel-rate rate-bad">11.5%</span>
+    </div>
+    <div class="abandon-chips">
+      <span class="chip chip-red">整体转化率 0.069%</span>
+      <span class="chip chip-red">结账弃单 88.5%</span>
+      <span class="chip chip-amber">加购→结账流失 41.4%</span>
+    </div>
+  </div>
+</div>
 
-    <!-- Landing page abandon -->
-    <div class="section card">
-      <div class="card-title">落地页弃单分布 Top 10</div>
-      <table class="lp-table">
-        <thead>
-          <tr>
-            <th>落地页</th>
-            <th>加购</th>
-            <th>成交</th>
-            <th>弃单</th>
-          </tr>
-        </thead>
+<!-- Landing page -->
+<div class="section card">
+  <div class="card-h">落地页弃单分布 Top 10</div>
+  <table class="tbl">
+    <thead><tr>
+      <th>落地页</th>
+      <th class="r">加购</th>
+      <th class="r">成交</th>
+      <th class="r">弃单</th>
+      <th class="r">转化率</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><span class="page-name">UP6 产品页</span><span class="page-tag tag-red">最大漏点</span></td><td class="r">275</td><td class="r">12</td><td class="r" style="color:var(--red);font-weight:600">263</td><td class="r">4.4%</td></tr>
+      <tr><td><span class="page-name">首页</span></td><td class="r">249</td><td class="r">15</td><td class="r" style="color:var(--red);font-weight:600">234</td><td class="r">6.0%</td></tr>
+      <tr><td><span class="page-name">UT2 产品页</span></td><td class="r">107</td><td class="r">10</td><td class="r">97</td><td class="r">9.3%</td></tr>
+      <tr><td><span class="page-name">UC450 Pro 产品页</span><span class="page-tag tag-red">0% 转化</span></td><td class="r">21</td><td class="r">0</td><td class="r" style="color:var(--red);font-weight:600">21</td><td class="r" style="color:var(--red)">0%</td></tr>
+      <tr><td><span class="page-name">UP6 Exclusive Offer 页</span></td><td class="r">20</td><td class="r">3</td><td class="r">17</td><td class="r">15.0%</td></tr>
+      <tr><td><span class="page-name">日文 UT2 页 (/ja-jp)</span><span class="page-tag tag-amber">0% 转化</span></td><td class="r">17</td><td class="r">0</td><td class="r">17</td><td class="r" style="color:var(--red)">0%</td></tr>
+      <tr><td><span class="page-name">UC250 产品页</span></td><td class="r">7</td><td class="r">1</td><td class="r">6</td><td class="r">14.3%</td></tr>
+      <tr><td><span class="page-name">Blog: Best Portable NAS</span></td><td class="r">5</td><td class="r">0</td><td class="r">5</td><td class="r" style="color:var(--red)">0%</td></tr>
+      <tr><td><span class="page-name">HDMI Cable 页</span></td><td class="r">4</td><td class="r">0</td><td class="r">4</td><td class="r" style="color:var(--red)">0%</td></tr>
+      <tr><td><span class="page-name">/en-jp 日本首页</span></td><td class="r">4</td><td class="r">0</td><td class="r">4</td><td class="r" style="color:var(--red)">0%</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ─────────── ADS ─────────── -->
+<div class="section">
+  <div class="sec-label">广告投放数据 — Meta Ads</div>
+
+  <!-- Meta Traffic -->
+  <div class="ad-block">
+    <div class="ad-header">
+      <span class="platform-pill pill-meta">Meta</span>
+      <span class="ad-type-tag type-traffic">流量广告</span>
+      <span style="font-size:13px;font-weight:500;color:var(--t2)">UC450 Pro · UP6 · UT2</span>
+      <span class="ad-period">5月1日 — 5月31日</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr)">
+      <div class="ad-meta-item"><div class="am-label">总花费</div><div class="am-val">$3,876</div></div>
+      <div class="ad-meta-item"><div class="am-label">总点击</div><div class="am-val blue">40,805</div></div>
+      <div class="ad-meta-item"><div class="am-label">落地页浏览</div><div class="am-val">36,853</div></div>
+      <div class="ad-meta-item"><div class="am-label">均CPC</div><div class="am-val">$0.11</div></div>
+      <div class="ad-meta-item"><div class="am-label">均CPM</div><div class="am-val">$5.86</div></div>
+    </div>
+    <div class="ad-table-wrap">
+      <table class="tbl">
+        <thead><tr>
+          <th>系列名称</th><th class="r">花费</th><th class="r">点击</th><th class="r">CTR</th><th class="r">CPC</th><th class="r">CPM</th><th class="r">落地浏览</th><th class="r">频次</th>
+        </tr></thead>
         <tbody>
-          <tr class="data-row">
-            <td>UP6 产品页 <span class="issue-tag">最大漏点</span></td>
-            <td>275</td><td>12</td><td class="abandon-num">263</td>
-          </tr>
-          <tr class="data-row">
-            <td>首页</td>
-            <td>249</td><td>15</td><td class="abandon-num">234</td>
-          </tr>
-          <tr class="data-row">
-            <td>UT2 产品页</td>
-            <td>107</td><td>10</td><td class="abandon-num">97</td>
-          </tr>
-          <tr class="data-row">
-            <td>UC450 Pro 产品页 <span class="issue-tag">0%转化</span></td>
-            <td>21</td><td>0</td><td class="abandon-num">21</td>
-          </tr>
-          <tr class="data-row">
-            <td>UP6 Exclusive Offer 页</td>
-            <td>20</td><td>3</td><td class="abandon-num">17</td>
-          </tr>
-          <tr class="data-row">
-            <td>日文 UT2 页（/ja-jp）<span class="issue-tag">0%转化</span></td>
-            <td>17</td><td>0</td><td class="abandon-num">17</td>
-          </tr>
-          <tr class="data-row">
-            <td>UC250 产品页</td>
-            <td>7</td><td>1</td><td>6</td>
-          </tr>
-          <tr class="data-row">
-            <td>Blog: Best Portable NAS</td>
-            <td>5</td><td>0</td><td>5</td>
-          </tr>
-          <tr class="data-row">
-            <td>HDMI Cable 页</td>
-            <td>4</td><td>0</td><td>4</td>
-          </tr>
-          <tr class="data-row">
-            <td>/en-jp 日本首页</td>
-            <td>4</td><td>0</td><td>4</td>
-          </tr>
+          <tr><td>UC450 Pro Traffic</td><td class="r">$582</td><td class="r">5,378</td><td class="r">6.08%</td><td class="r">$0.11</td><td class="r">$4.31</td><td class="r">5,386</td><td class="r">1.52</td></tr>
+          <tr><td>UP6 Traffic (4/13)</td><td class="r">$2,362</td><td class="r">19,394</td><td class="r">7.53%</td><td class="r">$0.12</td><td class="r">$6.32</td><td class="r">19,844</td><td class="r">1.45</td></tr>
+          <tr><td>UT2 Traffic (5/13)</td><td class="r">$931</td><td class="r">7,824</td><td class="r">7.10%</td><td class="r">$0.12</td><td class="r">$6.80</td><td class="r">7,633</td><td class="r">1.24</td></tr>
+          <tr><td>UP6 Traffic (5/14)</td><td class="r">$887 *</td><td class="r">8,209</td><td class="r">9.49%</td><td class="r">$0.10</td><td class="r">$6.46</td><td class="r">8,990</td><td class="r">1.59</td></tr>
+          <tr class="total-row"><td>合计</td><td class="r">$4,762</td><td class="r">40,805</td><td class="r">—</td><td class="r">$0.11</td><td class="r">$5.86</td><td class="r">41,853</td><td class="r">—</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:var(--t4);margin-top:8px">* UP6 Traffic (5/14) 花费 $886.77，四舍五入为 $887</p>
+    </div>
+  </div>
+
+  <!-- Meta Purchase/Retargeting -->
+  <div class="ad-block">
+    <div class="ad-header">
+      <span class="platform-pill pill-meta">Meta</span>
+      <span class="ad-type-tag type-purchase">转化广告</span>
+      <span style="font-size:13px;font-weight:500;color:var(--t2)">再营销 · Purchase · Partnership</span>
+      <span class="ad-period">5月1日 — 5月31日</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr)">
+      <div class="ad-meta-item"><div class="am-label">总花费</div><div class="am-val">$3,091</div></div>
+      <div class="ad-meta-item"><div class="am-label">购买转化</div><div class="am-val blue">15 单</div></div>
+      <div class="ad-meta-item"><div class="am-label">广告收入</div><div class="am-val green">$18,922</div></div>
+      <div class="ad-meta-item"><div class="am-label">整体 ROAS</div><div class="am-val amber">6.12×</div></div>
+      <div class="ad-meta-item"><div class="am-label">均 CPA</div><div class="am-val">$206</div></div>
+    </div>
+    <div class="ad-table-wrap">
+      <table class="tbl">
+        <thead><tr>
+          <th>系列名称</th><th class="r">花费</th><th class="r">转化</th><th class="r">收入</th><th class="r">ROAS</th><th class="r">CPA</th><th class="r">点击</th><th class="r">CPM</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Evergreen Retargeting</td><td class="r">$346</td><td class="r">2</td><td class="r">$798</td><td class="r"><span class="roas-tag roas-mid">2.3×</span></td><td class="r">$173</td><td class="r">415</td><td class="r">$15.38</td></tr>
+          <tr><td>Retargeting UP6 Sale</td><td class="r">$1,006</td><td class="r">5</td><td class="r">$7,395</td><td class="r"><span class="roas-tag roas-hi">7.3×</span></td><td class="r">$201</td><td class="r">716</td><td class="r">$18.12</td></tr>
+          <tr><td>Retargeting UT2 Sale</td><td class="r">$396</td><td class="r">2</td><td class="r">$798</td><td class="r"><span class="roas-tag roas-lo">2.0×</span></td><td class="r">$198</td><td class="r">349</td><td class="r">$29.15</td></tr>
+          <tr><td>UP6 Purchase (5/20)</td><td class="r">$1,198</td><td class="r">7</td><td class="r">$8,432</td><td class="r"><span class="roas-tag roas-hi">7.0×</span></td><td class="r">$171</td><td class="r">1,079</td><td class="r">$39.67</td></tr>
+          <tr><td>UP6 Partnership (5/29)</td><td class="r">$145</td><td class="r">1</td><td class="r">$1,499</td><td class="r"><span class="roas-tag roas-hi">10.3×</span></td><td class="r">$145</td><td class="r">87</td><td class="r">$38.58</td></tr>
+          <tr class="total-row"><td>合计</td><td class="r">$3,091</td><td class="r">17</td><td class="r">$18,922</td><td class="r"><span class="roas-tag roas-hi">6.12×</span></td><td class="r">$182</td><td class="r">2,646</td><td class="r">—</td></tr>
         </tbody>
       </table>
     </div>
+  </div>
 
-    <!-- Ad section -->
-    <div class="section">
-      <div class="section-title">广告投放数据</div>
+  <div class="sec-label" style="margin-top:20px">广告投放数据 — Google Ads</div>
 
-      <!-- Meta Ads -->
-      <div class="card" style="margin-bottom: 14px;">
-        <div class="ad-platform">
-          <span class="platform-tag" style="background: rgba(24,119,242,0.15); color: #4e93f5; border: 1px solid rgba(24,119,242,0.3);">Meta Ads</span>
-          <span style="font-size: 12px; color: var(--text3);">5月1日 — 5月31日</span>
-        </div>
-        <div class="platform-meta">
-          <div class="meta-item">
-            <div class="meta-label">总花费</div>
-            <div class="meta-value">$7,854</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">广告带来收入</div>
-            <div class="meta-value green">$18,922</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">整体 ROAS</div>
-            <div class="meta-value amber">2.41×</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">购买转化</div>
-            <div class="meta-value blue">17单</div>
-          </div>
-        </div>
-        <table class="ad-table">
-          <thead>
-            <tr>
-              <th>广告系列</th>
-              <th>花费</th>
-              <th>收入</th>
-              <th>ROAS</th>
-              <th>点击量</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="lp-url">Evergreen Retargeting Sales</td>
-              <td>$346</td>
-              <td>$798</td>
-              <td><span class="roas-mid">2.3×</span></td>
-              <td>415</td>
-            </tr>
-            <tr>
-              <td class="lp-url">Retargeting UP6 Sale</td>
-              <td>$1,006</td>
-              <td>$7,395</td>
-              <td><span class="roas-high">7.3×</span></td>
-              <td>716</td>
-            </tr>
-            <tr>
-              <td class="lp-url">Retargeting UT2 Sale</td>
-              <td>$396</td>
-              <td>$798</td>
-              <td><span class="roas-low">2.0×</span></td>
-              <td>349</td>
-            </tr>
-            <tr>
-              <td class="lp-url">UP6 Purchase (5/20)</td>
-              <td>$1,198</td>
-              <td>$8,432</td>
-              <td><span class="roas-high">7.0×</span></td>
-              <td>1,079</td>
-            </tr>
-            <tr>
-              <td class="lp-url">UP6-Partnership (5/29)</td>
-              <td>$145</td>
-              <td>$1,499</td>
-              <td><span class="roas-high">10.3×</span></td>
-              <td>87</td>
-            </tr>
-            <tr>
-              <td class="lp-url" style="color: var(--text3);">流量系列（UC450 / UP6 / UT2）</td>
-              <td>$4,762</td>
-              <td>—</td>
-              <td><span style="color: var(--text3); font-size: 11px;">无转化追踪</span></td>
-              <td>40,805</td>
-            </tr>
-            <tr class="ad-total-row">
-              <td>合计</td>
-              <td>$7,854</td>
-              <td>$18,922</td>
-              <td><span class="roas-mid">2.41×</span></td>
-              <td>43,451</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Google Search -->
-      <div class="card">
-        <div class="ad-platform">
-          <span class="platform-tag" style="background: rgba(234,67,53,0.12); color: #f07060; border: 1px solid rgba(234,67,53,0.3);">Google Search</span>
-          <span style="font-size: 12px; color: var(--text3);">5月22日 — 5月31日（上线10天）</span>
-        </div>
-        <div class="platform-meta">
-          <div class="meta-item">
-            <div class="meta-label">花费</div>
-            <div class="meta-value">$546</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">广告收入</div>
-            <div class="meta-value green">$9,543</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">ROAS</div>
-            <div class="meta-value green">17.5×</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">购买转化</div>
-            <div class="meta-value blue">7单</div>
-          </div>
-        </div>
-        <table class="ad-table">
-          <thead>
-            <tr>
-              <th>广告系列</th>
-              <th>花费</th>
-              <th>点击</th>
-              <th>转化次数</th>
-              <th>转化价值</th>
-              <th>ROAS</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="lp-url">UT2 Search (US)</td>
-              <td>$546</td>
-              <td>684</td>
-              <td>7</td>
-              <td>$9,543</td>
-              <td><span class="roas-high">17.5×</span></td>
-            </tr>
-            <tr class="ad-total-row">
-              <td>合计</td>
-              <td>$546</td>
-              <td>684</td>
-              <td>7</td>
-              <td>$9,543</td>
-              <td><span class="roas-high">17.5×</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <!-- Google Search -->
+  <div class="ad-block">
+    <div class="ad-header">
+      <span class="platform-pill pill-google">Google</span>
+      <span class="ad-type-tag type-purchase">搜索广告</span>
+      <span style="font-size:13px;font-weight:500;color:var(--t2)">UT2 Search · US</span>
+      <span class="ad-period">5月22日 — 5月31日（上线10天）</span>
     </div>
-
-    <!-- Insights -->
-    <div class="section">
-      <div class="section-title">重点问题 & 行动建议</div>
-      <div class="insight-grid">
-        <div class="insight-item red">
-          <div class="insight-label">🔴 核心问题</div>
-          UP6产品页弃单263次，仅12次成交（4.4%转化）。结账流程阻力大，建议增加一键购买、信任背书（评分/媒体报道）。
-        </div>
-        <div class="insight-item amber">
-          <div class="insight-label">🟡 待优化</div>
-          UC450 Pro页面21次加购0成交，转化率0%。排查是否有库存显示问题、价格跳转异常或结账报错。
-        </div>
-        <div class="insight-item amber">
-          <div class="insight-label">🟡 市场机会</div>
-          日文 /ja-jp 页17次加购0成交，日本用户有意向但本地化不足。建议补全日文结账流程、支持本地支付。
-        </div>
-        <div class="insight-item green">
-          <div class="insight-label">✅ 亮点</div>
-          Google Search 上线仅10天 ROAS 达17.5×，UT2搜索广告效率极高，建议扩大预算，并测试 UP6 关键词组。
-        </div>
-      </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr)">
+      <div class="ad-meta-item"><div class="am-label">花费</div><div class="am-val">$546</div></div>
+      <div class="ad-meta-item"><div class="am-label">购买转化</div><div class="am-val blue">7 单</div></div>
+      <div class="ad-meta-item"><div class="am-label">广告收入</div><div class="am-val green">$9,543</div></div>
+      <div class="ad-meta-item"><div class="am-label">ROAS</div><div class="am-val green">17.5×</div></div>
+      <div class="ad-meta-item"><div class="am-label">CPA / CVR</div><div class="am-val">$78 / 1.02%</div></div>
     </div>
-
-  </div><!-- /tab-monthly -->
-
-  <!-- ===================== WEEKLY REPORT ===================== -->
-  <div id="tab-weekly" class="hidden">
-
-    <div class="section">
-      <div class="section-title">核心销售数据 <span class="vs-badge">vs 5月1–4日同期</span></div>
-      <div class="kpi-grid">
-        <div class="kpi-card up">
-          <div class="kpi-label">GMV</div>
-          <div class="kpi-value">$13,806</div>
-          <span class="kpi-delta up">▲ +60.3%</span>
-          <div class="kpi-sub">同期 $8,613</div>
-        </div>
-        <div class="kpi-card up">
-          <div class="kpi-label">订单量</div>
-          <div class="kpi-value">15</div>
-          <span class="kpi-delta up">▲ +50.0%</span>
-          <div class="kpi-sub">同期 10 单</div>
-        </div>
-        <div class="kpi-card up">
-          <div class="kpi-label">客单价 AOV</div>
-          <div class="kpi-value">$1,026</div>
-          <span class="kpi-delta up">▲ +19.4%</span>
-          <div class="kpi-sub">同期 $859</div>
-        </div>
-        <div class="kpi-card down">
-          <div class="kpi-label">访问量</div>
-          <div class="kpi-value">7,370</div>
-          <span class="kpi-delta down">▼ -32.2%</span>
-          <div class="kpi-sub">同期 10,863</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="alert good">
-      <span class="icon">✅</span>开局强劲——访问量下滑 32% 但 GMV 反增 60%，加购转化率 1.76%（5月全月仅 1.02%），流量质量和转化效率双双改善。
-    </div>
-
-    <!-- Products + Funnel -->
-    <div class="two-col section">
-      <div class="card">
-        <div class="card-title">产品销售（6/1–6/4）</div>
-        <div class="prod-bar-row">
-          <div class="prod-bar-name">UP6 <span class="prod-badge main">78.7%</span></div>
-          <div class="prod-bar-track"><div class="prod-bar-fill" style="width:78.7%; background: var(--blue);"></div></div>
-          <div class="prod-bar-val">$10,863</div>
-        </div>
-        <div class="prod-bar-row">
-          <div class="prod-bar-name">UT2</div>
-          <div class="prod-bar-track"><div class="prod-bar-fill" style="width:21.3%; background: var(--purple);"></div></div>
-          <div class="prod-bar-val">$2,943</div>
-        </div>
-        <div style="margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);">
-          <div style="font-size: 12px; color: var(--text3); margin-bottom: 8px;">订单拆分</div>
-          <div style="display: flex; gap: 8px;">
-            <div style="flex:1; background: var(--bg4); border-radius: 8px; padding: 10px; text-align: center;">
-              <div style="font-size: 20px; font-weight: 600;">7</div>
-              <div style="font-size: 11px; color: var(--text3);">UP6 单</div>
-            </div>
-            <div style="flex:1; background: var(--bg4); border-radius: 8px; padding: 10px; text-align: center;">
-              <div style="font-size: 20px; font-weight: 600;">7</div>
-              <div style="font-size: 11px; color: var(--text3);">UT2 单</div>
-            </div>
-            <div style="flex:1; background: var(--bg4); border-radius: 8px; padding: 10px; text-align: center;">
-              <div style="font-size: 20px; font-weight: 600;">1</div>
-              <div style="font-size: 11px; color: var(--text3);">其他</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">转化漏斗</div>
-        <div class="funnel-row">
-          <div class="funnel-num">7,370</div>
-          <div class="funnel-label">总访问</div>
-        </div>
-        <div class="funnel-arrow">↓ 1.76% 加购 ✦ 高于5月全月</div>
-        <div class="funnel-row" style="border: 1px solid var(--green-border); background: rgba(34,216,138,0.05);">
-          <div class="funnel-num" style="color: var(--green);">129</div>
-          <div class="funnel-label">加购访问</div>
-          <div class="funnel-rate" style="color: var(--green);">1.76%</div>
-        </div>
-        <div class="funnel-arrow">↓ 63.6% 进入结账</div>
-        <div class="funnel-row">
-          <div class="funnel-num">82</div>
-          <div class="funnel-label">到达结账页</div>
-          <div class="funnel-rate">63.6%</div>
-        </div>
-        <div class="funnel-arrow">↓ 14.6% 完成</div>
-        <div class="funnel-row">
-          <div class="funnel-num">12</div>
-          <div class="funnel-label">完成结账</div>
-          <div class="funnel-rate">14.6%</div>
-        </div>
-        <div class="abandon-row">
-          <span class="abandon-pill">加购流失 36.4%</span>
-          <span class="abandon-pill">结账弃单 85.4%</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Landing page -->
-    <div class="section card">
-      <div class="card-title">落地页弃单分布（6/1–6/4）</div>
-      <table class="lp-table">
-        <thead>
-          <tr>
-            <th>落地页</th>
-            <th>加购</th>
-            <th>成交</th>
-            <th>弃单</th>
-          </tr>
-        </thead>
+    <div class="ad-table-wrap">
+      <table class="tbl">
+        <thead><tr>
+          <th>系列名称</th><th class="r">花费</th><th class="r">点击</th><th class="r">平均CPC</th><th class="r">转化</th><th class="r">转化价值</th><th class="r">转化率</th><th class="r">ROAS</th>
+        </tr></thead>
         <tbody>
-          <tr class="data-row">
-            <td>首页 <span style="font-size:10px; color: var(--green); background: var(--green-bg); border:1px solid var(--green-border); padding: 2px 6px; border-radius:4px; margin-left:5px;">好转</span></td>
-            <td>44</td><td>6</td><td class="abandon-num">38</td>
-          </tr>
-          <tr class="data-row">
-            <td>UP6 产品页 <span class="issue-tag">仅4.8%转化</span></td>
-            <td>42</td><td>2</td><td class="abandon-num">40</td>
-          </tr>
-          <tr class="data-row">
-            <td>UT2 产品页</td>
-            <td>29</td><td>1</td><td class="abandon-num">28</td>
-          </tr>
-          <tr class="data-row">
-            <td>UP6 Exclusive Offer 页 <span class="issue-tag">0%转化</span></td>
-            <td>6</td><td>0</td><td>6</td>
-          </tr>
-          <tr class="data-row">
-            <td>日文 UT2 页（/ja-jp）</td>
-            <td>1</td><td>0</td><td>1</td>
-          </tr>
+          <tr><td>UT2 Search (US) <span class="page-tag tag-green">出价受限</span></td><td class="r">$546</td><td class="r">684</td><td class="r">$0.80</td><td class="r">7</td><td class="r">$9,543</td><td class="r">1.02%</td><td class="r"><span class="roas-tag roas-hi">17.5×</span></td></tr>
+          <tr class="total-row"><td>合计</td><td class="r">$546</td><td class="r">684</td><td class="r">$0.80</td><td class="r">7</td><td class="r">$9,543</td><td class="r">1.02%</td><td class="r"><span class="roas-tag roas-hi">17.5×</span></td></tr>
         </tbody>
       </table>
     </div>
+  </div>
 
-    <!-- Ad section weekly -->
-    <div class="section">
-      <div class="section-title">广告投放数据</div>
-
-      <!-- Meta Ads June -->
-      <div class="card" style="margin-bottom: 14px;">
-        <div class="ad-platform">
-          <span class="platform-tag" style="background: rgba(24,119,242,0.15); color: #4e93f5; border: 1px solid rgba(24,119,242,0.3);">Meta Ads</span>
-          <span style="font-size: 12px; color: var(--text3);">6月1日 — 6月3日</span>
-        </div>
-        <div class="platform-meta">
-          <div class="meta-item">
-            <div class="meta-label">总花费</div>
-            <div class="meta-value">$749</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">广告带来收入</div>
-            <div class="meta-value green">$4,547</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">整体 ROAS</div>
-            <div class="meta-value amber">6.07×</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">购买转化</div>
-            <div class="meta-value blue">3单</div>
-          </div>
-        </div>
-        <table class="ad-table">
-          <thead>
-            <tr>
-              <th>广告系列</th>
-              <th>花费</th>
-              <th>收入</th>
-              <th>ROAS</th>
-              <th>点击量</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="lp-url">Retargeting UP6 Sale</td>
-              <td>$108</td>
-              <td>$1,449</td>
-              <td><span class="roas-high">13.4×</span></td>
-              <td>78</td>
-            </tr>
-            <tr>
-              <td class="lp-url">UP6-Partnership</td>
-              <td>&lt;$1</td>
-              <td>$3,098</td>
-              <td><span class="roas-high">—</span></td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td class="lp-url" style="color: var(--text3);">UP6 Traffic / UT2 Traffic / UT2 Retargeting</td>
-              <td>$641</td>
-              <td>—</td>
-              <td><span style="color: var(--text3); font-size:11px;">流量系列</span></td>
-              <td>3,040</td>
-            </tr>
-            <tr class="ad-total-row">
-              <td>合计</td>
-              <td>$749</td>
-              <td>$4,547</td>
-              <td><span class="roas-mid">6.07×</span></td>
-              <td>3,118</td>
-            </tr>
-          </tbody>
-        </table>
+  <!-- Total Ad Summary -->
+  <div class="card" style="margin-top:4px">
+    <div class="card-h">广告汇总（5月）</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px">
+        <div style="font-size:11px;color:var(--t4);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em">总广告花费</div>
+        <div style="font-size:20px;font-weight:600;font-family:'JetBrains Mono',monospace">$8,399</div>
+        <div style="font-size:11px;color:var(--t4);margin-top:2px">Meta $7,853 + Google $546</div>
       </div>
+      <div style="background:var(--green-l);border:1px solid var(--green-b);border-radius:8px;padding:12px">
+        <div style="font-size:11px;color:var(--green);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;font-weight:600">广告带来收入</div>
+        <div style="font-size:20px;font-weight:600;font-family:'JetBrains Mono',monospace;color:var(--green)">$28,465</div>
+        <div style="font-size:11px;color:var(--green);margin-top:2px;opacity:.7">含 Google $9,543</div>
+      </div>
+      <div style="background:var(--amber-l);border:1px solid var(--amber-b);border-radius:8px;padding:12px">
+        <div style="font-size:11px;color:var(--amber);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;font-weight:600">综合 ROAS</div>
+        <div style="font-size:20px;font-weight:600;font-family:'JetBrains Mono',monospace;color:var(--amber)">3.39×</div>
+        <div style="font-size:11px;color:var(--amber);margin-top:2px;opacity:.7">转化广告 7.3× avg</div>
+      </div>
+      <div style="background:var(--blue-l);border:1px solid var(--blue-b);border-radius:8px;padding:12px">
+        <div style="font-size:11px;color:var(--blue);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;font-weight:600">广告驱动订单</div>
+        <div style="font-size:20px;font-weight:600;font-family:'JetBrains Mono',monospace;color:var(--blue)">24 单</div>
+        <div style="font-size:11px;color:var(--blue);margin-top:2px;opacity:.7">占总订单 40.7%</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <!-- Google Search June -->
-      <div class="card">
-        <div class="ad-platform">
-          <span class="platform-tag" style="background: rgba(234,67,53,0.12); color: #f07060; border: 1px solid rgba(234,67,53,0.3);">Google Search</span>
-          <span style="font-size: 12px; color: var(--text3);">6月1日 — 6月3日</span>
-        </div>
-        <div class="platform-meta">
-          <div class="meta-item">
-            <div class="meta-label">花费</div>
-            <div class="meta-value">$141</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">广告收入</div>
-            <div class="meta-value green">$748</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">ROAS</div>
-            <div class="meta-value amber">5.3×</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">购买转化</div>
-            <div class="meta-value blue">2单</div>
-          </div>
-        </div>
-        <table class="ad-table">
-          <thead>
-            <tr>
-              <th>广告系列</th>
-              <th>花费</th>
-              <th>点击</th>
-              <th>转化次数</th>
-              <th>转化价值</th>
-              <th>ROAS</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="lp-url">UT2 Search (US)</td>
-              <td>$141</td>
-              <td>168</td>
-              <td>2</td>
-              <td>$748</td>
-              <td><span class="roas-mid">5.3×</span></td>
-            </tr>
-            <tr class="ad-total-row">
-              <td>合计</td>
-              <td>$141</td>
-              <td>168</td>
-              <td>2</td>
-              <td>$748</td>
-              <td><span class="roas-mid">5.3×</span></td>
-            </tr>
-          </tbody>
-        </table>
-        <div style="margin-top: 12px; padding: 10px 12px; background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 8px; font-size: 12px; color: var(--blue);">
-          💡 搜索广告转化价值 $399 + $349 = $748，转化率 1.19%（vs 5月末 1.02%），势头良好。
-        </div>
+<!-- Insights -->
+<div class="section">
+  <div class="sec-label">重点问题与行动建议</div>
+  <div class="insight-grid">
+    <div class="insight red">
+      <div class="insight-lbl">🔴 最大漏点</div>
+      <p>UP6产品页 275 次加购仅 12 次成交（4.4%），弃单 263 次。建议增加信任背书（评分/媒体）、减少结账跳转步骤，并部署弃单挽回邮件序列。</p>
+    </div>
+    <div class="insight red">
+      <div class="insight-lbl">🔴 零转化页面</div>
+      <p>UC450 Pro 21 次加购、日文 UT2 页 17 次加购均为 0% 转化。需排查 UC450 Pro 库存/结账报错，以及日文市场结账流程与本地支付方式。</p>
+    </div>
+    <div class="insight amber">
+      <div class="insight-lbl">🟡 流量质量下滑</div>
+      <p>访问量+13% 但 GMV -33%，广告流量系列（UP6/UT2 Traffic）带来 4 万次点击，需检查流量广告是否吸引了错误受众，考虑对流量广告再分层定向。</p>
+    </div>
+    <div class="insight green">
+      <div class="insight-lbl">✅ 搜索广告爆发</div>
+      <p>Google Search 上线仅 10 天，ROAS 17.5×，CPA $78——远优于 Meta 转化广告（$182 CPA）。强烈建议提升 $50/日 预算上限并扩展 UP6 关键词组。</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- /monthly -->
+
+<!-- ═══════════════════════════════════════════ WEEKLY ═══ -->
+<div id="tab-weekly" class="hidden">
+
+<!-- KPI -->
+<div class="section">
+  <div class="sec-label">核心销售数据 <span style="font-size:10px;color:var(--t4);font-weight:400;margin-left:4px">对比5月1–4日同期</span></div>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-top"><span class="kpi-label">GMV</span><div class="kpi-icon" style="background:var(--green-l)">📈</div></div>
+      <div class="kpi-val">$13,806</div>
+      <div class="kpi-footer"><span class="delta up">▲ 60.3%</span><span class="kpi-vs">同期 $8,613</span></div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-top"><span class="kpi-label">订单量</span><div class="kpi-icon" style="background:var(--green-l)">📦</div></div>
+      <div class="kpi-val">15 单</div>
+      <div class="kpi-footer"><span class="delta up">▲ 50.0%</span><span class="kpi-vs">同期 10单</span></div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-top"><span class="kpi-label">客单价 AOV</span><div class="kpi-icon" style="background:var(--green-l)">💰</div></div>
+      <div class="kpi-val">$1,026</div>
+      <div class="kpi-footer"><span class="delta up">▲ 19.4%</span><span class="kpi-vs">同期 $859</span></div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-top"><span class="kpi-label">访问量</span><div class="kpi-icon" style="background:var(--red-l)">👆</div></div>
+      <div class="kpi-val">7,370</div>
+      <div class="kpi-footer"><span class="delta dn">▼ 32.2%</span><span class="kpi-vs">同期 10,863</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="alert good">
+  <span class="alert-icon">✅</span>
+  <div>开局强劲——访问量虽下滑 32%，GMV 反涨 60%。加购转化率 <b>1.76%</b>（高于5月全月 1.02%），转化质量明显提升。</div>
+</div>
+
+<!-- Products + Funnel -->
+<div class="g2 section">
+  <div class="card">
+    <div class="card-h">产品销售明细（6/1–6/4）</div>
+
+    <div class="prod-item">
+      <div class="prod-rank r1">1</div>
+      <div class="prod-info">
+        <div class="prod-name">UnifyDrive UP6 <span class="badge badge-blue">78.7%</span></div>
+        <div class="prod-bar-wrap"><div class="prod-bar-fill" style="width:78.7%;background:var(--blue)"></div></div>
+      </div>
+      <div class="prod-nums">
+        <div class="prod-rev">$10,863</div>
+        <div class="prod-units">7 台 · $1,552/台</div>
       </div>
     </div>
 
-    <!-- Weekly insights -->
-    <div class="section">
-      <div class="section-title">本周重点 & 下步行动</div>
-      <div class="insight-grid">
-        <div class="insight-item green">
-          <div class="insight-label">✅ 正向信号</div>
-          首页加购转化率13.6%（44加购6成交），较5月显著改善，说明首页优化生效，可继续强化CTA和社会证明。
-        </div>
-        <div class="insight-item red">
-          <div class="insight-label">🔴 持续问题</div>
-          UP6产品页仍是最大漏点（42加购仅2成交，4.8%），弃单依旧集中在此。需A/B测试页面信任元素和定价展示。
-        </div>
-        <div class="insight-item amber">
-          <div class="insight-label">🟡 待优化</div>
-          UP6 Exclusive Offer页6次加购0成交，专属优惠页反而无转化——检查优惠码是否有效，或页面加载/跳转是否正常。
-        </div>
-        <div class="insight-item blue">
-          <div class="insight-label">📊 广告观察</div>
-          Meta ROAS 本周6.1×（5月整月2.4×），Partnership效果突出。搜索广告ROAS 5.3×（低于5月17.5×），属于月初正常波动，持续观察。
-        </div>
+    <div class="prod-item">
+      <div class="prod-rank">2</div>
+      <div class="prod-info">
+        <div class="prod-name">UnifyDrive UT2</div>
+        <div class="prod-bar-wrap"><div class="prod-bar-fill" style="width:21.3%;background:var(--purple)"></div></div>
+      </div>
+      <div class="prod-nums">
+        <div class="prod-rev">$2,943</div>
+        <div class="prod-units">7 台 · $420/台</div>
       </div>
     </div>
 
-  </div><!-- /tab-weekly -->
+    <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border)">
+      <div style="display:flex;gap:8px;font-size:12px;color:var(--t3);margin-bottom:10px">
+        <span>合计：<b style="color:var(--t1)">14 台</b></span>
+        <span>·</span>
+        <span>总收入：<b style="color:var(--t1)">$13,806</b></span>
+      </div>
+      <div class="alert info" style="margin:0;padding:10px 12px">
+        <span class="alert-icon">💡</span>
+        <div style="font-size:12px">UP6 与 UT2 销量并列（各7台），UP6 客单价高出 3.7× 仍是收入绝对主力</div>
+      </div>
+    </div>
+  </div>
 
-</div><!-- /wrap -->
+  <div class="card">
+    <div class="card-h">转化漏斗</div>
+    <div class="funnel-step">
+      <div class="funnel-num">7,370</div>
+      <div class="funnel-label">总访问量</div>
+      <span class="funnel-rate rate-neu">—</span>
+    </div>
+    <div class="funnel-arrow">↓ 加购率 1.76% ↑ vs 5月 1.02%</div>
+    <div class="funnel-step" style="border-color:var(--green-b);background:var(--green-l)">
+      <div class="funnel-num" style="color:var(--green)">129</div>
+      <div class="funnel-label">加购访问</div>
+      <span class="funnel-rate rate-good">1.76%</span>
+    </div>
+    <div class="funnel-arrow">↓ 进入结账 63.6%（5月 58.6%）</div>
+    <div class="funnel-step">
+      <div class="funnel-num">82</div>
+      <div class="funnel-label">到达结账页</div>
+      <span class="funnel-rate rate-good">63.6%</span>
+    </div>
+    <div class="funnel-arrow">↓ 完成结账 14.6%（5月 11.5%）</div>
+    <div class="funnel-step" style="border-color:var(--green-b);background:var(--green-l)">
+      <div class="funnel-num" style="color:var(--green)">12</div>
+      <div class="funnel-label">完成结账</div>
+      <span class="funnel-rate rate-good">14.6%</span>
+    </div>
+    <div class="abandon-chips">
+      <span class="chip chip-green">加购率 +0.74pp ↑</span>
+      <span class="chip chip-amber">结账弃单 85.4%</span>
+      <span class="chip chip-green">加购流失降至 36.4%</span>
+    </div>
+  </div>
+</div>
 
+<!-- Landing -->
+<div class="section card">
+  <div class="card-h">落地页弃单分布（6/1–6/4）</div>
+  <table class="tbl">
+    <thead><tr>
+      <th>落地页</th><th class="r">加购</th><th class="r">成交</th><th class="r">弃单</th><th class="r">转化率</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><span class="page-name">首页</span><span class="page-tag tag-green">明显好转</span></td><td class="r">44</td><td class="r">6</td><td class="r">38</td><td class="r" style="color:var(--green)">13.6%</td></tr>
+      <tr><td><span class="page-name">UP6 产品页</span><span class="page-tag tag-red">仍是漏点</span></td><td class="r">42</td><td class="r">2</td><td class="r" style="color:var(--red);font-weight:600">40</td><td class="r" style="color:var(--red)">4.8%</td></tr>
+      <tr><td><span class="page-name">UT2 产品页</span></td><td class="r">29</td><td class="r">1</td><td class="r">28</td><td class="r">3.4%</td></tr>
+      <tr><td><span class="page-name">UP6 Exclusive Offer 页</span><span class="page-tag tag-amber">0% 转化</span></td><td class="r">6</td><td class="r">0</td><td class="r">6</td><td class="r" style="color:var(--red)">0%</td></tr>
+      <tr><td><span class="page-name">日文 UT2 页 (/ja-jp)</span></td><td class="r">1</td><td class="r">0</td><td class="r">1</td><td class="r">—</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ─────────── ADS ─────────── -->
+<div class="section">
+  <div class="sec-label">广告投放数据 — Meta Ads</div>
+
+  <!-- Meta Traffic June -->
+  <div class="ad-block">
+    <div class="ad-header">
+      <span class="platform-pill pill-meta">Meta</span>
+      <span class="ad-type-tag type-traffic">流量广告</span>
+      <span style="font-size:13px;font-weight:500;color:var(--t2)">UP6 · UT2 Traffic</span>
+      <span class="ad-period">6月1日 — 6月3日</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr)">
+      <div class="ad-meta-item"><div class="am-label">总花费</div><div class="am-val">$286</div></div>
+      <div class="ad-meta-item"><div class="am-label">总点击</div><div class="am-val blue">2,635</div></div>
+      <div class="ad-meta-item"><div class="am-label">落地浏览</div><div class="am-val">2,556</div></div>
+      <div class="ad-meta-item"><div class="am-label">均CPC</div><div class="am-val">$0.11</div></div>
+      <div class="ad-meta-item"><div class="am-label">均CPM</div><div class="am-val">$6.73</div></div>
+    </div>
+    <div class="ad-table-wrap">
+      <table class="tbl">
+        <thead><tr>
+          <th>系列名称</th><th class="r">花费</th><th class="r">点击</th><th class="r">CTR</th><th class="r">CPC</th><th class="r">CPM</th><th class="r">落地浏览</th><th class="r">频次</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>UT2 Traffic (5/13)</td><td class="r">$143</td><td class="r">1,227</td><td class="r">6.35%</td><td class="r">$0.12</td><td class="r">$6.90</td><td class="r">1,200</td><td class="r">1.07</td></tr>
+          <tr><td>UP6 Traffic (5/14)</td><td class="r">$143</td><td class="r">1,408</td><td class="r">7.17%</td><td class="r">$0.10</td><td class="r">$6.57</td><td class="r">1,356</td><td class="r">1.11</td></tr>
+          <tr class="total-row"><td>合计</td><td class="r">$286</td><td class="r">2,635</td><td class="r">—</td><td class="r">$0.11</td><td class="r">$6.73</td><td class="r">2,556</td><td class="r">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Meta Purchase June -->
+  <div class="ad-block">
+    <div class="ad-header">
+      <span class="platform-pill pill-meta">Meta</span>
+      <span class="ad-type-tag type-purchase">转化广告</span>
+      <span style="font-size:13px;font-weight:500;color:var(--t2)">再营销 · Purchase · Partnership</span>
+      <span class="ad-period">6月1日 — 6月3日</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr)">
+      <div class="ad-meta-item"><div class="am-label">总花费</div><div class="am-val">$463</div></div>
+      <div class="ad-meta-item"><div class="am-label">购买转化</div><div class="am-val blue">3 单</div></div>
+      <div class="ad-meta-item"><div class="am-label">广告收入</div><div class="am-val green">$4,547</div></div>
+      <div class="ad-meta-item"><div class="am-label">整体 ROAS</div><div class="am-val amber">9.82×</div></div>
+      <div class="ad-meta-item"><div class="am-label">均 CPA</div><div class="am-val">$154</div></div>
+    </div>
+    <div class="ad-table-wrap">
+      <table class="tbl">
+        <thead><tr>
+          <th>系列名称</th><th class="r">花费</th><th class="r">转化</th><th class="r">收入</th><th class="r">ROAS</th><th class="r">CPA</th><th class="r">点击</th><th class="r">CPM</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Retargeting UP6 Sale</td><td class="r">$108</td><td class="r">1</td><td class="r">$1,449</td><td class="r"><span class="roas-tag roas-hi">13.4×</span></td><td class="r">$108</td><td class="r">78</td><td class="r">$21.10</td></tr>
+          <tr><td>Retargeting UT2 Sale</td><td class="r">$56</td><td class="r">0</td><td class="r">—</td><td class="r"><span class="roas-tag roas-na">—</span></td><td class="r">—</td><td class="r">33</td><td class="r">$32.49</td></tr>
+          <tr><td>UP6 Purchase (5/20)</td><td class="r">$299</td><td class="r">0</td><td class="r">—</td><td class="r"><span class="roas-tag roas-na">—</span></td><td class="r">—</td><td class="r">372</td><td class="r">$31.21</td></tr>
+          <tr><td>UP6 Partnership <span class="page-tag tag-green">爆发</span></td><td class="r">&lt;$1</td><td class="r">2</td><td class="r">$3,098</td><td class="r"><span class="roas-tag roas-hi">超高</span></td><td class="r">—</td><td class="r">—</td><td class="r">$10.00</td></tr>
+          <tr class="total-row"><td>合计</td><td class="r">$463</td><td class="r">3</td><td class="r">$4,547</td><td class="r"><span class="roas-tag roas-hi">9.82×</span></td><td class="r">$154</td><td class="r">483</td><td class="r">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec-label" style="margin-top:20px">广告投放数据 — Google Ads</div>
+
+  <!-- Google Search June -->
+  <div class="ad-block">
+    <div class="ad-header">
+      <span class="platform-pill pill-google">Google</span>
+      <span class="ad-type-tag type-purchase">搜索广告</span>
+      <span style="font-size:13px;font-weight:500;color:var(--t2)">UT2 Search · US</span>
+      <span class="ad-period">6月1日 — 6月3日</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr)">
+      <div class="ad-meta-item"><div class="am-label">花费</div><div class="am-val">$141</div></div>
+      <div class="ad-meta-item"><div class="am-label">购买转化</div><div class="am-val blue">2 单</div></div>
+      <div class="ad-meta-item"><div class="am-label">广告收入</div><div class="am-val green">$748</div></div>
+      <div class="ad-meta-item"><div class="am-label">ROAS</div><div class="am-val amber">5.3×</div></div>
+      <div class="ad-meta-item"><div class="am-label">CVR</div><div class="am-val">1.19%</div></div>
+    </div>
+    <div class="ad-table-wrap">
+      <table class="tbl">
+        <thead><tr>
+          <th>系列名称</th><th class="r">花费</th><th class="r">点击</th><th class="r">均CPC</th><th class="r">转化</th><th class="r">转化价值明细</th><th class="r">CVR</th><th class="r">ROAS</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td>UT2 Search (US)</td>
+            <td class="r">$141</td><td class="r">168</td><td class="r">$0.84</td><td class="r">2</td>
+            <td class="r" style="font-size:11px;color:var(--t3)">$399 + $349</td>
+            <td class="r">1.19%</td>
+            <td class="r"><span class="roas-tag roas-mid">5.3×</span></td>
+          </tr>
+          <tr class="total-row"><td>合计</td><td class="r">$141</td><td class="r">168</td><td class="r">$0.84</td><td class="r">2</td><td class="r">$748</td><td class="r">1.19%</td><td class="r"><span class="roas-tag roas-mid">5.3×</span></td></tr>
+        </tbody>
+      </table>
+      <div class="alert info" style="margin-top:12px;margin-bottom:0">
+        <span class="alert-icon">📊</span>
+        <div style="font-size:12px">5月末 ROAS 17.5×（月末爆发期），6月初 5.3× 属正常波动；转化率 1.19% 略高于5月全月均值 1.02%，趋势正向。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weekly Total -->
+  <div class="card" style="margin-top:4px">
+    <div class="card-h">广告汇总（6/1–6/3）</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px">
+        <div style="font-size:11px;color:var(--t4);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em">总广告花费</div>
+        <div style="font-size:20px;font-weight:600;font-family:'JetBrains Mono',monospace">$890</div>
+        <div style="font-size:11px;color:var(--t4);margin-top:2px">Meta $749 + Google $141</div>
+      </div>
+      <div style="background:var(--green-l);border:1px solid var(--green-b);border-radius:8px;padding:12px">
+        <div style="font-size:11px;color:var(--green);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;font-weight:600">广告带来收入</div>
+        <div style="font-size:20px;font-weight:600;font-family:'JetBrains Mono',monospace;color:var(--green)">$5,295</div>
+        <div style="font-size:11px;color:var(--green);margin-top:2px;opacity:.7">含 Google $748</div>
+      </div>
+      <div style="background:var(--amber-l);border:1px solid var(--amber-b);border-radius:8px;padding:12px">
+        <div style="font-size:11px;color:var(--amber);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;font-weight:600">综合 ROAS</div>
+        <div style="font-size:20px;font-weight:600;font-family:'JetBrains Mono',monospace;color:var(--amber)">5.95×</div>
+        <div style="font-size:11px;color:var(--amber);margin-top:2px;opacity:.7">大幅优于5月整月 3.39×</div>
+      </div>
+      <div style="background:var(--blue-l);border:1px solid var(--blue-b);border-radius:8px;padding:12px">
+        <div style="font-size:11px;color:var(--blue);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;font-weight:600">广告驱动订单</div>
+        <div style="font-size:20px;font-weight:600;font-family:'JetBrains Mono',monospace;color:var(--blue)">5 单</div>
+        <div style="font-size:11px;color:var(--blue);margin-top:2px;opacity:.7">占总订单 33.3%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Weekly Insights -->
+<div class="section">
+  <div class="sec-label">本周重点与行动建议</div>
+  <div class="insight-grid">
+    <div class="insight green">
+      <div class="insight-lbl">✅ 首页转化大幅改善</div>
+      <p>首页加购转化率 13.6%（44 加购 6 成交），5月全月仅 6%。说明首页近期改动生效，建议持续强化首屏 CTA 和产品对比模块。</p>
+    </div>
+    <div class="insight red">
+      <div class="insight-lbl">🔴 UP6 产品页持续漏单</div>
+      <p>42 次加购仅 2 次成交（4.8%），是最大单点损失。建议本周内启动 A/B 测试：对比现有页面 vs 增加「信任背书区」版本。</p>
+    </div>
+    <div class="insight amber">
+      <div class="insight-lbl">🟡 Exclusive Offer 页失效</div>
+      <p>UP6 专属优惠页 6 次加购 0 成交，专门的优惠页反而无转化，需立即检查优惠码有效性、倒计时逻辑与结账跳转路径。</p>
+    </div>
+    <div class="insight blue">
+      <div class="insight-lbl">📊 Partnership 渠道异常高效</div>
+      <p>UP6 Partnership 花费不足 $1 却带来 2 单 $3,098 收入，ROAS 超高。需确认数据归因是否准确，若有效应尽快扩大该渠道合作规模。</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- /weekly -->
+
+</div><!-- page -->
 <script>
-function switchTab(tab) {
-  const monthly = document.getElementById('tab-monthly');
-  const weekly = document.getElementById('tab-weekly');
-  const btns = document.querySelectorAll('.tab-btn');
-  const label = document.getElementById('period-label');
-
-  if (tab === 'monthly') {
-    monthly.classList.remove('hidden');
-    weekly.classList.add('hidden');
-    btns[0].classList.add('active');
-    btns[1].classList.remove('active');
-    label.innerHTML = '<span class="period-dot"></span> 2026年5月1日 — 5月31日';
-  } else {
-    weekly.classList.remove('hidden');
-    monthly.classList.add('hidden');
-    btns[1].classList.add('active');
-    btns[0].classList.remove('active');
-    label.innerHTML = '<span class="period-dot" style="background: var(--amber);"></span> 2026年6月1日 — 6月4日';
-  }
+function show(t){
+  document.getElementById('tab-monthly').classList.toggle('hidden', t!=='monthly');
+  document.getElementById('tab-weekly').classList.toggle('hidden', t!=='weekly');
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',(t==='monthly'&&i===0)||(t==='weekly'&&i===1)));
+  const chip = document.getElementById('period-chip');
+  const dot = chip.querySelector('.dot');
+  const txt = document.getElementById('period-txt');
+  if(t==='monthly'){dot.style.background='var(--green)';txt.textContent='May 1 – May 31, 2026';}
+  else{dot.style.background='var(--amber)';txt.textContent='Jun 1 – Jun 4, 2026';}
 }
 </script>
 </body>
