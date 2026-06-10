@@ -3,417 +3,493 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UnifyDrive · 运营数据存档</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='68' font-size='52' font-weight='800' fill='white' text-anchor='middle' font-family='system-ui'>U</text></svg>">
-<title>UnifyDrive 运营周报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+  :root{
+    --bg:#F1F4F1;
+    --surface:#FFFFFF;
+    --ink:#13201A;
+    --ink-soft:#5B6B62;
+    --ink-faint:#92A097;
+    --line:#E3E8E3;
+    --line-strong:#D0D8D1;
+    --green:#149254;
+    --green-deep:#0D6A3C;
+    --green-bright:#19B062;
+    --green-soft:#E4F2E9;
+    --amber:#B07418;
+    --amber-soft:#F8EEDA;
+    --indigo:#4338ca;
+    --indigo-soft:#eef2ff;
+    --indigo-border:#a5b4fc;
+    --shadow:0 1px 2px rgba(19,32,26,.04), 0 8px 24px -12px rgba(19,32,26,.10);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding:0 20px 80px;
+  }
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-feature-settings:"tnum" 1}
+  .wrap{max-width:880px;margin:0 auto}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 0 18px;border-bottom:1px solid var(--line);
+    position:sticky;top:0;background:linear-gradient(var(--bg) 78%, transparent);
+    z-index:20;flex-wrap:wrap;gap:10px;
+  }
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:18px;letter-spacing:-.01em}
+  .brand .u{color:var(--ink)}
+  .brand .d{color:var(--green)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green-bright);box-shadow:0 0 0 3px var(--green-soft);position:relative}
+  .dot::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:1px solid var(--green-bright);opacity:.4;animation:ping 2.6s ease-out infinite}
+  @keyframes ping{0%{transform:scale(.7);opacity:.5}80%,100%{transform:scale(2.4);opacity:0}}
+  .topmeta{display:flex;align-items:center;gap:18px;font-size:12px;color:var(--ink-soft)}
+  .topmeta b{color:var(--ink);font-weight:600}
 
-  :root {
-    --ink: #171717;
-    --ink2: #444;
-    --ink3: #999;
-    --bg: #fafaf9;
-    --card: #fff;
-    --border: #e0ded8;
-    --hover: #f5f4f1;
-    --blue: #2563eb;
-    --green: #0d6b36;
-    --green-bg: #e3f5ea;
-    --blue-bg: #eff6ff;
-    --mo: #4338ca;
-    --mo-bg: #eef2ff;
-    --mo-border: #a5b4fc;
-  }
+  .hero{padding:40px 0 8px}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--green);text-transform:uppercase;font-weight:500}
+  h1{font-size:clamp(30px,6vw,46px);font-weight:700;letter-spacing:-.025em;line-height:1.02;margin:14px 0 10px}
+  .sub{font-size:15px;color:var(--ink-soft);max-width:42ch}
 
-  body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    font-size: 15px;
-    line-height: 1.55;
-    padding: 0 24px 80px;
-    -webkit-font-smoothing: antialiased;
+  .kpis{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+    border-radius:var(--radius);overflow:hidden;margin:30px 0 8px;
   }
-  .page { max-width: 720px; margin: 0 auto; }
+  .kpi{background:var(--surface);padding:18px 18px 16px}
+  .kpi .lbl{font-size:11px;color:var(--ink-soft);letter-spacing:.02em;display:flex;align-items:center;gap:6px}
+  .kpi .val{font-family:'JetBrains Mono',monospace;font-size:25px;font-weight:500;letter-spacing:-.02em;margin-top:8px;line-height:1}
+  .kpi .val small{font-size:14px;color:var(--ink-faint);font-weight:400}
+  .delta{display:inline-flex;align-items:center;gap:3px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:2px 6px;border-radius:6px}
+  .delta.up{color:var(--green-deep);background:var(--green-soft)}
+  .delta.down{color:var(--amber);background:var(--amber-soft)}
 
-  /* ── topbar ── */
-  .topbar {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 32px 0 16px; margin-bottom: 48px;
-    border-bottom: 2px solid var(--ink);
+  .trend{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px 16px;margin:26px 0 36px;box-shadow:var(--shadow);
   }
-  .topbar .logo { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
-  .topbar .logo span { color: var(--ink); }
-  .topbar .updated {
-    font-size: 12px; color: var(--ink3); font-weight: 500;
+  .trend-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:8px}
+  .trend-head .t{font-size:13px;font-weight:600;letter-spacing:.01em}
+  .trend-head .t span{color:var(--ink-faint);font-weight:400}
+  .legend{display:flex;gap:14px;font-size:11px;color:var(--ink-soft)}
+  .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+  .chart{
+    display:flex;align-items:flex-end;gap:clamp(8px,2.4vw,22px);
+    height:188px;padding-top:26px;position:relative;
   }
-  .topbar .updated strong {
-    font-family: 'JetBrains Mono', monospace; color: var(--ink); font-weight: 600;
+  .col{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;cursor:pointer;position:relative;min-width:0}
+  .bar-wrap{width:100%;display:flex;align-items:flex-end;justify-content:center;height:100%;position:relative}
+  .bar{
+    width:100%;max-width:46px;background:var(--green);border-radius:5px 5px 2px 2px;
+    transform-origin:bottom;transition:filter .15s, background .15s;
+    height:var(--h);animation:grow .7s cubic-bezier(.2,.8,.2,1) both;
   }
+  .bar.warn{background:var(--amber)}
+  .bar.partial{
+    background:repeating-linear-gradient(135deg,var(--green) 0 7px,#3fb578 7px 9px);
+    opacity:.92;
+  }
+  .col:hover .bar{filter:brightness(1.08) saturate(1.1)}
+  .col:focus-visible{outline:none}
+  .col:focus-visible .bar{outline:2px solid var(--ink);outline-offset:2px}
+  @keyframes grow{from{transform:scaleY(0);opacity:.3}to{transform:scaleY(1);opacity:1}}
+  .proj{position:absolute;left:50%;transform:translateX(-50%);width:54px;border-top:1.5px dashed var(--amber);height:0}
+  .proj .ptag{position:absolute;top:-17px;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);white-space:nowrap;font-weight:500}
+  .col .xlabel{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);white-space:nowrap}
+  .col .xval{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink);font-weight:500;margin-top:2px}
+  .tip{
+    position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(4px);
+    background:var(--ink);color:#fff;border-radius:8px;padding:9px 11px;font-size:11px;line-height:1.45;
+    white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .14s,transform .14s;z-index:10;
+    box-shadow:0 8px 20px -6px rgba(0,0,0,.4);
+  }
+  .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--ink)}
+  .tip .tg{font-family:'JetBrains Mono',monospace}
+  .tip b{color:var(--green-bright)}
+  .col:hover .tip,.col:focus-visible .tip{opacity:1;transform:translateX(-50%) translateY(0)}
 
-  /* ── hero ── */
-  .hero { margin-bottom: 48px; }
-  .hero .eyebrow {
-    font-size: 11px; font-weight: 700; color: var(--ink3);
-    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px;
+  .toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:12px}
+  .seg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:3px}
+  .seg button{
+    font-family:inherit;font-size:13px;color:var(--ink-soft);background:none;border:none;cursor:pointer;
+    padding:6px 14px;border-radius:7px;font-weight:500;transition:.15s;
   }
-  .hero h1 {
-    font-size: 38px; font-weight: 800; letter-spacing: -0.035em;
-    line-height: 1.1; margin-bottom: 10px;
-  }
-  .hero p { font-size: 15px; color: var(--ink2); font-weight: 500; }
+  .seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .toolbar .count{font-size:12px;color:var(--ink-faint);font-family:'JetBrains Mono',monospace}
 
-  /* ── month accordion ── */
-  details {
-    margin-bottom: 10px;
-    background: var(--card);
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: border-color .15s;
+  .month{margin-bottom:14px}
+  .mhead{
+    width:100%;display:flex;align-items:center;gap:14px;background:none;border:none;cursor:pointer;
+    padding:14px 4px 12px;font-family:inherit;text-align:left;color:var(--ink);
   }
-  details[open] {
-    border-color: #c0beb6;
-  }
+  .mhead .my{font-size:17px;font-weight:600;letter-spacing:-.01em;font-family:'JetBrains Mono',monospace}
+  .mhead .mline{flex:1;height:1px;background:var(--line)}
+  .mhead .mn{font-size:12px;color:var(--ink-soft);font-family:'JetBrains Mono',monospace}
+  .mhead .gmv{font-size:12px;color:var(--ink);font-family:'JetBrains Mono',monospace;font-weight:500}
+  .chev{transition:transform .25s;color:var(--ink-faint)}
+  .mhead[aria-expanded="false"] .chev{transform:rotate(-90deg)}
+  .rows{display:grid;transition:grid-template-rows .3s ease, opacity .25s;grid-template-rows:1fr;opacity:1}
+  .mhead[aria-expanded="false"] + .rows{grid-template-rows:0fr;opacity:0}
+  .rows-inner{overflow:hidden;min-height:0}
 
-  summary {
-    display: flex; align-items: center; gap: 12px;
-    padding: 16px 22px; cursor: pointer;
-    user-select: none; list-style: none;
+  .row{
+    display:grid;grid-template-columns:148px 1fr auto;align-items:center;gap:16px;
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:15px 18px;margin-bottom:8px;text-decoration:none;color:inherit;
+    transition:border-color .15s, box-shadow .15s, transform .15s;cursor:pointer;
   }
-  summary::-webkit-details-marker { display: none; }
+  .row:hover{border-color:var(--line-strong);box-shadow:var(--shadow);transform:translateY(-1px)}
+  .row.flash{animation:flash 1.4s ease}
+  @keyframes flash{0%,100%{box-shadow:var(--shadow)}25%{box-shadow:0 0 0 2px var(--green)}}
+  .period{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink-soft);white-space:nowrap}
+  .period .tag-inline{display:block;font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:.02em}
+  .metrics{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .metric{display:flex;flex-direction:column;gap:2px}
+  .metric .m-l{font-size:10px;color:var(--ink-faint);letter-spacing:.04em}
+  .metric .m-v{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:500;letter-spacing:-.01em}
+  .metric .m-v.big{font-size:17px}
+  .badges{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .badge{
+    font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500;white-space:nowrap;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .badge.green{background:var(--green-soft);color:var(--green-deep)}
+  .badge.amber{background:var(--amber-soft);color:var(--amber)}
+  .badge.indigo{background:var(--indigo-soft);color:var(--indigo);border:1.5px solid var(--indigo-border)}
+  .badge.ghost{background:#F2F4F2;color:var(--ink-soft)}
+  .open{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-faint);font-weight:500;white-space:nowrap}
+  .row:hover .open{color:var(--green)}
+  .desc-text{font-size:13px;color:var(--ink-soft);line-height:1.5}
 
-  summary .month-name {
-    font-size: 15px; font-weight: 700; letter-spacing: -0.01em;
-  }
-  summary .count {
-    font-size: 12px; font-weight: 600; color: var(--ink3);
-    margin-left: auto; margin-right: 4px;
-  }
-  summary .chevron {
-    width: 22px; height: 22px; border-radius: 6px;
-    background: #eeece6; display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 700; color: var(--ink3);
-    transition: all .15s; flex-shrink: 0;
-  }
-  details[open] summary .chevron {
-    background: var(--ink); color: #fff;
-  }
+  .row.mreport{background:linear-gradient(180deg,#fff, #fbfdfb);border-color:var(--line-strong)}
 
-  /* ── entry ── */
-  .entry-list { padding: 2px 16px 18px; }
+  .foot{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
-  .entry {
-    display: flex; align-items: center; gap: 18px;
-    padding: 14px 18px; border-radius: 9px;
-    text-decoration: none; color: inherit;
-    transition: background .12s;
-    border: 1px solid transparent;
+  @media (max-width:640px){
+    .kpis{grid-template-columns:1fr 1fr}
+    .row{grid-template-columns:1fr;gap:12px}
+    .open{display:none}
+    .metrics{gap:18px}
+    .trend-head{flex-direction:column;align-items:flex-start;gap:9px}
+    .legend{display:none}
+    .chart{gap:6px}
+    .col .tip{display:none}
+    h1{margin-top:10px}
   }
-  .entry:hover {
-    background: var(--hover);
-    border-color: #e8e6e0;
-  }
-
-  .entry .date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px; font-weight: 600; color: var(--ink2);
-    min-width: 140px; flex-shrink: 0;
-  }
-
-  .entry .kpis {
-    display: flex; gap: 24px; align-items: baseline;
-  }
-  .entry .kv {
-    display: flex; align-items: baseline; gap: 6px;
-  }
-  .entry .kv.gmv {
-    min-width: 120px;
-  }
-  .entry .kv.orders {
-    min-width: 64px;
-  }
-  .entry .kv .v {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700; font-size: 17px; color: var(--ink);
-  }
-  .entry .kv .v.gr { color: var(--green); }
-  .entry .kv .lb {
-    font-size: 11px; font-weight: 600; color: var(--ink3);
-    text-transform: uppercase; letter-spacing: 0.04em;
-  }
-
-  .entry .desc {
-    font-size: 14px; font-weight: 500; color: var(--ink2);
-    flex: 1;
-  }
-
-  .entry .tag {
-    font-size: 10px; font-weight: 700;
-    padding: 3px 8px; border-radius: 5px;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    flex-shrink: 0;
-    background: #eeece6; color: var(--ink3);
-  }
-  .entry .tag.mo { background: var(--mo-bg); color: var(--mo); border: 1.5px solid var(--mo-border); font-size: 11px; padding: 4px 10px; }
-  .entry .tag.gr { background: var(--green-bg); color: var(--green); }
-
-  .entry .arr {
-    color: #ccc; font-size: 14px; flex-shrink: 0;
-    opacity: 0; transition: all .12s;
-  }
-  .entry:hover .arr { opacity: 1; }
-
-  /* ── footer ── */
-  .footer {
-    margin-top: 44px; padding-top: 20px;
-    border-top: 2px solid var(--ink);
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 12px; font-weight: 500; color: var(--ink3);
-  }
-  .footer a { color: var(--ink2); text-decoration: none; font-weight: 600; }
-  .footer a:hover { color: var(--ink); }
-
-  @media (max-width: 600px) {
-    body { padding: 0 14px 60px; }
-    .hero h1 { font-size: 28px; }
-    .entry { flex-wrap: wrap; gap: 8px; padding: 13px 15px; }
-    .entry .date { min-width: auto; width: 100%; }
-    .entry .kpis { gap: 14px; flex-wrap: wrap; }
-    .entry .arr { display: none; }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .dot::after{display:none}
   }
 </style>
 </head>
 <body>
-<div class="page">
+<div class="wrap">
 
-  <div class="topbar">
-    <span class="logo">Unify<span>Drive</span></span>
-    <span class="updated">最后更新 <strong>2026-06-04</strong></span>
-  </div>
+  <header class="topbar">
+    <div class="brand"><span class="dot"></span><span class="u">Unify</span><span class="d">Drive</span></div>
+    <div class="topmeta">
+      <span>最后更新 <b class="mono">2026-06-04</b></span>
+      <span>共 <b class="mono">19</b> 期</span>
+    </div>
+  </header>
 
-  <div class="hero">
-    <div class="eyebrow">Weekly &amp; Monthly Reports</div>
+  <section class="hero">
+    <div class="eyebrow">Weekly &amp; Monthly Performance Ledger</div>
     <h1>运营周报</h1>
-    <p>运营数据与广告投放数据 · 共 19 期</p>
+    <p class="sub">运营数据与广告投放数据 · 周报 / 月报归档。点击走势图任意一周可定位到对应报告。</p>
+  </section>
+
+  <section class="kpis" aria-label="近期关键指标">
+    <div class="kpi">
+      <div class="lbl">近 5 周 GMV</div>
+      <div class="val">$58,591</div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">累计订单</div>
+      <div class="val">69 <small>单</small></div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">平均客单价</div>
+      <div class="val">$849</div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">最新完整周环比</div>
+      <div class="val" style="font-size:20px;display:flex;align-items:center;gap:8px;margin-top:11px">
+        <span class="delta up">▲ 224%</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="trend">
+    <div class="trend-head">
+      <div class="t">GMV 走势 <span>· 近 5 周</span></div>
+      <div class="legend">
+        <span><i style="background:var(--green)"></i>完整周</span>
+        <span><i style="background:var(--amber)"></i>异常周</span>
+        <span><i style="background:repeating-linear-gradient(135deg,var(--green) 0 4px,#3fb578 4px 6px)"></i>进行中</span>
+      </div>
+    </div>
+    <div class="chart" id="chart"></div>
+  </section>
+
+  <div class="toolbar">
+    <div class="seg" role="group" aria-label="筛选报告类型">
+      <button data-filter="all" aria-pressed="true">全部</button>
+      <button data-filter="weekly" aria-pressed="false">周报</button>
+      <button data-filter="monthly" aria-pressed="false">月报</button>
+    </div>
+    <div class="count" id="count"></div>
   </div>
 
-  <!-- Jun 2026 -->
-  <details open>
-    <summary>
-      <span class="month-name">June 2026</span>
-      <span class="count">1 期</span>
-      <span class="chevron">+</span>
-    </summary>
-    <div class="entry-list">
-      <a class="entry" href="weekly/2026-06-01.html">
-        <span class="date">06-01 — 06-04</span>
-        <div class="kpis">
-          <span class="kv gmv"><span class="v">$13,806</span> <span class="lb">GMV</span></span>
-          <span class="kv orders"><span class="v">15</span> <span class="lb">单</span></span>
-        </div>
-        <span class="tag gr">含 5月月报</span>
-        <span class="arr">→</span>
-      </a>
-    </div>
-  </details>
+  <div id="archive"></div>
 
-  <!-- May 2026 -->
-  <details open>
-    <summary>
-      <span class="month-name">May 2026</span>
-      <span class="count">4 期</span>
-      <span class="chevron">+</span>
-    </summary>
-    <div class="entry-list">
-      <a class="entry" href="weekly/2026-05-22.html">
-        <span class="date">05-22 — 05-28</span>
-        <div class="kpis">
-          <span class="kv gmv"><span class="v">$14,280</span> <span class="lb">GMV</span></span>
-          <span class="kv orders"><span class="v">14</span> <span class="lb">单</span></span>
-        </div>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="weekly/2026-05-15.html">
-        <span class="date">05-15 — 05-21</span>
-        <div class="kpis">
-          <span class="kv gmv"><span class="v">$4,405</span> <span class="lb">GMV</span></span>
-          <span class="kv orders"><span class="v">13</span> <span class="lb">单</span></span>
-        </div>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="reports/2026-05-15.html">
-        <span class="date">05-08 — 05-15</span>
-        <div class="kpis">
-          <span class="kv gmv"><span class="v">$14,750</span> <span class="lb">GMV</span></span>
-          <span class="kv orders"><span class="v">13</span> <span class="lb">单</span></span>
-        </div>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="reports/2026-05-08.html">
-        <span class="date">05-01 — 05-08</span>
-        <div class="kpis">
-          <span class="kv gmv"><span class="v">$11,350</span> <span class="lb">GMV</span></span>
-          <span class="kv orders"><span class="v">14</span> <span class="lb">单</span></span>
-        </div>
-        <span class="arr">→</span>
-      </a>
-    </div>
-  </details>
-
-  <!-- Apr 2026 -->
-  <details>
-    <summary>
-      <span class="month-name">April 2026</span>
-      <span class="count">5 期</span>
-      <span class="chevron">+</span>
-    </summary>
-    <div class="entry-list">
-      <a class="entry" href="reports/2026-04-29.html">
-        <span class="date">4月月报</span>
-        <div class="kpis">
-          <span class="kv gmv"><span class="v gr">+58%</span> <span class="lb">UP6 vs 3月</span></span>
-        </div>
-        <span class="tag mo">月报</span>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="reports/2026-04-22.html">
-        <span class="date">04-16 — 04-22</span>
-        <div class="desc">促销后复盘 · 购物车页面调整</div>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="reports/2026-04-16.html">
-        <span class="date">04-10 — 04-15</span>
-        <div class="desc">Shopify + Meta 促销首周 · 用户热力图</div>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="reports/2026-04-09.html">
-        <span class="date">04-01 — 04-08</span>
-        <div class="kpis">
-          <span class="kv gmv"><span class="v">$1,599</span> <span class="lb">Revenue</span></span>
-          <span class="kv"><span class="v">2.51</span> <span class="lb">ROAS</span></span>
-        </div>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="reports/2026-04-02.html">
-        <span class="date">3月月报</span>
-        <div class="kpis">
-          <span class="kv gmv"><span class="v gr">+149%</span> <span class="lb">收入 vs 2月</span></span>
-        </div>
-        <span class="tag mo">月报</span>
-        <span class="arr">→</span>
-      </a>
-    </div>
-  </details>
-
-  <!-- Mar 2026 -->
-  <details>
-    <summary>
-      <span class="month-name">March 2026</span>
-      <span class="count">4 期</span>
-      <span class="chevron">+</span>
-    </summary>
-    <div class="entry-list">
-      <a class="entry" href="reports/2026-03-26.html">
-        <span class="date">03-26</span>
-        <div class="desc">春季促销方案 · EDM · 日本市场专属</div>
-        <span class="tag">方案</span>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="reports/2026-03-19.html">
-        <span class="date">03-12 — 03-18</span>
-        <div class="desc">退货率分析 · 网站改版热力图</div>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="reports/2026-03-12.html">
-        <span class="date">03-05 — 03-11</span>
-        <div class="kpis">
-          <span class="kv gmv"><span class="v">$11,492</span> <span class="lb">YouTube</span></span>
-          <span class="kv gmv"><span class="v">$7,194</span> <span class="lb">Google</span></span>
-        </div>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="reports/2026-03-05.html">
-        <span class="date">2月月报</span>
-        <div class="kpis">
-          <span class="kv gmv"><span class="v">$30,707</span> <span class="lb">GMV</span></span>
-          <span class="kv orders"><span class="v">36</span> <span class="lb">单</span></span>
-        </div>
-        <span class="tag mo">月报</span>
-        <span class="arr">→</span>
-      </a>
-    </div>
-  </details>
-
-  <!-- Feb 2026 -->
-  <details>
-    <summary>
-      <span class="month-name">February 2026</span>
-      <span class="count">1 期</span>
-      <span class="chevron">+</span>
-    </summary>
-    <div class="entry-list">
-      <a class="entry" href="reports/2026-02-05.html">
-        <span class="date">02-05</span>
-        <div class="desc">官网 10 层改版方案 · $9K 广告投放</div>
-        <span class="tag">方案</span>
-        <span class="arr">→</span>
-      </a>
-    </div>
-  </details>
-
-  <!-- Jan 2026 -->
-  <details>
-    <summary>
-      <span class="month-name">January 2026</span>
-      <span class="count">3 期</span>
-      <span class="chevron">+</span>
-    </summary>
-    <div class="entry-list">
-      <a class="entry" href="reports/2026-01-29.html">
-        <span class="date">01-29</span>
-        <div class="desc">UC250/UC450 分析 · Banner 优化 · 购物车 1.0</div>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="reports/2026-01-22.html">
-        <span class="date">01-22</span>
-        <div class="kpis">
-          <span class="kv gmv"><span class="v">$2,551</span> <span class="lb">UT2</span></span>
-          <span class="kv gmv"><span class="v">$1,452</span> <span class="lb">UC250</span></span>
-        </div>
-        <span class="arr">→</span>
-      </a>
-      <a class="entry" href="reports/2026-01-15.html">
-        <span class="date">01-15</span>
-        <div class="desc">UC450PRO 页面 · Trustpilot · 弃单优化 · VAT</div>
-        <span class="arr">→</span>
-      </a>
-    </div>
-  </details>
-
-  <!-- Dec 2025 -->
-  <details>
-    <summary>
-      <span class="month-name">December 2025</span>
-      <span class="count">1 期</span>
-      <span class="chevron">+</span>
-    </summary>
-    <div class="entry-list">
-      <a class="entry" href="reports/2025-12.html">
-        <span class="date">12月</span>
-        <div class="desc">GitHub 管理 · 购物车推荐 · SSD 上架 · 圣诞 Banner</div>
-        <span class="arr">→</span>
-      </a>
-    </div>
-  </details>
-
-  <div class="footer">
-    <span>UnifyDrive 运营档案</span>
-    <a href="https://github.com/theyouthforyou/unifydrive-weekly">GitHub →</a>
-  </div>
+  <footer class="foot">
+    <span>UnifyDrive · 独立站运营 · 广告投放复盘</span>
+    <span class="mono">归档自 2025 · 19 期</span>
+  </footer>
 
 </div>
+
+<script>
+const periods = [
+  // Jun 2026
+  { type:'weekly', month:'2026 / 06', year:2026, mo:6, partial:true,
+    label:'06-01 – 06-04', note:'部分周 · 4 天',
+    gmv:13806, orders:15, badges:[{t:'含 5月月报',c:'green'}],
+    chart:true, proj:24160, href:'weekly/2026-06-01.html' },
+  // May 2026
+  { type:'weekly', month:'2026 / 05', year:2026, mo:5,
+    label:'05-22 – 05-28', gmv:14280, orders:14,
+    chart:true, href:'weekly/2026-05-22.html' },
+  { type:'weekly', month:'2026 / 05', year:2026, mo:5,
+    label:'05-15 – 05-21', gmv:4405, orders:13,
+    chart:true, warn:'单周 GMV 骤降 · 客单价异常', href:'weekly/2026-05-15.html' },
+  { type:'weekly', month:'2026 / 05', year:2026, mo:5,
+    label:'05-08 – 05-15', gmv:14750, orders:13,
+    chart:true, href:'reports/2026-05-15.html' },
+  { type:'weekly', month:'2026 / 05', year:2026, mo:5,
+    label:'05-01 – 05-08', gmv:11350, orders:14,
+    chart:true, href:'reports/2026-05-08.html' },
+  // Apr 2026
+  { type:'monthly', month:'2026 / 04', year:2026, mo:4,
+    label:'4月月报', note:'月度复盘',
+    gmv:null, orders:null, badges:[{t:'+58% UP6 vs 3月',c:'green'},{t:'月报',c:'indigo'}],
+    mreport:true, href:'reports/2026-04-29.html' },
+  { type:'weekly', month:'2026 / 04', year:2026, mo:4,
+    label:'04-16 – 04-22', gmv:null, orders:null,
+    desc:'促销后复盘 · 购物车页面调整', href:'reports/2026-04-22.html' },
+  { type:'weekly', month:'2026 / 04', year:2026, mo:4,
+    label:'04-10 – 04-15', gmv:null, orders:null,
+    desc:'Shopify + Meta 促销首周 · 用户热力图', href:'reports/2026-04-16.html' },
+  { type:'weekly', month:'2026 / 04', year:2026, mo:4,
+    label:'04-01 – 04-08', gmv:null, orders:null,
+    alt:[{l:'Revenue',v:'$1,599'},{l:'ROAS',v:'2.51'}], href:'reports/2026-04-09.html' },
+  { type:'monthly', month:'2026 / 04', year:2026, mo:4,
+    label:'3月月报', note:'月度复盘',
+    gmv:null, orders:null, badges:[{t:'+149% 收入 vs 2月',c:'green'},{t:'月报',c:'indigo'}],
+    mreport:true, href:'reports/2026-04-02.html' },
+  // Mar 2026
+  { type:'weekly', month:'2026 / 03', year:2026, mo:3,
+    label:'03-26', gmv:null, orders:null,
+    desc:'春季促销方案 · EDM · 日本市场专属', badges:[{t:'方案',c:'ghost'}], href:'reports/2026-03-26.html' },
+  { type:'weekly', month:'2026 / 03', year:2026, mo:3,
+    label:'03-12 – 03-18', gmv:null, orders:null,
+    desc:'退货率分析 · 网站改版热力图', href:'reports/2026-03-19.html' },
+  { type:'weekly', month:'2026 / 03', year:2026, mo:3,
+    label:'03-05 – 03-11', gmv:null, orders:null,
+    alt:[{l:'YouTube',v:'$11,492'},{l:'Google',v:'$7,194'}], href:'reports/2026-03-12.html' },
+  { type:'monthly', month:'2026 / 03', year:2026, mo:3,
+    label:'2月月报', note:'月度复盘',
+    gmv:30707, orders:36, badges:[{t:'月报',c:'indigo'}],
+    mreport:true, href:'reports/2026-03-05.html' },
+  // Feb 2026
+  { type:'weekly', month:'2026 / 02', year:2026, mo:2,
+    label:'02-05', gmv:null, orders:null,
+    desc:'官网 10 层改版方案 · $9K 广告投放', badges:[{t:'方案',c:'ghost'}], href:'reports/2026-02-05.html' },
+  // Jan 2026
+  { type:'weekly', month:'2026 / 01', year:2026, mo:1,
+    label:'01-29', gmv:null, orders:null,
+    desc:'UC250/UC450 分析 · Banner 优化 · 购物车 1.0', href:'reports/2026-01-29.html' },
+  { type:'weekly', month:'2026 / 01', year:2026, mo:1,
+    label:'01-22', gmv:null, orders:null,
+    alt:[{l:'UT2',v:'$2,551'},{l:'UC250',v:'$1,452'}], href:'reports/2026-01-22.html' },
+  { type:'weekly', month:'2026 / 01', year:2026, mo:1,
+    label:'01-15', gmv:null, orders:null,
+    desc:'UC450PRO 页面 · Trustpilot · 弃单优化 · VAT', href:'reports/2026-01-15.html' },
+  // Dec 2025
+  { type:'monthly', month:'2025 / 12', year:2025, mo:12,
+    label:'12月', note:'工作总结',
+    gmv:null, orders:null,
+    desc:'GitHub 管理 · 购物车推荐 · SSD 上架 · 圣诞 Banner', href:'reports/2025-12.html' },
+];
+
+const fmt = n => '$' + n.toLocaleString('en-US');
+const aov = p => p.orders ? Math.round(p.gmv / p.orders) : null;
+
+/* ---------- trend chart ---------- */
+const chartData = periods.filter(p=>p.chart).slice().reverse();
+const maxGmv = Math.max(...chartData.map(p=>p.gmv));
+const chartEl = document.getElementById('chart');
+const usable = 150;
+
+chartData.forEach((p,i)=>{
+  const h = Math.max(8, Math.round(p.gmv / maxGmv * usable));
+  const col = document.createElement('div');
+  col.className='col';
+  col.tabIndex=0;
+  col.setAttribute('role','button');
+  col.setAttribute('aria-label', `${p.label}，GMV ${fmt(p.gmv)}，${p.orders} 单`);
+  col.dataset.label = p.label;
+  const barClass = 'bar' + (p.warn?' warn':'') + (p.partial?' partial':'');
+  const projHtml = p.proj ? `<div class="proj"><span class="ptag">≈${fmt(Math.round(p.proj/1000))}K</span></div>` : '';
+  col.innerHTML = `
+    <div class="tip">
+      <div class="tg">${p.label}${p.partial?' · 进行中':''}</div>
+      <div class="tg">GMV <b>${fmt(p.gmv)}</b> · ${p.orders}单</div>
+      <div class="tg">客单价 ${fmt(aov(p))}</div>
+      ${p.proj?`<div class="tg" style="color:#ffd9a3">节奏预测 ≈${fmt(p.proj)}</div>`:''}
+    </div>
+    <div class="bar-wrap">
+      ${projHtml}
+      <div class="${barClass}" style="--h:${h}px;animation-delay:${i*70}ms"></div>
+    </div>
+    <div class="xlabel">${p.label.slice(0,5)}</div>
+    <div class="xval">${fmt(Math.round(p.gmv/1000))}K</div>`;
+  col.addEventListener('click', ()=> focusRow(p.label));
+  col.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();focusRow(p.label);} });
+  chartEl.appendChild(col);
+});
+
+/* ---------- archive list ---------- */
+const archiveEl = document.getElementById('archive');
+
+function monthGmv(items){
+  const withGmv = items.filter(p=>p.gmv);
+  if(!withGmv.length) return '';
+  const sum = withGmv.reduce((a,p)=>a+p.gmv,0);
+  return withGmv.length===1 && items.length===1 ? '' : fmt(sum);
+}
+
+function deltaFor(idx){
+  const ci = chartData.findIndex(p=>p===periods[idx]);
+  if(ci<=0) return null;
+  const prev = chartData[ci-1];
+  const cur = chartData[ci];
+  if(!prev||!cur) return null;
+  return Math.round((cur.gmv-prev.gmv)/prev.gmv*100);
+}
+
+let currentFilter = 'all';
+function render(filter='all'){
+  currentFilter = filter;
+  archiveEl.innerHTML='';
+  const groups = {};
+  let shown=0;
+  periods.forEach((p,idx)=>{
+    if(filter==='weekly' && p.type!=='weekly') return;
+    if(filter==='monthly' && p.type!=='monthly') return;
+    (groups[p.month] ||= []).push({...p,_idx:idx});
+  });
+
+  Object.entries(groups).forEach(([month,items])=>{
+    const m = document.createElement('section');
+    m.className='month';
+    const isRecent = month==='2026 / 06' || month==='2026 / 05';
+    m.innerHTML = `
+      <button class="mhead" aria-expanded="${isRecent}">
+        <span class="my">${month}</span>
+        <span class="mline"></span>
+        <span class="gmv">${monthGmv(items)}</span>
+        <span class="mn">${items.length} 期</span>
+        <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="rows"><div class="rows-inner"></div></div>`;
+    const inner = m.querySelector('.rows-inner');
+
+    items.forEach(p=>{
+      shown++;
+      const row = document.createElement('a');
+      row.href=p.href||'#';
+      row.className='row' + (p.mreport?' mreport':'');
+      row.dataset.label=p.label;
+
+      let contentHtml='';
+      if(p.gmv){
+        const a = aov(p);
+        const d = deltaFor(p._idx);
+        const deltaHtml = (d!==null && !p.partial)
+          ? `<span class="delta ${d>=0?'up':'down'}">${d>=0?'▲':'▼'} ${Math.abs(d)}%</span>`
+          : (p.partial ? `<span class="badge ghost">进行中</span>` : '');
+        contentHtml = `
+          <div class="metrics">
+            <div class="metric"><span class="m-l">GMV</span><span class="m-v big">${fmt(p.gmv)}</span></div>
+            <div class="metric"><span class="m-l">订单</span><span class="m-v">${p.orders} 单</span></div>
+            <div class="metric"><span class="m-l">客单价</span><span class="m-v">${fmt(a)}</span></div>
+            <div class="metric"><span class="m-l">环比</span><span class="m-v" style="margin-top:1px">${deltaHtml||'<span style="color:var(--ink-faint)">—</span>'}</span></div>
+          </div>`;
+      } else if(p.alt){
+        contentHtml = `<div class="metrics">${p.alt.map(m=>`<div class="metric"><span class="m-l">${m.l}</span><span class="m-v big">${m.v}</span></div>`).join('')}</div>`;
+      } else if(p.desc){
+        contentHtml = `<div class="desc-text">${p.desc}</div>`;
+      }
+
+      const warnBadge = p.warn ? `<span class="badge amber" title="${p.warn}">⚠ 异常</span>` : '';
+      const projBadge = p.proj ? `<span class="badge ghost">节奏 ≈${fmt(Math.round(p.proj/1000))}K</span>` : '';
+      const extraBadges = (p.badges||[]).map(b=>`<span class="badge ${b.c}">${b.t}</span>`).join('');
+
+      row.innerHTML = `
+        <div class="period">${p.label}${p.note?`<span class="tag-inline">${p.note}</span>`:''}</div>
+        ${contentHtml}
+        <div style="display:flex;align-items:center;gap:10px">
+          ${warnBadge}${projBadge}${extraBadges}
+          <span class="open">查看 <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>`;
+      inner.appendChild(row);
+    });
+
+    const head = m.querySelector('.mhead');
+    head.addEventListener('click',()=>{
+      const open = head.getAttribute('aria-expanded')==='true';
+      head.setAttribute('aria-expanded', String(!open));
+    });
+    archiveEl.appendChild(m);
+  });
+
+  document.getElementById('count').textContent = `${shown} 期`;
+}
+
+function focusRow(label){
+  render(currentFilter);
+  const row = [...document.querySelectorAll('.row')].find(r=>r.dataset.label===label);
+  if(!row) return;
+  const head = row.closest('.month').querySelector('.mhead');
+  if(head.getAttribute('aria-expanded')==='false') head.setAttribute('aria-expanded','true');
+  setTimeout(()=>{
+    row.scrollIntoView({behavior:'smooth',block:'center'});
+    row.classList.remove('flash'); void row.offsetWidth; row.classList.add('flash');
+  },100);
+}
+
+document.querySelectorAll('.seg button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+    render(b.dataset.filter);
+  });
+});
+
+render('all');
+</script>
 </body>
 </html>
