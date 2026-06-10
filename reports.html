@@ -49,7 +49,7 @@
   }
   .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:18px;letter-spacing:-.01em}
   .brand .u{color:var(--ink)}
-  .brand .d{color:var(--green)}
+  .brand .d{color:var(--ink)}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--green-bright);box-shadow:0 0 0 3px var(--green-soft);position:relative}
   .dot::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:1px solid var(--green-bright);opacity:.4;animation:ping 2.6s ease-out infinite}
   @keyframes ping{0%{transform:scale(.7);opacity:.5}80%,100%{transform:scale(2.4);opacity:0}}
@@ -102,6 +102,9 @@
   .metric .m-l{font-size:10px;color:var(--ink-faint);letter-spacing:.04em}
   .metric .m-v{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:500;letter-spacing:-.01em}
   .metric .m-v.big{font-size:17px}
+  .delta{display:inline-flex;align-items:center;gap:3px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:2px 6px;border-radius:6px}
+  .delta.up{color:var(--green-deep);background:var(--green-soft)}
+  .delta.down{color:var(--amber);background:var(--amber-soft)}
 
   .badge{
     font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500;white-space:nowrap;
@@ -242,6 +245,13 @@ const periods = [
 const fmt = n => '$' + n.toLocaleString('en-US');
 const aov = p => p.orders ? Math.round(p.gmv / p.orders) : null;
 
+function deltaFor(idx){
+  for(let i=idx-1; i>=0; i--){
+    if(periods[i].gmv && periods[i].month === periods[idx].month) return Math.round((periods[idx].gmv - periods[i].gmv) / periods[i].gmv * 100);
+  }
+  return null;
+}
+
 const archiveEl = document.getElementById('archive');
 
 let currentFilter = 'all';
@@ -280,11 +290,16 @@ function render(filter='all'){
       let contentHtml='';
       if(p.gmv){
         const a = aov(p);
+        const d = deltaFor(p._idx);
+        const deltaHtml = d!==null
+          ? `<span class="delta ${d>=0?'up':'down'}">${d>=0?'▲':'▼'} ${Math.abs(d)}%</span>`
+          : '<span style="color:var(--ink-faint);font-size:12px">—</span>';
         contentHtml = `
           <div class="metrics">
             <div class="metric"><span class="m-l">GMV</span><span class="m-v big">${fmt(p.gmv)}</span></div>
             <div class="metric w96"><span class="m-l">订单</span><span class="m-v">${p.orders} 单</span></div>
             <div class="metric w96"><span class="m-l">客单价</span><span class="m-v">${fmt(a)}</span></div>
+            <div class="metric w80"><span class="m-l">环比</span><span class="m-v" style="margin-top:1px">${deltaHtml}</span></div>
           </div>`;
       } else if(p.alt){
         contentHtml = `<div class="metrics">${p.alt.map(m=>`<div class="metric"><span class="m-l">${m.l}</span><span class="m-v big">${m.v}</span></div>`).join('')}</div>`;
