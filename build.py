@@ -165,8 +165,7 @@ PAGE_TPL = '''<!DOCTYPE html>
 <body>
 <div class="page">
   <nav class="nav">
-    <a {nav_reports_active} href="reports.html">周报月报</a>
-    <a {nav_meetings_active} href="meetings.html">例会 / 工作计划</a>
+    <a class="active" href="reports.html">← 返回周报存档</a>
   </nav>
   <div class="top-bar">
     <div>
@@ -193,8 +192,6 @@ for e in entries:
     body_html = md_to_html(e['body'])
 
     out_dir = os.path.join(BASE, 'reports')
-    nav_reports = 'class="active"'
-    nav_meetings = ''
     section_label = 'Weekly / Monthly Report'
     back_link = 'reports.html'
     back_label = '周报月报'
@@ -202,8 +199,6 @@ for e in entries:
 
     html_page = PAGE_TPL.format(
         title=e['date'],
-        nav_reports_active=nav_reports,
-        nav_meetings_active=nav_meetings,
         section_label=section_label,
         date=e['date'],
         back_link=back_link,
