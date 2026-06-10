@@ -9,20 +9,21 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #f6f5f3;
+    --bg: #f5f4f0;
     --surface: #ffffff;
-    --surface2: #f0efeb;
-    --border: rgba(0,0,0,0.10);
-    --border-light: rgba(0,0,0,0.06);
+    --surface2: #f1f0eb;
+    --border: rgba(0,0,0,0.09);
+    --border-light: rgba(0,0,0,0.05);
     --text: #141413;
-    --text-2: #585852;
-    --text-3: #94948e;
-    --accent: #0f7a3d;
-    --accent-bg: #e6f4ec;
-    --amber: #9e6100;
-    --amber-bg: #fff8ed;
+    --text-2: #5c5c56;
+    --text-3: #96968f;
+    --green: #0f7a3d;
+    --green-bg: #eaf5ef;
+    --amber: #8a5e00;
+    --amber-bg: #fef9ef;
     --blue: #1a5fb4;
-    --blue-bg: #eef4fd;
+    --blue-bg: #eef4fc;
+    --red: #b02828;
   }
 
   body {
@@ -34,183 +35,136 @@
     padding: 0 20px 60px;
     -webkit-font-smoothing: antialiased;
   }
-  .page { max-width: 700px; margin: 0 auto; }
-
-  /* ── nav ── */
-  .nav {
-    display: flex; gap: 6px; justify-content: center;
-    padding: 20px 0 0; margin-bottom: 48px;
-  }
-  .nav a {
-    text-decoration: none; font-size: 13px; font-weight: 500;
-    padding: 7px 22px; border-radius: 20px;
-    color: var(--text-2); transition: all .18s;
-  }
-  .nav a:hover { color: var(--text); background: var(--surface2); }
-  .nav a.active {
-    color: var(--text); font-weight: 600;
-    background: var(--surface);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  }
+  .page { max-width: 680px; margin: 0 auto; }
 
   /* ── header ── */
-  .header { text-align: center; margin-bottom: 44px; }
+  .header { text-align: center; padding: 48px 0 40px; }
   .header-label {
     font-size: 10px; font-weight: 700; color: var(--text-3);
     letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px;
   }
   .header-title {
     font-size: 30px; font-weight: 700; letter-spacing: -0.025em;
-    margin-bottom: 6px;
   }
   .header-desc {
-    font-size: 13px; color: var(--text-2);
+    font-size: 13px; color: var(--text-2); margin-top: 6px;
     display: flex; align-items: center; justify-content: center; gap: 8px;
   }
-  .header-desc .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-3); }
+  .header-desc .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-3); }
 
   /* ── count bar ── */
   .count-bar {
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-    margin-bottom: 36px; font-size: 12px; color: var(--text-2);
+    text-align: center; margin-bottom: 38px;
+    font-size: 12px; color: var(--text-3);
   }
-  .count-bar .pill {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 5px 14px; border-radius: 20px;
-    font-family: 'IBM Plex Mono', monospace; font-size: 12px;
-  }
-  .count-bar .pill strong { font-weight: 600; color: var(--text); }
+  .count-bar strong { color: var(--text); font-weight: 600; }
 
   /* ── month group ── */
   details {
-    margin-bottom: 6px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    margin-bottom: 20px;
     background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
     overflow: hidden;
     transition: border-color .2s, box-shadow .2s;
   }
   details[open] {
-    border-color: rgba(0,0,0,0.18);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-    margin-bottom: 10px;
+    border-color: rgba(0,0,0,0.15);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
   }
 
   summary {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 20px; cursor: pointer;
+    display: flex; justify-content: center; align-items: center; gap: 10px;
+    padding: 16px 20px; cursor: pointer;
     font-size: 15px; font-weight: 600;
     user-select: none; list-style: none;
+    text-align: center;
   }
   summary::-webkit-details-marker { display: none; }
 
-  summary .month-name {
-    display: flex; align-items: center; gap: 10px;
-  }
-  summary .month-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--border); transition: background .2s, transform .2s;
-  }
-  details[open] summary .month-dot {
-    background: var(--accent); transform: scale(1.3);
-  }
   summary .chevron {
-    font-size: 10px; color: var(--text-3);
+    font-size: 9px; color: var(--text-3);
     transition: transform .2s;
   }
   details[open] summary .chevron { transform: rotate(90deg); }
 
   summary .meta {
     font-size: 11px; font-weight: 500; color: var(--text-3);
-    margin-left: auto; margin-right: 10px;
   }
 
   /* ── entry list ── */
-  .entry-list {
-    padding: 2px 12px 14px;
-  }
+  .entry-list { padding: 0 16px 16px; }
+
   .entry {
-    display: flex; align-items: center; gap: 14px;
-    padding: 13px 16px; border-radius: 10px;
+    display: flex; align-items: center; gap: 16px;
+    padding: 14px 18px; border-radius: 10px;
     text-decoration: none; color: inherit;
     transition: background .15s;
-    margin-bottom: 2px;
   }
   .entry:hover { background: var(--surface2); }
 
   .entry-date {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 13px; font-weight: 500; color: var(--text-3);
-    min-width: 118px; flex-shrink: 0;
+    min-width: 126px; flex-shrink: 0;
   }
-  .entry-date.monthly {
-    color: var(--accent); font-weight: 600;
-  }
-
-  .entry-info { flex: 1; min-width: 0; }
-  .entry-title {
-    font-size: 13px; font-weight: 500; color: var(--text);
-    line-height: 1.5;
-    display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
-  }
-  .entry-title .sep { color: var(--text-3); font-size: 10px; }
 
   .entry-metrics {
-    display: flex; gap: 14px; margin-top: 2px;
+    flex: 1;
+    display: flex; gap: 20px;
+    font-size: 13px; color: var(--text-2);
   }
-  .entry-metrics span {
-    font-size: 11px; color: var(--text-2);
+  .entry-metrics .metric-item {
+    display: flex; align-items: baseline; gap: 5px;
+  }
+  .entry-metrics .metric-label {
+    font-size: 12px; color: var(--text-3);
   }
   .entry-metrics .num {
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: 600; color: var(--text); font-size: 12px;
+    font-weight: 600; font-size: 15px; color: var(--text);
+    letter-spacing: -0.01em;
   }
+  .entry-metrics .num.green { color: var(--green); }
+  .entry-metrics .num.red { color: var(--red); }
 
-  .entry-tag {
-    font-size: 10px; font-weight: 600;
-    padding: 2px 8px; border-radius: 10px;
+  .entry-badge {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.03em;
+    padding: 3px 9px; border-radius: 10px;
     white-space: nowrap; flex-shrink: 0;
   }
-  .entry-tag.report { background: var(--accent-bg); color: var(--accent); }
-  .entry-tag.monthly { background: var(--amber-bg); color: var(--amber); }
-  .entry-tag.note { background: var(--blue-bg); color: var(--blue); }
+  .entry-badge.weekly  { background: var(--green-bg); color: var(--green); }
+  .entry-badge.monthly { background: var(--amber-bg); color: var(--amber); }
+  .entry-badge.plan    { background: var(--blue-bg); color: var(--blue); }
 
   .entry-arrow {
-    color: var(--text-3); font-size: 13px;
-    opacity: 0; transition: opacity .15s; flex-shrink: 0;
+    color: var(--text-3); font-size: 13px; flex-shrink: 0;
+    opacity: 0; transition: opacity .15s;
   }
   .entry:hover .entry-arrow { opacity: 1; }
 
   /* ── footer ── */
   .footer {
-    text-align: center; margin-top: 44px; padding-top: 20px;
+    text-align: center; margin-top: 48px; padding-top: 22px;
     border-top: 1px solid var(--border);
     font-size: 11px; color: var(--text-3);
   }
   .footer a { color: inherit; text-decoration: none; }
   .footer a:hover { color: var(--text-2); }
 
-  /* ── responsive ── */
   @media (max-width: 600px) {
-    body { padding: 0 14px 40px; }
+    body { padding: 0 12px 40px; }
+    .header { padding: 36px 0 32px; }
     .header-title { font-size: 24px; }
-    .entry {
-      flex-wrap: wrap; gap: 6px; padding: 12px 14px;
-    }
+    .entry { flex-wrap: wrap; gap: 6px; padding: 12px 14px; }
     .entry-date { min-width: auto; width: 100%; }
-    .entry-metrics { gap: 10px; flex-wrap: wrap; }
-    .entry-tag { margin-left: 0; }
+    .entry-metrics { gap: 14px; flex-wrap: wrap; }
     .entry-arrow { display: none; }
   }
 </style>
 </head>
 <body>
 <div class="page">
-
-  <nav class="nav">
-    <a class="active" href="reports.html">周报月报</a>
-  </nav>
 
   <div class="header">
     <div class="header-label">Weekly &amp; Monthly Reports</div>
@@ -221,29 +175,21 @@
     </div>
   </div>
 
-  <div class="count-bar">
-    <span>共 <strong>19</strong> 期</span>
-    <span class="pill">2025.12 — 2026.06</span>
-  </div>
+  <div class="count-bar">共 <strong>19</strong> 期 · 2025.12 — 2026.06</div>
 
   <!-- Jun 2026 -->
   <details open>
     <summary>
-      <span class="month-name"><span class="month-dot"></span>2026 年 6 月</span>
-      <span class="meta">1 期</span>
-      <span class="chevron">▶</span>
+      <span class="chevron">▶</span> Jun 2026 <span class="meta">· 1 期</span>
     </summary>
     <div class="entry-list">
       <a class="entry" href="weekly/2026-06-01.html">
-        <span class="entry-date monthly">6月月报 + 06-01 — 06-04</span>
-        <div class="entry-info">
-          <div class="entry-title">六月首周 · 含五月月报</div>
-          <div class="entry-metrics">
-            <span>GMV <span class="num">$13,806</span></span>
-            <span>订单 <span class="num">15</span></span>
-          </div>
+        <span class="entry-date">06-01 — 06-04</span>
+        <div class="entry-metrics">
+          <span class="metric-item"><span class="num">$13,806</span> <span class="metric-label">GMV</span></span>
+          <span class="metric-item"><span class="num">15</span> <span class="metric-label">订单</span></span>
         </div>
-        <span class="entry-tag report">周报</span>
+        <span class="entry-badge weekly">含 5月月报</span>
         <span class="entry-arrow">→</span>
       </a>
     </div>
@@ -252,56 +198,38 @@
   <!-- May 2026 -->
   <details open>
     <summary>
-      <span class="month-name"><span class="month-dot"></span>2026 年 5 月</span>
-      <span class="meta">4 期</span>
-      <span class="chevron">▶</span>
+      <span class="chevron">▶</span> May 2026 <span class="meta">· 4 期</span>
     </summary>
     <div class="entry-list">
       <a class="entry" href="weekly/2026-05-22.html">
         <span class="entry-date">05-22 — 05-28</span>
-        <div class="entry-info">
-          <div class="entry-title">5月第四周</div>
-          <div class="entry-metrics">
-            <span>GMV <span class="num">$14,280</span></span>
-            <span>订单 <span class="num">14</span></span>
-          </div>
+        <div class="entry-metrics">
+          <span class="metric-item"><span class="num">$14,280</span> <span class="metric-label">GMV</span></span>
+          <span class="metric-item"><span class="num">14</span> <span class="metric-label">订单</span></span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="weekly/2026-05-15.html">
         <span class="entry-date">05-15 — 05-21</span>
-        <div class="entry-info">
-          <div class="entry-title">5月第三周</div>
-          <div class="entry-metrics">
-            <span>GMV <span class="num">$4,405</span></span>
-            <span>订单 <span class="num">8</span></span>
-          </div>
+        <div class="entry-metrics">
+          <span class="metric-item"><span class="num">$4,405</span> <span class="metric-label">GMV</span></span>
+          <span class="metric-item"><span class="num">8</span> <span class="metric-label">订单</span></span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="reports/2026-05-15.html">
         <span class="entry-date">05-08 — 05-15</span>
-        <div class="entry-info">
-          <div class="entry-title">用户问卷调查 · Meta 再营销复盘</div>
-          <div class="entry-metrics">
-            <span>订单 <span class="num">11</span></span>
-          </div>
+        <div class="entry-metrics">
+          <span class="metric-item"><span class="num">11</span> <span class="metric-label">订单</span></span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="reports/2026-05-08.html">
         <span class="entry-date">05-01 — 05-08</span>
-        <div class="entry-info">
-          <div class="entry-title">5月第一周</div>
-          <div class="entry-metrics">
-            <span>GMV <span class="num">$11,350</span></span>
-            <span>订单 <span class="num">14</span></span>
-          </div>
+        <div class="entry-metrics">
+          <span class="metric-item"><span class="num">$11,350</span> <span class="metric-label">GMV</span></span>
+          <span class="metric-item"><span class="num">14</span> <span class="metric-label">订单</span></span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
     </div>
@@ -310,49 +238,45 @@
   <!-- Apr 2026 -->
   <details open>
     <summary>
-      <span class="month-name"><span class="month-dot"></span>2026 年 4 月</span>
-      <span class="meta">5 期</span>
-      <span class="chevron">▶</span>
+      <span class="chevron">▶</span> Apr 2026 <span class="meta">· 5 期</span>
     </summary>
     <div class="entry-list">
       <a class="entry" href="reports/2026-04-29.html">
-        <span class="entry-date monthly">4月月报</span>
-        <div class="entry-info">
-          <div class="entry-title">April vs March · UP6 强势增长 +58%</div>
+        <span class="entry-date">4月月报</span>
+        <div class="entry-metrics">
+          <span class="metric-item"><span class="num green">+58%</span> <span class="metric-label">UP6 vs 3月</span></span>
         </div>
-        <span class="entry-tag monthly">月报</span>
+        <span class="entry-badge monthly">月报</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="reports/2026-04-22.html">
         <span class="entry-date">04-16 — 04-22</span>
-        <div class="entry-info">
-          <div class="entry-title">春季促销后复盘 · 购物车页面调整</div>
+        <div class="entry-metrics">
+          <span class="metric-label" style="font-size:13px;color:var(--text-2)">促销后复盘 · 购物车页面调整</span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="reports/2026-04-16.html">
         <span class="entry-date">04-10 — 04-15</span>
-        <div class="entry-info">
-          <div class="entry-title">Shopify + Meta 促销首周 · 用户热力图分析</div>
+        <div class="entry-metrics">
+          <span class="metric-label" style="font-size:13px;color:var(--text-2)">Shopify + Meta 促销首周 · 用户热力图</span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="reports/2026-04-09.html">
         <span class="entry-date">04-01 — 04-08</span>
-        <div class="entry-info">
-          <div class="entry-title">Meta 广告数据 · 整体 ROAS 2.51</div>
+        <div class="entry-metrics">
+          <span class="metric-item"><span class="num">$1,599</span> <span class="metric-label">Revenue</span></span>
+          <span class="metric-item"><span class="num">2.51</span> <span class="metric-label">ROAS</span></span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="reports/2026-04-02.html">
-        <span class="entry-date monthly">3月月报</span>
-        <div class="entry-info">
-          <div class="entry-title">2月 vs 3月完整对比 · 收入 +149% 增长</div>
+        <span class="entry-date">3月月报</span>
+        <div class="entry-metrics">
+          <span class="metric-item"><span class="num green">+149%</span> <span class="metric-label">收入 vs 2月</span></span>
         </div>
-        <span class="entry-tag monthly">月报</span>
+        <span class="entry-badge monthly">月报</span>
         <span class="entry-arrow">→</span>
       </a>
     </div>
@@ -361,45 +285,39 @@
   <!-- Mar 2026 -->
   <details>
     <summary>
-      <span class="month-name"><span class="month-dot"></span>2026 年 3 月</span>
-      <span class="meta">4 期</span>
-      <span class="chevron">▶</span>
+      <span class="chevron">▶</span> Mar 2026 <span class="meta">· 4 期</span>
     </summary>
     <div class="entry-list">
       <a class="entry" href="reports/2026-03-26.html">
         <span class="entry-date">03-26</span>
-        <div class="entry-info">
-          <div class="entry-title">春季促销方案 · EDM 序列 · 日本市场专属机制</div>
+        <div class="entry-metrics">
+          <span class="metric-label" style="font-size:13px;color:var(--text-2)">春季促销方案 · EDM · 日本市场专属</span>
         </div>
-        <span class="entry-tag note">方案</span>
+        <span class="entry-badge plan">方案</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="reports/2026-03-19.html">
         <span class="entry-date">03-12 — 03-18</span>
-        <div class="entry-info">
-          <div class="entry-title">退货率分析 · 网站改版热力图对比</div>
+        <div class="entry-metrics">
+          <span class="metric-label" style="font-size:13px;color:var(--text-2)">退货率分析 · 网站改版热力图</span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="reports/2026-03-12.html">
         <span class="entry-date">03-05 — 03-11</span>
-        <div class="entry-info">
-          <div class="entry-title">YouTube Organic $11,492 · Google Search $7,194</div>
+        <div class="entry-metrics">
+          <span class="metric-item"><span class="num">$11,492</span> <span class="metric-label">YouTube</span></span>
+          <span class="metric-item"><span class="num">$7,194</span> <span class="metric-label">Google</span></span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="reports/2026-03-05.html">
-        <span class="entry-date monthly">2月月报</span>
-        <div class="entry-info">
-          <div class="entry-title">二月运营月报</div>
-          <div class="entry-metrics">
-            <span>GMV <span class="num">$30,707</span></span>
-            <span>订单 <span class="num">36</span></span>
-          </div>
+        <span class="entry-date">2月月报</span>
+        <div class="entry-metrics">
+          <span class="metric-item"><span class="num">$30,707</span> <span class="metric-label">GMV</span></span>
+          <span class="metric-item"><span class="num">36</span> <span class="metric-label">订单</span></span>
         </div>
-        <span class="entry-tag monthly">月报</span>
+        <span class="entry-badge monthly">月报</span>
         <span class="entry-arrow">→</span>
       </a>
     </div>
@@ -408,17 +326,15 @@
   <!-- Feb 2026 -->
   <details>
     <summary>
-      <span class="month-name"><span class="month-dot"></span>2026 年 2 月</span>
-      <span class="meta">1 期</span>
-      <span class="chevron">▶</span>
+      <span class="chevron">▶</span> Feb 2026 <span class="meta">· 1 期</span>
     </summary>
     <div class="entry-list">
       <a class="entry" href="reports/2026-02-05.html">
         <span class="entry-date">02-05</span>
-        <div class="entry-info">
-          <div class="entry-title">官网 10 层改版方案 · $9K 广告投放计划</div>
+        <div class="entry-metrics">
+          <span class="metric-label" style="font-size:13px;color:var(--text-2)">官网 10 层改版方案 · $9K 广告投放</span>
         </div>
-        <span class="entry-tag note">方案</span>
+        <span class="entry-badge plan">方案</span>
         <span class="entry-arrow">→</span>
       </a>
     </div>
@@ -427,33 +343,29 @@
   <!-- Jan 2026 -->
   <details>
     <summary>
-      <span class="month-name"><span class="month-dot"></span>2026 年 1 月</span>
-      <span class="meta">3 期</span>
-      <span class="chevron">▶</span>
+      <span class="chevron">▶</span> Jan 2026 <span class="meta">· 3 期</span>
     </summary>
     <div class="entry-list">
       <a class="entry" href="reports/2026-01-29.html">
         <span class="entry-date">01-29</span>
-        <div class="entry-info">
-          <div class="entry-title">UC250/UC450 数据分析 · 首页 Banner 优化 · 购物车 1.0</div>
+        <div class="entry-metrics">
+          <span class="metric-label" style="font-size:13px;color:var(--text-2)">UC250/UC450 分析 · Banner 优化 · 购物车 1.0</span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="reports/2026-01-22.html">
         <span class="entry-date">01-22</span>
-        <div class="entry-info">
-          <div class="entry-title">Meta 招募测试 209 用户 · UC250/UC450 上线 · UT2 6 单 $2,551</div>
+        <div class="entry-metrics">
+          <span class="metric-item"><span class="num">$2,551</span> <span class="metric-label">UT2</span></span>
+          <span class="metric-item"><span class="num">$1,452</span> <span class="metric-label">UC250</span></span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
       <a class="entry" href="reports/2026-01-15.html">
         <span class="entry-date">01-15</span>
-        <div class="entry-info">
-          <div class="entry-title">UC450PRO 页面 · Trustpilot 邀评 · 弃单优化 · 10% VAT</div>
+        <div class="entry-metrics">
+          <span class="metric-label" style="font-size:13px;color:var(--text-2)">UC450PRO 页面 · Trustpilot · 弃单优化 · VAT</span>
         </div>
-        <span class="entry-tag report">周报</span>
         <span class="entry-arrow">→</span>
       </a>
     </div>
@@ -462,17 +374,14 @@
   <!-- Dec 2025 -->
   <details>
     <summary>
-      <span class="month-name"><span class="month-dot"></span>2025 年 12 月</span>
-      <span class="meta">1 期</span>
-      <span class="chevron">▶</span>
+      <span class="chevron">▶</span> Dec 2025 <span class="meta">· 1 期</span>
     </summary>
     <div class="entry-list">
       <a class="entry" href="reports/2025-12.html">
-        <span class="entry-date monthly">12月</span>
-        <div class="entry-info">
-          <div class="entry-title">GitHub 管理 · 购物车推荐 · 日版导航栏 · SSD 上架 · 圣诞 Banner</div>
+        <span class="entry-date">12月</span>
+        <div class="entry-metrics">
+          <span class="metric-label" style="font-size:13px;color:var(--text-2)">GitHub 管理 · 购物车推荐 · SSD 上架 · 圣诞 Banner</span>
         </div>
-        <span class="entry-tag note">总结</span>
         <span class="entry-arrow">→</span>
       </a>
     </div>
