@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026.2.5 · UnifyDrive</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#f5f4f0;--surface:#fff;--surface2:#efede7;--border:rgba(0,0,0,0.12);--border-light:rgba(0,0,0,0.07);--text:#15150f;--text-2:#5c5c56;--text-3:#8f8f88;--green:#0f7a3d;--green-bg:#dff2e6}
+  body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.7;padding:0 24px 60px}
+  .page{max-width:780px;margin:0 auto}
+  .nav{display:flex;gap:0;justify-content:center;padding:16px 0 0;margin-bottom:20px}
+  .nav a{text-decoration:none;font-size:13px;font-weight:500;padding:8px 24px;border-radius:8px;color:var(--text-2);transition:all .15s}
+  .nav a:hover{color:var(--text);background:var(--surface2)}
+  .nav a.active{color:var(--text);font-weight:600;background:var(--surface);border:1px solid var(--border)}
+  .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+  .back-link{font-size:12px;color:var(--text-2);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color .12s}
+  .back-link:hover{color:var(--text)}
+  .date-badge{font-size:13px;font-weight:600;color:var(--text);background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:20px;font-family:'IBM Plex Mono',monospace}
+  .section-label{font-size:11px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em}
+  .content h1,.content h2,.content h3{margin-top:28px;margin-bottom:8px;font-weight:600;color:var(--text)}
+  .content h1{font-size:20px;margin-top:0}
+  .content h2{font-size:17px;margin-top:32px;padding-bottom:6px;border-bottom:1px solid var(--border-light)}
+  .content h3{font-size:14px;margin-top:24px;color:var(--text-2)}
+  .content p{margin:10px 0}
+  .content ul,.content ol{margin:8px 0;padding-left:20px}
+  .content li{margin:4px 0;color:var(--text-2)}
+  .content code{background:var(--surface2);padding:2px 6px;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:13px}
+  .content blockquote{margin:12px 0;padding:10px 16px;background:var(--surface2);border-left:3px solid var(--text-3);border-radius:0 6px 6px 0;font-size:13px;color:var(--text-2)}
+  .content hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+  .content strong{color:var(--text);font-weight:600}
+  .content img{max-width:100%;border-radius:8px;border:1px solid var(--border)}
+  .content .img-wrap{margin:16px 0;text-align:center}
+  .content a{color:var(--text)}
+  .footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-3)}
+  @media(max-width:540px){body{padding:0 16px 40px}.content h1{font-size:18px}.content h2{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="nav">
+    <a class="active" href="reports.html">周报月报</a>
+    <a  href="meetings.html">例会 / 工作计划</a>
+  </nav>
+  <div class="top-bar">
+    <div>
+      <div class="section-label">Weekly / Monthly Report</div>
+      <span class="date-badge">2026.2.5</span>
+    </div>
+    <a class="back-link" href="reports.html">&larr; 周报月报</a>
+  </div>
+  <div class="content">
+        <h2>一、UnifyDrive 2026 官网改版方案</h2>
+        <h3>第一部分：整体逻辑与效果预判</h3>
+        <p><strong>核心流量转化逻辑：</strong></p>
+        <p><strong>视觉锚点 \-\&gt; 场景共鸣 \-\&gt; 认知降负 \-\&gt; 决策收敛 \-\&gt; 信任背书  \-\&gt; 售后保障。</strong></p>
+        <p>#### 1. 为什么要这样排？</p>
+        <ul>
+        <li><strong>1\-3 层（激发欲望）：</strong></li>
+        </ul>
+        <ul>
+        <li>用户进站前 3 秒是感性的。我们<strong>用</strong>“‘直观的产品阵列”<strong>（Floor 1） 展示产品，用</strong>“生活化视频”<strong>（Floor 2）制造代入感，用</strong>“丝滑的软件界面”（Floor 3）消除对技术门槛的恐惧。</li>
+        </ul>
+        <ul>
+        <li><strong>4 层（ 辅助决策）：</strong></li>
+        </ul>
+        <ul>
+        <li>欲望被激发后，理性回归，用户面临选择困难（尤其你有4款定位不同的产品）。</li>
+        </ul>
+        <ul>
+        <li>介入\<em>\</em>“智能导购”<strong>（Floor 4），通过问答逻辑，将泛流量精准分流到 SKU，</strong>。</li>
+        </ul>
+        <ul>
+        <li><strong>5\-9 层（建立信任）：</strong></li>
+        </ul>
+        <ul>
+        <li>用户选定型号准备下单时，防御机制启动：“这牌子靠谱吗？”</li>
+        </ul>
+        <ul>
+        <li>我们用\<em>\</em>“出身证明”<strong>（KS）、</strong>“专家证言”<strong>（YouTube）、</strong>“从众心理”<strong>（社媒）、</strong>“真实口碑”（评论）四连发，建立信任防线。</li>
+        </ul>
+        <ul>
+        <li><strong>10 层（收 \- 兜底）：</strong></li>
+        </ul>
+        <ul>
+        <li>最后的“服务与承诺”，消除后顾之忧。</li>
+        </ul>
+        <p>#### 2. 预期效果</p>
+        <ul>
+        <li><strong>跳出率 \(Bounce Rate\) ↓：</strong> 视频和动态 UI 会显著增加用户停留时长。</li>
+        </ul>
+        <ul>
+        <li><strong>转化率 \(CVR\) ↑：</strong> 第 4 层的问答引导将大幅减少因“不知道买哪个”而流失的客户，针对小白客户。</li>
+        </ul>
+        <ul>
+        <li><strong>信任厚度↑： 多</strong>维度的信任背书（KS/油管/社媒/站内评论）构建了极高的信任壁垒，敢于直接下单。</li>
+        </ul>
+        <hr>
+        <h3>第二部分：详情操作</h3>
+        <p>#### 🟢 Floor 1: 产品展示楼层</p>
+        <ul>
+        <li><strong>💻 PC 端 UI：四列阵列</strong></li>
+        </ul>
+        <ul>
+        <li>四款产品 \(UT2, UP6, UC250, UC450 Pro\) 一字排开，</li>
+        </ul>
+        <ul>
+        <li><strong>📱 手机端 UI：</strong> <strong>1\*4 垂直全宽堆叠</strong></li>
+        </ul>
+        <ul>
+        <li><strong>布局：</strong> 4 张全宽卡片，垂直向下排列。</li>
+        </ul>
+        <ul>
+        <li><strong>展示：</strong> 每一屏只展示一款产品的高清侧颜 \+ 一个核心利益点</li>
+        </ul>
+        <p>#### 🟢 Floor 2: 四个产品场景视频</p>
+        <p><strong>【逻辑】 价值可视化</strong></p>
+        <ul>
+        <li><strong>目的：</strong> 静态图无法传达“体验”。用视频展示 NAS 是如何融入生活的，唤醒潜在需求。</li>
+        </ul>
+        <ul>
+        <li><strong>💻 PC 端 UI：</strong> <strong>四格动态橱窗</strong></li>
+        </ul>
+        <ul>
+        <li>1\*4网格或横排。默认静音循环播放四个产品的五到八秒视频。</li>
+        </ul>
+        <ul>
+        <li><strong>内容：</strong></li>
+        </ul>
+        <ol>
+        <li><strong>UT2:</strong> 户外使用ut备份摄影素材。</li>
+        </ol>
+        <ol>
+        <li><strong>UP6:</strong> 手指触控屏幕，管理家庭相册。</li>
+        </ol>
+        <ol>
+        <li><strong>UC250:</strong> 客厅电视播放 4K 电影。</li>
+        </ol>
+        <ol>
+        <li><strong>UC450:</strong> 工作室 Mac 上剪辑 8K 视频。</li>
+        </ol>
+        <ul>
+        <li><strong>📱 手机端 UI：</strong> <strong>横向滑动视频流</strong></li>
+        </ul>
+        <ul>
+        <li>全屏宽度的视频卡片，左右滑动切换场景。</li>
+        </ul>
+        <p>#### 🟢 Floor 3: App 运行界面</p>
+        <p><strong>【逻辑】 易用性感知</strong></p>
+        <ul>
+        <li><strong>目的：</strong> 建立简单好用，低门槛的印象。</li>
+        </ul>
+        <ul>
+        <li><strong>💻 PC 端 UI：</strong> <strong>粘性滚动视差 </strong></li>
+        </ul>
+        <ul>
+        <li>背景固定为操作系统初始界面。向下滚动时，依次往上滚上app 图标 ，然后展开app操作界面；</li>
+        </ul>
+        <ul>
+        <li>手持手机的特写，屏幕内 GIF 演示：一键备份 \-\&gt; 释放空间。</li>
+        </ul>
+        <p>#### 🟢 Floor 4: 问答式选购引导</p>
+        <p><strong>【逻辑】 需求精准匹配</strong></p>
+        <ul>
+        <li><strong>目的：</strong> 针对 UT2/UP6/UC250/UC450 做精准分流。</li>
+        </ul>
+        <ul>
+        <li><strong>选购逻辑树：</strong></li>
+        </ul>
+        <ol>
+        <li><strong>Layer 1 \(Where?\):</strong> 你在哪用？ \-\&gt; \[🎒 户外\] \[🏠 家庭\] \[⚡️ 工作室\]</li>
+        </ol>
+        <ol>
+        <li><strong>Layer 2 \(What?\):</strong></li>
+        </ol>
+        <ul>
+        <li>选 <strong>户外</strong> \-\&gt; 直接推 <strong>UT2</strong>。</li>
+        </ul>
+        <ul>
+        <li>选 <strong>工作室</strong> \-\&gt; 直接推 <strong>UC450 Pro</strong>。</li>
+        </ul>
+        <ul>
+        <li>选 <strong>家庭</strong> \-\&gt; 追问：<em>&quot;Want a Screen?&quot;</em> \(要屏幕吗？\)</li>
+        </ul>
+        <ul>
+        <li>Yes \-\&gt; 推 <strong>UP6</strong> \(平板NAS\)。</li>
+        </ul>
+        <ul>
+        <li>No \(Just Storage\) \-\&gt; 推 <strong>UC250</strong> \(大容量\)。</li>
+        </ul>
+        <p>#### 🟢 Floor 5: KS 众筹历史</p>
+        <p><strong>【逻辑】 品牌溯源</strong></p>
+        <p>#### 🟢 Floor 6: YouTube 权威背书</p>
+        <p><strong>【逻辑】信任背书</strong></p>
+        <p>#### 🟢 Floor 7: 社媒晒图</p>
+        <p><strong>【逻辑】 审美共识</strong></p>
+        <ul>
+        <li><strong>目的：</strong> 信任背书，激发从众心理</li>
+        </ul>
+        <ul>
+        <li><strong>UI：</strong> <strong>瀑布流 / 滑动画廊</strong>。。</li>
+        </ul>
+        <p>#### 🟢 Floor 8: 站内评论</p>
+        <p><strong>【逻辑】 防御性决策</strong></p>
+        <ul>
+        <li><strong>目的：</strong> 展示客户好评。</li>
+        </ul>
+        <ul>
+        <li><strong>UI：</strong> 。展示4\-5 星好评 \+ 用户金句\+选购的产品。</li>
+        </ul>
+        <p>#### 🟢 Floor 9: Blog 区域</p>
+        <p><strong>【逻辑】 深度内容沉淀</strong></p>
+        <ul>
+        <li><strong>目的：</strong> 服务深度用户，沉淀 SEO 长尾流量。</li>
+        </ul>
+        <p>#### 🟢 Floor 10: 底部保障与服务</p>
+        <p><strong>【逻辑】 服务闭环</strong></p>
+        <ul>
+        <li><strong>目的：</strong> 临门一脚，消除售后焦虑。</li>
+        </ul>
+        <ul>
+        <li><strong>UI：</strong> <strong>服务矩阵 \+ 订阅</strong>。</li>
+        </ul>
+        <h2>二、广告方案</h2>
+        <p><strong>核心逻辑：</strong></p>
+        <ul>
+        <li><strong>谷歌 \(收割逻辑\)</strong>：前期“窄而精准”。只抓那些已经知道 NAS，甚至已经知道雷电口、知道 SD 卡备份痛点的人。等数据跑通了，后期才能慢慢放宽受众。</li>
+        </ul>
+        <ul>
+        <li><strong>Meta \(种草逻辑\)</strong>：前期可以“相对宽一点”，因为 Facebook 是靠兴趣标签（摄影、露营、科技）去碰运气，让算法帮我们找对 NAS 感兴趣的人。</li>
+        </ul>
+        <p>预算为：<strong>Google $7,000 \(78%\) \+ Meta $2,000 \(22%\)</strong>。</p>
+        <hr>
+        <h2>UnifyDrive 首月投放方案</h2>
+        <h3><strong>1. 核心战略大图</strong></h3>
+        <ul>
+        <li><strong>总预算：</strong> $9,000</li>
+        </ul>
+        <ul>
+        <li><strong>UT2 \(大众爆款\):</strong> 卖给<strong>爱玩的</strong>。户外、旅行、Vlog，讲“便携”。</li>
+        </ul>
+        <ul>
+        <li><strong>UP6/450Pro :</strong> 卖给<strong>专业的</strong>。数码发烧友、独立创作者，讲“性能怪兽”、“私人云”。</li>
+        </ul>
+        <ul>
+        <li><strong>UC250 \(家用入门\):</strong> 卖给<strong>刚需的</strong>。</li>
+        </ul>
+        <p>-</p>
+        <hr>
+        <h3><strong>2. 四周投放节奏与预算表</strong></h3>
+        <hr>
+        <h3><strong>3. 平台账户详细设置</strong></h3>
+        <p>#### <strong>🔴 Google Ads 设置 \(总预算: $7,000\)</strong></p>
+        <p><strong>Campaign A: UT2 \- PMax</strong></p>
+        <ul>
+        <li><strong>日预算:</strong> <strong>$120/天</strong></li>
+        </ul>
+        <ul>
+        <li><strong>Asset Group 修正:</strong></li>
+        </ul>
+        <ul>
+        <li><strong>&quot;Digital Nomad&quot; \(数字游民\):</strong> 针对咖啡厅办公、移动剪辑的个人。</li>
+        </ul>
+        <ul>
+        <li><strong>&quot;Adventure/Travel&quot; \(户外\):</strong> 针对无人机玩家、驴友。</li>
+        </ul>
+        <p><strong>Campaign B: Prosumer \- Search </strong></p>
+        <ul>
+        <li><strong>日预算:</strong> <strong>$85/天</strong></li>
+        </ul>
+        <ul>
+        <li><strong>Ad Group 1: 450Pro \(进阶创作者\)</strong></li>
+        </ul>
+        <ul>
+        <li><strong>关键词:</strong> <code>&quot;Best NAS for Mac Studio&quot;</code>, <code>&quot;Personal cloud storage&quot;</code>, <code>&quot;Video editing storage for mac&quot;</code>.</li>
+        </ul>
+        <ul>
+        <li><strong>文案:</strong> <em>“Own your data. The ultimate personal cloud for creators.”</em></li>
+        </ul>
+        <ul>
+        <li><strong>Ad Group 2: UP6 \(骨灰级玩家\)</strong></li>
+        </ul>
+        <ul>
+        <li><strong>关键词:</strong> <code>&quot;Thunderbolt 4 drive&quot;</code>, <code>&quot;Fastest home server&quot;</code>, <code>&quot;10GbE NAS enclosure&quot;</code>.</li>
+        </ul>
+        <ul>
+        <li><strong>文案:</strong> <em>“Need speed? 10GbE \+ Thunderbolt 4. Your personal speed beast.”</em> \(追求速度？万兆\+雷电。你的私人性能怪兽。\)</li>
+        </ul>
+        <ul>
+        <li><strong>否定词:</strong> <code>Enterprise</code> \(企业\), <code>Office</code> \(办公室\), <code>Rackmount</code> \(机架式\), <code>Cheap</code></li>
+        </ul>
+        <p><strong>Campaign C: Competitor \- Search \(防御\)</strong></p>
+        <ul>
+        <li><strong>日预算:</strong> $30/天</li>
+        </ul>
+        <ul>
+        <li><strong>关键词:</strong> <code>&quot;Ugreen NAS review&quot;</code>, <code>&quot;Synology DS923+ alternative&quot;</code>.</li>
+        </ul>
+        <p><strong>Campaign D: UC250 \- Standard Shopping</strong></p>
+        <ul>
+        <li><strong>日预算:</strong> <strong>$10/天</strong></li>
+        </ul>
+        <hr>
+        <p>#### <strong>🔵 Meta Ads 设置 \(总预算: $2,000\)</strong></p>
+        <p><strong>Campaign E: Sales \(CBO\)</strong></p>
+        <ul>
+        <li><strong>总预算:</strong> <strong>$65/天</strong></li>
+        </ul>
+        <p><strong>Ad Group 1: Cold Traffic \(找新客\) \- 60% 预算</strong></p>
+        <ul>
+        <li><strong>受众 \(Interests\):</strong></li>
+        </ul>
+        <ul>
+        <li><strong>UT2:</strong> <code>Photography</code>, <code>Drone (DJI)</code>, <code>Camping</code>, <code>Travel</code>.</li>
+        </ul>
+        <ul>
+        <li><strong>UP6/450Pro:</strong> <code>PC Master Race</code>, <code>Mac Rumors</code>, <code>TechCrunch</code>, <code>Linus Tech Tips</code> \(抓关注科技大V的极客\)。</li>
+        </ul>
+        <p>-</p>
+        <p><strong>Ad Group 2: Retargeting \(追老客\) \- 40% 预算</strong></p>
+  </div>
+  <div class="footer">
+    <a style="color:inherit" href="https://github.com/theyouthforyou/unifydrive-weekly">View on GitHub</a>
+  </div>
+</div>
+</body>
+</html>

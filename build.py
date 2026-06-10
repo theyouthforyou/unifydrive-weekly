@@ -9,9 +9,6 @@ with open("/Users/caesarxu/Desktop/例会.md", "r") as f:
 sections = re.split(r'\n(?=# \d{4}\\.\d)', content)
 print(f"Sections: {len(sections)}")
 
-meeting_dates = {'2025.12', '2026.1.15', '2026.1.22', '2026.1.29', '2026.2.5', '2026.3.26'}
-report_dates = {'2026.3.5', '2026.3.12', '2026.3.19', '2026.4.2', '2026.4.9',
-                '2026.4.16', '2026.4.22', '2026.4.29', '2026.5.8', '2026.5.15'}
 months_map = {1:'Jan',2:'Feb',3:'Mar',4:'Apr',5:'May',6:'Jun',
               7:'Jul',8:'Aug',9:'Sep',10:'Oct',11:'Nov',12:'Dec'}
 
@@ -30,20 +27,18 @@ for i, sec in enumerate(sections):
     
     date_str = f"{year}.{month}" if day is None else f"{year}.{month}.{day}"
     month_name = f"{months_map[month]} {year}"
-    is_report = date_str in report_dates
-    
+
     if day:
         fname = f"{year}-{month:02d}-{int(day):02d}"
     else:
         fname = f"{year}-{month:02d}"
-    
+
     entries.append({
         'date': date_str, 'year': year, 'month': month,
         'month_name': month_name, 'body': body,
-        'is_report': is_report, 'filename': fname,
+        'filename': fname,
     })
-    t = "R" if is_report else "M"
-    print(f"  [{t}] {date_str} -> {fname}.html ({month_name}, {len(body)} chars)")
+    print(f"  [R] {date_str} -> {fname}.html ({month_name}, {len(body)} chars)")
 
 print(f"Parsed {len(entries)} entries total")
 
@@ -193,27 +188,17 @@ PAGE_TPL = '''<!DOCTYPE html>
 GH = "https://github.com/theyouthforyou/unifydrive-weekly"
 
 report_count = 0
-meeting_count = 0
 
 for e in entries:
     body_html = md_to_html(e['body'])
-    
-    if e['is_report']:
-        out_dir = os.path.join(BASE, 'reports')
-        nav_reports = 'class="active"'
-        nav_meetings = ''
-        section_label = 'Weekly / Monthly Report'
-        back_link = 'reports.html'
-        back_label = '周报月报'
-        report_count += 1
-    else:
-        out_dir = os.path.join(BASE, 'meetings')
-        nav_reports = ''
-        nav_meetings = 'class="active"'
-        section_label = 'Meeting Notes / Work Plan'
-        back_link = 'meetings.html'
-        back_label = '例会 / 工作计划'
-        meeting_count += 1
+
+    out_dir = os.path.join(BASE, 'reports')
+    nav_reports = 'class="active"'
+    nav_meetings = ''
+    section_label = 'Weekly / Monthly Report'
+    back_link = 'reports.html'
+    back_label = '周报月报'
+    report_count += 1
 
     html_page = PAGE_TPL.format(
         title=e['date'],
@@ -231,4 +216,4 @@ for e in entries:
         f.write(html_page)
     print(f"  Generated: {out_path}")
 
-print(f"\nDone! {report_count} reports + {meeting_count} meetings generated.")
+print(f"\nDone! {report_count} reports generated.")
