@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='68' font-size='52' font-weight='800' fill='white' text-anchor='middle' font-family='system-ui'>U</text></svg>">
+<title>2026.6.10 · UnifyDrive</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#f5f4f0;--surface:#fff;--surface2:#efede7;--border:rgba(0,0,0,0.12);--border-light:rgba(0,0,0,0.07);--text:#15150f;--text-2:#5c5c56;--text-3:#8f8f88;--green:#0f7a3d;--green-bg:#dff2e6}
+  body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.7;padding:0 24px 60px}
+  .page{max-width:780px;margin:0 auto}
+  .nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);margin-bottom:32px;font-size:13px;font-weight:600}
+  .nav a{text-decoration:none;color:var(--text-2);transition:color .12s}
+  .nav a:hover{color:var(--text)}
+  .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+  .back-link{font-size:12px;color:var(--text-2);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color .12s}
+  .back-link:hover{color:var(--text)}
+  .date-badge{font-size:13px;font-weight:600;color:var(--text);background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:20px;font-family:'IBM Plex Mono',monospace}
+  .section-label{font-size:11px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em}
+  .content h1,.content h2,.content h3{margin-top:28px;margin-bottom:8px;font-weight:600;color:var(--text)}
+  .content h1{font-size:20px;margin-top:0}
+  .content h2{font-size:17px;margin-top:32px;padding-bottom:6px;border-bottom:1px solid var(--border-light)}
+  .content h3{font-size:14px;margin-top:24px;color:var(--text-2)}
+  .content p{margin:10px 0}
+  .content ul,.content ol{margin:8px 0;padding-left:20px}
+  .content li{margin:4px 0;color:var(--text-2)}
+  .content code{background:var(--surface2);padding:2px 6px;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:13px}
+  .content blockquote{margin:12px 0;padding:10px 16px;background:var(--surface2);border-left:3px solid var(--text-3);border-radius:0 6px 6px 0;font-size:13px;color:var(--text-2)}
+  .content hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+  .content strong{color:var(--text);font-weight:600}
+  .content img{max-width:100%;border-radius:8px;border:1px solid var(--border)}
+  .content .img-wrap{margin:16px 0;text-align:center}
+  .content a{color:var(--text)}
+  .kpi-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;background:var(--surface);border-radius:8px;overflow:hidden}
+  .kpi-table th,.kpi-table td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border-light)}
+  .kpi-table th{background:var(--surface2);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-2);font-weight:600}
+  .kpi-table tr:last-child td{border-bottom:none}
+  .kpi-table .num{font-family:'IBM Plex Mono',monospace;font-weight:500}
+  .kpi-table .down{color:#c0392b}
+  .kpi-table .up{color:var(--green)}
+  .tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500;font-family:'IBM Plex Mono',monospace}
+  .tag-green{background:var(--green-bg);color:var(--green)}
+  .tag-red{background:#fce4e4;color:#c0392b}
+  .callout{margin:14px 0;padding:12px 16px;border-radius:8px;font-size:13px;background:var(--surface2);border-left:3px solid var(--text-3)}
+  .callout.warn{border-left-color:#e67e22;background:#fef9e7}
+  .callout.ok{border-left-color:var(--green);background:var(--green-bg)}
+  blockquote{background:#fff3cd;border-left:3px solid #e67e22;margin:12px 0;padding:10px 16px;border-radius:0 6px 6px 0;font-size:13px}
+  .footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-3)}
+  @media(max-width:540px){body{padding:0 16px 40px}.content h1{font-size:18px}.content h2{font-size:15px}.kpi-table{font-size:12px}.kpi-table th,.kpi-table td{padding:8px 10px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="nav">
+    <a href="../reports.html">← 返回周报存档</a>
+    <span style="font-size:12px;color:var(--text-3)">2026.6.10</span>
+  </nav>
+  <div class="top-bar">
+    <div>
+      <div class="section-label">Weekly / Monthly Report</div>
+    </div>
+  </div>
+  <div class="content">
+
+    <h1>📊 周报 | June 5–10, 2026</h1>
+
+    <hr>
+
+    <h2>一、核心销售数据</h2>
+
+    <table class="kpi-table">
+      <tr>
+        <th>指标</th>
+        <th>本周（6/4–6/10）</th>
+        <th>上周（5/28–6/3）</th>
+        <th>环比</th>
+      </tr>
+      <tr>
+        <td><strong>GMV</strong></td>
+        <td><span class="num">$16,116</span></td>
+        <td><span class="num">$19,613</span></td>
+        <td><span class="tag tag-red">▼ -17.8%</span></td>
+      </tr>
+      <tr>
+        <td><strong>订单量</strong></td>
+        <td><span class="num">15 单</span></td>
+        <td><span class="num">18 单</span></td>
+        <td><span class="tag tag-red">▼ -16.7%</span></td>
+      </tr>
+      <tr>
+        <td><strong>客单价 AOV</strong></td>
+        <td><span class="num">$1,066</span></td>
+        <td><span class="num">$1,082</span></td>
+        <td><span class="tag tag-red">▼ -1.5%</span></td>
+      </tr>
+      <tr>
+        <td><strong>访问量</strong></td>
+        <td><span class="num">13,497</span></td>
+        <td><span class="num">14,304</span></td>
+        <td><span class="tag tag-red">▼ -5.6%</span></td>
+      </tr>
+    </table>
+
+    <blockquote>
+      ⚠️ 本周销售小幅回落，但UP6连续3周收入增长，UT2订单量连续3周增长，整体趋势向好。
+    </blockquote>
+
+    <hr>
+
+    <h2>二、产品明细</h2>
+
+    <table class="kpi-table">
+      <tr>
+        <th>产品</th>
+        <th>销量</th>
+        <th>收入</th>
+      </tr>
+      <tr>
+        <td><strong>UnifyDrive UP6</strong></td>
+        <td><span class="num">9 单</span></td>
+        <td><span class="num"><strong>$13,722</strong></span></td>
+      </tr>
+      <tr>
+        <td>UnifyDrive UT2</td>
+        <td><span class="num">6 单</span></td>
+        <td><span class="num">$2,394</span></td>
+      </tr>
+    </table>
+
+    <ul>
+      <li>UP6连续3周收入增长，本周贡献 <strong>85.1%</strong> 收入</li>
+      <li>UT2 Standard Package连续3周订单增长，势头稳定</li>
+    </ul>
+
+    <hr>
+
+    <h2>三、流量渠道</h2>
+
+    <table class="kpi-table">
+      <tr>
+        <th>渠道</th>
+        <th>访问量</th>
+        <th>完成结账</th>
+        <th>转化率</th>
+      </tr>
+      <tr>
+        <td>Social（社交）</td>
+        <td><span class="num">8,283</span></td>
+        <td><span class="num">2</span></td>
+        <td><span class="num">0.024%</span></td>
+      </tr>
+      <tr>
+        <td>Direct（直访）</td>
+        <td><span class="num">3,421</span></td>
+        <td><span class="num">7</span></td>
+        <td><span class="num">0.205%</span></td>
+      </tr>
+      <tr>
+        <td>Search（搜索）</td>
+        <td><span class="num">1,382</span></td>
+        <td><span class="num">4</span></td>
+        <td><span class="num">0.289%</span></td>
+      </tr>
+      <tr>
+        <td>Unknown</td>
+        <td><span class="num">406</span></td>
+        <td><span class="num">0</span></td>
+        <td><span class="num">0%</span></td>
+      </tr>
+    </table>
+
+    <h3>重点：</h3>
+    <ul>
+      <li><strong>YouTube订单连续3周增长</strong>，本周来自YouTube的订单增长显著，是重要的自然流量来源</li>
+      <li><strong>Facebook访客数连续6周减少</strong>，较6周前减少约1万人，降幅96%——付费社交流量大幅萎缩</li>
+      <li><strong>Direct直访结账访问连续3周增长</strong>，品牌认知度在提升</li>
+      <li>Search转化率0.289%依然最高</li>
+    </ul>
+
+    <hr>
+
+    <h2>四、GA4 网站互动数据</h2>
+
+    <table class="kpi-table">
+      <tr>
+        <th>指标</th>
+        <th>6/5 – 6/11</th>
+      </tr>
+      <tr>
+        <td>浏览次数</td>
+        <td><span class="num">13,000</span></td>
+      </tr>
+      <tr>
+        <td>活跃用户</td>
+        <td><span class="num">8,428</span></td>
+      </tr>
+      <tr>
+        <td>人均浏览页数</td>
+        <td><span class="num">1.54</span></td>
+      </tr>
+      <tr>
+        <td>平均互动时长</td>
+        <td><span class="num">25 s</span></td>
+      </tr>
+      <tr>
+        <td>跳出率</td>
+        <td><span class="num">71.1%</span></td>
+      </tr>
+    </table>
+
+    <blockquote>
+      跳出率71.1%、人均仅看1.54页、互动时长25秒，说明大部分用户到站即走。与Shopify数据对比（总访问13,497 vs GA4浏览13,000），两个数据源吻合。高跳出率与Social渠道占61%流量但转化仅0.024%一致——流量多但质量低。
+    </blockquote>
+
+    <h3>用户分布 Top 5</h3>
+
+    <table class="kpi-table">
+      <tr><th>国家/地区</th><th>活跃用户</th><th>占比</th></tr>
+      <tr><td>🇺🇸 United States</td><td><span class="num">6,443</span></td><td><span class="num">76.4%</span></td></tr>
+      <tr><td>🇬🇧 United Kingdom</td><td><span class="num">346</span></td><td><span class="num">4.1%</span></td></tr>
+      <tr><td>🇸🇬 Singapore</td><td><span class="num">293</span></td><td><span class="num">3.5%</span></td></tr>
+      <tr><td>🇨🇦 Canada</td><td><span class="num">268</span></td><td><span class="num">3.2%</span></td></tr>
+      <tr><td>🇦🇺 Australia</td><td><span class="num">109</span></td><td><span class="num">1.3%</span></td></tr>
+    </table>
+
+    <h3>年龄分布</h3>
+
+    <table class="kpi-table">
+      <tr><th>年龄段</th><th>活跃用户</th></tr>
+      <tr><td>18-24</td><td><span class="num">119</span></td></tr>
+      <tr><td>25-34</td><td><span class="num">283</span></td></tr>
+      <tr><td>35-44</td><td><span class="num">322</span></td></tr>
+      <tr><td>45-54</td><td><span class="num">271</span></td></tr>
+      <tr><td>55-64</td><td><span class="num">173</span></td></tr>
+      <tr><td>65+</td><td><span class="num">82</span></td></tr>
+    </table>
+
+    <h3>兴趣类别 Top 5</h3>
+
+    <table class="kpi-table">
+      <tr><th>兴趣</th><th>活跃用户</th></tr>
+      <tr><td>Technology / Technophiles</td><td><span class="num">242</span></td></tr>
+      <tr><td>Shutterbugs（摄影爱好者）</td><td><span class="num">230</span></td></tr>
+      <tr><td>Shopping Enthusiasts</td><td><span class="num">192</span></td></tr>
+      <tr><td>Travel Buffs</td><td><span class="num">149</span></td></tr>
+      <tr><td>Avid Investors</td><td><span class="num">100</span></td></tr>
+    </table>
+
+    <ul>
+      <li>美国用户占76.4%，主市场高度集中；UK/SG/CA/AU为辅</li>
+      <li>主力用户年龄集中在25-54岁（占可知年龄用户的70%），与购买力匹配</li>
+      <li>兴趣上 Technophiles（科技发烧友）+ Shutterbugs（摄影爱好者）排前二，与UP6目标人群精准吻合</li>
+    </ul>
+
+    <hr>
+
+    <h2>五、转化漏斗</h2>
+
+    <table class="kpi-table">
+      <tr>
+        <th>环节</th>
+        <th>数量</th>
+        <th>转化率</th>
+      </tr>
+      <tr>
+        <td>总访问</td>
+        <td><span class="num">13,497</span></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>加购访问</td>
+        <td><span class="num">207</span></td>
+        <td><span class="num">1.53%</span></td>
+      </tr>
+      <tr>
+        <td>到达结账页</td>
+        <td><span class="num">120</span></td>
+        <td><span class="num">57.9%</span> of 加购</td>
+      </tr>
+      <tr>
+        <td>完成结账</td>
+        <td><span class="num">13</span></td>
+        <td><span class="num">10.8%</span> of 结账页</td>
+      </tr>
+      <tr>
+        <td><strong>整体转化率</strong></td>
+        <td>—</td>
+        <td><span class="num"><strong>0.10%</strong></span></td>
+      </tr>
+    </table>
+
+    <h3>弃单率：</h3>
+    <ul>
+      <li>加购→未完成弃单率：<strong>93.7%</strong></li>
+      <li>结账页弃单率：<strong>89.2%</strong></li>
+    </ul>
+
+    <hr>
+
+    <h2>六、各落地页弃单分布</h2>
+
+    <table class="kpi-table">
+      <tr>
+        <th>落地页</th>
+        <th>访问量</th>
+        <th>加购次数</th>
+        <th>完成购买</th>
+        <th>弃单数</th>
+      </tr>
+      <tr>
+        <td>UP6 产品页</td>
+        <td><span class="num">5,963</span></td>
+        <td><span class="num">83</span></td>
+        <td><span class="num">4</span></td>
+        <td><span class="num"><strong>79</strong></span></td>
+      </tr>
+      <tr>
+        <td>首页</td>
+        <td><span class="num">2,742</span></td>
+        <td><span class="num">54</span></td>
+        <td><span class="num">2</span></td>
+        <td><span class="num"><strong>52</strong></span></td>
+      </tr>
+      <tr>
+        <td>UT2 产品页</td>
+        <td><span class="num">3,313</span></td>
+        <td><span class="num">47</span></td>
+        <td><span class="num">1</span></td>
+        <td><span class="num"><strong>46</strong></span></td>
+      </tr>
+      <tr>
+        <td>UP6 Exclusive Offer页</td>
+        <td><span class="num">290</span></td>
+        <td><span class="num">8</span></td>
+        <td><span class="num">0</span></td>
+        <td><span class="num">8</span></td>
+      </tr>
+      <tr>
+        <td>日文UT2页（/ja-jp）</td>
+        <td><span class="num">59</span></td>
+        <td><span class="num">2</span></td>
+        <td><span class="num">0</span></td>
+        <td><span class="num">2</span></td>
+      </tr>
+      <tr>
+        <td>UC450 Pro 产品页</td>
+        <td><span class="num">72</span></td>
+        <td><span class="num">1</span></td>
+        <td><span class="num">0</span></td>
+        <td><span class="num">1</span></td>
+      </tr>
+    </table>
+
+    <hr>
+
+    <h2>七、值得关注</h2>
+
+    <table class="kpi-table">
+      <tr>
+        <th>类型</th>
+        <th>内容</th>
+      </tr>
+      <tr>
+        <td><span class="tag tag-green">✅ 正向</span></td>
+        <td>UP6销售额连续3周增长</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-green">✅ 正向</span></td>
+        <td>UT2订单量连续3周增长</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-green">✅ 正向</span></td>
+        <td>YouTube订单连续3周增长（+400%）</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-red">⚠️ 警示</span></td>
+        <td>Facebook流量连续6周下滑，降幅96%</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-red">⚠️ 警示</span></td>
+        <td>桌面端结账访问量下降42%</td>
+      </tr>
+    </table>
+
+    <hr>
+
+    <h2>八、Google Ads 投放数据</h2>
+
+    <p><strong>投放期间：</strong>6/5 – 6/10 | <strong>总花费：</strong>$179.65 | <strong>总转化价值：</strong>$1,449.00 | <strong>ROAS：</strong>8.07</p>
+
+    <h3>搜索广告系列</h3>
+
+    <table class="kpi-table">
+      <tr>
+        <th>广告系列</th>
+        <th>状态</th>
+        <th>日预算</th>
+        <th>花费</th>
+        <th>点击</th>
+        <th>CPC</th>
+        <th>转化</th>
+        <th>CPA</th>
+        <th>转化价值</th>
+        <th>ROAS</th>
+      </tr>
+      <tr>
+        <td>KRIS-US-UT2-SEARCH</td>
+        <td><span style="font-size:11px;color:var(--green)">投放中</span></td>
+        <td><span class="num">$50</span></td>
+        <td><span class="num">$177.72</span></td>
+        <td><span class="num">177</span></td>
+        <td><span class="num">$1.00</span></td>
+        <td><span class="num">1</span></td>
+        <td><span class="num">$177.72</span></td>
+        <td><span class="num">$1,449</span></td>
+        <td><span class="tag tag-green">8.15x</span></td>
+      </tr>
+      <tr>
+        <td>UK/AU/CA/SG-UT2-SEARCH</td>
+        <td><span style="font-size:11px;color:var(--amber)">学习中</span></td>
+        <td><span class="num">$40</span></td>
+        <td><span class="num">$1.93</span></td>
+        <td><span class="num">7</span></td>
+        <td><span class="num">$0.28</span></td>
+        <td><span class="num">0</span></td>
+        <td><span class="num">---</span></td>
+        <td><span class="num">$0</span></td>
+        <td><span class="num">---</span></td>
+      </tr>
+    </table>
+
+    <ul>
+      <li>US-UT2-SEARCH搜索广告稳健产出，转化价值$1,449，ROAS 8.15表现优秀</li>
+      <li>多国扩展搜索广告（UK/AU/CA/SG）刚进入学习期，花费$1.93还未产生转化</li>
+    </ul>
+
+    <hr>
+
+    <h2>九、Meta Ads 投放数据</h2>
+
+    <p><strong>投放期间：</strong>6/5 – 6/10</p>
+
+    <h3>转化广告系列</h3>
+
+    <table class="kpi-table">
+      <tr>
+        <th>广告系列</th>
+        <th>状态</th>
+        <th>日预算</th>
+        <th>花费</th>
+        <th>购买数</th>
+        <th>CPA</th>
+        <th>转化价值</th>
+        <th>ROAS</th>
+        <th>频次</th>
+        <th>链接点击</th>
+        <th>CPC</th>
+      </tr>
+      <tr>
+        <td>Retargeting UP6 Sale</td>
+        <td><span style="font-size:11px;color:var(--green)">投放中</span></td>
+        <td><span style="font-size:11px;color:var(--text-2)">组预算</span></td>
+        <td><span class="num">$196.10</span></td>
+        <td><span class="num">3</span></td>
+        <td><span class="num">$65.37</span></td>
+        <td><span class="num">$3,247</span></td>
+        <td><span class="tag tag-green">16.56x</span></td>
+        <td><span class="num">3.0</span></td>
+        <td><span class="num">118</span></td>
+        <td><span class="num">$1.66</span></td>
+      </tr>
+      <tr>
+        <td>Retargeting UT2 Sale</td>
+        <td><span style="font-size:11px;color:var(--green)">投放中</span></td>
+        <td><span style="font-size:11px;color:var(--text-2)">组预算</span></td>
+        <td><span class="num">$92.86</span></td>
+        <td><span class="num">1</span></td>
+        <td><span class="num">$92.86</span></td>
+        <td><span class="num">$1,630</span></td>
+        <td><span class="tag tag-green">17.56x</span></td>
+        <td><span class="num">1.3</span></td>
+        <td><span class="num">73</span></td>
+        <td><span class="num">$1.27</span></td>
+      </tr>
+      <tr>
+        <td>UP6 Purchase (US/UK/CA)</td>
+        <td><span style="font-size:11px;color:var(--green)">投放中</span></td>
+        <td><span class="num">$150</span></td>
+        <td><span class="num">$713.34</span></td>
+        <td><span class="num">3</span></td>
+        <td><span class="num">$237.78</span></td>
+        <td><span class="num">$3,497</span></td>
+        <td><span class="tag tag-green">4.90x</span></td>
+        <td><span class="num">1.6</span></td>
+        <td><span class="num">873</span></td>
+        <td><span class="num">$0.82</span></td>
+      </tr>
+      <tr>
+        <td>UP6 Partnership</td>
+        <td><span style="font-size:11px;color:var(--text-3)">已暂停</span></td>
+        <td><span class="num">$70</span></td>
+        <td><span class="num">$310.93</span></td>
+        <td><span class="num">0*</span></td>
+        <td><span class="num">---</span></td>
+        <td><span class="num">---</span></td>
+        <td><span class="num">---</span></td>
+        <td><span class="num">1.6</span></td>
+        <td><span class="num">180</span></td>
+        <td><span class="num">$1.73</span></td>
+      </tr>
+      <tr style="background:var(--surface2);font-weight:600">
+        <td><strong>购买小计</strong></td>
+        <td></td>
+        <td></td>
+        <td><strong><span class="num">$1,002.30</span></strong></td>
+        <td><strong><span class="num">7</span></strong></td>
+        <td><strong><span class="num">$143.19</span></strong></td>
+        <td><strong><span class="num">$8,374</span></strong></td>
+        <td><strong><span class="tag tag-green">8.35x</span></strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <h3>流量广告系列</h3>
+
+    <table class="kpi-table">
+      <tr>
+        <th>广告系列</th>
+        <th>状态</th>
+        <th>日预算</th>
+        <th>花费</th>
+        <th>落地页访问</th>
+        <th>单次访问成本</th>
+      </tr>
+      <tr>
+        <td>UP6-Traffic</td>
+        <td><span style="font-size:11px;color:var(--green)">投放中</span></td>
+        <td><span class="num">$50</span></td>
+        <td><span class="num">$291.78</span></td>
+        <td><span class="num">2,701</span></td>
+        <td><span class="num">$0.11</span></td>
+      </tr>
+      <tr>
+        <td>UT2-Traffic</td>
+        <td><span style="font-size:11px;color:var(--text-3)">已暂停</span></td>
+        <td><span class="num">$50</span></td>
+        <td><span class="num">$218.34</span></td>
+        <td><span class="num">1,959</span></td>
+        <td><span class="num">$0.11</span></td>
+      </tr>
+    </table>
+
+    <blockquote>
+      再营销效率极高（ROAS 16.56 / 17.56），是当前ROI最高的渠道。UP6 Purchase冷受众系列ROAS 4.90也处于健康水平。整体Meta购买ROAS为8.35x。
+    </blockquote>
+
+    <hr>
+
+    <h2>十、广告汇总</h2>
+
+    <table class="kpi-table">
+      <tr>
+        <th>渠道</th>
+        <th>花费</th>
+        <th>转化价值</th>
+        <th>ROAS</th>
+        <th>购买数</th>
+      </tr>
+      <tr>
+        <td><strong>Google Ads</strong></td>
+        <td><span class="num">$179.65</span></td>
+        <td><span class="num">$1,449</span></td>
+        <td><span class="tag tag-green">8.07x</span></td>
+        <td><span class="num">1</span></td>
+      </tr>
+      <tr>
+        <td><strong>Meta Ads（购买系列）</strong></td>
+        <td><span class="num">$1,002.30</span></td>
+        <td><span class="num">$8,374</span></td>
+        <td><span class="tag tag-green">8.35x</span></td>
+        <td><span class="num">7</span></td>
+      </tr>
+      <tr>
+        <td>Meta Ads（流量系列）</td>
+        <td><span class="num">$510.12</span></td>
+        <td colspan="3" style="color:var(--text-2);font-size:12px">引流蓄水，贡献4,660落地页访问</td>
+      </tr>
+      <tr style="background:var(--surface2);font-weight:600">
+        <td><strong>合计</strong></td>
+        <td><strong><span class="num">$1,692.07</span></strong></td>
+        <td><strong><span class="num">$9,823</span></strong></td>
+        <td><strong><span class="tag tag-green">5.81x</span></strong></td>
+        <td><strong><span class="num">8</span></strong></td>
+      </tr>
+    </table>
+
+    <hr>
+
+    <h2>十一、简析与建议</h2>
+
+    <div class="callout ok">
+      <strong>UP6 表现强劲</strong> — 连续3周收入增长，贡献85%+营收，是当前核心利润引擎。再营销ROAS 16.56x极佳，建议持续加大UP6再营销预算。
+    </div>
+
+    <div class="callout warn">
+      <strong>跳出率71.1%，用户到站即走</strong> — GA4数据显示人均仅浏览1.54页、互动时长25秒。Social流量占比高但质量低是主因，建议优化落地页首屏体验和加载速度，同时减少低质社交流量的采买。
+    </div>
+
+    <div class="callout ok">
+      <strong>广告整体ROAS健康</strong> — 全渠道广告花费$1,692，带来$9,823转化价值，ROAS 5.81x。其中Google搜索ROAS 8.07x，Meta再营销16.56-17.56x，效率很高。
+    </div>
+
+    <div class="callout warn">
+      <strong>Facebook流量枯竭</strong> — 较6周前下滑96%，付费社交流量大幅萎缩。需要评估是否调整投放策略，或将预算向YouTube、Search等高ROI渠道转移。
+    </div>
+
+    <div class="callout ok">
+      <strong>有机渠道在增长</strong> — Direct直访和YouTube订单连续增长，品牌口碑在积累。建议增加YouTube内容投入，放大自然流量。
+    </div>
+
+    <div class="callout warn">
+      <strong>转化漏斗效率偏低</strong> — 整体转化率0.10%，加购弃单率93.7%。建议优化结账流程，针对加购未结账用户做再营销。
+    </div>
+
+  </div>
+    </div>
+
+  </div>
+  <div class="footer">
+    <a style="color:inherit" href="https://github.com/theyouthforyou/unifydrive-weekly">View on GitHub</a>
+  </div>
+</div>
+</body>
+</html>
