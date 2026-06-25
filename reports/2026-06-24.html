@@ -47,6 +47,13 @@
   .callout{margin:14px 0;padding:12px 16px;border-radius:8px;font-size:13px;background:var(--surface2);border-left:3px solid var(--text-3)}
   .callout.warn{border-left-color:#e67e22;background:#fef9e7}
   .callout.ok{border-left-color:var(--green);background:var(--green-bg)}
+  .kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0 28px}
+  .kpi-strip .item{background:var(--surface);border:1px solid var(--border-light);border-radius:10px;padding:14px 16px;text-align:center}
+  .kpi-strip .item .label{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+  .kpi-strip .item .value{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:600;color:var(--text)}
+  .kpi-strip .item .change{font-size:11px;font-weight:500;margin-top:2px}
+  .kpi-strip .item .change.up{color:var(--green)}
+  .kpi-strip .item .change.down{color:#c0392b}
   blockquote{background:#fff3cd;border-left:3px solid #e67e22;margin:12px 0;padding:10px 16px;border-radius:0 6px 6px 0;font-size:13px}
   .footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-3)}
   .analysis-box{margin:14px 0;padding:14px 18px;border-radius:8px;font-size:13px;background:#f8f6f0;border:1px solid var(--border-light)}
@@ -68,6 +75,29 @@
   <div class="content">
 
     <h1>📊 周报 | June 18–24, 2026</h1>
+
+    <div class="kpi-strip">
+      <div class="item">
+        <div class="label">本月访问</div>
+        <div class="value">4.5万</div>
+        <div class="change down">-18%</div>
+      </div>
+      <div class="item">
+        <div class="label">总销售额</div>
+        <div class="value">US$6.5万</div>
+        <div class="change up">+96%</div>
+      </div>
+      <div class="item">
+        <div class="label">订单</div>
+        <div class="value">70</div>
+        <div class="change up">+79%</div>
+      </div>
+      <div class="item">
+        <div class="label">转化率</div>
+        <div class="value">0.12%</div>
+        <div class="change up">+104%</div>
+      </div>
+    </div>
 
     <hr>
 
