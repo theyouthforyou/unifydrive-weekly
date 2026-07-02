@@ -1,557 +1,546 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='68' font-size='52' font-weight='800' fill='white' text-anchor='middle' font-family='system-ui'>U</text></svg>">
-<title>2026.6 · UnifyDrive 六月月报</title>
+<title>UnifyDrive 六月月报</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--bg:#f5f4f0;--surface:#fff;--surface2:#efede7;--border:rgba(0,0,0,0.12);--border-light:rgba(0,0,0,0.07);--text:#15150f;--text-2:#5c5c56;--text-3:#8f8f88;--green:#0f7a3d;--green-bg:#dff2e6}
-  body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.7;padding:0 24px 60px}
-  .page{max-width:780px;margin:0 auto}
-  .nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);margin-bottom:32px;font-size:13px;font-weight:600}
-  .nav a{text-decoration:none;color:var(--text-2);transition:color .12s}
-  .nav a:hover{color:var(--text)}
-  .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;padding-bottom:16px;border-bottom:1px solid var(--border)}
-  .back-link{font-size:12px;color:var(--text-2);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color .12s}
-  .back-link:hover{color:var(--text)}
-  .date-badge{font-size:13px;font-weight:600;color:var(--text);background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:20px;font-family:'IBM Plex Mono',monospace}
-  .section-label{font-size:11px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em}
-  .content h1,.content h2,.content h3{margin-top:28px;margin-bottom:8px;font-weight:600;color:var(--text)}
-  .content h1{font-size:20px;margin-top:0}
-  .content h2{font-size:17px;margin-top:32px;padding-bottom:6px;border-bottom:1px solid var(--border-light)}
-  .content h3{font-size:14px;margin-top:24px;color:var(--text-2)}
-  .content p{margin:10px 0}
-  .content ul,.content ol{margin:8px 0;padding-left:20px}
-  .content li{margin:4px 0;color:var(--text-2)}
-  .content code{background:var(--surface2);padding:2px 6px;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:13px}
-  .content blockquote{margin:12px 0;padding:10px 16px;background:var(--surface2);border-left:3px solid var(--text-3);border-radius:0 6px 6px 0;font-size:13px;color:var(--text-2)}
-  .content hr{border:none;border-top:1px solid var(--border);margin:24px 0}
-  .content strong{color:var(--text);font-weight:600}
-  .content img{max-width:100%;border-radius:8px;border:1px solid var(--border)}
-  .content .img-wrap{margin:16px 0;text-align:center}
-  .content a{color:var(--text)}
-  .kpi-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;background:var(--surface);border-radius:8px;overflow:hidden}
-  .kpi-table th,.kpi-table td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border-light)}
-  .kpi-table th{background:var(--surface2);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-2);font-weight:600}
-  .kpi-table tr:last-child td{border-bottom:none}
-  .kpi-table .num{font-family:'IBM Plex Mono',monospace;font-weight:500}
-  .kpi-table .down{color:#c0392b}
-  .kpi-table .up{color:var(--green)}
-  .tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500;font-family:'IBM Plex Mono',monospace}
-  .tag-green{background:var(--green-bg);color:var(--green)}
-  .tag-red{background:#fce4e4;color:#c0392b}
-  .tag-amber{background:#fef9e7;color:#b07418}
-  .callout{margin:14px 0;padding:12px 16px;border-radius:8px;font-size:13px;background:var(--surface2);border-left:3px solid var(--text-3)}
-  .callout.warn{border-left-color:#e67e22;background:#fef9e7}
-  .callout.ok{border-left-color:var(--green);background:var(--green-bg)}
-  .kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
-  .kpi-grid .item{background:var(--surface);border:1px solid var(--border-light);border-radius:8px;padding:14px 16px;text-align:center}
-  .kpi-grid .item .l{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px}
-  .kpi-grid .item .v{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--text)}
-  .kpi-grid .item .c{font-size:11px;font-weight:500;margin-top:2px}
-  .kpi-grid .item .c.up{color:var(--green)}
-  .kpi-grid .item .c.down{color:#c0392b}
-  blockquote{background:#fff3cd;border-left:3px solid #e67e22;margin:12px 0;padding:10px 16px;border-radius:0 6px 6px 0;font-size:13px}
-  .footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-3)}
-  @media(max-width:540px){body{padding:0 16px 40px}.content h1{font-size:18px}.content h2{font-size:15px}.kpi-table{font-size:12px}.kpi-table th,.kpi-table td{padding:8px 10px}}
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --ink:#12161F;
+    --ink-soft:#3A4150;
+    --paper:#F6F5F2;
+    --card:#FFFFFF;
+    --line:#E3E1DA;
+    --steel:#2E5C7A;
+    --steel-dim:#EAF0F4;
+    --good:#1B7A4D;
+    --good-bg:#EAF6EF;
+    --warn:#B23A2E;
+    --warn-bg:#FBEDEA;
+    --amber:#9A6A17;
+    --amber-bg:#FBF3E3;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, sans-serif;
+    line-height:1.55;
+    padding:0 0 80px;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:0 32px;}
+
+  header{
+    background:var(--ink);
+    color:#F6F5F2;
+    padding:56px 0 40px;
+    margin-bottom:48px;
+  }
+  header .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:#8FAFC2;
+    margin-bottom:14px;
+  }
+  header h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:44px;
+    letter-spacing:-0.01em;
+    margin-bottom:10px;
+  }
+  header .period{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    color:#B7C4CE;
+    margin-bottom:26px;
+  }
+  header .summary{
+    font-size:16.5px;
+    color:#E4E2DB;
+    max-width:680px;
+    border-left:2px solid var(--steel);
+    padding-left:18px;
+  }
+
+  .section{margin-bottom:56px;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:22px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:12px;
+  }
+  .section-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--steel);
+    font-weight:600;
+  }
+  .section-head h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:23px;
+  }
+  .section-note{
+    margin-left:auto;
+    font-size:12.5px;
+    color:#8B8778;
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  .kpi-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:14px;
+    margin-bottom:24px;
+  }
+  .kpi-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:18px 20px;
+  }
+  .kpi-label{font-size:12.5px; color:var(--ink-soft); margin-bottom:8px;}
+  .kpi-value{font-family:'IBM Plex Mono', monospace; font-size:26px; font-weight:600; letter-spacing:-0.01em;}
+  .kpi-delta{font-family:'IBM Plex Mono', monospace; font-size:12.5px; margin-top:6px; font-weight:600;}
+  .up{color:var(--good);}
+  .down{color:var(--warn);}
+  .flat{color:#8B8778;}
+
+  .kpi-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:12px;}
+
+  table{width:100%; border-collapse:collapse; font-size:14px; background:var(--card); border-radius:6px; overflow:hidden;}
+  th{
+    text-align:left;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    background:var(--steel-dim);
+    padding:10px 14px;
+    border-bottom:1px solid var(--line);
+  }
+  td{
+    padding:10px 14px;
+    border-bottom:1px solid var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+  }
+  td.label{font-family:'Inter', sans-serif; font-size:14px;}
+  tr:last-child td{border-bottom:none;}
+  tr.total td{font-weight:700; background:#FAFAF8;}
+  .num{text-align:right;}
+  .tag-good{color:var(--good); font-weight:600;}
+  .tag-warn{color:var(--warn); font-weight:600;}
+  .row-good{background:var(--good-bg);}
+  .row-warn{background:var(--warn-bg);}
+  .row-amber{background:var(--amber-bg);}
+
+  .table-scroll{overflow-x:auto; border:1px solid var(--line); border-radius:6px;}
+  .table-scroll table{border:none; border-radius:0;}
+
+  .callout{
+    border-radius:6px;
+    padding:16px 18px;
+    font-size:14px;
+    margin-bottom:14px;
+    border:1px solid transparent;
+  }
+  .callout-good{background:var(--good-bg); border-color:#CFE9DA;}
+  .callout-warn{background:var(--warn-bg); border-color:#F0D3CD;}
+  .callout-amber{background:var(--amber-bg); border-color:#F0E0BD;}
+  .callout-title{font-weight:700; margin-bottom:4px; font-size:13px;}
+  .callout-good .callout-title{color:var(--good);}
+  .callout-warn .callout-title{color:var(--warn);}
+  .callout-amber .callout-title{color:var(--amber);}
+
+  .funnel{margin-top:8px;}
+  .funnel-row{display:flex; align-items:center; gap:14px; margin-bottom:10px;}
+  .funnel-label{width:120px; font-size:13px; color:var(--ink-soft); flex-shrink:0;}
+  .funnel-bar-track{flex:1; background:#EDECE6; border-radius:4px; height:28px; position:relative;}
+  .funnel-bar-fill{
+    height:100%;
+    background:linear-gradient(90deg, var(--steel), #4E85A8);
+    border-radius:4px;
+    display:flex;
+    align-items:center;
+    padding-left:12px;
+    color:#fff;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .funnel-rate{width:70px; text-align:right; font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--steel); font-weight:600; flex-shrink:0;}
+  .funnel-scale-note{font-size:11.5px; color:#8B8778; margin-top:6px; font-style:italic;}
+
+  .cols-2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+
+  .sumlist{list-style:none;}
+  .sumlist li{
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+    display:flex;
+    gap:10px;
+  }
+  .sumlist li:last-child{border-bottom:none;}
+  .dot-good{color:var(--good); font-weight:700; flex-shrink:0;}
+  .dot-warn{color:var(--warn); font-weight:700; flex-shrink:0;}
+
+  .assumption{
+    font-size:12px;
+    color:#8B8778;
+    font-style:italic;
+    margin-top:4px;
+  }
+
+  .action-list{list-style:none; counter-reset:action;}
+  .action-list li{
+    counter-increment:action;
+    padding:14px 0 14px 40px;
+    position:relative;
+    border-bottom:1px solid var(--line);
+    font-size:14.5px;
+  }
+  .action-list li:last-child{border-bottom:none;}
+  .action-list li::before{
+    content:counter(action);
+    position:absolute;
+    left:0; top:14px;
+    width:24px; height:24px;
+    background:var(--steel);
+    color:#fff;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+  }
+  .action-list .action-why{color:var(--ink-soft); font-size:13px; margin-top:3px;}
+
+  @media(max-width:640px){
+    .kpi-grid,.kpi-grid-4{grid-template-columns:1fr 1fr;}
+    .cols-2{grid-template-columns:1fr;}
+    header h1{font-size:32px;}
+    .funnel-label{width:80px; font-size:12px;}
+  }
 </style>
 </head>
 <body>
-<div class="page">
-  <nav class="nav">
-    <a href="../reports.html">← 返回周报存档</a>
-    <span style="font-size:12px;color:var(--text-3)">2026.6</span>
-  </nav>
-  <div class="top-bar">
-    <div>
-      <div class="section-label">Monthly Report</div>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">UnifyDrive · Monthly Business Report</div>
+    <h1>六月月报</h1>
+    <div class="period">JUNE 1 – JUNE 30, 2026</div>
+    <div class="summary">
+      GMV $88,556，环比 +54.4%；整体转化率翻倍至 0.15%。UT2 销量逼近 UP6（47 vs 48 件），带动整体客单价结构性下滑。广告端 Retargeting 系列表现突出（ROAS 最高 8.86），Summer Sale 冷流量购买系列效率偏低，需本周决策。
     </div>
   </div>
-  <div class="content">
+</header>
 
-    <h1>📊 六月月报 | June 1–30, 2026</h1>
+<div class="wrap">
 
-    <blockquote>
-      GMV $88,556，环比+54.4%；整体转化率翻倍至0.15%。UT2销量逼近UP6（47 vs 48件），带动整体客单价结构性下滑。广告端Retargeting系列表现突出（ROAS最高8.86），Summer Sale系列效率偏低需决策。
-    </blockquote>
-
-    <h2>一、核心销售数据</h2>
-
-    <table class="kpi-table">
-      <tr>
-        <th>指标</th>
-        <th>六月</th>
-        <th>五月</th>
-        <th>环比</th>
-      </tr>
-      <tr>
-        <td><strong>GMV</strong></td>
-        <td><span class="num">$88,556</span></td>
-        <td><span class="num">$57,370</span></td>
-        <td><span class="tag tag-green">▲ +54.4%</span></td>
-      </tr>
-      <tr>
-        <td><strong>订单量</strong></td>
-        <td><span class="num">97 单</span></td>
-        <td><span class="num">59 单</span></td>
-        <td><span class="tag tag-green">▲ +64.4%</span></td>
-      </tr>
-      <tr>
-        <td><strong>整体 AOV</strong></td>
-        <td><span class="num">$942</span></td>
-        <td><span class="num">$1,028</span></td>
-        <td><span class="tag tag-red">▼ -8.4%</span></td>
-      </tr>
-      <tr>
-        <td><strong>UP6 AOV</strong></td>
-        <td><span class="num">$1,441</span></td>
-        <td><span class="num">—</span></td>
-        <td><span class="tag tag-amber">48 件 · $69,172</span></td>
-      </tr>
-      <tr>
-        <td><strong>UT2 AOV</strong></td>
-        <td><span class="num">$369</span></td>
-        <td><span class="num">—</span></td>
-        <td><span class="tag tag-amber">47 件 · $17,347</span></td>
-      </tr>
-      <tr>
-        <td><strong>访问量</strong></td>
-        <td><span class="num">54,914</span></td>
-        <td><span class="num">73,990</span></td>
-        <td><span class="tag tag-red">▼ -25.8%</span></td>
-      </tr>
-      <tr>
-        <td><strong>退货率</strong></td>
-        <td><span class="num">4.1%</span></td>
-        <td><span class="num">—</span></td>
-        <td><span class="tag tag-amber">$3,617 / 4 单</span></td>
-      </tr>
-    </table>
-
-    <div class="callout ok">
-      <strong>客单价下滑是结构性的，不是定价问题。</strong>UT2销量占比从五月低占比提升至与UP6几乎持平（48:47），UT2单价$369与UP6 $1,441相差近4倍，产品组合变化直接拉低整体均值。分品类看两款产品各自客单价并无异常。
+  <!-- 一、核心销售数据 -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>核心销售数据</h2>
+      <span class="section-note">VS MAY 2026</span>
     </div>
 
-    <hr>
-
-    <h2>二、产品明细</h2>
-
-    <table class="kpi-table">
-      <tr>
-        <th>产品</th>
-        <th>销量</th>
-        <th>收入</th>
-      </tr>
-      <tr>
-        <td><strong>UnifyDrive UP6</strong></td>
-        <td><span class="num">48 件</span></td>
-        <td><span class="num">$69,172</span></td>
-      </tr>
-      <tr>
-        <td>UnifyDrive UT2</td>
-        <td><span class="num">47 件</span></td>
-        <td><span class="num">$17,347</span></td>
-      </tr>
-      <tr>
-        <td>UT2 Silicone Case</td>
-        <td><span class="num">25 件</span></td>
-        <td><span class="num">$44</span></td>
-      </tr>
-      <tr>
-        <td>1-Year Extended Warranty (UP6)</td>
-        <td><span class="num">14 件</span></td>
-        <td><span class="num">—</span></td>
-      </tr>
-      <tr>
-        <td>UnifyDrive UC250</td>
-        <td><span class="num">3 件</span></td>
-        <td><span class="num">$1,097</span></td>
-      </tr>
-      <tr>
-        <td>UT2 CF-Express Adapter</td>
-        <td><span class="num">3 件</span></td>
-        <td><span class="num">$115</span></td>
-      </tr>
-      <tr>
-        <td>UnifyDrive UT2 256GB SSD</td>
-        <td><span class="num">1 件</span></td>
-        <td><span class="num">$457</span></td>
-      </tr>
-      <tr>
-        <td>UT2 Carrying Case</td>
-        <td><span class="num">2 件</span></td>
-        <td><span class="num">$88</span></td>
-      </tr>
-      <tr>
-        <td>UT2 Official Battery</td>
-        <td><span class="num">1 件</span></td>
-        <td><span class="num">$30</span></td>
-      </tr>
-    </table>
-
-    <ul>
-      <li>UP6贡献78.1%收入，UT2销量与UP6几乎持平</li>
-      <li>配件销售本月明显增加：Silicone Case 25件、延保14件，说明搭配推荐正在起作用</li>
-    </ul>
-
-    <hr>
-
-    <h2>三、流量渠道</h2>
-
-    <table class="kpi-table">
-      <tr>
-        <th>渠道</th>
-        <th>访问量</th>
-        <th>转化率</th>
-      </tr>
-      <tr>
-        <td>Social（社交）</td>
-        <td><span class="num">33,468</span></td>
-        <td><span class="tag tag-red">0.036%</span></td>
-      </tr>
-      <tr>
-        <td>Direct（直访）</td>
-        <td><span class="num">14,454</span></td>
-        <td><span class="num">0.277%</span></td>
-      </tr>
-      <tr>
-        <td>Search（搜索）</td>
-        <td><span class="num">5,960</span></td>
-        <td><span class="tag tag-green">0.369%</span></td>
-      </tr>
-      <tr>
-        <td>Unknown</td>
-        <td><span class="num">941</span></td>
-        <td><span class="num">0.425%</span></td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td><span class="num">84</span></td>
-        <td><span class="num">0%</span></td>
-      </tr>
-    </table>
-
-    <ul>
-      <li>Social占总流量61%但转化率仅0.036%，Search转化率是Social的10倍</li>
-      <li>Social承担曝光/种草角色而非直接成交，建议按渠道分角色评估</li>
-    </ul>
-
-    <hr>
-
-    <h2>四、转化漏斗</h2>
-
-    <table class="kpi-table">
-      <tr>
-        <th>环节</th>
-        <th>数量</th>
-        <th>转化率</th>
-      </tr>
-      <tr>
-        <td>总访问</td>
-        <td><span class="num">54,914</span></td>
-        <td>—</td>
-      </tr>
-      <tr>
-        <td>加购访问</td>
-        <td><span class="num">1,125</span></td>
-        <td><span class="num">2.05%</span></td>
-      </tr>
-      <tr>
-        <td>到达结账页</td>
-        <td><span class="num">516</span></td>
-        <td><span class="num">45.9%</span> of 加购</td>
-      </tr>
-      <tr>
-        <td>完成结账</td>
-        <td><span class="num">78</span></td>
-        <td><span class="num">15.1%</span> of 结账页</td>
-      </tr>
-      <tr>
-        <td><strong>整体转化率</strong></td>
-        <td>—</td>
-        <td><span class="num"><strong>0.15%</strong></span></td>
-      </tr>
-    </table>
-
-    <ul>
-      <li>加购率2.05%（五月1.02%）翻倍，整体转化率0.15%（五月0.069%）翻倍以上</li>
-      <li>加购→结账流失率54.1%，结账页弃单率84.9%，仍是最大漏损点</li>
-    </ul>
-
-    <hr>
-
-    <h2>五、各落地页完整漏斗</h2>
-
-    <table class="kpi-table">
-      <tr>
-        <th>落地页</th>
-        <th>访问量</th>
-        <th>加购</th>
-        <th>完成结账</th>
-        <th>加购转化率</th>
-      </tr>
-      <tr>
-        <td><strong>UT2 产品页</strong></td>
-        <td><span class="num">13,292</span></td>
-        <td><span class="num">241</span></td>
-        <td><span class="num">18</span></td>
-        <td><span class="tag tag-green">7.5%</span></td>
-      </tr>
-      <tr>
-        <td>首页</td>
-        <td><span class="num">10,330</span></td>
-        <td><span class="num">348</span></td>
-        <td><span class="num">17</span></td>
-        <td><span class="num">4.9%</span></td>
-      </tr>
-      <tr>
-        <td>UP6 产品页</td>
-        <td><span class="num">22,644</span></td>
-        <td><span class="num">350</span></td>
-        <td><span class="num">15</span></td>
-        <td><span class="tag tag-red">4.3%</span></td>
-      </tr>
-      <tr>
-        <td>Summer Sale 页</td>
-        <td><span class="num">1,545</span></td>
-        <td><span class="num">68</span></td>
-        <td><span class="num">4</span></td>
-        <td><span class="num">5.9%</span></td>
-      </tr>
-      <tr>
-        <td>UP6 Exclusive Offer 页</td>
-        <td><span class="num">982</span></td>
-        <td><span class="num">36</span></td>
-        <td><span class="num">2</span></td>
-        <td><span class="num">5.6%</span></td>
-      </tr>
-      <tr>
-        <td>UC250 产品页</td>
-        <td><span class="num">353</span></td>
-        <td><span class="num">3</span></td>
-        <td><span class="num">2</span></td>
-        <td><span class="num">66.7%</span></td>
-      </tr>
-      <tr>
-        <td>日文 UT2 页（/ja-jp）</td>
-        <td><span class="num">273</span></td>
-        <td><span class="num">11</span></td>
-        <td><span class="num">1</span></td>
-        <td><span class="num">9.1%</span></td>
-      </tr>
-      <tr>
-        <td>Blog: Best Portable NAS</td>
-        <td><span class="num">189</span></td>
-        <td><span class="num">3</span></td>
-        <td><span class="num">1</span></td>
-        <td><span class="num">33.3%</span></td>
-      </tr>
-      <tr>
-        <td>日文首页（/ja-jp）</td>
-        <td><span class="num">144</span></td>
-        <td><span class="num">8</span></td>
-        <td><span class="num">1</span></td>
-        <td><span class="num">12.5%</span></td>
-      </tr>
-    </table>
-
-    <div class="callout warn">
-      <strong>UP6 产品页是本月最大的流量浪费点。</strong>22,644次访问只换来15单，加购转化率4.3%明显低于UT2产品页的7.5%。结合UP6是高客单价产品（$1,441），大流量低转化说明页面在说服力或价格锚点上可能存在阻力。
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">GMV</div>
+        <div class="kpi-value">$88,556</div>
+        <div class="kpi-delta up">▲ +54.4% vs $57,370</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">订单量</div>
+        <div class="kpi-value">97</div>
+        <div class="kpi-delta up">▲ +64.4% vs 59</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">整体客单价 AOV</div>
+        <div class="kpi-value">$942</div>
+        <div class="kpi-delta down">▼ -8.4% vs $1,028</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">UP6 AOV</div>
+        <div class="kpi-value">$1,441</div>
+        <div class="kpi-delta flat">48 件 · $69,172</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">UT2 AOV</div>
+        <div class="kpi-value">$369</div>
+        <div class="kpi-delta flat">47 件 · $17,347</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">退货率</div>
+        <div class="kpi-value">4.1%</div>
+        <div class="kpi-delta flat">$3,617 / 4 单</div>
+      </div>
     </div>
 
-    <hr>
-
-    <h2>六、广告投放表现</h2>
-
-    <p><strong>总花费：</strong>$11,945 | <strong>广告归因转化价值：</strong>$39,418（占GMV 44.5%）| <strong>综合ROAS：</strong>3.30（Google 5.62 / Meta 2.66）</p>
-    <p style="font-size:12px;color:var(--text-3);margin-top:2px;">* 广告归因转化价值为平台自报数据，与Shopify总GMV存在归因口径差异，仅作效率参考。</p>
-
-    <table class="kpi-table">
-      <tr>
-        <th>平台</th>
-        <th>系列</th>
-        <th>花费</th>
-        <th>转化数</th>
-        <th>转化价值</th>
-        <th>ROAS</th>
-        <th>CPA</th>
-      </tr>
-      <tr>
-        <td>Meta</td>
-        <td>UP6 Retargeting</td>
-        <td><span class="num">$1,021</span></td>
-        <td><span class="num">7</span></td>
-        <td><span class="num">$9,043</span></td>
-        <td><span class="tag tag-green">8.86x</span></td>
-        <td><span class="num">$146</span></td>
-      </tr>
-      <tr>
-        <td>Google</td>
-        <td>UT2 Search (US)</td>
-        <td><span class="num">$1,485</span></td>
-        <td><span class="num">9</span></td>
-        <td><span class="num">$11,676</span></td>
-        <td><span class="tag tag-green">7.86x</span></td>
-        <td><span class="num">$165</span></td>
-      </tr>
-      <tr>
-        <td>Meta</td>
-        <td>UP6 Partnership</td>
-        <td><span class="num">$448</span></td>
-        <td><span class="num">2</span></td>
-        <td><span class="num">$3,098</span></td>
-        <td><span class="tag tag-green">6.91x</span></td>
-        <td><span class="num">$224</span></td>
-      </tr>
-      <tr>
-        <td>Meta</td>
-        <td>UT2 Retargeting</td>
-        <td><span class="num">$470</span></td>
-        <td><span class="num">5</span></td>
-        <td><span class="num">$3,086</span></td>
-        <td><span class="tag tag-green">6.57x</span></td>
-        <td><span class="num">$94</span></td>
-      </tr>
-      <tr>
-        <td>Google</td>
-        <td>UT2 Search (UK/AU/CA/SG)</td>
-        <td><span class="num">$691</span></td>
-        <td><span class="num">4</span></td>
-        <td><span class="num">$2,796</span></td>
-        <td><span class="num">4.05x</span></td>
-        <td><span class="num">$173</span></td>
-      </tr>
-      <tr>
-        <td>Meta</td>
-        <td>UP6 Purchase（冷流量，已暂停）</td>
-        <td><span class="num">$2,743</span></td>
-        <td><span class="num">5</span></td>
-        <td><span class="num">$6,545</span></td>
-        <td><span class="tag tag-amber">2.39x</span></td>
-        <td><span class="num">$549</span></td>
-      </tr>
-      <tr>
-        <td>Meta</td>
-        <td>Summer Sale Purchase</td>
-        <td><span class="num">$1,703</span></td>
-        <td><span class="num">4</span></td>
-        <td><span class="num">$3,174</span></td>
-        <td><span class="tag tag-red">1.86x</span></td>
-        <td><span class="num">$426</span></td>
-      </tr>
-    </table>
-
-    <div class="callout ok">
-      <strong>Retargeting 是本月最优效率来源。</strong>Meta与Google的4条Retargeting/高意图搜索系列ROAS全部在4-8.9之间，CPA最低压到$94（UT2 Retargeting）。建议下月优先保证这几条系列的预算。
+    <div class="callout callout-amber">
+      <div class="callout-title">客单价下滑是结构性的，不是定价问题</div>
+      整体 AOV 下滑 8.4%，主因是 UT2 销量占比从五月的低占比大幅提升至与 UP6 几乎持平（48 : 47）。UP6 与 UT2 单价相差近 4 倍，产品组合变化直接拉低均值——分品类看，两款产品各自客单价并无异常。UT2 的放量与 Google Search（两条 UT2 系列 ROAS 4–7.9）及 Meta UT2 Retargeting（ROAS 6.57）表现相符，属于广告驱动的良性增长。
     </div>
-
-    <div class="callout warn">
-      <strong>两条系列需要本周决策。</strong>Summer Sale Purchase ROAS仅1.86，CPA $426，是目前唯一ROAS低于2且仍在花钱的系列。建议决定是换素材/受众还是降预算止损。
-    </div>
-
-    <div class="callout warn">
-      <strong>两条纯流量系列值得关注。</strong>UT2-Traffic（$1,204，落地页浏览9,371次）与UP6-Traffic（$1,455，落地页浏览12,871次）无直接归因购买，但引流成本极低（$0.11-0.13/次），可能承担产品页流量助攻作用。建议下月做辅助转化核查再决定去留。
-    </div>
-
-    <hr>
-
-    <h2>七、退货与退款明细</h2>
-
-    <table class="kpi-table">
-      <tr>
-        <th>订单</th>
-        <th>退款金额</th>
-        <th>产品</th>
-        <th>原因</th>
-      </tr>
-      <tr>
-        <td>#1479</td>
-        <td><span class="num">$1,579.00</span></td>
-        <td>UP6</td>
-        <td>用户暂时不要，未发货全额退款</td>
-      </tr>
-      <tr>
-        <td>#1628</td>
-        <td><span class="num">$1,279.48</span></td>
-        <td>UP6</td>
-        <td>不满意TB4和操作，挽单失败，扣手续费$169.52</td>
-      </tr>
-      <tr>
-        <td>#1453</td>
-        <td><span class="num">$379.05</span></td>
-        <td>UT2</td>
-        <td>客户发起拒付，产品已退回全额退款</td>
-      </tr>
-      <tr>
-        <td>#1575</td>
-        <td><span class="num">$379.05</span></td>
-        <td>UT2</td>
-        <td>AI Help Center误导Dropbox支持，全额退款</td>
-      </tr>
-    </table>
-
-    <div class="callout warn">
-      <strong>#1575 需要立刻核查。</strong>AI Help Center对Dropbox支持状态的描述错误导致退款，需确认页面内容已全部更正。
-    </div>
-
-    <hr>
-
-    <h2>八、月度总结</h2>
-
-    <table class="kpi-table">
-      <tr>
-        <th>类型</th>
-        <th>内容</th>
-      </tr>
-      <tr>
-        <td><span class="tag tag-green">✅ 正向</span></td>
-        <td>GMV $88,556，环比+54.4%</td>
-      </tr>
-      <tr>
-        <td><span class="tag tag-green">✅ 正向</span></td>
-        <td>整体转化率0.15%，较五月翻倍</td>
-      </tr>
-      <tr>
-        <td><span class="tag tag-green">✅ 正向</span></td>
-        <td>配件销售（Silicone Case、延保）明显增加</td>
-      </tr>
-      <tr>
-        <td><span class="tag tag-green">✅ 正向</span></td>
-        <td>日本市场持续增长，结账访问同比去年+950%</td>
-      </tr>
-      <tr>
-        <td><span class="tag tag-green">✅ 正向</span></td>
-        <td>Retargeting广告系列ROAS全线跑赢冷流量3-4倍</td>
-      </tr>
-      <tr>
-        <td><span class="tag tag-red">⚠️ 警示</span></td>
-        <td>退货率4.1%，4单退款$3,617，UP6退货2单需关注</td>
-      </tr>
-      <tr>
-        <td><span class="tag tag-red">⚠️ 警示</span></td>
-        <td>访问量下滑25.8%，需补充流量来源</td>
-      </tr>
-      <tr>
-        <td><span class="tag tag-red">⚠️ 警示</span></td>
-        <td>Social流量61%但转化率仅0.036%</td>
-      </tr>
-      <tr>
-        <td><span class="tag tag-red">⚠️ 警示</span></td>
-        <td>UP6产品页22,644次访问仅15次成交</td>
-      </tr>
-      <tr>
-        <td><span class="tag tag-red">⚠️ 警示</span></td>
-        <td>Summer Sale Meta系列ROAS 1.86，仍在消耗预算</td>
-      </tr>
-    </table>
-
   </div>
-  <div class="footer">
-    <a style="color:inherit" href="https://github.com/theyouthforyou/unifydrive-weekly">View on GitHub</a>
+
+  <!-- 二、产品明细 -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>产品明细</h2>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <tr><th>产品</th><th class="num">销量</th><th class="num">收入</th></tr>
+        <tr><td class="label">UnifyDrive UP6</td><td class="num">48</td><td class="num">$69,172</td></tr>
+        <tr><td class="label">UnifyDrive UT2</td><td class="num">47</td><td class="num">$17,347</td></tr>
+        <tr><td class="label">UT2 Silicone Case</td><td class="num">25</td><td class="num">$44</td></tr>
+        <tr><td class="label">1-Year Extended Warranty (UP6)</td><td class="num">14</td><td class="num">—</td></tr>
+        <tr><td class="label">UnifyDrive UC250</td><td class="num">3</td><td class="num">$1,097</td></tr>
+        <tr><td class="label">UT2 CF-Express Adapter</td><td class="num">3</td><td class="num">$115</td></tr>
+        <tr><td class="label">UnifyDrive UT2 256GB SSD</td><td class="num">1</td><td class="num">$457</td></tr>
+        <tr><td class="label">UT2 Carrying Case</td><td class="num">2</td><td class="num">$88</td></tr>
+        <tr><td class="label">UT2 Official Battery</td><td class="num">1</td><td class="num">$30</td></tr>
+      </table>
+    </div>
+    <div class="callout callout-good" style="margin-top:14px;">
+      <div class="callout-title">配件转化能力提升</div>
+      UP6 贡献 78.1% 收入；Silicone Case（25 件）与延保（14 件）附加销售明显增加，说明结账页 / 详情页的搭配推荐正在起作用。
+    </div>
   </div>
+
+  <!-- 三、流量与转化 -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>流量与转化</h2>
+    </div>
+
+    <div class="cols-2">
+      <div>
+        <div class="table-scroll">
+          <table>
+            <tr><th>渠道</th><th class="num">访问量</th><th class="num">转化率</th></tr>
+            <tr class="row-warn"><td class="label">Social</td><td class="num">33,468</td><td class="num">0.036%</td></tr>
+            <tr><td class="label">Direct</td><td class="num">14,454</td><td class="num">0.277%</td></tr>
+            <tr class="row-good"><td class="label">Search</td><td class="num">5,960</td><td class="num">0.369%</td></tr>
+            <tr><td class="label">Unknown</td><td class="num">941</td><td class="num">0.425%</td></tr>
+            <tr><td class="label">Email</td><td class="num">84</td><td class="num">0%</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="callout callout-warn">
+        <div class="callout-title">Social 流量占 61%，但转化率最低</div>
+        Search 转化率是 Social 的 10 倍。Social 大概率承担的是曝光/种草角色而非直接成交，建议按渠道分角色评估，而非用统一转化率考核。
+      </div>
+    </div>
+
+    <div style="margin-top:24px;">
+      <div class="funnel">
+        <div class="funnel-row">
+          <div class="funnel-label">总访问</div>
+          <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100%;">54,914</div></div>
+          <div class="funnel-rate">—</div>
+        </div>
+        <div class="funnel-row">
+          <div class="funnel-label">加购</div>
+          <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:38%;">1,125</div></div>
+          <div class="funnel-rate">2.05%</div>
+        </div>
+        <div class="funnel-row">
+          <div class="funnel-label">到达结账页</div>
+          <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:22%;">516</div></div>
+          <div class="funnel-rate">45.9%</div>
+        </div>
+        <div class="funnel-row">
+          <div class="funnel-label">完成结账</div>
+          <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:10%;">78</div></div>
+          <div class="funnel-rate">15.1%</div>
+        </div>
+      </div>
+      <div class="funnel-scale-note">* 条形宽度为视觉示意，非等比例，具体数值以标注为准</div>
+    </div>
+
+    <div class="callout callout-good" style="margin-top:16px;">
+      <div class="callout-title">整体转化质量翻倍</div>
+      加购率 2.05%（五月 1.02%）、整体转化率 0.15%（五月 0.069%）均较五月翻倍以上。同时结账页弃单率 84.9%、加购到结账流失 54.1% 仍是最大漏损点，是下月优化优先级。
+    </div>
+
+    <div class="table-scroll" style="margin-top:16px;">
+      <table>
+        <tr><th>落地页</th><th class="num">访问量</th><th class="num">加购</th><th class="num">完成结账</th><th class="num">加购转化率</th></tr>
+        <tr class="row-good"><td class="label">UT2 产品页</td><td class="num">13,292</td><td class="num">241</td><td class="num">18</td><td class="num">7.5%</td></tr>
+        <tr><td class="label">首页</td><td class="num">10,330</td><td class="num">348</td><td class="num">17</td><td class="num">4.9%</td></tr>
+        <tr class="row-warn"><td class="label">UP6 产品页</td><td class="num">22,644</td><td class="num">350</td><td class="num">15</td><td class="num">4.3%</td></tr>
+        <tr><td class="label">Summer Sale 页</td><td class="num">1,545</td><td class="num">68</td><td class="num">4</td><td class="num">5.9%</td></tr>
+        <tr><td class="label">UP6 Exclusive Offer 页</td><td class="num">982</td><td class="num">36</td><td class="num">2</td><td class="num">5.6%</td></tr>
+        <tr><td class="label">UC250 产品页</td><td class="num">353</td><td class="num">3</td><td class="num">2</td><td class="num">66.7%</td></tr>
+        <tr><td class="label">日文 UT2 页 (/ja-jp)</td><td class="num">273</td><td class="num">11</td><td class="num">1</td><td class="num">9.1%</td></tr>
+        <tr><td class="label">Blog: Best Portable NAS</td><td class="num">189</td><td class="num">3</td><td class="num">1</td><td class="num">33.3%</td></tr>
+        <tr><td class="label">日文 UT2 256GB 页</td><td class="num">16</td><td class="num">3</td><td class="num">1</td><td class="num">33.3%</td></tr>
+        <tr><td class="label">日文首页 (/ja-jp)</td><td class="num">144</td><td class="num">8</td><td class="num">1</td><td class="num">12.5%</td></tr>
+      </table>
+    </div>
+    <div class="callout callout-warn" style="margin-top:14px;">
+      <div class="callout-title">UP6 产品页是本月最大的流量浪费点</div>
+      22,644 次访问只换来 15 单，加购转化率 4.3% 明显低于 UT2 产品页的 7.5%。结合 UP6 是高客单价产品（$1,441），大流量低转化说明页面在说服力或价格锚点上可能存在阻力，建议优先做该页 A/B 测试。
+    </div>
+  </div>
+
+  <!-- 四、广告投放表现 -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2>广告投放表现</h2>
+      <span class="section-note">GOOGLE ADS + META ADS</span>
+    </div>
+
+    <div class="kpi-grid-4">
+      <div class="kpi-card">
+        <div class="kpi-label">广告总花费</div>
+        <div class="kpi-value">$11,945</div>
+        <div class="kpi-delta flat">占 GMV 13.5%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">广告归因转化价值</div>
+        <div class="kpi-value">$39,418</div>
+        <div class="kpi-delta flat">占 GMV 44.5%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">综合 ROAS</div>
+        <div class="kpi-value">3.30</div>
+        <div class="kpi-delta flat">Google 5.62 / Meta 2.66</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">追踪购买笔数</div>
+        <div class="kpi-value">36</div>
+        <div class="kpi-delta flat">Google 13 · Meta 23</div>
+      </div>
+    </div>
+    <div class="assumption">* 广告归因转化价值为平台自报数据（Pixel/GA 追踪），与 Shopify 总 GMV 存在归因口径差异，不做 1:1 对应，仅作效率参考。</div>
+
+    <h3 style="font-family:'Fraunces',serif; font-size:17px; margin:28px 0 12px;">分系列表现排行（按 ROAS 排序）</h3>
+    <div class="table-scroll">
+      <table>
+        <tr><th>平台</th><th>系列</th><th class="num">花费</th><th class="num">转化数</th><th class="num">转化价值</th><th class="num">ROAS</th><th class="num">CPA</th></tr>
+        <tr class="row-good"><td class="label">Meta</td><td class="label">UP6 Retargeting</td><td class="num">$1,021</td><td class="num">7</td><td class="num">$9,043</td><td class="num tag-good">8.86</td><td class="num">$146</td></tr>
+        <tr class="row-good"><td class="label">Google</td><td class="label">UT2 Search (US)</td><td class="num">$1,485</td><td class="num">9</td><td class="num">$11,676</td><td class="num tag-good">7.86</td><td class="num">$165</td></tr>
+        <tr class="row-good"><td class="label">Meta</td><td class="label">UP6 Partnership</td><td class="num">$448</td><td class="num">2</td><td class="num">$3,098</td><td class="num tag-good">6.91</td><td class="num">$224</td></tr>
+        <tr class="row-good"><td class="label">Meta</td><td class="label">UT2 Retargeting</td><td class="num">$470</td><td class="num">5</td><td class="num">$3,086</td><td class="num tag-good">6.57</td><td class="num">$94</td></tr>
+        <tr><td class="label">Google</td><td class="label">UT2 Search (UK/AU/CA/SG)</td><td class="num">$691</td><td class="num">4</td><td class="num">$2,796</td><td class="num">4.05</td><td class="num">$173</td></tr>
+        <tr class="row-amber"><td class="label">Meta</td><td class="label">UP6 Purchase（冷流量）</td><td class="num">$2,743</td><td class="num">5</td><td class="num">$6,545</td><td class="num tag-warn">2.39</td><td class="num">$549</td></tr>
+        <tr class="row-warn"><td class="label">Meta</td><td class="label">Summer Sale Purchase</td><td class="num">$1,703</td><td class="num">4</td><td class="num">$3,174</td><td class="num tag-warn">1.86</td><td class="num">$426</td></tr>
+      </table>
+    </div>
+
+    <div class="callout callout-amber" style="margin-top:16px;">
+      <div class="callout-title">两条纯流量系列值得关注</div>
+      Meta 的 UT2-Traffic（$1,204 花费，落地页浏览 9,371 次，单次 $0.13）与 UP6-Traffic（$1,455 花费，落地页浏览 12,871 次，单次 $0.11）没有直接归因购买，但引流成本极低，可能承担了对 UP6/UT2 产品页流量的助攻作用（UP6 产品页 22,644 次访问、UT2 产品页 13,292 次访问，量级吻合）。建议下月做一次辅助转化（assisted conversion）核查，避免只看末次点击就砍掉这类流量。
+    </div>
+
+    <div class="cols-2" style="margin-top:12px;">
+      <div class="callout callout-good">
+        <div class="callout-title">扬长：Retargeting 是本月最优效率来源</div>
+        Meta 与 Google 的 4 条 Retargeting / 高意图搜索系列 ROAS 全部在 4–8.9 之间，CPA 最低压到 $94（UT2 Retargeting）。这批老客户 / 高意图流量的转化效率是冷流量购买系列的 3–4 倍，建议下月优先保证这几条系列的预算不被削减。
+      </div>
+      <div class="callout callout-warn">
+        <div class="callout-title">避短：两条系列需要本周决策</div>
+        Summer Sale Purchase（仍在投放）ROAS 仅 1.86，CPA $426，是目前唯一 ROAS 低于 2 且仍在花钱的系列；UP6 冷流量购买系列 ROAS 2.39 已暂停。建议本周决定 Summer Sale 系列是换素材/受众，还是降预算止损。
+      </div>
+    </div>
+  </div>
+
+  <!-- 五、退货与退款明细 -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2>退货与退款明细</h2>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <tr><th>订单</th><th>原订单日期</th><th>退款日期</th><th class="num">退款金额</th><th>产品</th><th>原因</th></tr>
+        <tr><td class="label">#1479</td><td>2026-03-20</td><td>2026-06-01</td><td class="num">$1,579.00</td><td class="label">UP6</td><td class="label">用户暂时不要，未发货全额退款</td></tr>
+        <tr class="row-warn"><td class="label">#1628</td><td>2026-05-26</td><td>2026-06-15</td><td class="num">$1,279.48</td><td class="label">UP6</td><td class="label">不满意 TB4 和操作，挽单失败，扣手续费 $169.52</td></tr>
+        <tr><td class="label">#1453</td><td>2026-03-12</td><td>2026-06-22</td><td class="num">$379.05</td><td class="label">UT2</td><td class="label">客户发起拒付，产品已退回全额退款</td></tr>
+        <tr class="row-warn"><td class="label">#1575</td><td>2026-04-26</td><td>2026-06-30</td><td class="num">$379.05</td><td class="label">UT2</td><td class="label">AI Help Center 误导 Dropbox 支持，全额退款</td></tr>
+        <tr class="total"><td class="label">合计</td><td></td><td></td><td class="num">$3,616.58</td><td class="label">UP6×2 · UT2×2</td><td class="label">退货率 4.1%</td></tr>
+      </table>
+    </div>
+    <div class="callout callout-warn" style="margin-top:14px;">
+      <div class="callout-title">#1575 需要立刻核查</div>
+      AI Help Center 对 Dropbox 支持状态的描述错误导致退款，需确认页面内容是否已全部更正，避免同类误导重复发生。
+    </div>
+  </div>
+
+  <!-- 六、月度总结 -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <h2>月度总结</h2>
+    </div>
+    <div class="cols-2">
+      <ul class="sumlist">
+        <li><span class="dot-good">✓</span> GMV $88,556，环比 +54.4%</li>
+        <li><span class="dot-good">✓</span> 整体转化率 0.15%，较五月翻倍</li>
+        <li><span class="dot-good">✓</span> 配件销售（Silicone Case、延保）明显增加</li>
+        <li><span class="dot-good">✓</span> 日本市场持续增长，结账访问同比去年 +950%</li>
+        <li><span class="dot-good">✓</span> Retargeting 广告系列 ROAS 全线跑赢冷流量 3–4 倍</li>
+      </ul>
+      <ul class="sumlist">
+        <li><span class="dot-warn">!</span> 退货率 4.1%，UP6 退货 2 单需关注</li>
+        <li><span class="dot-warn">!</span> 访问量下滑 25.8%，需补充流量来源</li>
+        <li><span class="dot-warn">!</span> Social 流量占 61% 但转化率仅 0.036%</li>
+        <li><span class="dot-warn">!</span> UP6 产品页 22,644 次访问仅 15 次成交</li>
+        <li><span class="dot-warn">!</span> Summer Sale Meta 系列 ROAS 1.86，仍在消耗预算</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 七、需要决策 & 下月计划 -->
+  <div class="section" style="margin-bottom:20px;">
+    <div class="section-head">
+      <span class="section-num">07</span>
+      <h2>需要决策 &amp; 下月计划</h2>
+    </div>
+    <ol class="action-list">
+      <li>
+        Summer Sale Meta 系列（ROAS 1.86）本周内决定：更换素材/受众，还是降预算止损。
+        <div class="action-why">当前是唯一 ROAS 低于 2 且仍在投放的系列，继续原样投放会持续拉低整体 Meta 效率。</div>
+      </li>
+      <li>
+        将预算向 Retargeting 系列（UP6/UT2）与 Google UT2 Search 倾斜。
+        <div class="action-why">这 4 条系列 ROAS 4–8.9，是本月效率最高的组合，验证了"老客户+高意图搜索"策略。</div>
+      </li>
+      <li>
+        对 UP6 产品页做转化率专项排查（A/B 测试文案/定价锚点/信任模块）。
+        <div class="action-why">22,644 次访问仅 15 单成交，是全站最大的流量浪费点，且 UP6 客单价最高，优化收益也最大。</div>
+      </li>
+      <li>
+        核实 AI Help Center 中 Dropbox 支持相关描述已全部更正（对应订单 #1575）。
+        <div class="action-why">避免同类信息误导继续产生退款。</div>
+      </li>
+      <li>
+        对无直接归因但低成本引流的系列（Meta 两条 Traffic 系列）做一次辅助转化核查，再决定去留。
+        <div class="action-why">末次点击模型可能低估了这些系列对 UP6/UT2 产品页流量的贡献。</div>
+      </li>
+    </ol>
+  </div>
+
 </div>
 </body>
 </html>
