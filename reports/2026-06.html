@@ -68,6 +68,15 @@
     border-left:2px solid var(--steel);
     padding-left:18px;
   }
+  .header-kpi{display:flex;gap:0;margin-top:24px;padding:18px 22px;background:rgba(255,255,255,0.06);border-radius:10px;align-items:center}
+  .hk-item{flex:1;text-align:center}
+  .hk-l{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8FAFC2;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+  .hk-v{display:block;font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:#fff;letter-spacing:-.01em}
+  .hk-d{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;margin-top:3px;font-weight:500}
+  .hk-d.up{color:#6BCB9B}
+  .hk-d.down{color:#E88A7A}
+  .hk-d.flat{color:#B7C4CE}
+  .hk-divider{width:1px;height:40px;background:rgba(255,255,255,0.12);flex-shrink:0}
 
   .section{margin-bottom:56px;}
   .section-head{
@@ -243,8 +252,30 @@
     <div class="eyebrow">UnifyDrive · Monthly Business Report</div>
     <h1>六月月报</h1>
     <div class="period">JUNE 1 – JUNE 30, 2026</div>
-    <div class="summary">
-      GMV $88,556，环比 +54.4%；整体转化率翻倍至 0.15%。UT2 销量逼近 UP6（47 vs 48 件），带动整体客单价结构性下滑。广告端 Retargeting 系列表现突出（ROAS 最高 8.86），Summer Sale 冷流量购买系列效率偏低，需本周决策。
+    <div class="header-kpi">
+      <div class="hk-item">
+        <span class="hk-l">GMV</span>
+        <span class="hk-v">$88,556</span>
+        <span class="hk-d up">▲ +54.4%</span>
+      </div>
+      <div class="hk-divider"></div>
+      <div class="hk-item">
+        <span class="hk-l">订单</span>
+        <span class="hk-v">97</span>
+        <span class="hk-d up">▲ +64.4%</span>
+      </div>
+      <div class="hk-divider"></div>
+      <div class="hk-item">
+        <span class="hk-l">转化率</span>
+        <span class="hk-v">0.15%</span>
+        <span class="hk-d up">翻倍</span>
+      </div>
+      <div class="hk-divider"></div>
+      <div class="hk-item">
+        <span class="hk-l">退货率</span>
+        <span class="hk-v">4.1%</span>
+        <span class="hk-d flat">$3,617</span>
+      </div>
     </div>
   </div>
 </header>
