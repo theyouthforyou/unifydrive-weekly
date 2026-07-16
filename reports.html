@@ -174,7 +174,7 @@
 const periods = [
   // Jul 2026
   { type:'weekly', month:'2026 / 07', year:2026, mo:7,
-    label:'07-09 – 07-16', gmv:11181, orders:17, hideDelta:true,
+    label:'07-09 – 07-16', gmv:11181, orders:17,
     href:'reports/2026-07-16.html' },
   { type:'weekly', month:'2026 / 07', year:2026, mo:7,
     label:'07-01 – 07-09', gmv:27379, orders:36,
@@ -319,7 +319,7 @@ function render(filter='all'){
             <div class="metric"><span class="m-l">GMV</span><span class="m-v big">${fmt(p.gmv)}</span></div>
             <div class="metric w96"><span class="m-l">订单</span><span class="m-v">${p.orders} 单</span></div>
             <div class="metric w96"><span class="m-l">客单价</span><span class="m-v">${fmt(a)}</span></div>
-            ${p.hideDelta?'':`<div class="metric w80"><span class="m-l">环比</span><span class="m-v" style="margin-top:1px">${deltaHtml}</span></div>`}
+            <div class="metric w80"><span class="m-l">环比</span><span class="m-v" style="margin-top:1px">${deltaHtml}</span></div>
           </div>`;
       } else if(p.alt){
         contentHtml = `<div class="metrics">${p.alt.map(m=>`<div class="metric"><span class="m-l">${m.l}</span><span class="m-v big">${m.v}</span></div>`).join('')}</div>`;
