@@ -141,8 +141,8 @@
   <header class="topbar">
     <div class="brand"><span class="dot"></span><span class="u">Unify</span><span class="d">Drive</span></div>
     <div class="topmeta">
-      <span>最后更新 <b class="mono">2026-07-16</b></span>
-      <span>共 <b class="mono">25</b> 期</span>
+      <span>最后更新 <b class="mono">2026-07-23</b></span>
+      <span>共 <b class="mono">26</b> 期</span>
     </div>
   </header>
 
@@ -165,7 +165,7 @@
 
   <footer class="foot">
     <span>UnifyDrive · 独立站运营 · 广告投放复盘</span>
-    <span class="mono">归档自 2025 · 25 期</span>
+    <span class="mono">归档自 2025 · 26 期</span>
   </footer>
 
 </div>
@@ -174,10 +174,13 @@
 const periods = [
   // Jul 2026
   { type:'weekly', month:'2026 / 07', year:2026, mo:7,
-    label:'07-09 – 07-16', gmv:11181, orders:17,
+    label:'07-16 – 07-23', gmv:18033, orders:20, aov:899,
+    href:'reports/2026-07-23.html' },
+  { type:'weekly', month:'2026 / 07', year:2026, mo:7,
+    label:'07-09 – 07-16', gmv:11181, orders:17, aov:788,
     href:'reports/2026-07-16.html' },
   { type:'weekly', month:'2026 / 07', year:2026, mo:7,
-    label:'07-01 – 07-09', gmv:27379, orders:36,
+    label:'07-01 – 07-09', gmv:27379, orders:36, aov:792,
     href:'reports/2026-07-09.html' },
   // Jun 2026
   { type:'monthly', month:'2026 / 06', year:2026, mo:6,
@@ -309,7 +312,7 @@ function render(filter='all'){
 
       let contentHtml='';
       if(p.gmv){
-        const a = aov(p);
+        const a = p.aov ?? aov(p);
         const d = deltaFor(p._idx);
         const deltaHtml = d!==null
           ? `<span class="delta ${d>=0?'up':'down'}">${d>=0?'▲':'▼'} ${Math.abs(d)}%</span>`
