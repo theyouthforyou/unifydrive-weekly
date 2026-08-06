@@ -141,8 +141,8 @@
   <header class="topbar">
     <div class="brand"><span class="dot"></span><span class="u">Unify</span><span class="d">Drive</span></div>
     <div class="topmeta">
-      <span>最后更新 <b class="mono">2026-07-31</b></span>
-      <span>共 <b class="mono">27</b> 期</span>
+      <span>最后更新 <b class="mono">2026-08-06</b></span>
+      <span>共 <b class="mono">28</b> 期</span>
     </div>
   </header>
 
@@ -165,13 +165,17 @@
 
   <footer class="foot">
     <span>UnifyDrive · 独立站运营 · 广告投放复盘</span>
-    <span class="mono">归档自 2025 · 27 期</span>
+    <span class="mono">归档自 2025 · 28 期</span>
   </footer>
 
 </div>
 
 <script>
 const periods = [
+  // Aug 2026
+  { type:'weekly', month:'2026 / 08', year:2026, mo:8,
+    label:'08-01 – 08-06', gmv:13372, orders:15, aov:891,
+    href:'reports/2026-08-06.html' },
   // Jul 2026
   { type:'monthly', month:'2026 / 07', year:2026, mo:7,
     label:'7月月报', note:'Shopify + 广告已完成',
@@ -296,7 +300,7 @@ function render(filter='all'){
   Object.entries(groups).forEach(([month,items])=>{
     const m = document.createElement('section');
     m.className='month';
-    const isRecent = month==='2026 / 07' || month==='2026 / 06' || month==='2026 / 05';
+    const isRecent = month==='2026 / 08' || month==='2026 / 07' || month==='2026 / 06';
     m.innerHTML = `
       <button class="mhead" aria-expanded="${isRecent}">
         <span class="my">${month}</span>
