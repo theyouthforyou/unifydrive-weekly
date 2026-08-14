@@ -15,13 +15,15 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--tex
 .nav a{text-decoration:none;color:var(--text2)}.nav span{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:12px}
 .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;padding-bottom:16px;border-bottom:1px solid var(--border)}
 .eyebrow{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-.content h1,.content h2,.content h3{color:var(--text);font-weight:600}.content h1{font-size:20px;margin:0 0 14px}.content h2{font-size:17px;margin:32px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border-light)}.content h3{font-size:14px;color:var(--text2);margin:24px 0 8px}
+.content h1,.content h2,.content h3,.content h4{color:var(--text);font-weight:600}.content h1{font-size:20px;margin:0 0 14px}.content h2{font-size:17px;margin:32px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border-light)}.content h3{font-size:14px;color:var(--text2);margin:24px 0 8px}.content h4{font-size:12px;color:var(--muted);margin:16px 0 6px;text-transform:uppercase;letter-spacing:.04em}
 .content p{margin:10px 0}.content ul{margin:8px 0;padding-left:20px}.content li{margin:4px 0;color:var(--text2)}.content hr{border:none;border-top:1px solid var(--border);margin:24px 0}.content strong{font-weight:600}
 .table-wrap{overflow-x:auto;margin:12px 0}.table{width:100%;border-collapse:collapse;font-size:13px;background:var(--surface);border-radius:8px;overflow:hidden}.table th,.table td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border-light);white-space:nowrap}.table th{background:var(--surface2);font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text2);font-weight:600}.table tr:last-child td{border-bottom:none}
+.table-wrap.fit{overflow-x:visible}.table.fit{table-layout:fixed}.table.fit th,.table.fit td{white-space:normal;overflow-wrap:anywhere;padding:9px 8px}.table.fit th:first-child,.table.fit td:first-child{width:27%}
 .num{font-family:'IBM Plex Mono',monospace;font-weight:500;white-space:nowrap}.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap}.tag-green{background:var(--greenbg);color:var(--green)}.tag-red{background:var(--redbg);color:var(--red)}
 .callout{margin:14px 0;padding:12px 16px;border-radius:8px;font-size:13px;background:var(--surface2);border-left:3px solid var(--muted)}.callout.warn{border-left-color:#e67e22;background:#fef9e7}.callout.ok{border-left-color:var(--green);background:var(--greenbg)}.callout b{display:block;margin-bottom:3px}
+.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.evidence-figure{margin:0;background:var(--surface);border:1px solid var(--border-light);border-radius:8px;overflow:hidden}.evidence-figure img{display:block;width:100%;height:auto}.evidence-figure figcaption{padding:9px 11px;font-size:11px;color:var(--muted);line-height:1.5}
 .source{font-size:12px;color:var(--muted)}.footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
-@media(max-width:640px){body{padding:0 12px 40px}.nav{padding:12px 8px}.table{min-width:620px;font-size:12px}.content h1{font-size:18px}}
+@media(max-width:640px){body{padding:0 12px 40px}.nav{padding:12px 8px}.table{min-width:620px;font-size:12px}.table.fit{min-width:0;font-size:11px}.table.fit th,.table.fit td{padding:7px 4px}.content h1{font-size:18px}.evidence-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body><div class="page">
@@ -116,11 +118,18 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--tex
 <hr><h2>五、Google Ads 投放数据</h2>
 <p class="source">统计期间：8/6–8/12；广告数据截至 8 月 12 日。</p>
 <h3>5.1 搜索广告系列</h3>
-<div class="table-wrap"><table class="table">
-<tr><th>广告系列</th><th class="num">花费</th><th class="num">转化价值</th><th class="num">ROAS</th><th class="num">展示</th><th class="num">点击</th><th class="num">CTR</th><th class="num">CPC</th><th class="num">转化</th><th class="num">CVR</th><th class="num">CPA</th></tr>
-<tr><td><strong>US UT2 Search</strong></td><td class="num">$297.10</td><td class="num">$2,048.00</td><td><span class="tag tag-green">6.89x</span></td><td class="num">1,121</td><td class="num">96</td><td class="num">8.56%</td><td class="num">$3.09</td><td class="num">2.00</td><td class="num">2.08%</td><td class="num">$148.55</td></tr>
-<tr><td><strong>US UP6 Search</strong></td><td class="num">$256.35</td><td class="num">$0</td><td>—</td><td class="num">803</td><td class="num">95</td><td class="num">11.83%</td><td class="num">$2.70</td><td class="num">0.00</td><td class="num">0.00%</td><td>—</td></tr>
-<tr><td><strong>搜索广告合计</strong></td><td class="num"><strong>$553.45</strong></td><td class="num"><strong>$2,048.00</strong></td><td><span class="tag tag-green">3.70x</span></td><td class="num"><strong>1,924</strong></td><td class="num"><strong>191</strong></td><td class="num">9.93%</td><td class="num">$2.90</td><td class="num"><strong>2.00</strong></td><td class="num">1.05%</td><td class="num">$276.72</td></tr>
+<div class="table-wrap fit"><table class="table fit">
+<tr><th>广告系列</th><th class="num">花费</th><th class="num">转化价值</th><th class="num">ROAS</th><th class="num">转化</th><th class="num">CPA</th></tr>
+<tr><td><strong>US UT2 Search</strong></td><td class="num">$297.10</td><td class="num">$2,048.00</td><td><span class="tag tag-green">6.89x</span></td><td class="num">2.00</td><td class="num">$148.55</td></tr>
+<tr><td><strong>US UP6 Search</strong></td><td class="num">$256.35</td><td class="num">$0</td><td>—</td><td class="num">0.00</td><td>—</td></tr>
+<tr><td><strong>搜索广告合计</strong></td><td class="num"><strong>$553.45</strong></td><td class="num"><strong>$2,048.00</strong></td><td><span class="tag tag-green">3.70x</span></td><td class="num"><strong>2.00</strong></td><td class="num">$276.72</td></tr>
+</table></div>
+<h3>5.2 点击质量</h3>
+<div class="table-wrap fit"><table class="table fit">
+<tr><th>广告系列</th><th class="num">展示</th><th class="num">点击</th><th class="num">CTR</th><th class="num">CPC</th><th class="num">CVR</th></tr>
+<tr><td><strong>US UT2 Search</strong></td><td class="num">1,121</td><td class="num">96</td><td class="num">8.56%</td><td class="num">$3.09</td><td class="num">2.08%</td></tr>
+<tr><td><strong>US UP6 Search</strong></td><td class="num">803</td><td class="num">95</td><td class="num">11.83%</td><td class="num">$2.70</td><td class="num">0.00%</td></tr>
+<tr><td><strong>搜索广告合计</strong></td><td class="num"><strong>1,924</strong></td><td class="num"><strong>191</strong></td><td class="num">9.93%</td><td class="num">$2.90</td><td class="num">1.05%</td></tr>
 </table></div>
 <ul>
 <li>US UT2 Search 是本期 Google 唯一产生转化价值的系列，ROAS 6.89x，带来 2 次平台转化。</li>
@@ -128,17 +137,121 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--tex
 <li>Google 平台“转化次数”可以出现小数，且平台归因不等同于 Shopify 的实际整数订单。</li>
 </ul>
 
-<hr><h2>六、阶段性结论</h2>
+<hr><h2>六、业绩波动分析</h2>
+<p>本节将 Shopify 的成交结果，与 GA4、Google Search Console、Clarity 及本周广告数据交叉核对。结论不是单纯“广告没问题、网站没转化”，而是<strong>搜索需求和高意向流量减少，UP6 成交型流量转弱，移动端页面承接又放大了损失</strong>。</p>
+
+<h3>6.1 Shopify｜最终成交结果</h3>
+<p class="source">来源：Shopify Analytics；统计周期 8/7–8/13，对比 7/31–8/6。</p>
+<div class="table-wrap fit"><table class="table fit">
+<tr><th>指标</th><th class="num">本期</th><th class="num">上期</th><th class="num">变化</th></tr>
+<tr><td><strong>GMV</strong></td><td class="num">$8,449.94</td><td class="num">$20,870.71</td><td><span class="tag tag-red">-59.5%</span></td></tr>
+<tr><td><strong>订单</strong></td><td class="num">13</td><td class="num">23</td><td><span class="tag tag-red">-43.5%</span></td></tr>
+<tr><td><strong>AOV</strong></td><td class="num">$650.00</td><td class="num">$907.42</td><td><span class="tag tag-red">-28.3%</span></td></tr>
+<tr><td><strong>UP6 订单</strong></td><td class="num">3</td><td class="num">13</td><td><span class="tag tag-red">-76.9%</span></td></tr>
+<tr><td><strong>UT2 订单</strong></td><td class="num">9</td><td class="num">8</td><td><span class="tag tag-green">+12.5%</span></td></tr>
+</table></div>
+<p>GMV 的降幅大于订单降幅，直接原因是 UP6 少了 10 单，同时 UT2 的增长无法弥补高客单产品缺口。因此本周不是全站产品普遍卖不动，而是问题集中在 UP6。</p>
+
+<h3>6.2 GA4｜流量数量、质量与来源</h3>
+<p class="source">来源：GA4「流量获取：带来会话的来源/媒介」；统计周期 8/7–8/13，对比 7/31–8/6。</p>
+<div class="table-wrap fit"><table class="table fit">
+<tr><th>指标</th><th class="num">本期</th><th class="num">上期</th><th class="num">变化</th></tr>
+<tr><td><strong>会话</strong></td><td class="num">9,737</td><td class="num">13,288</td><td><span class="tag tag-red">-26.7%</span></td></tr>
+<tr><td><strong>有效浏览会话</strong></td><td class="num">2,073</td><td class="num">3,977</td><td><span class="tag tag-red">-47.9%</span></td></tr>
+<tr><td><strong>互动率</strong></td><td class="num">21.29%</td><td class="num">29.93%</td><td><span class="tag tag-red">下降 8.64 个百分点</span></td></tr>
+<tr><td><strong>平均互动时长</strong></td><td class="num">17 秒</td><td class="num">23 秒</td><td><span class="tag tag-red">-26.1%</span></td></tr>
+<tr><td><strong>GA4 重要行为</strong></td><td class="num">10</td><td class="num">18</td><td><span class="tag tag-red">-44.4%</span></td></tr>
+<tr><td><strong>GA4 收入</strong></td><td class="num">$6,174.98</td><td class="num">$19,493.05</td><td><span class="tag tag-red">-68.3%</span></td></tr>
+</table></div>
+<div class="table-wrap fit"><table class="table fit">
+<tr><th>来源 / 媒介</th><th class="num">本期会话</th><th class="num">上期会话</th><th class="num">本期互动率</th><th class="num">本期收入</th></tr>
+<tr><td><strong>facebook / cpc</strong></td><td class="num">4,711</td><td class="num">6,365</td><td class="num">18.17%</td><td class="num">$0</td></tr>
+<tr><td><strong>(not set)</strong></td><td class="num">1,533</td><td class="num">215</td><td class="num">1.11%</td><td class="num">$0</td></tr>
+<tr><td><strong>fb / paid_social</strong></td><td class="num">830</td><td class="num">1,137</td><td class="num">18.43%</td><td class="num">$0</td></tr>
+<tr><td><strong>(data not available)</strong></td><td class="num">816</td><td class="num">—</td><td class="num">0.98%</td><td class="num">$0</td></tr>
+<tr><td><strong>google / organic</strong></td><td class="num">744</td><td class="num">1,501</td><td class="num">44.89%</td><td class="num">$432.98</td></tr>
+<tr><td><strong>(direct) / (none)</strong></td><td class="num">649</td><td class="num">1,431</td><td class="num">24.81%</td><td class="num">$1,998.00</td></tr>
+<tr><td><strong>youtube.com / referral</strong></td><td class="num">351</td><td class="num">704</td><td class="num">50.43%</td><td class="num">$399.00</td></tr>
+<tr><td><strong>ig / paid_social</strong></td><td class="num">296</td><td class="num">488</td><td class="num">23.31%</td><td class="num">$1,599.00</td></tr>
+<tr><td><strong>google / cpc</strong></td><td class="num">198</td><td class="num">503</td><td class="num">52.02%</td><td class="num">$848.00</td></tr>
+<tr><td><strong>meta / paid_social</strong></td><td class="num">84</td><td class="num">—</td><td class="num">30.95%</td><td class="num">$0</td></tr>
+</table></div>
+<p class="source">说明：“有效浏览会话”对应 GA4 的感兴趣会话，即停留超过 10 秒、发生至少 1 个重要行为，或浏览至少 2 个页面的会话。“GA4 重要行为”对应关键事件，可能包含购买、加购、开始结账或表单等；截图未展示具体事件清单，因此不能全部视为购买。</p>
 <ul>
-<li><strong>业绩下降首先是流量问题：</strong>访问量下降 40.4%，订单下降 43.5%，两者变化接近。</li>
-<li><strong>第二个影响来自产品结构：</strong>UP6 减少 10 单，AOV 从 $907.42 降至 $650.00，使销售额降幅扩大到 59.5%。</li>
-<li><strong>UT2 表现相对稳定：</strong>订单增长 12.5%，但单价较低，无法抵消 UP6 高价值订单减少。</li>
-<li><strong>回购客户占比：</strong>本期共有 12 位客户，其中 4 位为回购客户，回购客户率为 33.3%，说明已有客户仍然贡献了一部分订单，但本期新增客户和高客单价 UP6 订单不足。</li>
-<li><strong>Meta 转化广告有产出：</strong>保留的转化系列合计 ROAS 4.90x，主要由 Retargeting UP6 Sale 和 UP6 VIP100 Purchase 支撑。</li>
-<li><strong>Google 由 UT2 搜索广告支撑：</strong>Google 搜索 ROAS 3.70x，$2,048 转化价值全部来自 US UT2 Search；UP6 Search 本期有点击但暂无平台转化。</li>
+<li>总会话下降 26.7%，但有效浏览会话下降 47.9%，说明损失的不只是访问数量，流量质量也在下降。</li>
+<li>Google Organic、Google CPC 和 Direct 分别下降 50.4%、60.6% 和 54.6%；这些主动搜索和品牌访问通常比普通社交流量更接近成交。</li>
+<li>facebook / cpc 仍占最大流量，但平均互动仅 4 秒、GA4 未记录收入；它完成了引流，却没有提供同等强度的成交信号。</li>
+<li>本期 (not set) 1,533 次、(data not available) 816 次，两者合计约占 24.1%，说明 UTM 与归因质量也需要整理。GA4 收入低于 Shopify GMV，因此仅用于趋势和渠道判断，不与 Shopify 对账。</li>
 </ul>
-<div class="callout warn"><b>给老板的汇报结论</b>本期销售额下降，不是单一的转化故障，而是“流量减少 + UP6 高价值订单减少”叠加造成的。访问量少了约 40%，UP6 少了 10 单；虽然转化率只小幅下降、UT2 还增加了 1 单，但低客单价产品无法填补 UP6 的销售缺口。广告方面，Meta 转化广告和 Google UT2 搜索广告仍有产出，说明广告并非完全无效；下一步重点是恢复高质量流量，检查 UP6 广告和落地页承接，同时继续放大已经能带来订单的 UT2 Search 和 UP6 再营销。</div>
-<p class="source">本版已加入 Meta Ads、Google Ads；未提交、未推送。</p>
+
+<h3>6.3 GSC｜自然搜索需求变化</h3>
+<p class="source">来源：Google Search Console「搜索结果表现」；统计周期 8/7–8/13，对比 7/31–8/6。</p>
+<div class="table-wrap fit"><table class="table fit">
+<tr><th>指标</th><th class="num">本期</th><th class="num">上期</th><th class="num">变化</th></tr>
+<tr><td><strong>自然点击</strong></td><td class="num">645</td><td class="num">1,322</td><td><span class="tag tag-red">-51.2%</span></td></tr>
+<tr><td><strong>自然展示</strong></td><td class="num">1.73 万</td><td class="num">2.05 万</td><td><span class="tag tag-red">-15.6%</span></td></tr>
+<tr><td><strong>CTR</strong></td><td class="num">3.7%</td><td class="num">6.5%</td><td><span class="tag tag-red">下降 2.8 个百分点</span></td></tr>
+<tr><td><strong>平均排名</strong></td><td class="num">11.5</td><td class="num">12.1</td><td><span class="tag tag-green">改善 0.6</span></td></tr>
+</table></div>
+<h4>品牌词点击</h4>
+<div class="table-wrap fit"><table class="table fit">
+<tr><th>搜索词</th><th class="num">本期点击</th><th class="num">上期点击</th><th class="num">变化</th></tr>
+<tr><td><strong>unify drive</strong></td><td class="num">103</td><td class="num">263</td><td><span class="tag tag-red">-60.8%</span></td></tr>
+<tr><td><strong>unifydrive</strong></td><td class="num">92</td><td class="num">272</td><td><span class="tag tag-red">-66.2%</span></td></tr>
+</table></div>
+<h4>主要页面展示</h4>
+<div class="table-wrap fit"><table class="table fit">
+<tr><th>GSC 页面</th><th class="num">本期展示</th><th class="num">上期展示</th><th class="num">变化</th></tr>
+<tr><td><strong>/products/unifydrive-ut2</strong></td><td class="num">564</td><td class="num">678</td><td><span class="tag tag-red">-16.8%</span></td></tr>
+<tr><td><strong>/blogs/features/what-is-raid-10-raid-levels-explained</strong></td><td class="num">425</td><td class="num">247</td><td><span class="tag tag-green">+72.1%</span></td></tr>
+<tr><td><strong>/products/unifydrive-up6</strong></td><td class="num">363</td><td class="num">614</td><td><span class="tag tag-red">-40.9%</span></td></tr>
+<tr><td><strong>/blogs/features/raid-0-1-5-6-10-explained-choosing-the-right-raid-level-for-your-unifydrive-nas</strong></td><td class="num">258</td><td class="num">139</td><td><span class="tag tag-green">+85.6%</span></td></tr>
+<tr><td><strong>https://unifydrive.com/</strong></td><td class="num">205</td><td class="num">398</td><td><span class="tag tag-red">-48.5%</span></td></tr>
+<tr><td><strong>/blogs/features/how-to-stop-paying-for-cloud-storage-and-take-back-control-of-your-files</strong></td><td class="num">160</td><td class="num">95</td><td><span class="tag tag-green">+68.4%</span></td></tr>
+<tr><td><strong>/blogs/features/ssd-vs-hdd-for-nas-unifydrive-ut2</strong></td><td class="num">157</td><td class="num">150</td><td><span class="tag tag-green">+4.7%</span></td></tr>
+<tr><td><strong>/blogs/features/top-private-cloud-storage-solutions-for-personal-and-business-needs-in-2025</strong></td><td class="num">135</td><td class="num">45</td><td><span class="tag tag-green">+200.0%</span></td></tr>
+<tr><td><strong>/blogs/features/unifydrive-ut2-user-guide-solving-common-and-unexpected-issues-easily</strong></td><td class="num">120</td><td class="num">140</td><td><span class="tag tag-red">-14.3%</span></td></tr>
+<tr><td><strong>/ja-jp/blogs/特徵/why-nas-is-the-smarter-backup-solution-for-secure-storage-of-photos-work-files-and-more</strong></td><td class="num">85</td><td class="num">2</td><td><span class="tag tag-green">+4,150%</span></td></tr>
+</table></div>
+<ul>
+<li>平均排名从 12.1 改善到 11.5，但自然点击仍下降 51.2%，所以不能简单归因于排名下滑。</li>
+<li>品牌词点击、首页和 UP6 产品页展示明显下降，说明品牌及 UP6 的购买型搜索需求和点击意愿转弱。</li>
+<li>多篇 RAID、云存储和私有云文章的展示反而增长，说明 SEO 不是全面下降，而是流量结构更偏向“了解知识”的信息型内容。这些用户离购买更远，短期内无法替代品牌词和产品页流量。</li>
+<li>UT2 产品页展示仅下降 16.8%，明显好于 UP6 的 40.9%；这与 Shopify 中 UT2 订单增长、UP6 订单下降的产品分化方向一致。</li>
+</ul>
+
+<h3>6.4 Clarity｜移动端页面行为</h3>
+<p class="source">来源：Microsoft Clarity「热度地图」；过去 7 天，按 UnifyDrive 产品 URL 筛选的移动端视图。</p>
+<ul>
+<li>热图样本包含 4,420 次页面浏览、3,693 次点击；点击热点主要落在主图、缩略图、轮播箭头和功能内容，说明用户首先在确认产品外观和功能。</li>
+<li>移动首屏主要被促销条、导航、主图和缩略图占用；用户需要继续下滑后才能看到分期、保障信息和“为什么值 $1,599”的解释，购买理由出现得偏晚。</li>
+<li>热图左侧排行显示轮播箭头约占 11.45% 的点击，用户愿意切换图片了解产品；但 FAQ 第一项只有 5 次点击，占 0.14%，关键异议没有被高频查看。</li>
+<li>FAQ 中出现 Thunderbolt 速度、是否包含存储/RAM、内置屏幕用途、AI 功能及交付时间等问题，说明用户购买前主要关心配置、兼容性和交付承诺。这些信息应提前到购买区域附近，而不是只放在页面深处。</li>
+<li>这些数据能证明购买信息的优先级和路径仍可优化，但热图本身不能证明支付故障。结合 Shopify 转化率仅小幅回落，当前更应先处理加购前的说服，而不是直接判断结账坏了。</li>
+</ul>
+<div class="evidence-grid">
+<figure class="evidence-figure"><img src="../assets/2026-08-13/clarity-mobile-product-overview.png" alt="Clarity 移动端产品页首屏点击热图"><figcaption>Clarity｜移动端产品页首屏：4,420 次页面浏览、3,693 次点击，热点集中在主图、缩略图与轮播操作。</figcaption></figure>
+<figure class="evidence-figure"><img src="../assets/2026-08-13/clarity-mobile-faq.png" alt="Clarity 移动端产品页 FAQ 点击热图"><figcaption>Clarity｜页面深处 FAQ：首项仅 5 次点击（0.14%），配置、兼容性和交付信息不宜只依赖 FAQ 承接。</figcaption></figure>
+</div>
+
+<h3>6.5 广告数据｜引流有效，UP6 成交分化</h3>
+<p class="source">来源：本周报第四、第五部分 Meta Ads 与 Google Ads；统计期间 8/6–8/12。</p>
+<ul>
+<li>Meta 流量广告带来 5,897 次落地页浏览，单次成本 $0.11，CTR、CPC 也处于正常水平，说明“低成本带来访问”的目标已完成。</li>
+<li>Meta 转化广告合计 ROAS 4.90x，其中 UP6 再营销 8.88x、VIP100 4.59x；广告不是整体失效，但效果主要由少数转化系列支撑。</li>
+<li>Google UT2 Search 的 ROAS 为 6.89x；UP6 Search 有 95 次点击、CTR 11.83%，却没有转化，说明 UP6 已从“有没有点击”转为“点击后为什么没有成交”的问题。</li>
+</ul>
+
+<div class="callout warn"><b>为什么下降</b>第一，GSC 中品牌词点击下降 60% 以上、UP6 产品页展示下降 40.9%，说明本周主动寻找品牌和 UP6 的购买型需求减少；排名反而从 12.1 改善到 11.5，因此不像是单纯排名下滑。第二，GA4 总会话下降 26.7%，有效浏览会话下降 47.9%，高意向流量流失得更快。第三，Shopify 的销售损失主要集中在 UP6，而 UT2 相对稳定，说明是产品结构分化，不是全站商品同时失效。第四，广告点击和部分转化系列仍正常，但 UP6 Search 有 95 次点击、CTR 11.83% 却无成交；结合 Clarity 中购买理由出现偏晚、FAQ 点击很低，更像是点击后的页面承接和购买说服不足，而不是广告没有把人带来。</div>
+
+<h3>6.6 后续动作</h3>
+<ul>
+<li><strong>广告：</strong>保留 UP6 再营销、VIP100 和 Google UT2 Search；对无转化的 UP6 Search 检查搜索词、关键词匹配及广告承诺，暂不盲目扩量。</li>
+<li><strong>页面：</strong>优化 UP6 移动端首屏，提前展示价格理由、配置差异、评价、交付时间、运费和购买按钮，并增加吸附购买栏。</li>
+<li><strong>SEO：</strong>检查品牌词与 UP6 页面标题、搜索摘要和近期活动信息；保留增长中的 RAID 内容，同时加强内容页到 UP6/UT2 产品页的内部引导。</li>
+<li><strong>数据：</strong>统一 facebook / fb / meta / ig 的 UTM 命名，减少 (not set) 与 (data not available)；下周固定复查 GSC 品牌词、GA4 有效浏览会话及 Shopify UP6 加购和订单。</li>
+</ul>
+<p class="source">注：各平台归因模型和数据口径不同。Shopify 用于确认实际成交，GA4 用于判断流量质量与来源，GSC 用于判断自然搜索需求，Clarity 用于观察页面行为；不将不同平台的收入直接相加。</p>
 </main>
 <footer class="footer">UnifyDrive · 运营数据与广告投放数据</footer>
 </div></body>
