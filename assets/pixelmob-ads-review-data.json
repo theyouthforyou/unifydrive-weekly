@@ -1,0 +1,1814 @@
+{
+  "preparedOn": "2026-10-29",
+  "sourceSession": "20260903_232714_e9583e",
+  "exportMessageCount": 435,
+  "sourceRoles": "User-supplied session export and recap; original tool outputs checked",
+  "financialToolBlock": 413,
+  "accounts": {
+    "backup2": 235058.44,
+    "backup": 37517.33,
+    "ecommerce": 33472.75,
+    "metaDetailedSum": 306048.52,
+    "metaSummaryPage": 306048.21,
+    "googleAdCost": 40940.5,
+    "totalUsingDetail": 346989.02,
+    "googleBankDebitAsNotedInSource": 40725.96
+  },
+  "campaigns": [
+    {
+      "name": "RT 再营销",
+      "cost": 53842.21,
+      "result": 250,
+      "purchases": 251,
+      "roas": 4.525652
+    },
+    {
+      "name": "ASC-AI",
+      "cost": 28750.89,
+      "result": 101,
+      "purchases": 101,
+      "roas": 3.46144
+    },
+    {
+      "name": "IG 拉新（Pro）",
+      "cost": 37844.46,
+      "result": 74,
+      "purchases": 74,
+      "roas": 1.886062
+    },
+    {
+      "name": "LLA 相似",
+      "cost": 2991.95,
+      "result": 3,
+      "purchases": 3,
+      "roas": 0.92682
+    }
+  ],
+  "google": {
+    "impressions": 10106376,
+    "clicks": 133369,
+    "TrueViewViews": 2192558,
+    "recordedConversions": 0,
+    "recordedConversionValue": 0,
+    "demandGenCost": 12223.43,
+    "videoCost": 28717.07
+  },
+  "sources": [
+    {
+      "name": "PixelMob_Google_ads账户众筹具体广告花费",
+      "rows": [
+        {
+          "row": 1,
+          "cells": [
+            "广告系列状态",
+            "广告系列",
+            "预算",
+            "预算名称",
+            "预算类型",
+            "货币代码",
+            "状态",
+            "状况原因",
+            "优化得分",
+            "广告系列子类型",
+            "广告系列类型",
+            "出价策略类型",
+            "转化价值",
+            "TrueView 观看次数",
+            "展示次数",
+            "TrueView 平均每次观看费用",
+            "转化次数",
+            "转化率",
+            "每次转化费用",
+            "点击次数",
+            "点击率",
+            "转化次数（可与其他平台对比）",
+            "单位费用转化价值（可与其他平台对比）",
+            "唯一身份用户数",
+            "平均每千次展示费用",
+            "费用"
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "50",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 大多数广告被拒登",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            " --",
+            "0",
+            "0",
+            "",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "50",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            " --",
+            "0",
+            "0",
+            "",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_DG_Clicks_US_AllAges_AllGenders_2026",
+            "30",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "标准",
+            "需求开发",
+            "尽可能争取更多点击次数",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            " --",
+            "0",
+            "0",
+            "",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "30",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            " --",
+            "0",
+            "0",
+            "",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "row": 6,
+          "cells": [
+            "已暂停",
+            "Campaign #1",
+            "50.4",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "标准",
+            "效果最大化",
+            "尽可能提高转化次数",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            " --",
+            "0",
+            "0",
+            "",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "row": 7,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "30",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "389",
+            "887",
+            "0.05",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "877",
+            "22.06",
+            "19.57"
+          ]
+        },
+        {
+          "row": 8,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "150",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 受预算限制",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "3826",
+            "6361",
+            "0.039",
+            "0",
+            "0",
+            "0",
+            "34",
+            "0.0053",
+            "0",
+            "0",
+            "6334",
+            "23.63",
+            "150.29"
+          ]
+        },
+        {
+          "row": 9,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "200",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 受预算限制",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "9902",
+            "76625",
+            "0.035",
+            "0",
+            "0",
+            "0",
+            "56",
+            "0.0007",
+            "0",
+            "0",
+            "63634",
+            "4.53",
+            "346.95"
+          ]
+        },
+        {
+          "row": 10,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "300",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 受预算限制",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "16242",
+            "86914",
+            "0.034",
+            "0",
+            "0",
+            "0",
+            "96",
+            "0.0011",
+            "0",
+            "0",
+            "77621",
+            "6.31",
+            "548.15"
+          ]
+        },
+        {
+          "row": 11,
+          "cells": [
+            "已暂停",
+            "GOC_pretest_Pixelmob-Pro_Videoview_YouTube-VVC_US_AllAges_Al",
+            "200",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 所有广告均已暂停; 大多数广告被拒登",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "42669",
+            "450590",
+            "0.035",
+            "0",
+            "0",
+            "0",
+            "91",
+            "0.0002",
+            "0",
+            "0",
+            "394175",
+            "3.28",
+            "1477.72"
+          ]
+        },
+        {
+          "row": 12,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "150",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 受预算限制",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "19991",
+            "98585",
+            "0.033",
+            "0",
+            "0",
+            "0",
+            "93",
+            "0.0009",
+            "0",
+            "0",
+            "92119",
+            "6.75",
+            "665.68"
+          ]
+        },
+        {
+          "row": 13,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "150",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 受预算限制",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "21097",
+            "117658",
+            "0.033",
+            "0",
+            "0",
+            "0",
+            "112",
+            "0.001",
+            "0",
+            "0",
+            "107077",
+            "5.98",
+            "703.25"
+          ]
+        },
+        {
+          "row": 14,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "150",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 受预算限制",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "19285",
+            "88256",
+            "0.034",
+            "0",
+            "0",
+            "0",
+            "79",
+            "0.0009",
+            "0",
+            "0",
+            "82057",
+            "7.4",
+            "652.7"
+          ]
+        },
+        {
+          "row": 15,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "200",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 受预算限制",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "46150",
+            "195654",
+            "0.029",
+            "0",
+            "0",
+            "0",
+            "275",
+            "0.0014",
+            "0",
+            "0",
+            "158922",
+            "6.87",
+            "1344.04"
+          ]
+        },
+        {
+          "row": 16,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Click_DemandGen_US_AllAges_AllGender",
+            "300",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "标准",
+            "需求开发",
+            "尽可能争取更多点击次数",
+            "0",
+            "312157",
+            "696748",
+            "0.016",
+            "0",
+            "0",
+            "0",
+            "34950",
+            "0.0502",
+            "0",
+            "0",
+            "41691",
+            "7.02",
+            "4888.7"
+          ]
+        },
+        {
+          "row": 17,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Click_DemandGen_US_AllAges_AllGender",
+            "200",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "标准",
+            "需求开发",
+            "尽可能争取更多点击次数",
+            "0",
+            "924751",
+            "1453275",
+            "0.007",
+            "0",
+            "0",
+            "0",
+            "78961",
+            "0.0543",
+            "0",
+            "0",
+            "836086",
+            "4.41",
+            "6410"
+          ]
+        },
+        {
+          "row": 18,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "200",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "172482",
+            "1623734",
+            "0.034",
+            "0",
+            "0",
+            "0",
+            "617",
+            "0.0004",
+            "0",
+            "0",
+            "978557",
+            "3.59",
+            "5834.79"
+          ]
+        },
+        {
+          "row": 19,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "150",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "142962",
+            "1279708",
+            "0.034",
+            "0",
+            "0",
+            "0",
+            "517",
+            "0.0004",
+            "0",
+            "0",
+            "771714",
+            "3.76",
+            "4815.13"
+          ]
+        },
+        {
+          "row": 20,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_nonUS_AllAges_AllGender",
+            "200",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 受预算限制",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "55756",
+            "542212",
+            "0.03",
+            "0",
+            "0",
+            "0",
+            "218",
+            "0.0004",
+            "0",
+            "0",
+            "370584",
+            "3.1",
+            "1683.08"
+          ]
+        },
+        {
+          "row": 21,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "100",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 受预算限制",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "201775",
+            "2043328",
+            "0.032",
+            "0",
+            "0",
+            "0",
+            "725",
+            "0.0004",
+            "0",
+            "0",
+            "971780",
+            "3.12",
+            "6381.63"
+          ]
+        },
+        {
+          "row": 22,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "30",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "96919",
+            "421237",
+            "0.02",
+            "0",
+            "0",
+            "0",
+            "444",
+            "0.0011",
+            "0",
+            "0",
+            "301853",
+            "4.53",
+            "1908.74"
+          ]
+        },
+        {
+          "row": 23,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "100",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停; 受预算限制",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "37617",
+            "245361",
+            "0.034",
+            "0",
+            "0",
+            "0",
+            "216",
+            "0.0009",
+            "0",
+            "0",
+            "214914",
+            "5.21",
+            "1278.07"
+          ]
+        },
+        {
+          "row": 24,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Videoview_IG_US_AllAges_AllGenders_2",
+            "30",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "视频观看次数",
+            "视频",
+            "目标每次观看费用",
+            "0",
+            "25766",
+            "184273",
+            "0.035",
+            "0",
+            "0",
+            "0",
+            "132",
+            "0.0007",
+            "0",
+            "0",
+            "163769",
+            "4.92",
+            "907.3"
+          ]
+        },
+        {
+          "row": 25,
+          "cells": [
+            "已暂停",
+            "GOC_launch_Pixelmob-Pro_Click_DemandGen_US_AllAges_AllGender",
+            "100",
+            " --",
+            "每日",
+            "USD",
+            "已暂停",
+            "广告系列已暂停",
+            " --",
+            "标准",
+            "需求开发",
+            "尽可能争取更多点击次数",
+            "0",
+            "42822",
+            "494970",
+            "0.022",
+            "0",
+            "0",
+            "0",
+            "15753",
+            "0.0318",
+            "0",
+            "0",
+            "316691",
+            "1.87",
+            "924.74"
+          ]
+        },
+        {
+          "row": 26,
+          "cells": [
+            "总计：广告系列",
+            " --",
+            " --",
+            " --",
+            " --",
+            "USD",
+            " --",
+            "",
+            " --",
+            "标准",
+            " --",
+            " --",
+            "0",
+            "2192558",
+            "10106376",
+            "0.019",
+            "0",
+            "0",
+            "0",
+            "133369",
+            "0.0132",
+            "0",
+            "0",
+            "4580384",
+            "4.05",
+            "40940.5"
+          ]
+        },
+        {
+          "row": 27,
+          "cells": [
+            "总计：账号",
+            "",
+            "",
+            "",
+            "",
+            "USD",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0",
+            "2192558",
+            "10106376",
+            "0.019",
+            "0",
+            "0",
+            "0",
+            "133369",
+            "0.0132",
+            "0",
+            "0",
+            "4580384",
+            "4.05",
+            "40940.5"
+          ]
+        },
+        {
+          "row": 28,
+          "cells": [
+            "总计：效果最大化",
+            "",
+            "",
+            "",
+            "",
+            "USD",
+            "",
+            "",
+            "",
+            "",
+            "效果最大化",
+            "",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            " --",
+            "0",
+            "0",
+            "",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "row": 29,
+          "cells": [
+            "总计：需求开发",
+            "",
+            "",
+            "",
+            "",
+            "USD",
+            "",
+            "",
+            "",
+            "",
+            "需求开发",
+            "",
+            "0",
+            "1279730",
+            "2644993",
+            "0.01",
+            "0",
+            "0",
+            "0",
+            "129664",
+            "0.049",
+            "0",
+            "0",
+            "1159851",
+            "4.62",
+            "12223.43"
+          ]
+        },
+        {
+          "row": 30,
+          "cells": [
+            "总计：视频",
+            "",
+            "",
+            "",
+            "",
+            "USD",
+            "",
+            "",
+            "",
+            "",
+            "视频",
+            "",
+            "0",
+            "912828",
+            "7461383",
+            "0.031",
+            "0",
+            "0",
+            "0",
+            "3705",
+            "0.0005",
+            "0",
+            "0",
+            "3494837",
+            "3.85",
+            "28717.07"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PixelMob- Meta-Ecommerce账户众筹具体广告花费",
+      "rows": [
+        {
+          "row": 1,
+          "cells": [
+            "33472",
+            "广告系列投放",
+            "归因设置",
+            "成效",
+            "成效指标",
+            "单次成效费用",
+            "广告组预算",
+            "广告组预算类型",
+            "已花费金额 (USD)"
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            "总计",
+            "0",
+            "多项归因设置",
+            "",
+            "",
+            "",
+            "0",
+            "0",
+            "33472.75"
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            "GOC_account_active_20260527",
+            "inactive",
+            "点击后 7 天内、浏览后 1 天内或互动观看后 1 天内",
+            "",
+            "",
+            "",
+            "3",
+            "总预算",
+            "2.92"
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            "Instagram 帖子：Chasing the stars just got a whole...",
+            "inactive",
+            "点击后 7 天内或浏览后 1 天内",
+            "58",
+            "profile_visit_view",
+            "0.23672414",
+            "2",
+            "单日预算",
+            "13.73"
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            "Instagram 帖子：The PixelMobPro: The ultimate...",
+            "inactive",
+            "点击后 7 天内或浏览后 1 天内",
+            "36",
+            "profile_visit_view",
+            "0.3825",
+            "2",
+            "单日预算",
+            "13.77"
+          ]
+        },
+        {
+          "row": 6,
+          "cells": [
+            "Instagram 帖子：Every frame deserves clear feedback....",
+            "inactive",
+            "-",
+            "21",
+            "profile_visit_view",
+            "0.55285714",
+            "2",
+            "单日预算",
+            "11.61"
+          ]
+        },
+        {
+          "row": 7,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Subscribe_IG_USCA_AllAges_AllGender",
+            "inactive",
+            "点击后 7 天内、浏览后 1 天内或互动观看后 1 天内",
+            "3306",
+            "conversions:subscribe_website",
+            "2.89245917",
+            "使用广告组预算",
+            "0",
+            "9562.47"
+          ]
+        },
+        {
+          "row": 8,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_IG_US_AllAges_AllGenders_2026",
+            "inactive",
+            "点击后 7 天内、浏览后 1 天内或互动观看后 1 天内",
+            "282",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "81.12663121",
+            "使用广告组预算",
+            "0",
+            "22877.71"
+          ]
+        },
+        {
+          "row": 9,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_RT_US_AllAges_AllGenders_2026",
+            "inactive",
+            "-",
+            "6",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "165.09",
+            "使用广告组预算",
+            "0",
+            "990.54"
+          ]
+        },
+        {
+          "row": 10,
+          "cells": [
+            "Instagram 帖子：Edit anywhere. Create without...",
+            "inactive",
+            "点击后 7 天内或浏览后 1 天内",
+            "",
+            "",
+            "",
+            "30",
+            "单日预算",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PixelMob- Meta-Backup账户众筹具体广告花费",
+      "rows": [
+        {
+          "row": 1,
+          "cells": [
+            "广告系列名称",
+            "成效",
+            "成效指标",
+            "广告组预算",
+            "广告组预算类型",
+            "已花费金额 (USD)",
+            "购物次数",
+            "结束日期",
+            "广告花费回报 (ROAS) - 购物"
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            "总计",
+            "",
+            "",
+            "0",
+            "0",
+            "37517.33"
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            "GOC_account_active_20260528",
+            "",
+            "",
+            "3",
+            "总预算",
+            "2.89"
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            "GOC_account_active_20260629",
+            "",
+            "",
+            "2",
+            "总预算",
+            "1.95"
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Subscribe_IG_DEUK_AllAges_AllGender",
+            "948",
+            "conversions:subscribe_website",
+            "使用广告组预算",
+            "0",
+            "5070.33",
+            "9",
+            "",
+            "0.545724"
+          ]
+        },
+        {
+          "row": 6,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Subscribe_IG_CAAU_AllAges_AllGender",
+            "547",
+            "conversions:subscribe_website",
+            "使用广告组预算",
+            "0",
+            "1592.11",
+            "4",
+            "",
+            "0.025124"
+          ]
+        },
+        {
+          "row": 7,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_IG_CAAU_AllAges_AllGenders_20",
+            "115",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "使用广告组预算",
+            "0",
+            "11902.83",
+            "115",
+            "",
+            "0.313676"
+          ]
+        },
+        {
+          "row": 8,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_IG_DEUK_AllAges_AllGenders_20",
+            "49",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "使用广告组预算",
+            "0",
+            "6705.98",
+            "49",
+            "",
+            "0.073069"
+          ]
+        },
+        {
+          "row": 9,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_RT_DEUK_AllAges_AllGenders_20",
+            "5",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "使用广告组预算",
+            "0",
+            "188.15",
+            "5",
+            "",
+            "11.974488"
+          ]
+        },
+        {
+          "row": 10,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_RT_CAAU_AllAges_AllGenders_20",
+            "6",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "使用广告组预算",
+            "0",
+            "169.07",
+            "6",
+            "",
+            "18.54853"
+          ]
+        },
+        {
+          "row": 11,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_IG_JP_AllAges_AllGenders_2026",
+            "18",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "使用广告组预算",
+            "0",
+            "1766.39",
+            "18",
+            "",
+            "0.099129"
+          ]
+        },
+        {
+          "row": 12,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Purchase_IG_CAAU_AllAges_AllGenders_",
+            "1",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "使用广告组预算",
+            "0",
+            "1367.19",
+            "1",
+            "",
+            "0.803839"
+          ]
+        },
+        {
+          "row": 13,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Purchase_IG_DEUK_AllAges_AllGenders_",
+            "",
+            "",
+            "使用广告组预算",
+            "0",
+            "447.62"
+          ]
+        },
+        {
+          "row": 14,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Purchase_IG_JP_AllAges_AllGenders_20",
+            "3",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "使用广告组预算",
+            "0",
+            "1485.29",
+            "3",
+            "",
+            "1.81446"
+          ]
+        },
+        {
+          "row": 15,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Purchase_RT_DEUK_AllAges_AllGenders_",
+            "2",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "使用广告组预算",
+            "0",
+            "1351.37",
+            "2",
+            "",
+            "0.672651"
+          ]
+        },
+        {
+          "row": 16,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Purchase_RT_CAAU_AllAges_AllGenders_",
+            "12",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "使用广告组预算",
+            "0",
+            "3298.69",
+            "12",
+            "",
+            "2.734722"
+          ]
+        },
+        {
+          "row": 17,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Sales-ATC_IG_DEUK_AllAges_AllGenders",
+            "",
+            "",
+            "使用广告组预算",
+            "0",
+            "6.6"
+          ]
+        },
+        {
+          "row": 18,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Sales-ATC_IG_CAAU_AllAges_AllGenders",
+            "",
+            "",
+            "使用广告组预算",
+            "0",
+            "0.5"
+          ]
+        },
+        {
+          "row": 19,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Sales_Checkout_IG_CAAU_AllAges_AllGe",
+            "477",
+            "actions:offsite_conversion.fb_pixel_initiate_checkout",
+            "使用广告组预算",
+            "0",
+            "1543.77",
+            "2",
+            "",
+            "1.164681"
+          ]
+        },
+        {
+          "row": 20,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Sales_Checkout_IG_DEUK_AllAges_AllGe",
+            "",
+            "",
+            "使用广告组预算",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "row": 21,
+          "cells": [
+            "GOC_launch_Pixelmob-standard_Purchase_IG_JP_AllAges_AllGende",
+            "",
+            "",
+            "使用广告组预算",
+            "0",
+            "616.6"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PixelMob-Meta-Backup2账户众筹具体广告花费",
+      "rows": [
+        {
+          "row": 1,
+          "cells": [
+            "广告系列名称",
+            "广告系列投放",
+            "成效",
+            "成效指标",
+            "单次成效费用",
+            "广告组预算",
+            "广告组预算类型",
+            "已花费金额 (USD)",
+            "购物次数",
+            "结束日期",
+            "广告花费回报 (ROAS) - 购物",
+            "结果（初始）"
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            "总计",
+            "0",
+            "",
+            "",
+            "",
+            "0",
+            "0",
+            "235058.44"
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_IG_US_AllAges_AllGenders_2026",
+            "inactive",
+            "270",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "77.87133333",
+            "使用广告组预算",
+            "0",
+            "21025.26",
+            "270",
+            "",
+            "0.450107"
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            "GOC_account_active_20260528",
+            "inactive",
+            "",
+            "",
+            "",
+            "3",
+            "总预算",
+            "2.96"
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            "GOC_account_active_20260629",
+            "inactive",
+            "6",
+            "actions:offsite_conversion.fb_pixel_view_content",
+            "0.68333333",
+            "3",
+            "单日预算",
+            "4.1"
+          ]
+        },
+        {
+          "row": 6,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_ASC-AI_US_AllAges_AllGenders_",
+            "inactive",
+            "64",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "100.043125",
+            "使用广告组预算",
+            "0",
+            "6402.76",
+            "64",
+            "",
+            "0.232556"
+          ]
+        },
+        {
+          "row": 7,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_RT_US_AllAges_AllGenders_2026",
+            "inactive",
+            "39",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "114.9730769",
+            "使用广告组预算",
+            "0",
+            "4483.95",
+            "39",
+            "",
+            "1.249345"
+          ]
+        },
+        {
+          "row": 8,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Subscribe_IG_USCA_AllAges_AllGender",
+            "inactive",
+            "1650",
+            "conversions:subscribe_website",
+            "3.69020606",
+            "使用广告组预算",
+            "0",
+            "6088.84",
+            "18",
+            "",
+            "0.029562"
+          ]
+        },
+        {
+          "row": 9,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_ASC-AI_CA_AllAges_AllGenders_",
+            "inactive",
+            "",
+            "",
+            "",
+            "使用广告组预算",
+            "0",
+            "57.36"
+          ]
+        },
+        {
+          "row": 10,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_ASC-AI_DEUK_AllAges_AllGender",
+            "inactive",
+            "",
+            "",
+            "",
+            "使用广告组预算",
+            "0",
+            "32.52"
+          ]
+        },
+        {
+          "row": 11,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Sales_LLA-AO_US_AllAges_AllGenders_",
+            "inactive",
+            "42",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "82.95428571",
+            "使用广告组预算",
+            "0",
+            "3484.08",
+            "42",
+            "",
+            "1.120525"
+          ]
+        },
+        {
+          "row": 12,
+          "cells": [
+            "GOC_pretest_Pixelmob-Pro_Leads-Save_RT_US_AllAges_AllGenders",
+            "inactive",
+            "108",
+            "conversions:submit_application_website",
+            "10.40564815",
+            "使用广告组预算",
+            "0",
+            "1123.81",
+            "23",
+            "",
+            "13.104528"
+          ]
+        },
+        {
+          "row": 13,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Purchase_IG_US_AllAges_AllGenders_20",
+            "inactive",
+            "74",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "511.4116216",
+            "使用广告组预算",
+            "0",
+            "37844.46",
+            "74",
+            "",
+            "1.886062"
+          ]
+        },
+        {
+          "row": 14,
+          "cells": [
+            "GOC_launch_Pixelmob-standard_Purchase_IG_US_AllAges_AllGende",
+            "inactive",
+            "5",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "533.994",
+            "使用广告组预算",
+            "0",
+            "2669.97",
+            "5",
+            "",
+            "1.697772"
+          ]
+        },
+        {
+          "row": 15,
+          "cells": [
+            "GOC_launch_Pixelmob-all_Purchase_ASC-AI_US_AllAges_AllGender",
+            "inactive",
+            "101",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "284.6622772",
+            "使用广告组预算",
+            "0",
+            "28750.89",
+            "101",
+            "",
+            "3.46144"
+          ]
+        },
+        {
+          "row": 16,
+          "cells": [
+            "GOC_launch_Pixelmob-all_Purchase_LLA-AO_US_AllAges_AllGender",
+            "inactive",
+            "3",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "997.3166667",
+            "使用广告组预算",
+            "0",
+            "2991.95",
+            "3",
+            "",
+            "0.92682"
+          ]
+        },
+        {
+          "row": 17,
+          "cells": [
+            "GOC_launch_Pixelmob-all_Purchase_RT_US_AllAges_AllGenders_20",
+            "inactive",
+            "250",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "215.36884",
+            "使用广告组预算",
+            "0",
+            "53842.21",
+            "251",
+            "",
+            "4.525652"
+          ]
+        },
+        {
+          "row": 18,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Sales_ATC_IG_US_AllAges_AllGenders_2",
+            "inactive",
+            "",
+            "",
+            "",
+            "使用广告组预算",
+            "0",
+            "13.12"
+          ]
+        },
+        {
+          "row": 19,
+          "cells": [
+            "GOC_launch_Pixelmob-standard_Sales_ATC_IG_US_AllAges_AllGend",
+            "inactive",
+            "",
+            "",
+            "",
+            "使用广告组预算",
+            "0",
+            "10.01",
+            "1",
+            "",
+            "109.59041"
+          ]
+        },
+        {
+          "row": 20,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Sales_Checkout_IG_US_AllAges_AllGend",
+            "inactive",
+            "1978",
+            "actions:offsite_conversion.fb_pixel_initiate_checkout",
+            "3.93773003",
+            "使用广告组预算",
+            "0",
+            "7788.83",
+            "2",
+            "",
+            "0.287078"
+          ]
+        },
+        {
+          "row": 21,
+          "cells": [
+            "GOC_launch_Pixelmob-standard_Sales_Checkout_IG_US_AllAges_Al",
+            "inactive",
+            "7055",
+            "actions:offsite_conversion.fb_pixel_initiate_checkout",
+            "3.40940751",
+            "使用广告组预算",
+            "0",
+            "24053.37",
+            "4",
+            "",
+            "0.160892"
+          ]
+        },
+        {
+          "row": 22,
+          "cells": [
+            "GOC_launch_Pixelmob-all_AddPaymentInfo_ASC-AI_US_AllAges_All",
+            "inactive",
+            "",
+            "",
+            "",
+            "使用广告组预算",
+            "0",
+            "321.22"
+          ]
+        },
+        {
+          "row": 23,
+          "cells": [
+            "GOC_launch_Pixelmob-all_Quiz-Q1_RT_US_AllAges_AllGenders_202",
+            "inactive",
+            "1667",
+            "conversions:offsite_conversion.fb_pixel_custom.Quiz-Q1",
+            "4.20614277",
+            "使用广告组预算",
+            "0",
+            "7011.64",
+            "2",
+            "",
+            "0.256431"
+          ]
+        },
+        {
+          "row": 24,
+          "cells": [
+            "GOC_launch_Pixelmob-all_Quiz-Q1_RT_US_AllAges_AllGenders_202",
+            "inactive",
+            "4611",
+            "conversions:offsite_conversion.fb_pixel_custom.quiz短页面-KS",
+            "3.21768163",
+            "使用广告组预算",
+            "0",
+            "14836.73",
+            "4",
+            "",
+            "0.247494"
+          ]
+        },
+        {
+          "row": 25,
+          "cells": [
+            "GOC_launch_Pixelmob-Pro_Purchase_IG_非US_AllAges_AllGenders_2",
+            "inactive",
+            "17",
+            "actions:offsite_conversion.fb_pixel_purchase",
+            "373.51",
+            "使用广告组预算",
+            "0",
+            "6349.67",
+            "17",
+            "",
+            "2.712739"
+          ]
+        },
+        {
+          "row": 26,
+          "cells": [
+            "GOC_launch_Pixelmob-all_Quiz-Q1_RT_非US_AllAges_AllGenders_20",
+            "inactive",
+            "4489",
+            "conversions:offsite_conversion.fb_pixel_custom.quiz短页面-KS",
+            "1.03327244",
+            "使用广告组预算",
+            "0",
+            "4638.36",
+            "9",
+            "",
+            "2.126398"
+          ]
+        }
+      ]
+    }
+  ]
+}
