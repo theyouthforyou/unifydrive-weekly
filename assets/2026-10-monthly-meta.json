@@ -235,7 +235,41 @@
     }
   ],
   "corrections": "Prior weekly supplemented purchases retained separately; no additional purchases fabricated or double counted.",
-  "adsetCreativeSource": "User message; no independent ad-set/ad export",
+  "adsetCreativeSource": "Initial user summary; selected October ad-set and UP6 creative metrics independently checked in Meta Ads Manager on 2026-11-05. Not a complete ad-level export.",
+  "browserVerification": {
+    "account": "UnifyDrive (1328489431936954)",
+    "period": "2026-10-01/2026-10-31",
+    "purchaseCampaignTotals": { "spend": 7822.84, "purchases": 29, "value": 17866.20, "cart": 388, "checkout": 161 },
+    "actions": [
+      { "date": "2026-10-11/2026-10-12", "object": "UT2 price creative", "action": "Ad content updates recorded" },
+      { "date": "2026-10-12", "object": "UT2_Interest_VideoCreators_US", "dailyBudgetBefore": 60, "dailyBudgetAfter": 80 },
+      { "date": "2026-10-14", "object": "UT2_Interest_VideoCreators_US", "dailyBudgetBefore": 80, "dailyBudgetAfter": 50 },
+      { "date": "2026-10-14", "object": "UT2_IMG02_PriceOffer", "action": "Ad content update recorded" },
+      { "date": "2026-10-20", "object": "UT2_Interest_VideoCreators_US", "dailyBudgetSteps": [50, 40, 100], "action": "PortableBackup, PriceOffer, FieldBackup and 16TBCapacity transitioned from paused through pending to active" },
+      { "date": "2026-10-23", "object": "T2_MOF_ViewContent_UP6_30D_Excl_ATC", "actor": "Yifan Zhang", "dailyBudgetSteps": [30, 50, 70, 80] }
+    ],
+    "adsets": [
+      { "name": "T2_MOF_ViewContent_UP6_30D_Excl_ATC", "spend": 1359.03, "cart": 52, "checkout": 27, "purchases": 10, "value": 8801.86 },
+      { "name": "T1_BOF_ATC_UP6_14D_Excl_Purch", "spend": 376.63, "cart": 2, "checkout": 2, "purchases": 0 },
+      { "name": "T2_MOF_ViewContent_UT2_30D_Excl_ATC", "spend": 754.73, "cart": 46, "checkout": 21, "purchases": 2, "value": 621.18 },
+      { "name": "T1_BOF_ATC_UT2_14D_Excl_Purch", "spend": 909.34, "cart": 63, "checkout": 22, "purchases": 4, "value": 1396.00 },
+      { "name": "UT2_Interest_VideoCreators_US", "spend": 2281.83, "cart": 162, "checkout": 67, "purchases": 9, "value": 4451.16 }
+    ],
+    "up6ViewContentCreatives": [
+      { "name": "UP6_RTG_01_CardToCut_MOF", "cart": 9, "checkout": 7, "purchases": 3, "value": 2197.00, "roas": 6.13 },
+      { "name": "UP6_RTG_05_SeenIt_MOF", "cart": 28, "checkout": 11, "purchases": 4, "value": 3516.97, "roas": 5.48 },
+      { "name": "UP6_RTG_06_SeenIt_MOF", "cart": 12, "checkout": 7, "purchases": 2, "value": 3048.00, "roas": 13.39 },
+      { "name": "UP6_RTG_03_Touchscreen_MOF", "cart": 1, "checkout": 2, "purchases": 1, "value": 39.89, "roas": 0.86 },
+      { "name": "UP6_RTG_02_DirectEditing_MOF", "cart": 2, "purchases": 0 },
+      { "name": "UP6_RTG_04_Upgrade_MOF", "purchases": 0 }
+    ],
+    "limitations": [
+      "Current UP6 ViewContent settings use Advantage+ audience; custom audience is a suggestion, not proof of strict retargeting delivery throughout October.",
+      "Monthly results are not post-change incremental results.",
+      "Unpublished creative drafts are not evidence of completed updates.",
+      "Historical weekly supplemented purchases remain archived separately and are not mixed with the full-month platform totals."
+    ]
+  },
   "nextActionsNotCompleted": [
     "review UP6 14D cart frequency",
     "retest small-sample PriceOffer and Touchscreen",
