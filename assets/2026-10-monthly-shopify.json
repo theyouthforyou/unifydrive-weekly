@@ -1,0 +1,1414 @@
+{
+  "queriedOn": "2026-11-05",
+  "shop": "89f67a-87.myshopify.com",
+  "currency": "USD",
+  "timezone": "America/New_York",
+  "period": "2026-10-01/2026-10-31",
+  "comparison": "2026-09-01/2026-09-30",
+  "queries": {
+    "sales9": {
+      "query": "FROM sales SHOW total_sales, orders, average_order_value, gross_sales, discounts, sales_reversals, net_sales SINCE 2026-09-01 UNTIL 2026-09-30",
+      "columns": [
+        {
+          "name": "total_sales",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "orders",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "average_order_value",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "gross_sales",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "discounts",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "sales_reversals",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "net_sales",
+          "dataType": "MONEY"
+        }
+      ],
+      "rows": [
+        [
+          "51885.98",
+          "63",
+          "841.904",
+          "55859.8",
+          "-2819.79",
+          "-1376.17",
+          "51663.84"
+        ]
+      ],
+      "rowCount": 1,
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "sales10": {
+      "query": "FROM sales SHOW total_sales, orders, average_order_value, gross_sales, discounts, sales_reversals, net_sales SINCE 2026-10-01 UNTIL 2026-10-31",
+      "columns": [
+        {
+          "name": "total_sales",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "orders",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "average_order_value",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "gross_sales",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "discounts",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "sales_reversals",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "net_sales",
+          "dataType": "MONEY"
+        }
+      ],
+      "rows": [
+        [
+          "50981.08",
+          "81",
+          "646.255",
+          "55309.25",
+          "-2962.57",
+          "-1877.99",
+          "50468.69"
+        ]
+      ],
+      "rowCount": 1,
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "sessions9": {
+      "query": "FROM sessions SHOW sessions, online_store_visitors, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout, conversion_rate SINCE 2026-09-01 UNTIL 2026-09-30",
+      "columns": [
+        {
+          "name": "sessions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "online_store_visitors",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_with_cart_additions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_reached_checkout",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_completed_checkout",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "conversion_rate",
+          "dataType": "PERCENT"
+        }
+      ],
+      "rows": [
+        [
+          "55384",
+          "45276",
+          "570",
+          "301",
+          "56",
+          "0.0010111223458038423"
+        ]
+      ],
+      "rowCount": 1,
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "sessions10": {
+      "query": "FROM sessions SHOW sessions, online_store_visitors, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout, conversion_rate SINCE 2026-10-01 UNTIL 2026-10-31",
+      "columns": [
+        {
+          "name": "sessions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "online_store_visitors",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_with_cart_additions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_reached_checkout",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_completed_checkout",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "conversion_rate",
+          "dataType": "PERCENT"
+        }
+      ],
+      "rows": [
+        [
+          "50745",
+          "43586",
+          "722",
+          "435",
+          "72",
+          "0.001418859000886787"
+        ]
+      ],
+      "rowCount": 1,
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "products9": {
+      "query": "FROM sales SHOW orders, net_items_sold, net_sales, average_order_value GROUP BY product_title SINCE 2026-09-01 UNTIL 2026-09-30 ORDER BY net_sales DESC",
+      "columns": [
+        {
+          "name": "product_title",
+          "dataType": "STRING"
+        },
+        {
+          "name": "orders",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "net_items_sold",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "net_sales",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "average_order_value",
+          "dataType": "MONEY"
+        }
+      ],
+      "rows": [
+        [
+          "UnifyDrive UP6",
+          "26",
+          "25",
+          "37855",
+          "1513.615"
+        ],
+        [
+          "UnifyDrive UT2",
+          "35",
+          "37",
+          "13074.08",
+          "373.545"
+        ],
+        [
+          "UnifyDrive UC250",
+          "1",
+          "1",
+          "399",
+          "399"
+        ],
+        [
+          "",
+          "0",
+          "0",
+          "179.81",
+          ""
+        ],
+        [
+          "UT2 Official Battery",
+          "2",
+          "2",
+          "59.98",
+          "29.99"
+        ],
+        [
+          "UT2 | Carrying Case",
+          "2",
+          "1",
+          "39.99",
+          "39.99"
+        ],
+        [
+          "UT2 | CF-Express Type-B Adapter",
+          "1",
+          "1",
+          "35.99",
+          "35.99"
+        ],
+        [
+          "UT2 | Silicone case",
+          "20",
+          "22",
+          "19.99",
+          "0.999"
+        ],
+        [
+          "Remote control",
+          "1",
+          "0",
+          "0",
+          "16.99"
+        ]
+      ],
+      "rowCount": 9,
+      "chartHint": {
+        "type": "bar",
+        "xAxisColumnIndex": 0,
+        "yAxisColumnIndices": [
+          1,
+          2
+        ],
+        "yAxisFormat": "number"
+      },
+      "summaryMetric": {
+        "label": "orders",
+        "value": "88"
+      },
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "products10": {
+      "query": "FROM sales SHOW orders, net_items_sold, net_sales, average_order_value GROUP BY product_title SINCE 2026-10-01 UNTIL 2026-10-31 ORDER BY net_sales DESC",
+      "columns": [
+        {
+          "name": "product_title",
+          "dataType": "STRING"
+        },
+        {
+          "name": "orders",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "net_items_sold",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "net_sales",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "average_order_value",
+          "dataType": "MONEY"
+        }
+      ],
+      "rows": [
+        [
+          "UnifyDrive UP6",
+          "22",
+          "21",
+          "32065.81",
+          "1525.673"
+        ],
+        [
+          "UnifyDrive UT2",
+          "51",
+          "51",
+          "17430.59",
+          "348.619"
+        ],
+        [
+          "UnifyDrive UT2 with 256GB SSD",
+          "1",
+          "1",
+          "512.66",
+          "512.66"
+        ],
+        [
+          "UT2 Official Battery",
+          "5",
+          "5",
+          "149.95",
+          "35.988"
+        ],
+        [
+          "UT2 | Travel Adapter + USB C to USB C Cable 33W",
+          "1",
+          "3",
+          "119.97",
+          "119.97"
+        ],
+        [
+          "UT2 | CF-Express Type-B Adapter",
+          "2",
+          "2",
+          "76.76",
+          "38.38"
+        ],
+        [
+          "Remote control",
+          "3",
+          "3",
+          "52.97",
+          "17.656"
+        ],
+        [
+          "UT2 | Carrying Case",
+          "1",
+          "1",
+          "39.99",
+          "39.99"
+        ],
+        [
+          "UT2 | Silicone case",
+          "18",
+          "19",
+          "19.99",
+          "1.11"
+        ],
+        [
+          "",
+          "0",
+          "0",
+          "0",
+          ""
+        ]
+      ],
+      "rowCount": 10,
+      "chartHint": {
+        "type": "bar",
+        "xAxisColumnIndex": 0,
+        "yAxisColumnIndices": [
+          1,
+          2
+        ],
+        "yAxisFormat": "number"
+      },
+      "summaryMetric": {
+        "label": "orders",
+        "value": "104"
+      },
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "sources9": {
+      "query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout GROUP BY referrer_source SINCE 2026-09-01 UNTIL 2026-09-30 ORDER BY sessions DESC",
+      "columns": [
+        {
+          "name": "referrer_source",
+          "dataType": "STRING"
+        },
+        {
+          "name": "sessions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_with_cart_additions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_reached_checkout",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_completed_checkout",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "social",
+          "42388",
+          "223",
+          "80",
+          "14"
+        ],
+        [
+          "direct",
+          "8014",
+          "159",
+          "122",
+          "20"
+        ],
+        [
+          "search",
+          "4716",
+          "174",
+          "89",
+          "21"
+        ],
+        [
+          "unknown",
+          "247",
+          "13",
+          "10",
+          "1"
+        ],
+        [
+          "email",
+          "17",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "",
+          "2",
+          "1",
+          "0",
+          "0"
+        ]
+      ],
+      "rowCount": 6,
+      "chartHint": {
+        "type": "bar",
+        "xAxisColumnIndex": 0,
+        "yAxisColumnIndices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "yAxisFormat": "number"
+      },
+      "summaryMetric": {
+        "label": "sessions",
+        "value": "55,384"
+      },
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "sources10": {
+      "query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout GROUP BY referrer_source SINCE 2026-10-01 UNTIL 2026-10-31 ORDER BY sessions DESC",
+      "columns": [
+        {
+          "name": "referrer_source",
+          "dataType": "STRING"
+        },
+        {
+          "name": "sessions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_with_cart_additions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_reached_checkout",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_completed_checkout",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "social",
+          "37372",
+          "267",
+          "106",
+          "17"
+        ],
+        [
+          "direct",
+          "8594",
+          "223",
+          "201",
+          "24"
+        ],
+        [
+          "search",
+          "4411",
+          "219",
+          "121",
+          "30"
+        ],
+        [
+          "unknown",
+          "330",
+          "10",
+          "6",
+          "1"
+        ],
+        [
+          "email",
+          "36",
+          "1",
+          "1",
+          "0"
+        ],
+        [
+          "",
+          "2",
+          "2",
+          "0",
+          "0"
+        ]
+      ],
+      "rowCount": 6,
+      "chartHint": {
+        "type": "bar",
+        "xAxisColumnIndex": 0,
+        "yAxisColumnIndices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "yAxisFormat": "number"
+      },
+      "summaryMetric": {
+        "label": "sessions",
+        "value": "50,745"
+      },
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "device9": {
+      "query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout GROUP BY session_device_type SINCE 2026-09-01 UNTIL 2026-09-30 ORDER BY sessions DESC",
+      "columns": [
+        {
+          "name": "session_device_type",
+          "dataType": "STRING"
+        },
+        {
+          "name": "sessions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_with_cart_additions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_reached_checkout",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_completed_checkout",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "mobile",
+          "46811",
+          "331",
+          "146",
+          "27"
+        ],
+        [
+          "desktop",
+          "7375",
+          "219",
+          "138",
+          "27"
+        ],
+        [
+          "tablet",
+          "1174",
+          "20",
+          "17",
+          "2"
+        ],
+        [
+          "other",
+          "24",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "rowCount": 4,
+      "chartHint": {
+        "type": "bar",
+        "xAxisColumnIndex": 0,
+        "yAxisColumnIndices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "yAxisFormat": "number"
+      },
+      "summaryMetric": {
+        "label": "sessions",
+        "value": "55,384"
+      },
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "device10": {
+      "query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout GROUP BY session_device_type SINCE 2026-10-01 UNTIL 2026-10-31 ORDER BY sessions DESC",
+      "columns": [
+        {
+          "name": "session_device_type",
+          "dataType": "STRING"
+        },
+        {
+          "name": "sessions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_with_cart_additions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_reached_checkout",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_completed_checkout",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "mobile",
+          "41221",
+          "398",
+          "198",
+          "42"
+        ],
+        [
+          "desktop",
+          "8163",
+          "293",
+          "222",
+          "27"
+        ],
+        [
+          "tablet",
+          "1320",
+          "31",
+          "15",
+          "3"
+        ],
+        [
+          "",
+          "22",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "other",
+          "19",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "rowCount": 5,
+      "chartHint": {
+        "type": "bar",
+        "xAxisColumnIndex": 0,
+        "yAxisColumnIndices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "yAxisFormat": "number"
+      },
+      "summaryMetric": {
+        "label": "sessions",
+        "value": "50,745"
+      },
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "landing9": {
+      "query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout GROUP BY landing_page_path SINCE 2026-09-01 UNTIL 2026-09-30 ORDER BY sessions DESC LIMIT 12",
+      "columns": [
+        {
+          "name": "landing_page_path",
+          "dataType": "STRING"
+        },
+        {
+          "name": "sessions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_with_cart_additions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_reached_checkout",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_completed_checkout",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "/products/unifydrive-up6",
+          "28034",
+          "160",
+          "58",
+          "13"
+        ],
+        [
+          "/products/unifydrive-ut2",
+          "18855",
+          "194",
+          "106",
+          "28"
+        ],
+        [
+          "/",
+          "4497",
+          "138",
+          "65",
+          "7"
+        ],
+        [
+          "/blogs/features/what-is-raid-10-raid-levels-explained",
+          "463",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "/ja-jp/products/unifydrive-ut2",
+          "346",
+          "9",
+          "5",
+          "1"
+        ],
+        [
+          "/ja-jp",
+          "198",
+          "6",
+          "3",
+          "0"
+        ],
+        [
+          "/products/unifydrive-uc250",
+          "173",
+          "3",
+          "1",
+          "0"
+        ],
+        [
+          "/products/unifydrive-uc450-pro",
+          "169",
+          "2",
+          "1",
+          "0"
+        ],
+        [
+          "/pages/ut2-business-purchase",
+          "147",
+          "7",
+          "3",
+          "0"
+        ],
+        [
+          "/blogs/features/best-portable-nas-devices-for-travel-and-remote-work-in-2025",
+          "109",
+          "6",
+          "4",
+          "1"
+        ],
+        [
+          "/products/remote-control",
+          "105",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "/blogs/features/ssd-vs-hdd-for-nas-unifydrive-ut2",
+          "103",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "rowCount": 12,
+      "chartHint": {
+        "type": "bar",
+        "xAxisColumnIndex": 0,
+        "yAxisColumnIndices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "yAxisFormat": "number"
+      },
+      "summaryMetric": {
+        "label": "sessions",
+        "value": "53,199"
+      },
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "landing10": {
+      "query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout GROUP BY landing_page_path SINCE 2026-10-01 UNTIL 2026-10-31 ORDER BY sessions DESC LIMIT 12",
+      "columns": [
+        {
+          "name": "landing_page_path",
+          "dataType": "STRING"
+        },
+        {
+          "name": "sessions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_with_cart_additions",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_reached_checkout",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "sessions_that_completed_checkout",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "/products/unifydrive-up6",
+          "29310",
+          "113",
+          "51",
+          "11"
+        ],
+        [
+          "/products/unifydrive-ut2-copy",
+          "9122",
+          "106",
+          "45",
+          "7"
+        ],
+        [
+          "/products/unifydrive-ut2",
+          "4373",
+          "250",
+          "126",
+          "25"
+        ],
+        [
+          "/",
+          "3162",
+          "136",
+          "68",
+          "10"
+        ],
+        [
+          "/ja-jp/products/unifydrive-ut2",
+          "419",
+          "14",
+          "7",
+          "2"
+        ],
+        [
+          "/blogs/features/what-is-raid-10-raid-levels-explained",
+          "392",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "/ja-jp",
+          "189",
+          "7",
+          "4",
+          "0"
+        ],
+        [
+          "/account/unsubscribe",
+          "159",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "/products/unifydrive-uc250",
+          "139",
+          "4",
+          "2",
+          "0"
+        ],
+        [
+          "/products/unifydrive-uc450-pro",
+          "125",
+          "4",
+          "4",
+          "0"
+        ],
+        [
+          "/zh",
+          "122",
+          "5",
+          "1",
+          "0"
+        ],
+        [
+          "/pages/ut2-business-purchase",
+          "107",
+          "6",
+          "0",
+          "0"
+        ]
+      ],
+      "rowCount": 12,
+      "chartHint": {
+        "type": "bar",
+        "xAxisColumnIndex": 0,
+        "yAxisColumnIndices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "yAxisFormat": "number"
+      },
+      "summaryMetric": {
+        "label": "sessions",
+        "value": "47,619"
+      },
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "countries10": {
+      "query": "FROM sales SHOW total_sales, orders GROUP BY shipping_country SINCE 2026-10-01 UNTIL 2026-10-31 ORDER BY total_sales DESC",
+      "columns": [
+        {
+          "name": "shipping_country",
+          "dataType": "STRING"
+        },
+        {
+          "name": "total_sales",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "orders",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "United States",
+          "34542.52",
+          "48"
+        ],
+        [
+          "United Kingdom",
+          "3496",
+          "4"
+        ],
+        [
+          "Japan",
+          "3147.63",
+          "5"
+        ],
+        [
+          "Australia",
+          "2197",
+          "3"
+        ],
+        [
+          "Canada",
+          "1695",
+          "5"
+        ],
+        [
+          "Martinique",
+          "1449",
+          "1"
+        ],
+        [
+          "Germany",
+          "953.98",
+          "3"
+        ],
+        [
+          "Taiwan",
+          "687.98",
+          "3"
+        ],
+        [
+          "Hungary",
+          "598",
+          "1"
+        ],
+        [
+          "France",
+          "399",
+          "1"
+        ],
+        [
+          "Netherlands",
+          "399",
+          "1"
+        ],
+        [
+          "Switzerland",
+          "388.98",
+          "2"
+        ],
+        [
+          "Sweden",
+          "349",
+          "1"
+        ],
+        [
+          "Spain",
+          "349",
+          "1"
+        ],
+        [
+          "Norway",
+          "299",
+          "1"
+        ],
+        [
+          "Pakistan",
+          "69.97",
+          "1"
+        ],
+        [
+          "Colombia",
+          "-39.98",
+          "0"
+        ]
+      ],
+      "rowCount": 17,
+      "chartHint": {
+        "type": "bar",
+        "xAxisColumnIndex": 0,
+        "yAxisColumnIndices": [
+          1
+        ],
+        "yAxisFormat": "money",
+        "currencyCode": "USD"
+      },
+      "summaryMetric": {
+        "label": "total_sales",
+        "value": "50,981.08"
+      },
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "daily": {
+      "query": "FROM sales SHOW total_sales, orders TIMESERIES day SINCE 2026-10-01 UNTIL 2026-10-31 ORDER BY day ASC",
+      "columns": [
+        {
+          "name": "day",
+          "dataType": "DAY_TIMESTAMP"
+        },
+        {
+          "name": "total_sales",
+          "dataType": "MONEY"
+        },
+        {
+          "name": "orders",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "2026-10-01",
+          "3247",
+          "3"
+        ],
+        [
+          "2026-10-02",
+          "349",
+          "1"
+        ],
+        [
+          "2026-10-03",
+          "438.89",
+          "2"
+        ],
+        [
+          "2026-10-04",
+          "1086.98",
+          "4"
+        ],
+        [
+          "2026-10-05",
+          "119.97",
+          "1"
+        ],
+        [
+          "2026-10-06",
+          "0",
+          "0"
+        ],
+        [
+          "2026-10-07",
+          "698",
+          "2"
+        ],
+        [
+          "2026-10-08",
+          "388.89",
+          "2"
+        ],
+        [
+          "2026-10-09",
+          "399",
+          "1"
+        ],
+        [
+          "2026-10-10",
+          "3048",
+          "2"
+        ],
+        [
+          "2026-10-11",
+          "1838.79",
+          "2"
+        ],
+        [
+          "2026-10-12",
+          "4756.17",
+          "6"
+        ],
+        [
+          "2026-10-13",
+          "0",
+          "0"
+        ],
+        [
+          "2026-10-14",
+          "1449",
+          "1"
+        ],
+        [
+          "2026-10-15",
+          "4417.18",
+          "6"
+        ],
+        [
+          "2026-10-16",
+          "1926.8",
+          "3"
+        ],
+        [
+          "2026-10-17",
+          "1599",
+          "1"
+        ],
+        [
+          "2026-10-18",
+          "5152.75",
+          "4"
+        ],
+        [
+          "2026-10-19",
+          "-1499",
+          "1"
+        ],
+        [
+          "2026-10-20",
+          "3244",
+          "6"
+        ],
+        [
+          "2026-10-21",
+          "1777.72",
+          "6"
+        ],
+        [
+          "2026-10-22",
+          "1016.97",
+          "4"
+        ],
+        [
+          "2026-10-23",
+          "4189.57",
+          "5"
+        ],
+        [
+          "2026-10-24",
+          "730.92",
+          "2"
+        ],
+        [
+          "2026-10-25",
+          "399",
+          "1"
+        ],
+        [
+          "2026-10-26",
+          "1825.05",
+          "2"
+        ],
+        [
+          "2026-10-27",
+          "3003.93",
+          "5"
+        ],
+        [
+          "2026-10-28",
+          "4011.51",
+          "4"
+        ],
+        [
+          "2026-10-29",
+          "349",
+          "1"
+        ],
+        [
+          "2026-10-30",
+          "667.99",
+          "2"
+        ],
+        [
+          "2026-10-31",
+          "349",
+          "1"
+        ]
+      ],
+      "rowCount": 31,
+      "chartHint": {
+        "type": "line",
+        "xAxisColumnIndex": 0,
+        "yAxisColumnIndices": [
+          1
+        ],
+        "yAxisFormat": "money",
+        "currencyCode": "USD"
+      },
+      "summaryMetric": {
+        "label": "total_sales",
+        "value": "50,981.08"
+      },
+      "shopDomain": "89f67a-87.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "refundsFull": {
+      "data": {
+        "orders": {
+          "nodes": [
+            {
+              "name": "#1931",
+              "createdAt": "2026-09-14T20:57:15Z",
+              "displayFinancialStatus": "REFUNDED",
+              "displayFulfillmentStatus": "FULFILLMENT_NOT_REQUIRED",
+              "lineItems": {
+                "nodes": [
+                  {
+                    "title": "UT2 Official Battery",
+                    "quantity": 1
+                  }
+                ]
+              },
+              "refunds": [
+                {
+                  "createdAt": "2026-10-21T12:00:23Z",
+                  "note": "哥伦比亚电池发不过去，取消订单，全额退款。",
+                  "totalRefundedSet": {
+                    "shopMoney": {
+                      "amount": "39.98",
+                      "currencyCode": "USD"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "#2001",
+              "createdAt": "2026-10-15T13:15:08Z",
+              "displayFinancialStatus": "REFUNDED",
+              "displayFulfillmentStatus": "FULFILLMENT_NOT_REQUIRED",
+              "lineItems": {
+                "nodes": [
+                  {
+                    "title": "UnifyDrive UT2",
+                    "quantity": 1
+                  }
+                ]
+              },
+              "refunds": [
+                {
+                  "createdAt": "2026-10-20T03:14:11Z",
+                  "note": "取消订单，原因：用户不想要了。未发货全额退款",
+                  "totalRefundedSet": {
+                    "shopMoney": {
+                      "amount": "349.0",
+                      "currencyCode": "USD"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "#1912",
+              "createdAt": "2026-09-02T17:58:46Z",
+              "displayFinancialStatus": "REFUNDED",
+              "displayFulfillmentStatus": "FULFILLED",
+              "lineItems": {
+                "nodes": [
+                  {
+                    "title": "UnifyDrive UP6",
+                    "quantity": 1
+                  }
+                ]
+              },
+              "refunds": [
+                {
+                  "createdAt": "2026-10-20T03:46:25Z",
+                  "note": "因产品不符合用户需求/预期，并且与其互联网服务不兼容、无法使用，提出退货退款，因用户通过 PayPal 发起了争议，为安抚客户并让用户取消PayPal case，此次已发货订单全额退款。",
+                  "totalRefundedSet": {
+                    "shopMoney": {
+                      "amount": "1499.0",
+                      "currencyCode": "USD"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "refundsPartial": {
+      "data": {
+        "orders": {
+          "nodes": [
+            {
+              "name": "#1960",
+              "createdAt": "2026-09-26T07:41:35Z",
+              "displayFinancialStatus": "PARTIALLY_REFUNDED",
+              "displayFulfillmentStatus": "FULFILLED",
+              "refunds": [
+                {
+                  "createdAt": "2026-09-29T07:43:29Z",
+                  "note": "用户确认不需要遥控器和UT2的软包，没发货，直接退款。",
+                  "totalRefundedSet": {
+                    "shopMoney": {
+                      "amount": "56.98",
+                      "currencyCode": "USD"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

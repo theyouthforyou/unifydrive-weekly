@@ -1,0 +1,49 @@
+{
+  "periods": [
+    "10/1–10/7",
+    "10/9–10/13",
+    "10/14–10/22",
+    "10/23–10/28"
+  ],
+  "missing": [
+    "10/8",
+    "10/29–10/31"
+  ],
+  "data": [
+    {
+      "name": "UP6 再营销",
+      "spend": 1381.05,
+      "purchase": 9,
+      "value": 9861.97
+    },
+    {
+      "name": "UT2 再营销",
+      "spend": 1395.95,
+      "purchase": 8,
+      "value": 2715.18
+    },
+    {
+      "name": "UT2 299Test",
+      "spend": 2780.08,
+      "purchase": 13,
+      "value": 5777.17
+    },
+    {
+      "name": "UP6 AudienceTest",
+      "spend": 692.06,
+      "purchase": 2,
+      "value": 1848
+    },
+    {
+      "name": "UP6 VIP100",
+      "spend": 357.84,
+      "purchase": 0,
+      "value": 0
+    }
+  ],
+  "totals": {
+    "spend": 6606.98,
+    "purchase": 32,
+    "value": 20202.32
+  }
+}
